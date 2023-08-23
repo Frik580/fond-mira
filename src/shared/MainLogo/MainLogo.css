@@ -1,0 +1,14 @@
+.main-logo__conteiner {
+    position: relative;
+    width: 180px;
+}
+
+.main-logo__image {
+    position: absolute;
+    top: -50px;
+    left: 0;
+    width: 180px;
+    height: 250px;
+    background-color: var(--color-white);
+    padding: 25px 15px;
+}

@@ -1,0 +1,38 @@
+.burger-button__conteiner {
+    position: relative;
+    width: 24px;
+    height: 24px;
+}
+
+.burger-button {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    border: none;
+    cursor: pointer;
+    background: none;
+    outline: none;
+    background-color: var(--color-dust-white);
+}
+
+.burger-button::before {
+    position: absolute;
+    content: "";
+    height: 6px;
+    width: 24px;
+    top: 4px;
+    left: 0px;
+    background-color: var(--color-blue);
+}
+
+.burger-button::after {
+    position: absolute;
+    content: "";
+    height: 6px;
+    width: 24px;
+    top: 14px;
+    left: 0px;
+    background-color: var(--color-blue);
+}

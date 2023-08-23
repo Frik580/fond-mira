@@ -1,0 +1,9 @@
+.header {
+    width: 100%;
+    min-height: 100px;
+    background-color: var(--color-blue);
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
