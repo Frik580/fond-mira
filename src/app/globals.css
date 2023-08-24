@@ -1,3 +1,6 @@
+@import url(../shared/Styles/normalize.css);
+@import url(../shared/Styles/fonts/fonts.css);
+
 * {
     box-sizing: border-box;
     padding: 0;
@@ -15,19 +18,26 @@ a {
     text-decoration: none;
 }
 
-.color_palettes {
-    color: #f9faf7;
-    color: #5cb7d4;
-    color: #003d7a;
-    color: #f1cbb0;
-}
-
 :root {
-	/* Colors */
-	--color-black: #212120;
-	--color-white: #ffffff;
+    font-family: "Inter", Arial, sans-serif;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    background-color: var(--color-white);
+    color: var(--color-black);
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    /* Colors */
+    --color-black: #212120;
+    --color-white: #ffffff;
     --color-dust-white: #f9faf7;
-	--color-blue: #003d7a;
+    --color-blue: #003d7a;
     --color-marine: #5cb7d4;
-	--color-pink: #f1cbb0;
+    --color-pink: #f1cbb0;
 }

@@ -1,0 +1,28 @@
+.header-link__conteiner {
+    display: flex;
+    align-items: center;
+    transition: opacity 0.3s ease-in-out;
+    border-bottom: 3px solid var(--color-blue);
+    opacity: 0.5;
+    height: 100px;
+}
+
+.header-link {
+    font-size: 20px;
+    line-height: 1.4;
+    font-weight: 400;
+    font-style: normal;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--color-white);
+}
+
+/* .header-link:hover ~ .header-link__conteiner {
+    opacity: 1;
+    border-bottom: 1px solid var(--color-white);
+} */
+
+.header-link__conteiner:hover {
+    opacity: 1;
+    border-bottom: 3px solid var(--color-white);
+}

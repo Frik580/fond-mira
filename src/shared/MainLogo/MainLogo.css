@@ -1,6 +1,8 @@
 .main-logo__conteiner {
     position: relative;
     width: 180px;
+    flex-shrink: 0;
+    z-index: 99;
 }
 
 .main-logo__image {
