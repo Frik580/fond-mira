@@ -65,9 +65,9 @@
 
 .top-news__line {
     width: 100px;
-    height: 5px;
+    height: 2px;
     background-color: var(--color-pink);
-    border-radius: 3px;
+    border-radius: 1px;
 }
 
 .top-news__text {
