@@ -44,5 +44,16 @@ a {
     --color-blue: #003d7a;
     --color-marine: #5cb7d4;
     --color-pink: #f1cbb0;
-    --color-gray: #848484;
+    --color-gray: #c6c6c6;
+}
+
+
+html::-webkit-scrollbar {
+	width: 10px;
+}
+
+html::-webkit-scrollbar-thumb {
+	background-color: var(--color-gray);
+	border-radius: 4px;
+	width: 5px;
 }

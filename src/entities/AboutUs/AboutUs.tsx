@@ -3,21 +3,21 @@
 import "./AboutUs.css";
 import Image from "next/image";
 import imagePP from "./5_4T5J0z5xA.png";
+import { MainTitle } from "../MainTitle/MainTitle";
+import { TITLES } from "../../shared/Constants";
 
 export const AboutUs = () => {
     return (
-        <section className="aboutus">
-            <h2 id="aboutus" className="aboutus__title">
-                Кто мы
-            </h2>
-            <div className="aboutus__conteiner">
+        <section className="about-us">
+            <MainTitle id="about-us" text={TITLES.ABOUT_US} />
+            <div className="about-us__conteiner">
                 <Image
                     src={imagePP}
-                    className="aboutus__image"
+                    className="about-us__image"
                     alt="фото Герасимчук Л.А."
                 />
-                <div className="aboutus__text-conteiner">
-                    <p className="aboutus__text">
+                <div className="about-us__text-conteiner">
+                    <p className="about-us__text">
                         События последнего времени поставили вопросы сохранения
                         исторической памяти в разряд приоритетных. Уникальность
                         проекта ПКО МОФ «Российский фонд мира» - «Рябиновая
@@ -34,12 +34,18 @@ export const AboutUs = () => {
                         Союза, нашим землякам, и первым в списке стоит имя В.М.
                         Астафьева.
                     </p>
-                    <p className="aboutus__text" style={{ textAlign: "right" }}>
+                    <p
+                        className="about-us__text"
+                        style={{ textAlign: "right" }}
+                    >
                         С пожеланием Мира,
                         <br /> председатель Правления ПКО МОФ &#171;Российский
                         фонд мира&#187;
                     </p>
-                    <p className="aboutus__text" style={{ textAlign: "right" }}>
+                    <p
+                        className="about-us__text"
+                        style={{ textAlign: "right" }}
+                    >
                         Любовь Герасимчук
                     </p>
                 </div>

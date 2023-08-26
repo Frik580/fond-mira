@@ -1,0 +1,10 @@
+.main-title {
+    font-size: 35px;
+    line-height: 1;
+    font-weight: 500;
+    font-style: normal;
+    padding-left: 30px;
+    width: 50%;
+    border-bottom: 2px dashed var(--color-gray);
+    color: var(--color-gray);
+}

@@ -1,33 +1,39 @@
-.about-us {
+.projects {
     display: flex;
     flex-direction: column;
     padding-top: 100px;
+    height: 600px;
+    background-color: var(--color-dust-white);
 }
 
-.about-us__conteiner {
+.projects__conteiner {
     display: flex;
-    gap: 100px;
     margin: 0 auto;
     padding: 50px 30px;
-    max-width: 1200px;
+
+    /* display: grid;
+    grid-template-columns: repeat(auto-fit, 200px);
+    justify-content: center;
+    gap: 40px 32.5px;
+    list-style-type: none; */
 }
 
-.about-us__image {
+/* .aboutus__image {
     width: 300px;
     height: 400px;
     border-radius: 10px;
     border: 2px solid var(--color-pink);
 }
 
-.about-us__text-conteiner {
+.aboutus__text-conteiner {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.about-us__text {
+.aboutus__text {
     font-size: 20px;
     line-height: 1.4;
     font-weight: 400;
     font-style: normal;
-}
+} */
