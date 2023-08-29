@@ -6,6 +6,7 @@ import imageNews from "./image.png";
 import { MainTitle } from "../MainTitle/MainTitle";
 import { TITLES } from "../../shared/Constants";
 import { News } from "../News/News";
+import { DotsButton } from "@/shared/DotsButton/DotsButton";
 
 export const NewsList = () => {
     return (
@@ -16,6 +17,7 @@ export const NewsList = () => {
                     <News />
                     <News />
                     <News />
+                    <DotsButton lenght={18} />
                 </ul>
                 <Image
                     src={imageNews}

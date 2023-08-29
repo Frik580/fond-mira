@@ -1,0 +1,24 @@
+.dots-button__conteiner {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.dots-button {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    background: none;
+    outline: none;
+    border: 2px solid var(--color-pink);
+}
+
+.dots-button_active {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 2px solid var(--color-pink);
+    background-color: var(--color-pink);
+}
