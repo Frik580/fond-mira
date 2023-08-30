@@ -1,0 +1,19 @@
+.projects-list {
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px;
+    background-color: var(--color-dust-white);
+}
+
+.projects-list__conteiner {
+    /* align-self: center; */
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 370px);
+    justify-content: center;
+    gap: 15px;
+    list-style-type: none;
+    padding: 50px 30px;
+    max-width: 1200px;
+    width: 100%;
+}

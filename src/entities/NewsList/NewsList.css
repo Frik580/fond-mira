@@ -18,10 +18,16 @@
     max-width: 1200px;
 }
 
-.news-list__articles {
+.news-list__block {
     display: flex;
     flex-direction: column;
     width: 70%;
+    gap: 50px;
+}
+
+.news-list__news {
+    display: flex;
+    flex-direction: column;
     list-style-type: none;
     gap: 20px;
 }

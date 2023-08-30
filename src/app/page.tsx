@@ -6,7 +6,7 @@ import { Footer } from "@/entities/Footer/Footer";
 import { Header } from "@/entities/Header/Header";
 import { NewsList } from "@/entities/NewsList/NewsList";
 import { Partners } from "@/entities/Partners/Partners";
-import { Projects } from "@/entities/Projects/Projects";
+import { ProjectsList } from "@/entities/ProjectsList/ProjectsList";
 import { TopNews } from "@/entities/TopNews/TopNews";
 
 export default function Home() {
@@ -16,7 +16,7 @@ export default function Home() {
             <TopNews />
             <AboutUs />
             <NewsList />
-            <Projects />
+            <ProjectsList />
             <Partners />
             <Contacts />
             <Footer />

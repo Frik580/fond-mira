@@ -23,6 +23,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/media/page.jsx", "src/app/layout.jsx", "src/app/page.tsx", "src/shared/BurgerButton/BurgerButton.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/media/page.jsx", "src/app/layout.jsx", "src/app/page.tsx", "src/features/BurgerButton/BurgerButton.tsx"],
   "exclude": ["node_modules"]
 }

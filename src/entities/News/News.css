@@ -19,6 +19,7 @@
 
 .news__date {
     flex-shrink: 0;
+    color: var(--color-pink);
 }
 
 .news__button {
@@ -41,6 +42,14 @@
     overflow: hidden;
     font-size: 18px;
     font-weight: 500;
+}
+
+.news__ikon {
+    margin: auto;
+    width: 40px;
+    height: 40px;
+    background-image: url(./reading.svg);
+    background-size: cover;
 }
 
 .news:hover > .news__button {
