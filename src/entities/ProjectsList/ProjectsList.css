@@ -6,7 +6,6 @@
 }
 
 .projects-list__conteiner {
-    /* align-self: center; */
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, 370px);
