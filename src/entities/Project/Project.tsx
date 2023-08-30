@@ -15,7 +15,9 @@ export const Project = () => {
                     alt="image"
                 />
                 <div className="project__conteiner">
-                    <p className="project__title">Пермь великая – ПАРМА многоликая</p>
+                    <p className="project__title">
+                        Пермь великая – ПАРМА многоликая
+                    </p>
                     <p className="project__text">больше информации</p>
                 </div>
             </li>
