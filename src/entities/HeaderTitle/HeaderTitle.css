@@ -1,0 +1,9 @@
+.header-title {
+    font-size: 30px;
+    line-height: 1.4;
+    font-weight: 500;
+    font-style: normal;
+    margin: auto;
+    text-align: center;
+    color: var(--color-white);
+}

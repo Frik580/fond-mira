@@ -1,9 +1,8 @@
 // "use client";
 
-import Image from "next/image";
 import "./TopNews.css";
-import background from "./top-news.png";
-import image from "./fond.png";
+import { PeaceFound } from "../PeaceFound/PeaceFound";
+import { HeaderTitle } from "../HeaderTitle/HeaderTitle";
 
 export const TopNews = () => {
     return (
@@ -14,29 +13,11 @@ export const TopNews = () => {
                 objectFit: "cover",
             }}
         >
-            {/* <Image
-                className="top-news__image"
-                src={background}
-                fill
-                alt="Ветви"
-            /> */}
             <div className="top-news__title-conteiner">
-                <h1 className="top-news__title">
-                    Пермские региональное отделение Международного общественного
-                    фонда &#171;Российский фонд мира&#187;
-                </h1>
-                <a
-                    href="https://peacefound.ru"
-                    className="top-news__found-ikon"
-                    target="_blank"
-                    rel="noreferrer"
-                >
-                    <Image
-                        src={image}
-                        className="top-news__found-image"
-                        alt="логотип фонда мира"
-                    />
-                </a>
+                <HeaderTitle />
+                <div className="top-news__found-ikon">
+                    <PeaceFound />
+                </div>
             </div>
             <div className="top-news__text-conteiner">
                 <div className="top-news__line" />

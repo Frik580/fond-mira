@@ -1,0 +1,12 @@
+.found__ikon {
+    width: 100px;
+    height: 100px;
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.found__image {
+    height: 100%;
+    width: 100%;
+}

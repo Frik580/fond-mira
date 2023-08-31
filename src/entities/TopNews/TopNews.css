@@ -24,27 +24,20 @@
     z-index: 1;
 }
 
-.top-news__title {
-    font-size: 30px;
-    line-height: 1.4;
-    font-weight: 500;
-    font-style: normal;
-    margin: auto;
-    text-align: center;
-    color: var(--color-white);
+@media (max-width: 1279px) {
+    .top-news__title-conteiner {
+        padding-left: 30px;
+    }
 }
 
 .top-news__found-ikon {
-    width: 100px;
-    height: 100px;
-    flex-shrink: 0;
-    overflow: hidden;
-    border-radius: 50%;
+    display: flex;
 }
 
-.top-news__found-image {
-    height: 100%;
-    width: 100%;
+@media (max-width: 1279px) {
+    .top-news__found-ikon {
+        display: none;
+    }
 }
 
 .top-news__text-conteiner {

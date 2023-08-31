@@ -8,10 +8,22 @@
     gap: 30px;
 }
 
+@media (max-width: 1279px) {
+    .header {
+        min-height: 120px;
+    }
+  }
+
 .header__navigation {
     display: flex;
     gap: 30px;
 }
+
+@media (max-width: 1279px) {
+    .header__navigation {
+      display: none;
+    }
+  }
 
 .header__button {
     background: none;
@@ -28,3 +40,13 @@
     font-weight: 400;
     font-style: normal;
 }
+
+.header__found-ikon {
+    display: none;
+}
+
+@media (max-width: 1279px) {
+    .header__found-ikon {
+      display: flex;
+    }
+  }
