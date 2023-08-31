@@ -3,6 +3,8 @@
 import "./TopNews.css";
 import { PeaceFound } from "../PeaceFound/PeaceFound";
 import { HeaderTitle } from "../HeaderTitle/HeaderTitle";
+import { MainLogo } from "../MainLogo/MainLogo";
+import logoImage from './logo.png'
 
 export const TopNews = () => {
     return (
@@ -14,10 +16,9 @@ export const TopNews = () => {
             }}
         >
             <div className="top-news__title-conteiner">
+                <MainLogo img={logoImage} alt='голубь мира' />
+                <PeaceFound />
                 <HeaderTitle />
-                <div className="top-news__found-ikon">
-                    <PeaceFound />
-                </div>
             </div>
             <div className="top-news__text-conteiner">
                 <div className="top-news__line" />

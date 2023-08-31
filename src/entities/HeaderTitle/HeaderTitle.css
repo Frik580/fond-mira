@@ -6,4 +6,11 @@
     margin: auto;
     text-align: center;
     color: var(--color-white);
+    max-width: 1200px;
 }
+
+@media (max-width: 1180px) {
+    .header-title {
+        font-size: 25px;
+    }
+  }

@@ -11,7 +11,7 @@ import { TopNews } from "@/entities/TopNews/TopNews";
 
 export default function Home() {
     return (
-        <main style={{ minHeight: "100vh" }}>
+        <main className="main">
             <Header />
             <TopNews />
             <AboutUs />
