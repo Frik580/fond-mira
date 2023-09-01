@@ -1,22 +1,30 @@
-// "use client";
+"use client";
 
 import "./TopNews.css";
+import { useEffect, useRef } from "react";
 import { PeaceFound } from "../PeaceFound/PeaceFound";
 import { HeaderTitle } from "../HeaderTitle/HeaderTitle";
 import { MainLogo } from "../MainLogo/MainLogo";
-import logoImage from './logo.png'
+import logoImage from "./logo.png";
 
-export const TopNews = () => {
+export const TopNews = ({ dom }: any) => {
+    const domRef = useRef<HTMLInputElement | null>(null);
+
+    useEffect(() => {
+        dom(domRef);
+    }, [dom]);
+
     return (
         <section
+            // ref={domRef}
             className="top-news"
             style={{
                 backgroundImage: `url(${"./top-news.png"})`,
                 objectFit: "cover",
             }}
         >
-            <div className="top-news__title-conteiner">
-                <MainLogo img={logoImage} alt='голубь мира' />
+            <div ref={domRef} className="top-news__title-conteiner">
+                <MainLogo img={logoImage} alt="голубь мира" />
                 <PeaceFound />
                 <HeaderTitle />
             </div>

@@ -1,17 +1,30 @@
 "use client";
 
 import "./Header.css";
+import { useState, useEffect } from "react";
 import { BurgerButton } from "@/features/BurgerButton/BurgerButton";
-import { MainLogo } from "@/entities/MainLogo/MainLogo";
 import { HeaderLink } from "@/entities/HeaderLink/HeaderLink";
 import { TITLES } from "../../shared/Constants";
-import img from "./logo.png";
-import { PeaceFound } from "../PeaceFound/PeaceFound";
-import { HeaderTitle } from "../HeaderTitle/HeaderTitle";
 
-export const Header = () => {
+export const Header = ({ domRef }: any) => {
+    const [isVisible, setIsVisible] = useState(true);
+
+    useEffect(() => {
+        if (domRef.current) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => setIsVisible(entry.isIntersecting));
+            });
+
+            observer.observe(domRef.current);
+
+            return () => {
+                observer.unobserve(domRef.current);
+            };
+        }
+    }, [domRef]);
+
     return (
-        <header className="header">
+        <header className={isVisible ? "header" : "header_visibility"}>
             <nav className="header__navigation">
                 <BurgerButton click={() => {}} />
                 <HeaderLink path={"#about-us"} title={TITLES.ABOUT_US} />
