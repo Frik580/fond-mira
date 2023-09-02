@@ -2,8 +2,7 @@
     display: flex;
     align-items: center;
     transition: opacity 0.3s ease-in-out;
-    opacity: 0.7;
-    height: 60px;
+    opacity: 0.6;
 }
 
 .header-link {
@@ -20,8 +19,8 @@
     opacity: 1;
 }
 
-@media (max-width: 1180px) {
-    .header-link {
+@media (max-width: 1023px) {
+    .header-link__conteiner {
       display: none;
     }
   }

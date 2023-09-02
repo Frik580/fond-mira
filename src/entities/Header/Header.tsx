@@ -5,6 +5,8 @@ import { useState, useEffect } from "react";
 import { BurgerButton } from "@/features/BurgerButton/BurgerButton";
 import { HeaderLink } from "@/entities/HeaderLink/HeaderLink";
 import { TITLES } from "../../shared/Constants";
+import { MainLogo } from "../MainLogo/MainLogo";
+import { PeaceFound } from "../PeaceFound/PeaceFound";
 
 export const Header = ({ domRef }: any) => {
     const [isVisible, setIsVisible] = useState(true);
@@ -18,6 +20,7 @@ export const Header = ({ domRef }: any) => {
             observer.observe(domRef.current);
 
             return () => {
+                // eslint-disable-next-line react-hooks/exhaustive-deps
                 observer.unobserve(domRef.current);
             };
         }
@@ -25,6 +28,10 @@ export const Header = ({ domRef }: any) => {
 
     return (
         <header className={isVisible ? "header" : "header_visibility"}>
+            <div className="header__links">
+                <MainLogo />
+                <PeaceFound />
+            </div>
             <nav className="header__navigation">
                 <BurgerButton click={() => {}} />
                 <HeaderLink path={"#about-us"} title={TITLES.ABOUT_US} />
@@ -36,7 +43,7 @@ export const Header = ({ domRef }: any) => {
                 <HeaderLink path={"#partners"} title={TITLES.PARTNERS} />
                 <HeaderLink path={"#"} title={TITLES.DOCUMENTS} />
                 <HeaderLink path={"#contacts"} title={TITLES.CONTACTS} />
-                <button className="header__button">Поддержать</button>
+                <button className="header__button">Помочь</button>
             </nav>
         </header>
     );

@@ -21,8 +21,14 @@
 .news-list__block {
     display: flex;
     flex-direction: column;
-    width: 70%;
+    width: 60%;
     gap: 50px;
+}
+
+@media (max-width: 1023px) {
+    .news-list__block {
+        width: 100%;
+    }
 }
 
 .news-list__news {
@@ -33,9 +39,15 @@
 }
 
 .news-list__image {
-    width: 30%;
+    width: 40%;
     height: auto;
     border-radius: 20px;
     border: 2px solid var(--color-pink);
     object-fit: cover;
+}
+
+@media (max-width: 1023px) {
+    .news-list__image {
+        display: none;
+    }
 }

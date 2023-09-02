@@ -12,9 +12,20 @@
     border-radius: 20px;
 }
 
+@media (max-width: 1023px) {
+    .news {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 799px) {
+    .news {
+        font-size: 16px;
+    }
+}
+
 .news:hover {
     border: 2px solid var(--color-pink);
-    /* box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1); */
 }
 
 .news__date {
@@ -40,8 +51,6 @@
     cursor: pointer;
     border-radius: 0 17px 17px 0;
     overflow: hidden;
-    font-size: 18px;
-    font-weight: 500;
 }
 
 .news__ikon {

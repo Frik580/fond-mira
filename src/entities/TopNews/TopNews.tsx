@@ -5,7 +5,6 @@ import { useEffect, useRef } from "react";
 import { PeaceFound } from "../PeaceFound/PeaceFound";
 import { HeaderTitle } from "../HeaderTitle/HeaderTitle";
 import { MainLogo } from "../MainLogo/MainLogo";
-import logoImage from "./logo.png";
 
 export const TopNews = ({ dom }: any) => {
     const domRef = useRef<HTMLInputElement | null>(null);
@@ -24,8 +23,10 @@ export const TopNews = ({ dom }: any) => {
             }}
         >
             <div ref={domRef} className="top-news__title-conteiner">
-                <MainLogo img={logoImage} alt="голубь мира" />
-                <PeaceFound />
+                <div className="top-news__links">
+                    <MainLogo />
+                    <PeaceFound />
+                </div>
                 <HeaderTitle />
             </div>
             <div className="top-news__text-conteiner">

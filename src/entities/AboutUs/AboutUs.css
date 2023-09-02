@@ -12,11 +12,29 @@
     max-width: 1200px;
 }
 
+@media (max-width: 1023px) {
+    .about-us__conteiner {
+        gap: 50px;
+    }
+}
+
+@media (max-width: 1023px) {
+    .about-us__conteiner {
+        flex-direction: column;
+    }
+}
+
 .about-us__image {
     width: 300px;
     height: 400px;
     border-radius: 20px;
     border: 2px solid var(--color-pink);
+}
+
+@media (max-width: 1023px) {
+    .about-us__image {
+        margin: 0 auto;
+    }
 }
 
 .about-us__text-conteiner {
@@ -30,4 +48,16 @@
     line-height: 1.4;
     font-weight: 400;
     font-style: normal;
+}
+
+@media (max-width: 1023px) {
+    .about-us__text {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 799px) {
+    .about-us__text {
+        font-size: 16px;
+    }
 }

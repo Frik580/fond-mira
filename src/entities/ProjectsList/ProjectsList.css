@@ -9,9 +9,9 @@
 .projects-list__conteiner {
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, 370px);
+    grid-template-columns: repeat(auto-fit, 350px);
     justify-content: center;
-    gap: 15px;
+    gap: 20px;
     list-style-type: none;
     padding: 50px 30px;
     max-width: 1200px;
