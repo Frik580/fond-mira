@@ -5,11 +5,7 @@
     flex-direction: column;
     align-items: center;
     position: relative;
-}
-
-.top-news__image {
-    object-fit: cover;
-    z-index: 0;
+    background-size: cover;
 }
 
 .top-news__title-conteiner {

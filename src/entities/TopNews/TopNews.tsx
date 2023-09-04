@@ -22,7 +22,7 @@ export const TopNews = () => {
             className="top-news"
             style={{
                 backgroundImage: `url(${"./top-news.png"})`,
-                objectFit: "cover",
+                // objectFit: "fill",
             }}
         >
             <div ref={domRef} className="top-news__title-conteiner">

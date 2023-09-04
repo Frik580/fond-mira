@@ -4,13 +4,27 @@
     padding-top: 100px;
 }
 
+.about-us__columns {
+    display: flex;
+    padding: 50px 30px 100px 30px;
+    gap: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+@media (max-width: 599px) {
+    .about-us__columns {
+        flex-direction: column;
+        gap: 0;
+    }
+}
+
 .about-us__conteiner {
     display: flex;
     flex-direction: column;
     gap: 20px;
     margin: 0 auto;
-    padding: 50px 30px;
-    max-width: 800px;
+    /* max-width: 800px; */
 }
 
 .about-us__text {
