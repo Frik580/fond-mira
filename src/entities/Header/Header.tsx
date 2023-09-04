@@ -7,24 +7,26 @@ import { HeaderLink } from "@/entities/HeaderLink/HeaderLink";
 import { TITLES } from "../../shared/Constants";
 import { MainLogo } from "../MainLogo/MainLogo";
 import { PeaceFound } from "../PeaceFound/PeaceFound";
+import { useAppSelector } from "../../shared/hooks/redux";
 
-export const Header = ({ domRef }: any) => {
+export const Header = () => {
+    const ref = useAppSelector((state) => state.ref.value);
     const [isVisible, setIsVisible] = useState(true);
 
     useEffect(() => {
-        if (domRef.current) {
+        if (ref) {
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach((entry) => setIsVisible(entry.isIntersecting));
             });
 
-            observer.observe(domRef.current);
+            observer.observe(ref);
 
             return () => {
                 // eslint-disable-next-line react-hooks/exhaustive-deps
-                observer.unobserve(domRef.current);
+                observer.unobserve(ref);
             };
         }
-    }, [domRef]);
+    }, [ref]);
 
     return (
         <header className={isVisible ? "header" : "header_visibility"}>

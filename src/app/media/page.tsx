@@ -1,14 +1,11 @@
-import Head from "next/head";
+// "use client";
+
+import { Counter } from "@/entities/Counter/Counter";
 
 export default function MediaPage() {
     return (
-        <>
-            <Head>
-                <title>Media</title>
-            </Head>
-            <main>
-                <p>Media Page</p>
-            </main>
-        </>
+        <main>
+            <Counter />
+        </main>
     );
 }

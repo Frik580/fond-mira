@@ -5,17 +5,20 @@ import { useEffect, useRef } from "react";
 import { PeaceFound } from "../PeaceFound/PeaceFound";
 import { HeaderTitle } from "../HeaderTitle/HeaderTitle";
 import { MainLogo } from "../MainLogo/MainLogo";
+import { useAppDispatch } from '../../shared/hooks/redux'
+import { setValue } from '../../store/reducers/refSlice'
 
-export const TopNews = ({ dom }: any) => {
-    const domRef = useRef<HTMLInputElement | null>(null);
+
+export const TopNews = () => {
+    const domRef = useRef<HTMLDivElement | null>(null);
+    const dispatch = useAppDispatch()
 
     useEffect(() => {
-        dom(domRef);
-    }, [dom]);
+        dispatch(setValue(domRef.current))
+    }, [dispatch]);
 
     return (
         <section
-            // ref={domRef}
             className="top-news"
             style={{
                 backgroundImage: `url(${"./top-news.png"})`,
