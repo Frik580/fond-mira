@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     padding-top: 50px;
-    background-color: var(--color-pink);
+    background-color: var(--color-gray);
 }
 
 .direction__title {

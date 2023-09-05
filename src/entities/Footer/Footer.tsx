@@ -7,7 +7,10 @@ export const Footer = () => {
 
     return (
         <footer className="footer">
-      <p className="footer__text">&#169; {date.getFullYear()}</p>
+            <p className="footer__text">
+                &#169; {date.getFullYear()} ПКО МОФ &#171;Российский фонд
+                мира&#187;
+            </p>
         </footer>
     );
 };
