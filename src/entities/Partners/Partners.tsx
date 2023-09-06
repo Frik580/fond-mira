@@ -5,7 +5,9 @@ import Image from "next/image";
 import zeml from "./zeml.png";
 import res from "./res.png";
 import vio from "./vio.png";
-import pgrants from "./pgrants.png";
+import pgrants from "./pg.png";
+import pfki from "./pfki.png";
+import np from "./nov.png";
 import { MainTitle } from "../MainTitle/MainTitle";
 import { TITLES } from "../../shared/Constants";
 
@@ -26,12 +28,17 @@ export const Partners = () => {
                         alt="Пермская региональная краеведческая общественная организация «Мы - земляки»"
                     />
                 </a>
-                <li className="partners__item">
+                <a
+                    href="https://vk.com/public60376245"
+                    className="partners__item"
+                    target="_blank"
+                    rel="noreferrer"
+                >
                     <p className="partners__text">
                         Пермская региональная общественная организация учителей
                         «Ассоциация «Луч»
                     </p>
-                </li>
+                </a>
                 <a
                     href="https://vk.com/59vol"
                     className="partners__item"
@@ -56,12 +63,19 @@ export const Partners = () => {
                         alt="Региональное отделение Российского военно - исторического общества"
                     />
                 </a>
-                <li className="partners__item">
-                    <p className="partners__text">
-                        Оздоровительно-образовательный лагерь «Ребячий лагерь
-                        «Новое поколение»
-                    </p>
-                </li>
+                <a
+                    href="https://novoepokolenie.com/"
+                    className="partners__item"
+                    target="_blank"
+                    rel="noreferrer"
+                >
+                    <Image
+                        className="partners__icon"
+                        src={np}
+                        alt="Оздоровительно-образовательный лагерь «Ребячий лагерь
+                        «Новое поколение»"
+                    />
+                </a>
                 <a
                     href="https://xn--80afcdbalict6afooklqi5o.xn--p1ai/"
                     className="partners__item"
@@ -74,11 +88,18 @@ export const Partners = () => {
                         alt="Фонд президентских грантов"
                     />
                 </a>
-                <li className="partners__item">
-                    <p className="partners__text">
-                        Президентский фонд культурных инициатив
-                    </p>
-                </li>
+                <a
+                    href="https://xn--80aeeqaabljrdbg6a3ahhcl4ay9hsa.xn--p1ai/"
+                    className="partners__item"
+                    target="_blank"
+                    rel="noreferrer"
+                >
+                    <Image
+                        className="partners__icon"
+                        src={pfki}
+                        alt="Президентский фонд культурных инициатив"
+                    />
+                </a>
             </ul>
         </section>
     );

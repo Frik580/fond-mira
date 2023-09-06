@@ -25,6 +25,6 @@ export const refSlice = createSlice({
 export const { setValue } = refSlice.actions
 
 // Other code such as selectors can use the imported `RootState` type
-export const selectCount = (state: RootState) => state.counter.value
+export const setRef = (state: RootState) => state.ref.value
 
 export default refSlice.reducer

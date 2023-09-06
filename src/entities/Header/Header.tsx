@@ -8,9 +8,10 @@ import { TITLES } from "../../shared/Constants";
 import { MainLogo } from "../MainLogo/MainLogo";
 import { PeaceFound } from "../PeaceFound/PeaceFound";
 import { useAppSelector } from "../../shared/hooks/redux";
+import { setRef } from "@/store/reducers/refSlice";
 
 export const Header = () => {
-    const ref = useAppSelector((state) => state.ref.value);
+    const ref = useAppSelector(setRef);
     const [isVisible, setIsVisible] = useState(true);
 
     useEffect(() => {
