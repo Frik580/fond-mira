@@ -24,20 +24,10 @@
     padding: 20px;
     overflow: hidden;
     transition: scale 0.3s ease-in-out;
-    /* background-color: blue; */
 }
 
 .partners__item:hover {
     scale: 105%;
-}
-
-.partners__text {
-    font-size: 18px;
-    line-height: 1.2;
-    font-weight: 400;
-    font-style: normal;
-    text-align: center;
-    color: var(--color-marine);
 }
 
 .partners__icon {

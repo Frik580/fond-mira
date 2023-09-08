@@ -13,9 +13,9 @@ body {
     overflow-x: hidden;
 }
 
-html {
+/* html {
     scroll-behavior: smooth;
-  }
+  } */
 
 a {
     color: inherit;
@@ -42,7 +42,7 @@ a {
     --color-white: #ffffff;
     --color-dust-white: #f9faf7;
     --color-blue: #003d7a;
-    --color-marine: #5cb7d4;
+    --color-marine: rgb(92, 183, 212);
     --color-pink: #f1cbb0;
     --color-gray: #b6b6b6;
 }

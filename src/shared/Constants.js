@@ -23,5 +23,5 @@ export const TITLES = {
     OUR_PROJECTS: "Наши проекты",
     PARTNERS: "Партнёры",
     DOCUMENTS: "Документы",
-    CONTACTS: "Контакты"
+    CONTACTS: "Контакты",
 };

@@ -4,24 +4,20 @@
 
 import { AboutUs } from "@/entities/AboutUs/AboutUs";
 import { Contacts } from "@/entities/Contacts/Contacts";
-import { Footer } from "@/entities/Footer/Footer";
-import { Header } from "@/entities/Header/Header";
 import { NewsList } from "@/entities/NewsList/NewsList";
-import { Partners } from "@/entities/Partners/Partners";
+import { PartnersList } from "@/entities/PartnersList/PartnersList";
 import { ProjectsList } from "@/entities/ProjectsList/ProjectsList";
 import { TopNews } from "@/entities/TopNews/TopNews";
 
-export default function Home() {
+export default function HomePage() {
     return (
         <main className="main">
-            <Header />
             <TopNews />
             <AboutUs />
             <NewsList />
             <ProjectsList />
-            <Partners />
+            <PartnersList />
             <Contacts />
-            <Footer />
         </main>
     );
 }

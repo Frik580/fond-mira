@@ -30,22 +30,24 @@ export const Header = () => {
     }, [ref]);
 
     return (
-        <header className={isVisible ? "header" : "header_visibility"}>
+        <header
+            className={isVisible ? "header" : "header_visibility"}
+        >
             <div className="header__links">
                 <MainLogo />
                 <PeaceFound />
             </div>
             <nav className="header__navigation">
                 <BurgerButton click={() => {}} />
-                <HeaderLink path={"#about-us"} title={TITLES.ABOUT_US} />
-                <HeaderLink path={"#news-list"} title={TITLES.NEWS} />
+                <HeaderLink path={"/#about-us"} title={TITLES.ABOUT_US} />
+                <HeaderLink path={"/#news-list"} title={TITLES.NEWS} />
                 <HeaderLink
-                    path={"#projects-list"}
+                    path={"/#projects-list"}
                     title={TITLES.OUR_PROJECTS}
                 />
-                <HeaderLink path={"#partners"} title={TITLES.PARTNERS} />
-                <HeaderLink path={"#"} title={TITLES.DOCUMENTS} />
-                <HeaderLink path={"#contacts"} title={TITLES.CONTACTS} />
+                <HeaderLink path={"/#partners"} title={TITLES.PARTNERS} />
+                <HeaderLink path={"/documents"} title={TITLES.DOCUMENTS} />
+                <HeaderLink path={"/#contacts"} title={TITLES.CONTACTS} />
                 <button className="header__button">Помочь</button>
             </nav>
         </header>

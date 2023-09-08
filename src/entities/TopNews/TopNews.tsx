@@ -22,15 +22,11 @@ export const TopNews = () => {
             className="top-news"
             style={{
                 backgroundImage: `url(${"./top-news.png"})`,
-                // objectFit: "fill",
             }}
         >
             <div ref={domRef} className="top-news__title-conteiner">
-                <div className="top-news__links">
-                    <MainLogo />
-                    <PeaceFound />
-                </div>
-                <HeaderTitle />
+                <HeaderTitle title='Пермские региональное отделение Международного общественного фонда
+            &#171;Российский фонд мира&#187;' />
             </div>
             <div className="top-news__text-conteiner">
                 <div className="top-news__line" />
