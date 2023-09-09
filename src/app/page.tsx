@@ -13,7 +13,7 @@ export default function HomePage() {
     return (
         <main className="main">
             <TopNews />
-            <AboutUs />
+            <AboutUs  />
             <NewsList />
             <ProjectsList />
             <PartnersList />

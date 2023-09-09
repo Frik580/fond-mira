@@ -1,4 +1,4 @@
-// "use client";
+"use client";
 
 import "./AboutUs.css";
 import image from "./ger.png";
@@ -6,10 +6,16 @@ import { MainTitle } from "../MainTitle/MainTitle";
 import { TITLES } from "../../shared/Constants";
 import { Direction } from "../Direction/Direction";
 import { Member } from "../Member/Member";
+import { useRef } from "react";
+import { setLinkAboutus } from "../../store/reducers/linkSlice";
+import useLinkDeactive from "../../shared/hooks/UseLinkDeactive";
 
 export const AboutUs = () => {
+    const ref = useRef<HTMLDivElement | null>(null);
+    useLinkDeactive(ref, setLinkAboutus(false));
+
     return (
-        <section className="about-us">
+        <section ref={ref} className="about-us">
             <MainTitle id="about-us" text={TITLES.ABOUT_US} />
             <div className="about-us__columns">
                 <Member

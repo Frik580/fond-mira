@@ -2,29 +2,29 @@ import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 import type { RootState } from '../store'
 
-type RefState = {
+type HeaderState = {
     // value: HTMLDivElement | null,
-    value: any,
+    value: boolean,
 }
 
-const initialState: RefState = {
-    value: null,
+const initialState: HeaderState = {
+    value: true,
 }
 
-export const refSlice = createSlice({
-    name: 'ref',
+export const headerSlice = createSlice({
+    name: 'header',
     // `createSlice` will infer the state type from the `initialState` argument
     initialState,
     reducers: {
-        setValue: (state, action: PayloadAction<HTMLDivElement | null>) => {
+        setValue: (state, action: PayloadAction<boolean>) => {
             state.value = action.payload 
         },
     },
 })
 
-export const { setValue } = refSlice.actions
+export const { setValue } = headerSlice.actions
 
 // Other code such as selectors can use the imported `RootState` type
-export const setRef = (state: RootState) => state.ref.value
+export const setHeader = (state: RootState) => state.header.value
 
-export default refSlice.reducer
+export default headerSlice.reducer

@@ -1,17 +1,24 @@
-"use client";
+// "use client";
 
 import "./MainLogo.css";
 import Image from "next/image";
 import logo from "./logo.png";
 import { usePathname } from "next/navigation";
+import { useAppDispatch } from "../../shared/hooks/redux";
+import { setLinkHome } from "../../store/reducers/linkSlice";
 
 export const MainLogo = () => {
     const pathname = usePathname();
+    const dispatch = useAppDispatch();
 
     return (
         <>
             {pathname === "/" ? (
-                <a href="#" className="main-logo__conteiner">
+                <a
+                    onClick={() => dispatch(setLinkHome())}
+                    href="#"
+                    className="main-logo__conteiner"
+                >
                     <Image
                         src={logo}
                         className="main-logo__image"

@@ -1,6 +1,6 @@
 .found__ikon {
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     flex-shrink: 0;
     overflow: hidden;
     border-radius: 50%;
@@ -9,13 +9,6 @@
 .found__image {
     height: 100%;
     width: 100%;
-}
-
-@media (max-width: 1023px) {
-    .found__ikon {
-        width: 60px;
-        height: 60px;
-    }
 }
 
 @media (max-width: 439px) {

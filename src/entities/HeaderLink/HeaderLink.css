@@ -3,11 +3,15 @@
     align-items: center;
     transition: opacity 0.3s ease-in-out;
     opacity: 0.6;
+    border: none;
+    background-color: transparent;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
 }
 
 .header-link {
     font-size: 20px;
-    line-height: 1.4;
+    line-height: 51px;
     font-weight: 400;
     font-style: normal;
     cursor: pointer;
@@ -17,10 +21,23 @@
 
 .header-link__conteiner:hover {
     opacity: 1;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid rgba(255, 255, 255, 0.7);
 }
 
-@media (max-width: 1199px) {
+@media (max-width: 1160px) {
     .header-link__conteiner {
-      display: none;
+        display: none;
     }
-  }
+}
+
+.header-link__text {
+    font-size: 20px;
+    line-height: 51px;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--color-white);
+    background-color: transparent;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid rgba(255, 255, 255, 0.7);
+}
