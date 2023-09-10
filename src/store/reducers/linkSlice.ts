@@ -37,57 +37,21 @@ export const linkSlice = createSlice({
             state.contacts = false
         },
         setLinkAboutus: (state, action: PayloadAction<boolean>) => {
-            // state.home = false
             state.aboutus = action.payload
-            // state.newslist = false
-            // state.projectslist = false
-            // state.partners = false
-            // state.documents = false
-            // state.contacts = false
         },
         setLinkNewslist: (state, action: PayloadAction<boolean>) => {
-            // state.home = false
-            // state.aboutus = false
             state.newslist = action.payload
-            // state.projectslist = false
-            // state.partners = false
-            // state.documents = false
-            // state.contacts = false
         },
         setLinkProjectslist: (state, action: PayloadAction<boolean>) => {
-            // state.home = false
-            // state.aboutus = false
-            // state.newslist = false
             state.projectslist = action.payload
-            // state.partners = false
-            // state.documents = false
-            // state.contacts = false
         },
         setLinkPartners: (state, action: PayloadAction<boolean>) => {
-            // state.home = false
-            // state.aboutus = false
-            // state.newslist = false
-            // state.projectslist = false
             state.partners = action.payload
-            // state.documents = false
-            // state.contacts = false
         },
         setLinkDocuments: (state, action: PayloadAction<boolean>) => {
-            // state.home = false
-            // state.aboutus = false
-            // state.newslist = false
-            // state.projectslist = false
-            // state.partners = false
             state.documents = action.payload
-            // state.contacts = false
         },
         setLinkContacts: (state, action: PayloadAction<boolean>) => {
-            // state.home = false
-            // state.aboutus = false
-            // state.newslist = false
-            // state.projectslist = false
-            // state.partners = false
-            // state.documents = action.payload
             state.contacts = action.payload
         },
     },

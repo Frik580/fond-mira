@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Providers } from "./providers";
 import { Header } from "@/entities/Header/Header";
 import { Footer } from "@/entities/Footer/Footer";
+import NavPopup from "@/entities/NavPopup/NavPopup";
 // import { Inter } from "next/font/google";
 
 // const inter = Inter({ subsets: ["latin"] });
@@ -24,6 +25,7 @@ export default function RootLayout({
                     <Header />
                     {children}
                     <Footer />
+                    <NavPopup />
                 </Providers>
             </body>
         </html>

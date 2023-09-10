@@ -1,16 +1,19 @@
-// "use client";
+"use client";
 
 import "./Contacts.css";
 import Image from "next/image";
 import imgAdds from "./adds3.png";
 import imgEmail from "./email4.png";
-// import { MainTitle } from "../MainTitle/MainTitle";
-// import { TITLES } from "../../shared/Constants";
+import { useRef } from "react";
+import useLinkDeactive from "@/shared/hooks/UseLinkDeactive";
+import { setLinkContacts } from "@/store/reducers/linkSlice";
 
 export const Contacts = () => {
+    const ref = useRef<HTMLDivElement | null>(null);
+    useLinkDeactive(ref, setLinkContacts(false));
+
     return (
-        <section className="contacts">
-            {/* <MainTitle id="contacts" text={TITLES.CONTACTS} /> */}
+        <section ref={ref} className="contacts">
             <div id="contacts" className="contacts__conteiner">
                 <p className="contacts__text">
                     Контакты ПКО МОФ «Российский фонд мира»

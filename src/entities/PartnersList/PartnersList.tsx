@@ -1,7 +1,6 @@
-// "use client";
+"use client";
 
 import "./PartnersList.css";
-import Image from "next/image";
 import zeml from "./images/zeml.png";
 import res from "./images/res.png";
 import vio from "./images/vio.png";
@@ -12,10 +11,16 @@ import luch from "./images/luch.png";
 import { MainTitle } from "../MainTitle/MainTitle";
 import { TITLES } from "../../shared/Constants";
 import { Partner } from "../Partner/Partner";
+import { useRef } from "react";
+import useLinkDeactive from "@/shared/hooks/UseLinkDeactive";
+import { setLinkPartners } from "@/store/reducers/linkSlice";
 
 export const PartnersList = () => {
+    const ref = useRef<HTMLDivElement | null>(null);
+    useLinkDeactive(ref, setLinkPartners(false));
+
     return (
-        <section className="partners">
+        <section ref={ref} className="partners">
             <MainTitle id="partners" text={TITLES.PARTNERS} />
             <ul className="partners__conteiner">
                 <Partner
