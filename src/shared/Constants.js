@@ -35,6 +35,10 @@ import imagevals from "./images/vals.png";
 import imagedobro from "./images/dobro.png";
 import imagekto from "./images/kto.png";
 import imageperm from "./images/perm_velikaya.png";
+import imagepfki from "../widgets/PartnersList/images/pfki.png";
+import imagepg from "../widgets/PartnersList/images/pg.png";
+import imageguber from "./images/guber.png";
+import imagegorod from "./images/gorod.png";
 
 export const PROJECTS = [
     {
@@ -42,7 +46,8 @@ export const PROJECTS = [
         year: 2018,
         title: 'Солнечный круг',
         preview: 'edededed',
-        src: imagekrug
+        src: imagekrug,
+        partner: imagepg,
     },
 
     {
@@ -50,56 +55,64 @@ export const PROJECTS = [
         year: 2018,
         title: 'Фестиваль семейного досуга и творчества «Мы – ветви. ПЕРМЬ»',
         preview: 'edededed',
-        src: imagevetvi
+        src: imagevetvi,
+        partner: imagegorod,
     },
     {
         id: 3,
         year: 2019,
         title: 'МЫ и МИР',
         preview: 'edededed',
-        src: imagemir
+        src: imagemir,
+        partner: imageguber
     },
     {
         id: 4,
         year: 2019,
         title: 'Реконструкция Победы. Живая Память',
         preview: 'edededed',
-        src: imagepobeda
+        src: imagepobeda,
+        partner: imagepg,
     },
     {
         id: 5,
         year: 2020,
         title: 'Майский вальс. Виват, Победа!',
         preview: 'edededed',
-        src: imagevals
+        src: imagevals,
+        partner: imagegorod
     },
     {
         id: 6,
         year: 2021,
         title: 'Кто, если не ТЫ',
         preview: 'edededed',
-        src: imagekto
+        src: imagekto,
+        partner: imageguber
     },
     {
         id: 7,
         year: 2022,
         title: 'Рябиновая аллея Героев',
         preview: 'edededed',
-        src: imagealleya
+        src: imagealleya,
+        partner: imagepg,
     },
     {
         id: 8,
         year: 2022,
         title: 'Пермь великая – ПАРМА многоликая',
         preview: 'edededed',
-        src: imageperm
+        src: imageperm,
+        partner: imagepfki,
     },
     {
         id: 9,
         year: 2023,
         title: 'Кто, если не ТЫ! PRO-ДОБРО',
         preview: 'edededed',
-        src: imagedobro
+        src: imagedobro,
+        partner: imageguber
     },
 
 ]

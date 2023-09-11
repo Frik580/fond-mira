@@ -1,29 +1,41 @@
 "use client";
 
 import "./ProjectLink.css";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
-import imageProject from "./project.png";
 
 type Props = {
+    year: number;
     title: string;
-    src: any;
+    src: StaticImageData;
+    partner: StaticImageData | null;
 };
 
-export const ProjectLink = ({ title, src }: Props) => {
+export const ProjectLink = ({ year, title, src, partner }: Props) => {
     return (
         <Link href={`project`}>
             <li
                 onMouseEnter={() => console.log("Навел")}
                 className="projectlink"
             >
-                <Image
-                    src={src}
-                    className="projectlink__image"
-                    alt="image"
-                />
+                <Image src={src} className="projectlink__image" alt="" />
                 <div className="projectlink__conteiner">
-                    <p className="projectlink__title">{title}</p>
+                    <div className="projectlink__partner">
+                        {partner && (
+                            <>
+                                {/* <p>При поддержке</p> */}
+                                <Image
+                                    src={partner}
+                                    className="projectlink__imagepartner"
+                                    alt=""
+                                />
+                            </>
+                        )}
+                    </div>
+                    <div className="projectlink__info">
+                        <p className="projectlink__title">{title}</p>
+                        <p className="projectlink__title">{year}</p>
+                    </div>
                     <p className="projectlink__text">больше информации</p>
                 </div>
             </li>
