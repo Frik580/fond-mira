@@ -4,21 +4,20 @@ import "./Header.css";
 import { BurgerButton } from "@/features/BurgerButton/BurgerButton";
 import { HeaderLink } from "@/entities/HeaderLink/HeaderLink";
 import { TITLES } from "../../shared/Constants";
-import { MainLogo } from "../MainLogo/MainLogo";
-import { PeaceFound } from "../PeaceFound/PeaceFound";
+import { MainLogo } from "../../entities/MainLogo/MainLogo";
+import { PeaceFound } from "../../entities/PeaceFound/PeaceFound";
 import { useAppDispatch, useAppSelector } from "../../shared/hooks/redux";
-import { setHeader } from "@/store/reducers/headerSlice";
-import { setLinkState } from "@/store/reducers/linkSlice";
-import { NavPopup } from "../NavPopup/NavPopup";
-import { setValue } from "@/store/reducers/popupSlice";
+import { headerValue } from "@/store/reducers/headerSlice";
+import { linkState } from "@/store/reducers/linkSlice";
+import { setValuePopup } from "@/store/reducers/popupSlice";
 
 export const Header = () => {
     const dispatch = useAppDispatch();
-    const headerValue = useAppSelector(setHeader);
-    const link = useAppSelector(setLinkState);
+    const header = useAppSelector(headerValue);
+    const link = useAppSelector(linkState);
 
     return (
-        <header className={headerValue ? "header" : "header_visibility"}>
+        <header className={header ? "header" : "header_visibility"}>
             <div className="header__links">
                 <MainLogo />
                 <PeaceFound />
@@ -26,7 +25,7 @@ export const Header = () => {
             <nav className="header__navigation">
                 <BurgerButton
                     click={() => {
-                        dispatch(setValue(true));
+                        dispatch(setValuePopup(true));
                     }}
                 />
                 <HeaderLink
@@ -79,7 +78,6 @@ export const Header = () => {
                 />
                 <button className="header__button">Помочь</button>
             </nav>
-            {/* <NavPopup /> */}
         </header>
     );
 };

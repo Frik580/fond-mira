@@ -1,9 +1,9 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Providers } from "./providers";
-import { Header } from "@/entities/Header/Header";
-import { Footer } from "@/entities/Footer/Footer";
-import NavPopup from "@/entities/NavPopup/NavPopup";
+import { Header } from "@/widgets/Header/Header";
+import { Footer } from "@/widgets/Footer/Footer";
+import { NavPopup } from "@/widgets/NavPopup/NavPopup";
 // import { Inter } from "next/font/google";
 
 // const inter = Inter({ subsets: ["latin"] });

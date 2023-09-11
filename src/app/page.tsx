@@ -2,12 +2,12 @@
 
 // import styles from "./page.module.css";
 
-import { AboutUs } from "@/entities/AboutUs/AboutUs";
-import { Contacts } from "@/entities/Contacts/Contacts";
-import { NewsList } from "@/entities/NewsList/NewsList";
-import { PartnersList } from "@/entities/PartnersList/PartnersList";
-import { ProjectsList } from "@/entities/ProjectsList/ProjectsList";
-import { TopNews } from "@/entities/TopNews/TopNews";
+import { AboutUs } from "@/widgets/AboutUs/AboutUs";
+import { Contacts } from "@/widgets/Contacts/Contacts";
+import { NewsList } from "@/widgets/NewsList/NewsList";
+import { PartnersList } from "@/widgets/PartnersList/PartnersList";
+import { ProjectsList } from "@/widgets/ProjectsList/ProjectsList";
+import { TopNews } from "@/widgets/TopNews/TopNews";
 
 export default function HomePage() {
     return (

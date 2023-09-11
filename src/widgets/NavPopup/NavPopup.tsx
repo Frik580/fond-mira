@@ -2,20 +2,20 @@
 
 import "./NavPopup.css";
 import { useAppDispatch, useAppSelector } from "@/shared/hooks/redux";
-import { setPopupValue, setValue } from "@/store/reducers/popupSlice";
+import { popupValue, setValuePopup } from "@/store/reducers/popupSlice";
 import { useEffect } from "react";
-import { HeaderLink } from "../HeaderLink/HeaderLink";
+import { HeaderLink } from "../../entities/HeaderLink/HeaderLink";
 import { TITLES } from "../../shared/Constants";
-import { setLinkState } from "@/store/reducers/linkSlice";
+import { linkState } from "@/store/reducers/linkSlice";
 
 export const NavPopup = () => {
     const dispatch = useAppDispatch();
-    const openpopup = useAppSelector(setPopupValue);
-    const link = useAppSelector(setLinkState);
+    const openpopup = useAppSelector(popupValue);
+    const link = useAppSelector(linkState);
 
     useEffect(() => {
         const handleEscClose = (e: any) => {
-            e.key === "Escape" && dispatch(setValue(false));
+            e.key === "Escape" && dispatch(setValuePopup(false));
         };
         document.addEventListener("keyup", handleEscClose);
         return () => {
@@ -25,7 +25,7 @@ export const NavPopup = () => {
 
     return (
         <div
-            onClick={() => dispatch(setValue(false))}
+            onClick={() => dispatch(setValuePopup(false))}
             className={`navpopup ${openpopup && "navpopup_opened"}`}
         >
             {openpopup && (
@@ -36,7 +36,7 @@ export const NavPopup = () => {
                     className="navpopup__conteiner"
                 >
                     <button
-                        onClick={() => dispatch(setValue(false))}
+                        onClick={() => dispatch(setValuePopup(false))}
                         className="navpopup__close-button"
                         type="button"
                     />
@@ -95,5 +95,3 @@ export const NavPopup = () => {
         </div>
     );
 };
-
-export default NavPopup;

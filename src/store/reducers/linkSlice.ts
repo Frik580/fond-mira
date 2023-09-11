@@ -68,6 +68,6 @@ export const {
 } = linkSlice.actions
 
 // Other code such as selectors can use the imported `RootState` type
-export const setLinkState = (state: RootState) => state.link
+export const linkState = (state: RootState) => state.link
 
 export default linkSlice.reducer

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useAppDispatch } from "./redux";
 
-export default function useLinkDeactive(ref: any, value: any) {
+export default function useLinkDeactive(ref: any, falsevalue: any) {
     const dispatch = useAppDispatch();
 
     useEffect(() => {
@@ -9,12 +9,12 @@ export default function useLinkDeactive(ref: any, value: any) {
         if (currentRef) {
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach((entry) => {
-                    !entry.isIntersecting && dispatch(value);
+                    !entry.isIntersecting && dispatch(falsevalue);
                 });
-            });
-    
+            }, { threshold: 0.2 });
+
             observer.observe(currentRef);
-    
+
             return () => {
                 observer.unobserve(currentRef);
             };

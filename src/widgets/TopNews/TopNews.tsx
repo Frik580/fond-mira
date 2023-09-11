@@ -2,22 +2,22 @@
 
 import "./TopNews.css";
 import { useEffect, useRef } from "react";
-import { HeaderTitle } from "../HeaderTitle/HeaderTitle";
+import { HeaderTitle } from "../../entities/HeaderTitle/HeaderTitle";
 import { useAppDispatch } from "../../shared/hooks/redux";
-import { setValue } from "../../store/reducers/headerSlice";
+import { setValueHeader } from "../../store/reducers/headerSlice";
 import { setLinkHome } from "../../store/reducers/linkSlice";
 
 export const TopNews = () => {
-    const domRef = useRef<HTMLDivElement | null>(null);
+    const ref = useRef<HTMLDivElement | null>(null);
     const dispatch = useAppDispatch();
 
     useEffect(() => {
-        const currentRef = domRef.current;
+        const currentRef = ref.current;
 
         if (currentRef) {
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach((entry) => {
-                    dispatch(setValue(entry.isIntersecting));
+                    dispatch(setValueHeader(entry.isIntersecting));
                     entry.isIntersecting && dispatch(setLinkHome());
                 });
             });
@@ -28,7 +28,7 @@ export const TopNews = () => {
                 observer.unobserve(currentRef);
             };
         }
-    }, [domRef]);
+    }, []);
 
     return (
         <section
@@ -37,7 +37,7 @@ export const TopNews = () => {
                 backgroundImage: `url(${"./top-news.png"})`,
             }}
         >
-            <div ref={domRef} className="top-news__title-conteiner">
+            <div ref={ref} className="top-news__title-conteiner">
                 <HeaderTitle
                     title="Пермские региональное отделение Международного общественного фонда
             &#171;Российский фонд мира&#187;"

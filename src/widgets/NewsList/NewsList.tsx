@@ -3,9 +3,9 @@
 import "./NewsList.css";
 import Image from "next/image";
 import imageNews from "./image.png";
-import { MainTitle } from "../MainTitle/MainTitle";
+import { MainTitle } from "../../entities/MainTitle/MainTitle";
 import { TITLES } from "../../shared/Constants";
-import { News } from "../News/News";
+import { News } from "../../entities/News/News";
 import { DotsButton } from "@/features/DotsButton/DotsButton";
 import { useRef } from "react";
 import { setLinkNewslist } from "../../store/reducers/linkSlice";

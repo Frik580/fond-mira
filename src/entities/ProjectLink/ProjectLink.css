@@ -1,17 +1,17 @@
-.project {
+.projectlink {
     position: relative;
     width: 100%;
     height: 350px;
     overflow: hidden;
 }
 
-.project__image {
+.projectlink__image {
     height: 100%;
     width: 100%;
     object-fit: cover;
 }
 
-.project__conteiner {
+.projectlink__conteiner {
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -27,11 +27,11 @@
     transition: opacity 0.3s ease-in-out;
 }
 
-.project:hover > .project__conteiner {
+.projectlink:hover > .projectlink__conteiner {
     opacity: 100%;
 }
 
-.project__title {
+.projectlink__title {
     font-size: 25px;
     line-height: 1.4;
     font-weight: 400;
@@ -41,7 +41,7 @@
     margin: auto;
 }
 
-.project__text {
+.projectlink__text {
     font-size: 15px;
     line-height: 1.4;
     font-weight: 400;

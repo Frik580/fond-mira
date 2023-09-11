@@ -1,8 +1,7 @@
 // "use client";
 
-import { Member } from "../Member/Member";
+import { Member } from "../../entities/Member/Member";
 import "./Direction.css";
-import gerL from "./ger.png";
 import pechO from "./pech.png";
 import bolT from "./bol.png";
 import bobO from "./bob.png";
@@ -16,7 +15,6 @@ import svyM from "./svy.png";
 export const Direction = () => {
     return (
         <section className="direction">
-            {/* <h3 className="direction__title">Правление</h3> */}
             <ul className="direction__conteiner">
                 <Member
                     image={pechO}

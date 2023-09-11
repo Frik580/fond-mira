@@ -12,7 +12,7 @@ import {
     setLinkDocuments,
     setLinkContacts,
 } from "../../store/reducers/linkSlice";
-import { setValue } from "@/store/reducers/popupSlice";
+import { setValuePopup } from "@/store/reducers/popupSlice";
 
 type Props = {
     title: string;
@@ -27,7 +27,7 @@ export const HeaderLink = ({ title, path, active, style, styleLink,styleText }: 
     const dispatch = useAppDispatch();
 
     const handleLinkState = () => {
-        dispatch(setValue(false))
+        dispatch(setValuePopup(false))
         dispatch(setLinkHome());
         if (path === "/#about-us") {
             dispatch(setLinkAboutus(true));

@@ -2,10 +2,11 @@
 
 import { Documents } from "@/widgets/Documents/Documents";
 
-export default function DocumentsPage() {
+export default function PermVelikayaPage() {
     return (
-        <main>
+        <main className="main">
             <Documents />
+            <p>gtgtgtg</p>
         </main>
     );
 }

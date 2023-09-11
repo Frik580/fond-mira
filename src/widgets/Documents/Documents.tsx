@@ -2,7 +2,7 @@
 
 import "./Documents.css";
 import Image from "next/image";
-import { MainTitle } from "../MainTitle/MainTitle";
+import { MainTitle } from "../../entities/MainTitle/MainTitle";
 import { TITLES } from "../../shared/Constants";
 
 
