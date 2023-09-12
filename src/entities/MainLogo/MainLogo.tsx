@@ -6,6 +6,7 @@ import logo from "./logo.png";
 import { usePathname } from "next/navigation";
 import { useAppDispatch } from "../../shared/hooks/redux";
 import { setLinkHome } from "../../store/reducers/linkSlice";
+import Link from "next/link";
 
 export const MainLogo = () => {
     const pathname = usePathname();
@@ -14,7 +15,7 @@ export const MainLogo = () => {
     return (
         <>
             {pathname === "/" ? (
-                <a
+                <Link
                     onClick={() => dispatch(setLinkHome())}
                     href="#"
                     className="main-logo__conteiner"
@@ -24,15 +25,15 @@ export const MainLogo = () => {
                         className="main-logo__image"
                         alt="голубь мира"
                     />
-                </a>
+                </Link>
             ) : (
-                <a href="/" className="main-logo__conteiner">
+                <Link href="/" className="main-logo__conteiner">
                     <Image
                         src={logo}
                         className="main-logo__image"
                         alt="голубь мира"
                     />
-                </a>
+                </Link>
             )}
         </>
     );

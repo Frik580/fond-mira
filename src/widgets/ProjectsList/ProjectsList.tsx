@@ -11,33 +11,22 @@ import { setLinkProjectslist } from "@/store/reducers/linkSlice";
 import { StaticImageData } from "next/image";
 
 export const ProjectsList = () => {
-    type TypeProjects = {
-        id: Key | null | undefined;
-        year: number
-        title: string;
-        src: StaticImageData;
-        partner: StaticImageData | null;
-    };
 
     const ref = useRef<HTMLDivElement | null>(null);
     useLinkDeactive(ref, setLinkProjectslist(false));
-    const [projects, setProjects] = useState<TypeProjects[]>([]);
-
-    useEffect(() => {
-        setProjects(PROJECTS.reverse());
-    }, []);
 
     return (
         <section ref={ref} className="projects-list">
             <MainTitle id="projects-list" text={TITLES.OUR_PROJECTS} />
             <ul className="projects-list__conteiner">
-                {projects.map(
+                {PROJECTS.reverse().map(
                     (card: {
                         id: Key | null | undefined;
                         year: number;
                         title: string;
-                        src: StaticImageData;
+                        src: string;
                         partner: StaticImageData | null;
+                        href: string;
                     }) => (
                         <ProjectLink
                             key={card.id}
@@ -45,6 +34,7 @@ export const ProjectsList = () => {
                             title={card.title}
                             src={card.src}
                             partner={card.partner}
+                            href={card.href}
                         />
                     ),
                 )}

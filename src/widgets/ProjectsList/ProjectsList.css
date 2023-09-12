@@ -12,6 +12,7 @@
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    /* grid-template-columns: repeat(auto-fit, 500px); */
     justify-content: center;
     list-style-type: none;
     padding-top: 50px;
@@ -19,7 +20,7 @@
     width: 100%;
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 1199px) {
     .projects-list__conteiner {
         grid-template-columns: 1fr 1fr;
     }

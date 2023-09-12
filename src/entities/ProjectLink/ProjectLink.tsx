@@ -7,23 +7,29 @@ import Link from "next/link";
 type Props = {
     year: number;
     title: string;
-    src: StaticImageData;
+    src: string;
     partner: StaticImageData | null;
+    href: string;
 };
 
-export const ProjectLink = ({ year, title, src, partner }: Props) => {
+export const ProjectLink = ({ year, title, src, partner, href }: Props) => {
     return (
-        <Link href={`project`}>
-            <li
-                onMouseEnter={() => console.log("Навел")}
-                className="projectlink"
-            >
-                <Image src={src} className="projectlink__image" alt="" />
+        <Link href={href}>
+            <li className="projectlink">
+                <Image
+                    src={`/image/projects/${src}.png`}
+                    fill
+                    className="projectlink__image"
+                    alt=""
+                />
                 <div className="projectlink__conteiner">
                     <div className="projectlink__partner">
+                        <p>{year}</p>
                         {partner && (
                             <>
-                                {/* <p>При поддержке</p> */}
+                                <p style={{ marginLeft: "auto" }}>
+                                    при поддержке:
+                                </p>
                                 <Image
                                     src={partner}
                                     className="projectlink__imagepartner"
@@ -34,7 +40,7 @@ export const ProjectLink = ({ year, title, src, partner }: Props) => {
                     </div>
                     <div className="projectlink__info">
                         <p className="projectlink__title">{title}</p>
-                        <p className="projectlink__title">{year}</p>
+                        {/* <p className="projectlink__title">{year}</p> */}
                     </div>
                     <p className="projectlink__text">больше информации</p>
                 </div>
