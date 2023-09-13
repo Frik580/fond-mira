@@ -26,11 +26,6 @@ export const TITLES = {
     CONTACTS: "Контакты",
 };
 
-import imagepfki from "../widgets/PartnersList/images/pfki.png";
-import imagepg from "../widgets/PartnersList/images/pg.png";
-import imageguber from "../widgets/PartnersList/images/guber.png";
-import imagegorod from "../widgets/PartnersList/images/gorod.png";
-
 export const PROJECTS = [
     {
         id: 1,
@@ -38,7 +33,7 @@ export const PROJECTS = [
         title: "Солнечный круг",
         preview: "edededed",
         src: 'krug',
-        partner: imagepg,
+        partner: 'pg',
         href: "/solnechnyy-krug",
     },
 
@@ -48,7 +43,7 @@ export const PROJECTS = [
         title: "Фестиваль семейного досуга и творчества «Мы – ветви. ПЕРМЬ»",
         preview: "edededed",
         src: 'vetvi',
-        partner: imagegorod,
+        partner: 'gorod',
         href: "/vetvi",
     },
     {
@@ -57,7 +52,7 @@ export const PROJECTS = [
         title: "МЫ и МИР",
         preview: "edededed",
         src: 'mir',
-        partner: imageguber,
+        partner: 'guber',
         href: "/my-i-mir",
     },
     {
@@ -66,7 +61,7 @@ export const PROJECTS = [
         title: "Реконструкция Победы. Живая Память",
         preview: "edededed",
         src: 'pobeda',
-        partner: imagepg,
+        partner: 'pg',
         href: "/zhivaya-pamyat",
     },
     {
@@ -75,7 +70,7 @@ export const PROJECTS = [
         title: "Майский вальс. Виват, Победа!",
         preview: "edededed",
         src: 'vals',
-        partner: imagegorod,
+        partner: 'gorod',
         href: "/mayskiy-vals",
     },
     {
@@ -83,8 +78,8 @@ export const PROJECTS = [
         year: 2021,
         title: "Кто, если не ТЫ",
         preview: "edededed",
-        src: 'kto',
-        partner: imageguber,
+        src: 'kto2',
+        partner: 'guber',
         href: "/kto-yesli-ne-ty",
     },
     {
@@ -93,7 +88,7 @@ export const PROJECTS = [
         title: "Рябиновая аллея Героев",
         preview: "edededed",
         src: 'alleya',
-        partner: imagepg,
+        partner: 'pg',
         href: "/ryabinovaya-alleya",
     },
     {
@@ -102,7 +97,7 @@ export const PROJECTS = [
         title: "Пермь великая – ПАРМА многоликая",
         preview: "edededed",
         src: 'perm_velikaya',
-        partner: imagepfki,
+        partner: 'pfki',
         href: "/perm-velikaya",
     },
     {
@@ -111,7 +106,7 @@ export const PROJECTS = [
         title: "Кто, если не ТЫ! PRO-ДОБРО",
         preview: "edededed",
         src: 'dobro',
-        partner: imageguber,
+        partner: 'guber',
         href: "/pro-dobro",
     },
 ];

@@ -12,8 +12,6 @@
 }
 
 .projectlink__imagepartner {
-    height: 100%;
-    width: 150px;
     padding: 5px;
     object-fit: contain;
     background-color: var(--color-dust-white);
@@ -45,7 +43,7 @@
     width: 100%;
     height: 70px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     font-size: 15px;
     line-height: 1.4;

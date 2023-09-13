@@ -7,6 +7,7 @@ import { PROJECTS } from "../../shared/Constants";
 import { useEffect, useRef } from "react";
 import { useAppDispatch } from "@/shared/hooks/redux";
 import { setValueHeader } from "@/store/reducers/headerSlice";
+import { Support } from "@/entities/Support/Support";
 
 export const ProjectProDobro = () => {
     const ref = useRef<HTMLDivElement | null>(null);
@@ -40,6 +41,9 @@ export const ProjectProDobro = () => {
             />
             <div ref={ref} className="project__title">
                 <HeaderTitle title={PROJECTS[0].title} />
+                <div className="project__partner">
+                    <Support partner="guber" />
+                </div>
             </div>
             <div className="project__conteiner">
                 <p>ProjectProDobro</p>

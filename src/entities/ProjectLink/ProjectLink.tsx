@@ -1,14 +1,15 @@
 "use client";
 
 import "./ProjectLink.css";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import Link from "next/link";
+import { Support } from "../Support/Support";
 
 type Props = {
     year: number;
     title: string;
     src: string;
-    partner: StaticImageData | null;
+    partner: string;
     href: string;
 };
 
@@ -24,23 +25,11 @@ export const ProjectLink = ({ year, title, src, partner, href }: Props) => {
                 />
                 <div className="projectlink__conteiner">
                     <div className="projectlink__partner">
-                        <p>{year}</p>
-                        {partner && (
-                            <>
-                                <p style={{ marginLeft: "auto" }}>
-                                    при поддержке:
-                                </p>
-                                <Image
-                                    src={partner}
-                                    className="projectlink__imagepartner"
-                                    alt=""
-                                />
-                            </>
-                        )}
+                        <p style={{marginRight: 'auto'}}>{year}</p>
+                        <Support partner={partner} />
                     </div>
                     <div className="projectlink__info">
                         <p className="projectlink__title">{title}</p>
-                        {/* <p className="projectlink__title">{year}</p> */}
                     </div>
                     <p className="projectlink__text">больше информации</p>
                 </div>
