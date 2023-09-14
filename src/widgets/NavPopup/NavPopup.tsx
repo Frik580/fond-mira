@@ -14,7 +14,7 @@ export const NavPopup = () => {
     const link = useAppSelector(linkState);
 
     useEffect(() => {
-        const handleEscClose = (e: any) => {
+        const handleEscClose = (e: { key: string; }) => {
             e.key === "Escape" && dispatch(setValuePopup(false));
         };
         document.addEventListener("keyup", handleEscClose);

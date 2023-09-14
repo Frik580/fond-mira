@@ -15,7 +15,10 @@ export const ProjectPermVelikaya = () => {
     const dispatch = useAppDispatch();
 
     useEffect(() => {
-        setProject(PROJECTS[1]);
+        const array = PROJECTS.sort(
+            (a, b) => (a.id < b.id && 1) || (a.id > b.id && -1) || 0,
+        );
+        setProject(array[1]);
         const currentRef = ref.current;
 
         if (currentRef) {

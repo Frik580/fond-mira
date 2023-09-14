@@ -4,8 +4,9 @@ import "./ProjectLink.css";
 import Image from "next/image";
 import Link from "next/link";
 import { Support } from "../Support/Support";
+import { FC } from "react";
 
-type Props = {
+type ProjectLinkProps = {
     year: number;
     title: string;
     src: string;
@@ -13,7 +14,13 @@ type Props = {
     href: string;
 };
 
-export const ProjectLink = ({ year, title, src, partner, href }: Props) => {
+export const ProjectLink: FC<ProjectLinkProps> = ({
+    year,
+    title,
+    src,
+    partner,
+    href,
+}) => {
     return (
         <Link href={href}>
             <li className="projectlink">
@@ -28,7 +35,7 @@ export const ProjectLink = ({ year, title, src, partner, href }: Props) => {
                         <p style={{ marginRight: "auto" }}>{year}</p>
                         <Support
                             partner={partner}
-                            color='var(--color-dust-white)'
+                            color="var(--color-dust-white)"
                         />
                     </div>
                     <div className="projectlink__info">

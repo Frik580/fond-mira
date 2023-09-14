@@ -13,8 +13,9 @@ import {
     setLinkContacts,
 } from "../../store/reducers/linkSlice";
 import { setValuePopup } from "@/store/reducers/popupSlice";
+import { FC } from "react";
 
-type Props = {
+type HeaderLinkProps = {
     title: string;
     path: string;
     active: boolean;
@@ -23,11 +24,18 @@ type Props = {
     styleText: string;
 };
 
-export const HeaderLink = ({ title, path, active, style, styleLink,styleText }: Props) => {
+export const HeaderLink: FC<HeaderLinkProps> = ({
+    title,
+    path,
+    active,
+    style,
+    styleLink,
+    styleText,
+}) => {
     const dispatch = useAppDispatch();
 
     const handleLinkState = () => {
-        dispatch(setValuePopup(false))
+        dispatch(setValuePopup(false));
         dispatch(setLinkHome());
         if (path === "/#about-us") {
             dispatch(setLinkAboutus(true));
@@ -49,10 +57,7 @@ export const HeaderLink = ({ title, path, active, style, styleLink,styleText }: 
             {active ? (
                 <p className={styleText}>{title}</p>
             ) : (
-                <button
-                    onClick={handleLinkState}
-                    className={style}
-                >
+                <button onClick={handleLinkState} className={style}>
                     <Link href={path} className={styleLink}>
                         {title}
                     </Link>

@@ -1,9 +1,12 @@
+"use client";
+
+import { FC } from "react";
 import "./HeaderTitle.css";
 
-type Props = {
+type HeaderTitleProps = {
     title: string;
 };
 
-export const HeaderTitle = ({ title }: Props) => {
+export const HeaderTitle : FC<HeaderTitleProps> = ({ title }) => {
     return <h1 className="header-title">{title}</h1>;
 };

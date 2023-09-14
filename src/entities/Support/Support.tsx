@@ -1,14 +1,15 @@
 // "use client";
 
+import { FC } from "react";
 import "./Support.css";
 import Image from "next/image";
 
-type Props = {
+type SupportProps = {
     partner: string;
     color?: string;
 };
 
-export const Support = ({ partner, color }: Props) => {
+export const Support: FC<SupportProps> = ({ partner, color }) => {
     return (
         <>
             {partner && (

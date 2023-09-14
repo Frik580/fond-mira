@@ -2,7 +2,7 @@
 
 import { ProjectProDobro } from "@/widgets/ProjectProDobro/ProjectProDobro";
 
-export default function DocumentsPage() {
+export default function ProDobroPage() {
     return (
         <main>
             <ProjectProDobro />

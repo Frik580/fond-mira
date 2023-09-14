@@ -1,15 +1,16 @@
-// "use client";
+"use client";
 
+import { FC } from "react";
 import "./Partner.css";
 import Image from "next/image";
 
-type Props = {
+type PartnerProps = {
     href: string;
     src: string;
     text: string;
 };
 
-export const Partner = ({ href, src, text }: Props) => {
+export const Partner: FC<PartnerProps> = ({ href, src, text }) => {
     return (
         <li>
             <a href={href} className="partner" target="_blank" rel="noreferrer">

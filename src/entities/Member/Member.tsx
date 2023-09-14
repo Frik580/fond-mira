@@ -1,15 +1,16 @@
 // "use client";
 
+import { FC } from "react";
 import "./Member.css";
 import Image, { StaticImageData } from "next/image";
 
-type Props = {
+type MemberProps = {
     image: string;
     text: string;
     alt: string;
 };
 
-export const Member = ({ image, text, alt }: Props) => {
+export const Member: FC<MemberProps> = ({ image, text, alt }) => {
     return (
         <li className="member">
             <Image
