@@ -1,7 +1,7 @@
 import "./MainTitle.css";
 
 type Props = {
-    id: string;
+    id?: string;
     text: string;
 };
 

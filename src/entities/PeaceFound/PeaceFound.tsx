@@ -1,6 +1,5 @@
 import "./PeaceFound.css";
 import Image from "next/image";
-import imageFound from "./fond.png";
 
 export const PeaceFound = () => {
     return (
@@ -11,7 +10,9 @@ export const PeaceFound = () => {
             rel="noreferrer"
         >
             <Image
-                src={imageFound}
+                src='/image/fond.png'
+                width={200}
+                height={200}
                 className="found__image"
                 alt="логотип фонда мира"
             />

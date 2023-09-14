@@ -1,7 +1,6 @@
 "use client";
 
 import "./AboutUs.css";
-import image from "./ger.png";
 import { MainTitle } from "../../entities/MainTitle/MainTitle";
 import { TITLES } from "../../shared/Constants";
 import { Direction } from "../Direction/Direction";
@@ -15,11 +14,11 @@ export const AboutUs = () => {
     useLinkDeactive(ref, setLinkAboutus(false));
 
     return (
-        <section ref={ref} className="about-us">
-            <MainTitle id="about-us" text={TITLES.ABOUT_US} />
+        <section id="about-us" ref={ref} className="about-us">
+            <MainTitle text={TITLES.ABOUT_US} />
             <div className="about-us__columns">
                 <Member
-                    image={image}
+                    image='ger'
                     text=", 
                     председатель Правления ПКО МОФ «Российский фонд мира», 
                     Председатель Совета ПРООУ «Ассоциация «ЛУЧ», 

@@ -13,8 +13,8 @@ export const Contacts = () => {
     useLinkDeactive(ref, setLinkContacts(false));
 
     return (
-        <section ref={ref} className="contacts">
-            <div id="contacts" className="contacts__conteiner">
+        <section id="contacts" ref={ref} className="contacts">
+            <div className="contacts__conteiner">
                 <p className="contacts__text">
                     Контакты ПКО МОФ «Российский фонд мира»
                 </p>

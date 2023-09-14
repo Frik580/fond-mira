@@ -25,8 +25,11 @@ export const ProjectLink = ({ year, title, src, partner, href }: Props) => {
                 />
                 <div className="projectlink__conteiner">
                     <div className="projectlink__partner">
-                        <p style={{marginRight: 'auto'}}>{year}</p>
-                        <Support partner={partner} />
+                        <p style={{ marginRight: "auto" }}>{year}</p>
+                        <Support
+                            partner={partner}
+                            color='var(--color-dust-white)'
+                        />
                     </div>
                     <div className="projectlink__info">
                         <p className="projectlink__title">{title}</p>

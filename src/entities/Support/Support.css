@@ -1,19 +1,15 @@
-.support{
-    display: flex;
-}
-
 .support__text {
     /* margin-left: auto; */
     font-size: 15px;
     line-height: 1.4;
     font-weight: 400;
     font-style: normal;
-    color: var(--color-dust-white);
+    /* color: var(--color-dust-white); */
 }
 
 .support__image {
     padding: 5px;
     object-fit: contain;
-    background-color: var(--color-dust-white);
+    /* background-color: var(--color-dust-white); */
     border-radius: 3px;
 }

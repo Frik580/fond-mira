@@ -2,7 +2,6 @@
 
 import "./MainLogo.css";
 import Image from "next/image";
-import logo from "./logo.png";
 import { usePathname } from "next/navigation";
 import { useAppDispatch } from "../../shared/hooks/redux";
 import { setLinkHome } from "../../store/reducers/linkSlice";
@@ -21,7 +20,9 @@ export const MainLogo = () => {
                     className="main-logo__conteiner"
                 >
                     <Image
-                        src={logo}
+                        src='/image/logo.png'
+                        width={200}
+                        height={200}
                         className="main-logo__image"
                         alt="голубь мира"
                     />
@@ -29,7 +30,9 @@ export const MainLogo = () => {
             ) : (
                 <Link href="/" className="main-logo__conteiner">
                     <Image
-                        src={logo}
+                        src='/image/logo.png'
+                        width={200}
+                        height={200}
                         className="main-logo__image"
                         alt="голубь мира"
                     />

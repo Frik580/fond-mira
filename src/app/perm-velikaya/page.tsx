@@ -1,12 +1,11 @@
 // "use client";
 
-import { Documents } from "@/widgets/Documents/Documents";
+import { ProjectPermVelikaya } from "@/widgets/ProjectPermVelikaya/ProjectPermVelikaya";
 
 export default function PermVelikayaPage() {
     return (
-        <main className="main">
-            <Documents />
-            <p>gtgtgtg</p>
+        <main>
+            <ProjectPermVelikaya />
         </main>
     );
 }

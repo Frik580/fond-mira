@@ -1,6 +1,6 @@
 "use client";
 
-import "./ProjectProDobro.css";
+import "./ProjectPermVelikaya.css";
 import Image from "next/image";
 import { HeaderTitle } from "@/entities/HeaderTitle/HeaderTitle";
 import { PROJECTS, ProjectType } from "../../shared/Constants";
@@ -9,13 +9,13 @@ import { useAppDispatch } from "@/shared/hooks/redux";
 import { setValueHeader } from "@/store/reducers/headerSlice";
 import { Support } from "@/entities/Support/Support";
 
-export const ProjectProDobro = () => {
+export const ProjectPermVelikaya = () => {
     const [project, setProject] = useState<ProjectType | null>(null);
     const ref = useRef<HTMLDivElement | null>(null);
     const dispatch = useAppDispatch();
 
     useEffect(() => {
-        setProject(PROJECTS[0]);
+        setProject(PROJECTS[1]);
         const currentRef = ref.current;
 
         if (currentRef) {
@@ -36,21 +36,21 @@ export const ProjectProDobro = () => {
     return (
         <>
             {project && (
-                <section className="project-pd">
+                <section className="project-pv">
                     <div
-                        className="project-pd__image"
+                        className="project-pv__image"
                         style={{
                             backgroundImage: `url("./image/projects/${project.src}.png")`,
                         }}
                     />
-                    <div ref={ref} className="project-pd__title">
+                    <div ref={ref} className="project-pv__title">
                         <HeaderTitle title={project.title} />
                     </div>
-                    <div className="project-pd__conteiner">
-                        <div className="project-pd__partner">
+                    <div className="project-pv__conteiner">
+                        <div className="project-pv__partner">
                             <Support partner={project.partner} />
                         </div>
-                        <p>ProjectProDobro</p>
+                        <p>ProjectPermVelikaya</p>
                     </div>
                 </section>
             )}

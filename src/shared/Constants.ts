@@ -1,3 +1,5 @@
+import { Key } from "react";
+
 export const WINDOW_SIZE = {
     HIGH: 1280,
     MIDDLE: 898,
@@ -24,6 +26,17 @@ export const TITLES = {
     PARTNERS: "Партнёры",
     DOCUMENTS: "Документы",
     CONTACTS: "Контакты",
+};
+
+
+export type ProjectType = {
+    id: Key | null | undefined;
+    year: number;
+    title: string;
+    preview: string;
+    src: string;
+    partner: string;
+    href: string;
 };
 
 export const PROJECTS = [

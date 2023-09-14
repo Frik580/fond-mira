@@ -13,44 +13,44 @@ export const PartnersList = () => {
     useLinkDeactive(ref, setLinkPartners(false));
 
     return (
-        <section ref={ref} className="partners">
-            <MainTitle id="partners" text={TITLES.PARTNERS} />
+        <section id="partners" ref={ref} className="partners">
+            <MainTitle text={TITLES.PARTNERS} />
             <ul className="partners__conteiner">
                 <Partner
                     href="https://vklmolod.ru"
-                    src='zeml'
+                    src="zeml"
                     text="Пермская региональная краеведческая общественная организация «Мы - земляки»"
                 />
                 <Partner
                     href="https://vk.com/public60376245"
-                    src='luch'
+                    src="luch"
                     text="Пермская региональная общественная организация учителей
                     «Ассоциация «Луч»"
                 />
                 <Partner
                     href="https://vk.com/59vol"
-                    src='res'
+                    src="res"
                     text="Ресурсный центр добровольчества Пермского края"
                 />
                 <Partner
                     href="https://rvio.histrf.ru/59"
-                    src='vio'
+                    src="vio"
                     text="Региональное отделение Российского военно - исторического общества"
                 />
                 <Partner
                     href="https://novoepokolenie.com/"
-                    src='nov'
+                    src="nov"
                     text="Оздоровительно-образовательный лагерь «Ребячий лагерь
                     «Новое поколение»"
                 />
                 <Partner
                     href="https://xn--80afcdbalict6afooklqi5o.xn--p1ai/"
-                    src='pg'
+                    src="pg"
                     text="Фонд президентских грантов"
                 />
                 <Partner
                     href="https://xn--80aeeqaabljrdbg6a3ahhcl4ay9hsa.xn--p1ai/"
-                    src='pfki'
+                    src="pfki"
                     text="Президентский фонд культурных инициатив"
                 />
             </ul>
