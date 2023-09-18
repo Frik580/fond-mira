@@ -1,6 +1,7 @@
 "use client";
 
 import "./Header.css";
+import Image from "next/image";
 import { BurgerButton } from "@/features/BurgerButton/BurgerButton";
 import { HeaderLink } from "@/entities/HeaderLink/HeaderLink";
 import { TITLES } from "../../shared/Constants";
@@ -10,6 +11,7 @@ import { useAppDispatch, useAppSelector } from "../../shared/hooks/redux";
 import { headerValue } from "@/store/reducers/headerSlice";
 import { linkState } from "@/store/reducers/linkSlice";
 import { setValuePopup } from "@/store/reducers/popupSlice";
+import Link from "next/link";
 
 export const Header = () => {
     const dispatch = useAppDispatch();
@@ -76,7 +78,26 @@ export const Header = () => {
                     styleLink="header-link"
                     styleText="header-link__text"
                 />
-                <button className="header__button">Помочь</button>
+                {/* <button className="header__button">Помочь</button> */}
+                <Link
+                    className="header__button"
+                    href={"https://bank.permgaspi.ru/base.php?i=29"}
+                    target="_blank"
+                    rel="noreferrer"
+                >
+                    <Image
+                        src={require("@/shared/image/orden.png")}
+                        width={80}
+                        height={80}
+                        className="header__button-image"
+                        alt="логотип фонда мира"
+                    />
+                    <p className="header__button-title">Книга Памяти</p>
+                    <p className="header__button-text">1941 - 1945</p>
+                    <p className="header__button-text">
+                        База данных погибших военнослужащих Пермского Края
+                    </p>
+                </Link>
             </nav>
         </header>
     );

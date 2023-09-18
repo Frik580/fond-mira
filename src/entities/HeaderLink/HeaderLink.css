@@ -1,7 +1,7 @@
 .header-link__conteiner {
     display: flex;
     align-items: center;
-    transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
     opacity: 0.6;
     border: none;
     background-color: transparent;
@@ -51,7 +51,7 @@
 .header-link__conteiner_burger {
     display: flex;
     align-items: center;
-    transition: opacity 0.3s ease-in-out;
+    transition: all 0.5s ease-in-out;
     opacity: 0.6;
     border: none;
     background-color: transparent;

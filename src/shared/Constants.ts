@@ -91,7 +91,7 @@ export const PROJECTS = [
         year: 2021,
         title: "Кто, если не ТЫ",
         preview: "edededed",
-        src: 'kto2',
+        src: 'ktoesli',
         partner: 'guber',
         href: "/kto-yesli-ne-ty",
     },

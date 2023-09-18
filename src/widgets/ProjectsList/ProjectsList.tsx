@@ -24,7 +24,7 @@ export const ProjectsList = () => {
     return (
         <section id="projects-list" ref={ref} className="projects-list">
             <MainTitle text={TITLES.OUR_PROJECTS} />
-            <ul className="projects-list__conteiner">
+            <div className="projects-list__conteiner">
                 {currentProjects.map((card: ProjectType) => (
                     <ProjectLink
                         key={card.id}
@@ -35,7 +35,7 @@ export const ProjectsList = () => {
                         href={card.href}
                     />
                 ))}
-            </ul>
+            </div>
         </section>
     );
 };

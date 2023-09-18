@@ -22,28 +22,26 @@ export const ProjectLink: FC<ProjectLinkProps> = ({
     href,
 }) => {
     return (
-        <Link href={href}>
-            <li className="projectlink">
-                <Image
-                    src={`/image/projects/${src}.png`}
-                    fill
-                    className="projectlink__image"
-                    alt=""
-                />
-                <div className="projectlink__conteiner">
-                    <div className="projectlink__partner">
-                        <p style={{ marginRight: "auto" }}>{year}</p>
-                        <Support
-                            partner={partner}
-                            color="var(--color-dust-white)"
-                        />
-                    </div>
-                    <div className="projectlink__info">
-                        <p className="projectlink__title">{title}</p>
-                    </div>
-                    <p className="projectlink__text">больше информации</p>
+        <Link className="projectlink" href={href}>
+            <Image
+                src={require(`@/shared/image/projects/${src}.png`)}
+                fill
+                className="projectlink__image"
+                alt=""
+            />
+            <div className="projectlink__conteiner">
+                <div className="projectlink__partner">
+                    <p style={{ marginRight: "auto" }}>{year}</p>
+                    <Support
+                        partner={partner}
+                        color="var(--color-dust-white)"
+                    />
                 </div>
-            </li>
+                <div className="projectlink__info">
+                    <p className="projectlink__title">{title}</p>
+                </div>
+                <p className="projectlink__text">больше информации</p>
+            </div>
         </Link>
     );
 };

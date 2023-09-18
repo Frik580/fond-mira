@@ -3,7 +3,7 @@
 // import styles from "./page.module.css";
 
 import { AboutUs } from "@/widgets/AboutUs/AboutUs";
-import { Contacts } from "@/widgets/Contacts/Contacts";
+import { Contacts } from "@/entities/Contacts/Contacts";
 import { NewsList } from "@/widgets/NewsList/NewsList";
 import { PartnersList } from "@/widgets/PartnersList/PartnersList";
 import { ProjectsList } from "@/widgets/ProjectsList/ProjectsList";

@@ -15,7 +15,7 @@ export const PartnersList = () => {
     return (
         <section id="partners" ref={ref} className="partners">
             <MainTitle text={TITLES.PARTNERS} />
-            <ul className="partners__conteiner">
+            <div className="partners__conteiner">
                 <Partner
                     href="https://vklmolod.ru"
                     src="zeml"
@@ -53,7 +53,7 @@ export const PartnersList = () => {
                     src="pfki"
                     text="Президентский фонд культурных инициатив"
                 />
-            </ul>
+            </div>
         </section>
     );
 };

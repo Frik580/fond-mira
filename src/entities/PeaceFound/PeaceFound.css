@@ -4,6 +4,7 @@
     flex-shrink: 0;
     overflow: hidden;
     border-radius: 50%;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, .1);
 }
 
 .found__image {
@@ -11,7 +12,7 @@
     width: 100%;
 }
 
-@media (max-width: 439px) {
+@media (max-width: 480px) {
     .found__ikon {
         display: none;
     }

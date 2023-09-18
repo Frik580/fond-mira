@@ -6,6 +6,7 @@ import { HeaderTitle } from "../../entities/HeaderTitle/HeaderTitle";
 import { useAppDispatch } from "../../shared/hooks/redux";
 import { setValueHeader } from "../../store/reducers/headerSlice";
 import { setLinkHome } from "../../store/reducers/linkSlice";
+import image from './top-news.png'
 
 export const TopNews = () => {
     const ref = useRef<HTMLDivElement | null>(null);
@@ -34,7 +35,7 @@ export const TopNews = () => {
         <section
             className="top-news"
             style={{
-                backgroundImage: `url(${"./top-news.png"})`,
+                backgroundImage: `url(${image.src})`,
             }}
         >
             <div ref={ref} className="top-news__title-conteiner">

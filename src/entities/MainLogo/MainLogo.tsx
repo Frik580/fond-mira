@@ -12,32 +12,20 @@ export const MainLogo = () => {
     const dispatch = useAppDispatch();
 
     return (
-        <>
-            {pathname === "/" ? (
-                <Link
-                    onClick={() => dispatch(setLinkHome())}
-                    href="#"
-                    className="main-logo__conteiner"
-                >
-                    <Image
-                        src='/image/logo.png'
-                        width={200}
-                        height={200}
-                        className="main-logo__image"
-                        alt="голубь мира"
-                    />
-                </Link>
-            ) : (
-                <Link href="/" className="main-logo__conteiner">
-                    <Image
-                        src='/image/logo.png'
-                        width={200}
-                        height={200}
-                        className="main-logo__image"
-                        alt="голубь мира"
-                    />
-                </Link>
-            )}
-        </>
+        <Link
+            onClick={
+                pathname === "/" ? () => dispatch(setLinkHome()) : () => {}
+            }
+            href={pathname === "/" ? "#" : "/"}
+            className="main-logo__conteiner"
+        >
+            <Image
+                src={require("@/shared/image/logo.png")}
+                width={200}
+                height={200}
+                className="main-logo__image"
+                alt="голубь мира"
+            />
+        </Link>
     );
 };

@@ -9,14 +9,20 @@
     top: 0;
     left: 0;
     z-index: 99;
-    transition: background-color 0.1s ease-in-out;
+    transition: background-color 0.5s ease-in-out;
+}
+
+@media (max-width: 400px) {
+    .header {
+        padding: 10px;
+    }
 }
 
 .header_visibility {
     width: 100%;
-    /* background-color: rgba(0, 61, 122, 0.6); */
-    /* background-color: var(--color-white); */
-    /* backdrop-filter: blur(10px); */
+    background-color: rgba(255, 255, 255, .3);
+    /* background-color: var(--color-gray); */
+    backdrop-filter: blur(20px);
     padding: 10px 30px;
     display: flex;
     align-items: center;
@@ -25,13 +31,14 @@
     top: 0;
     left: 0;
     z-index: 99;
-    transition: background-color 0.1s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
 }
 
 .header__navigation {
+    position: relative;
     display: flex;
     width: 100%;
-    gap: 30px;
+    gap: 20px;
     background-image: linear-gradient(
         90deg,
         var(--color-blue) 0%,
@@ -41,25 +48,63 @@
     padding: 0 12px 0 30px;
     border-radius: 30px;
     height: 60px;
-    /* box-shadow: 0px 0px 20px var(--color-black); */
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, .1);
 }
 
 .header__button {
-    background: none;
-    border: none;
-    outline: none;
-    cursor: pointer;
     background-color: var(--color-white);
     border-radius: 20px;
     padding: 0 20px;
-    margin-left: auto;
+    height: 40px;
+    width: 180px;
+    color: var(--color-black);
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    transition: all 0.5s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    overflow: hidden;
+}
+
+.header__button:hover {
+    height: 270px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .1);
+}
+
+
+.header__button-title {
     font-size: 20px;
     line-height: 40px;
     font-weight: 400;
     font-style: normal;
-    height: 40px;
-    color: var(--color-marine);
 }
+
+.header__button-text {
+    font-size: 16px;
+    line-height: 1.4;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    color: var(--color-black);
+    display: none;
+}
+
+.header__button:hover > .header__button-text {
+    display: block;
+}
+
+.header__button-image {
+    display: none;
+}
+
+.header__button:hover > .header__button-image {
+    display: block;
+}
+
 
 .header__links {
     display: flex;
