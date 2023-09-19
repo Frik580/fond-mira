@@ -7,6 +7,7 @@ import { FC, useEffect, useRef, useState } from "react";
 import { useAppDispatch } from "@/shared/hooks/redux";
 import { setValueHeader } from "@/store/reducers/headerSlice";
 import { Support } from "@/entities/Support/Support";
+import { Gallery } from "../Gallery/Gallery";
 
 type ProjectProps = {
     child: React.ReactNode;
@@ -68,6 +69,7 @@ export const Project: FC<ProjectProps> = ({ child, index }) => {
                         </div>
                         <>{child}</>
                     </div>
+                    <Gallery href={project.href} photo={project.photo} />
                 </section>
             )}
         </>

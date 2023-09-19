@@ -19,6 +19,7 @@ export const Member: FC<MemberProps> = ({ image, text, alt }) => {
                 height={1000}
                 className="member__image"
                 alt={alt}
+                loading="lazy"
             />
             <p className="member__text">
                 <b className="member__text_bolt">{alt}</b>

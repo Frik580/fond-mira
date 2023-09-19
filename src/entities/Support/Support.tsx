@@ -18,7 +18,7 @@ export const Support: FC<SupportProps> = ({ partner, color }) => {
                         при поддержке:{" "}
                     </p>
                     <Image
-                        src={`/image/partners/${partner}.png`}
+                        src={require(`@/shared/image/partners/${partner}.png`)}
                         width={140}
                         height={60}
                         className="support__image"

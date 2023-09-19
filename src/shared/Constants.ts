@@ -37,6 +37,7 @@ export type ProjectType = {
     src: string;
     partner: string;
     href: string;
+    photo: number;
 };
 
 export const PROJECTS = [
@@ -48,6 +49,7 @@ export const PROJECTS = [
         src: 'krug',
         partner: 'pg',
         href: "/solnechnyy-krug",
+        photo: 0,
     },
 
     {
@@ -58,6 +60,7 @@ export const PROJECTS = [
         src: 'vetvi',
         partner: 'gorod',
         href: "/vetvi",
+        photo: 0,
     },
     {
         id: 3,
@@ -67,6 +70,7 @@ export const PROJECTS = [
         src: 'mir',
         partner: 'guber',
         href: "/my-i-mir",
+        photo: 0,
     },
     {
         id: 4,
@@ -76,6 +80,7 @@ export const PROJECTS = [
         src: 'pobeda',
         partner: 'pg',
         href: "/zhivaya-pamyat",
+        photo: 0,
     },
     {
         id: 5,
@@ -85,6 +90,7 @@ export const PROJECTS = [
         src: 'vals',
         partner: 'gorod',
         href: "/mayskiy-vals",
+        photo: 0,
     },
     {
         id: 6,
@@ -94,6 +100,7 @@ export const PROJECTS = [
         src: 'ktoesli',
         partner: 'guber',
         href: "/kto-yesli-ne-ty",
+        photo: 0,
     },
     {
         id: 7,
@@ -103,6 +110,7 @@ export const PROJECTS = [
         src: 'alleya',
         partner: 'pg',
         href: "/ryabinovaya-alleya",
+        photo: 26,
     },
     {
         id: 8,
@@ -112,6 +120,7 @@ export const PROJECTS = [
         src: 'perm_velikaya',
         partner: 'pfki',
         href: "/perm-velikaya",
+        photo: 5,
     },
     {
         id: 9,
@@ -121,5 +130,6 @@ export const PROJECTS = [
         src: 'dobro',
         partner: 'guber',
         href: "/pro-dobro",
+        photo: 0,
     },
 ];

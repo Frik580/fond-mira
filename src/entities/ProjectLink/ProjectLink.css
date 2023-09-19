@@ -5,19 +5,6 @@
     overflow: hidden;
 }
 
-.projectlink__image {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-}
-
-.projectlink__imagepartner {
-    padding: 5px;
-    object-fit: contain;
-    background-color: var(--color-dust-white);
-    border-radius: 3px;
-}
-
 .projectlink__conteiner {
     position: absolute;
     display: flex;

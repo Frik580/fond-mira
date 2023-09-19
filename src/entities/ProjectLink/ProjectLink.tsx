@@ -26,8 +26,9 @@ export const ProjectLink: FC<ProjectLinkProps> = ({
             <Image
                 src={require(`@/shared/image/projects/${src}.png`)}
                 fill
-                className="projectlink__image"
-                alt=""
+                sizes="(max-width: 799px) 100vw, (max-width: 1199px) 50vw, 33vw"
+                style={{ objectFit: "cover" }}
+                alt={title}
             />
             <div className="projectlink__conteiner">
                 <div className="projectlink__partner">
