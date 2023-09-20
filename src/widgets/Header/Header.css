@@ -34,6 +34,12 @@
     transition: background-color 0.3s ease-in-out;
 }
 
+@media (max-width: 400px) {
+    .header_visibility {
+        padding: 10px;
+    }
+}
+
 .header__navigation {
     position: relative;
     display: flex;

@@ -69,7 +69,9 @@ export const Project: FC<ProjectProps> = ({ child, index }) => {
                         </div>
                         <>{child}</>
                     </div>
-                    <Gallery href={project.href} photo={project.photo} />
+                    {Boolean(project.photo) && (
+                        <Gallery href={project.href} photo={project.photo} />
+                    )}
                 </section>
             )}
         </>
