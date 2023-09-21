@@ -28,7 +28,7 @@ export const linkSlice = createSlice({
     initialState,
     reducers: {
         setLinkHome: (state) => {
-            state.home = true
+            state.home = false
             state.aboutus = false
             state.newslist = false
             state.projectslist = false

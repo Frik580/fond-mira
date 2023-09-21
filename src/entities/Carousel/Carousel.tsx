@@ -3,6 +3,7 @@
 import { FC, useEffect, useState } from "react";
 import "./Carousel.css";
 import Image from "next/image";
+import { WINDOW_SIZE, PHOTO_AMT } from "@/shared/Constants";
 import Link from "next/link";
 
 type CarouselProps = {
@@ -12,15 +13,43 @@ type CarouselProps = {
 
 export const Carousel: FC<CarouselProps> = ({ href, photo }) => {
     const [images, setImages] = useState<string[] | null>(null);
+    const [count, setCount] = useState<number>(0);
+    const [amt, setAmt] = useState<number>(0);
+    const [width, setWidth] = useState(window.innerWidth);
 
     useEffect(() => {
-        const array: any = [];
-        for (let i = 1; i <= photo; i++) {
-            array.push(require(`@/shared/image/projects/${href.slice(1)}/${i}.jpg`));
+        const handleResizeWindow = () => {
+            setCount(0);
+            setTimeout(() => setWidth(window.innerWidth), 500);
+        };
+
+        window.addEventListener("resize", handleResizeWindow);
+
+        return () => {
+            window.removeEventListener("resize", handleResizeWindow);
+        };
+    }, []);
+
+    useEffect(() => {
+        if (width > WINDOW_SIZE.HIGH) {
+            setAmt(PHOTO_AMT.HIGH);
+        } else if (width > WINDOW_SIZE.MIDDLE) {
+            setAmt(PHOTO_AMT.MIDDLE);
+        } else {
+            setAmt(PHOTO_AMT.SMALL);
         }
 
+        const array: any = [];
+        for (let i = 1 + count * amt; i <= amt + count * amt; i++) {
+            i <= photo &&
+                array.push(
+                    require(`@/shared/image/projects/${href.slice(
+                        1,
+                    )}/${i}.jpg`),
+                );
+        }
         setImages(array);
-    }, []);
+    }, [amt, count, width]);
 
     return (
         <>
@@ -31,11 +60,27 @@ export const Carousel: FC<CarouselProps> = ({ href, photo }) => {
                             key={i}
                             className="carousel__image"
                             src={card}
-                            // width={100}
-                            // height={200}
                             alt={`фото ${i}`}
                         />
                     ))}
+                    {count !== 0 && (
+                        <button
+                            onClick={() => {
+                                setCount(count - 1);
+                            }}
+                            className="carousel__arrow carousel__arrow_left"
+                            type="button"
+                        />
+                    )}
+                    {(count + 1) * amt < photo && (
+                        <button
+                            onClick={() => {
+                                setCount(count + 1);
+                            }}
+                            className="carousel__arrow carousel__arrow_right"
+                            type="button"
+                        />
+                    )}
                 </div>
             )}
         </>

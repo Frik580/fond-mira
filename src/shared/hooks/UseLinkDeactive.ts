@@ -11,7 +11,9 @@ export default function useLinkDeactive(ref: any, falsevalue: any) {
                 entries.forEach((entry) => {
                     !entry.isIntersecting && dispatch(falsevalue);
                 });
-            }, { threshold: 0.2 });
+            }
+            , { threshold: 0.2 }
+            );
 
             observer.observe(currentRef);
 

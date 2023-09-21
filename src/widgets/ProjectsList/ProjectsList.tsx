@@ -22,8 +22,8 @@ export const ProjectsList = () => {
     }, []);
 
     return (
-        <section id="projects-list" ref={ref} className="projects-list">
-            <MainTitle text={TITLES.OUR_PROJECTS} />
+        <section ref={ref} className="projects-list">
+            <MainTitle id="projects-list" text={TITLES.OUR_PROJECTS} />
             <div className="projects-list__conteiner">
                 {currentProjects.map((card: ProjectType) => (
                     <ProjectLink

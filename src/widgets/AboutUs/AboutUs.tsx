@@ -14,8 +14,8 @@ export const AboutUs = () => {
     useLinkDeactive(ref, setLinkAboutus(false));
 
     return (
-        <section id="about-us" ref={ref} className="about-us">
-            <MainTitle text={TITLES.ABOUT_US} />
+        <section ref={ref} className="about-us">
+            <MainTitle id="about-us" text={TITLES.ABOUT_US} />
             <div className="about-us__columns">
                 <Member
                     image='ger'

@@ -20,8 +20,8 @@ export const NewsList = () => {
     useLinkDeactive(ref, setLinkNewslist(false));
 
     return (
-        <section id="news-list" ref={ref} className="news-list">
-            <MainTitle text={TITLES.NEWS} />
+        <section ref={ref} className="news-list">
+            <MainTitle id="news-list" text={TITLES.NEWS} />
             <div className="news-list__conteiner">
                 <div className="news-list__block">
                     <ul className="news-list__news">

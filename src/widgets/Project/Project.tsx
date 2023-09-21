@@ -8,6 +8,7 @@ import { useAppDispatch } from "@/shared/hooks/redux";
 import { setValueHeader } from "@/store/reducers/headerSlice";
 import { Support } from "@/entities/Support/Support";
 import { Gallery } from "../Gallery/Gallery";
+import { setLinkHome } from "@/store/reducers/linkSlice";
 
 type ProjectProps = {
     child: React.ReactNode;
@@ -21,6 +22,7 @@ export const Project: FC<ProjectProps> = ({ child, index }) => {
     const dispatch = useAppDispatch();
 
     useEffect(() => {
+        dispatch(setLinkHome())
         const array = PROJECTS.sort(
             (a, b) => (a.id < b.id && 1) || (a.id > b.id && -1) || 0,
         );

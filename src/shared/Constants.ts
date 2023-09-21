@@ -1,22 +1,14 @@
 import { Key } from "react";
 
 export const WINDOW_SIZE = {
-    HIGH: 1280,
-    MIDDLE: 898,
-    MIDDLE_2: 562,
+    HIGH: 1000,
+    MIDDLE: 600,
 };
 
-export const CARDS_QUANTITY = {
-    HIGH: 10,
-    MIDDLE: 8,
-    MIDDLE_2: 9,
-    SMALL: 6,
-};
-
-export const CARDS_QUANTITY_NEXT = {
-    HIGH: 5,
-    MIDDLE: 4,
-    MIDDLE_2: 3,
+export const PHOTO_AMT = {
+    HIGH: 3,
+    MIDDLE: 2,
+    SMALL: 1,
 };
 
 export const TITLES = {

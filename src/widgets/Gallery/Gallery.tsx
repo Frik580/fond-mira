@@ -10,12 +10,10 @@ type GalleryProps = {
 };
 
 export const Gallery: FC<GalleryProps> = ({ href, photo }) => {
-
     return (
         <section className="gallery">
             <div className="gallery__conteiner">
-                {Boolean(photo) && <Carousel href={href} photo={photo} />}
-                <p>Gallery</p>
+                <Carousel href={href} photo={photo} />
             </div>
         </section>
     );

@@ -1,9 +1,8 @@
 .footer {
     display: flex;
     flex-direction: column;
-    padding: 20px;
     background-color: var(--color-blue);
-    height: 60px;
+    height: 40px;
 }
 
 .footer__text {

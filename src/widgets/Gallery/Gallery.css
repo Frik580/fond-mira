@@ -3,15 +3,14 @@
     justify-content: center;
     padding: 50px 30px;
     width: 100%;
-    background-color: var(--color-black);
+    background-color: var(--color-white);
 }
 
 .gallery__conteiner {
     display: flex;
     flex-direction: column;
     width: 100%;
-    background-color: var(--color-black);
+    background-color: var(--color-white);
     max-width: 1200px;
-    min-height: 500px;
     z-index: 2;
 }
