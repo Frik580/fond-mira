@@ -6,7 +6,7 @@ import { HeaderTitle } from "../../entities/HeaderTitle/HeaderTitle";
 import { useAppDispatch } from "../../shared/hooks/redux";
 import { setValueHeader } from "../../store/reducers/headerSlice";
 import { setLinkHome } from "../../store/reducers/linkSlice";
-import image from './top-news.png'
+import image from './news.webp'
 
 export const TopNews = () => {
     const ref = useRef<HTMLDivElement | null>(null);

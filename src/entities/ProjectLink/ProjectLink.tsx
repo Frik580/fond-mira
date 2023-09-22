@@ -4,42 +4,37 @@ import "./ProjectLink.css";
 import Image from "next/image";
 import Link from "next/link";
 import { Support } from "../Support/Support";
-import { FC } from "react";
+import { FC, useEffect } from "react";
+import { ProjectType } from "@/shared/Constants";
 
 type ProjectLinkProps = {
-    year: number;
-    title: string;
-    src: string;
-    partner: string;
-    href: string;
+    card: ProjectType;
 };
 
-export const ProjectLink: FC<ProjectLinkProps> = ({
-    year,
-    title,
-    src,
-    partner,
-    href,
-}) => {
+export const ProjectLink: FC<ProjectLinkProps> = ({ card }) => {
+    useEffect(() => {
+        console.log(card);
+    }, [card]);
+
     return (
-        <Link className="projectlink" href={href}>
+        <Link className="projectlink" href={card.href}>
             <Image
-                src={require(`@/shared/image/projects/${src}.png`)}
+                src={require(`@/shared/image/projects/${card.src}.webp`)}
                 fill
                 sizes="(max-width: 799px) 100vw, (max-width: 1199px) 50vw, 33vw"
                 style={{ objectFit: "cover" }}
-                alt={title}
+                alt={card.title}
             />
             <div className="projectlink__conteiner">
                 <div className="projectlink__partner">
-                    <p style={{ marginRight: "auto" }}>{year}</p>
+                    <p style={{ marginRight: "auto" }}>{card.year}</p>
                     <Support
-                        partner={partner}
+                        partner={card.partner}
                         color="var(--color-dust-white)"
                     />
                 </div>
                 <div className="projectlink__info">
-                    <p className="projectlink__title">{title}</p>
+                    <p className="projectlink__title">{card.title}</p>
                 </div>
                 <p className="projectlink__text">больше информации</p>
             </div>

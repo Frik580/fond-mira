@@ -22,12 +22,14 @@ export const Project: FC<ProjectProps> = ({ child, index }) => {
     const dispatch = useAppDispatch();
 
     useEffect(() => {
-        dispatch(setLinkHome())
         const array = PROJECTS.sort(
             (a, b) => (a.id < b.id && 1) || (a.id > b.id && -1) || 0,
         );
         setProject(array[index]);
+    }, [index]);
 
+    useEffect(() => {
+        dispatch(setLinkHome());
         const currentRef = ref.current;
 
         if (currentRef) {
@@ -43,39 +45,36 @@ export const Project: FC<ProjectProps> = ({ child, index }) => {
                 observer.unobserve(currentRef);
             };
         }
-    }, [project]);
+    }, []);
 
     useEffect(() => {
+        console.log(project);
         if (project) {
-            const image = require(`@/shared/image/projects/${project.src}.png`);
+            const image = require(`@/shared/image/projects/${project.src}.webp`);
             setImage(image.default.src);
         }
     }, [project]);
 
     return (
-        <>
-            {project && (
-                <section className="project">
-                    <div
-                        className="project__image"
-                        style={{
-                            backgroundImage: `url(${image})`,
-                        }}
-                    />
-                    <div ref={ref} className="project__title">
-                        <HeaderTitle title={project.title} />
-                    </div>
-                    <div className="project__conteiner">
-                        <div className="project__partner">
-                            <Support partner={project.partner} />
-                        </div>
-                        <>{child}</>
-                    </div>
-                    {Boolean(project.photo) && (
-                        <Gallery href={project.href} photo={project.photo} />
-                    )}
-                </section>
+        <section className="project">
+            <div
+                className="project__image"
+                style={{
+                    backgroundImage: `url(${image})`,
+                }}
+            />
+            <div ref={ref} className="project__title">
+                {project && <HeaderTitle title={project.title} />}
+            </div>
+            <div className="project__conteiner">
+                <div className="project__partner">
+                    {project && <Support partner={project.partner} />}
+                </div>
+                <>{child}</>
+            </div>
+            {project && Boolean(project.photo) && (
+                <Gallery href={project.href} photo={project.photo} />
             )}
-        </>
+        </section>
     );
 };

@@ -4,9 +4,6 @@ import { Providers } from "./providers";
 import { Header } from "@/widgets/Header/Header";
 import { Footer } from "@/widgets/Footer/Footer";
 import { NavPopup } from "@/widgets/NavPopup/NavPopup";
-// import { Inter } from "next/font/google";
-
-// const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
     title: "Фонд Мира Пермский край",

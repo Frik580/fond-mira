@@ -14,9 +14,9 @@ export const Member: FC<MemberProps> = ({ image, text, alt }) => {
     return (
         <li className="member">
             <Image
-                src={require(`@/shared/image/direction/${image}.png`)}
-                width={1000}
-                height={1000}
+                src={require(`@/shared/image/direction/${image}.webp`)}
+                width={500}
+                height={500}
                 className="member__image"
                 alt={alt}
                 loading="lazy"

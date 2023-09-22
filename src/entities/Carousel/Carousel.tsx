@@ -39,13 +39,13 @@ export const Carousel: FC<CarouselProps> = ({ href, photo }) => {
             setAmt(PHOTO_AMT.SMALL);
         }
 
-        const array: any = [];
+        const array = [];
         for (let i = 1 + count * amt; i <= amt + count * amt; i++) {
             i <= photo &&
                 array.push(
                     require(`@/shared/image/projects/${href.slice(
                         1,
-                    )}/${i}.jpg`),
+                    )}/${i}.webp`),
                 );
         }
         setImages(array);
@@ -68,18 +68,22 @@ export const Carousel: FC<CarouselProps> = ({ href, photo }) => {
                             onClick={() => {
                                 setCount(count - 1);
                             }}
-                            className="carousel__arrow carousel__arrow_left"
+                            className="carousel__button carousel__button_left"
                             type="button"
-                        />
+                        >
+                            <span className="carousel__arrow carousel__arrow_left" />
+                        </button>
                     )}
                     {(count + 1) * amt < photo && (
                         <button
                             onClick={() => {
                                 setCount(count + 1);
                             }}
-                            className="carousel__arrow carousel__arrow_right"
+                            className="carousel__button carousel__button_right"
                             type="button"
-                        />
+                        >
+                            <span className="carousel__arrow carousel__arrow_right" />
+                        </button>
                     )}
                 </div>
             )}

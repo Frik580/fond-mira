@@ -28,11 +28,12 @@ export const ProjectsList = () => {
                 {currentProjects.map((card: ProjectType) => (
                     <ProjectLink
                         key={card.id}
-                        year={card.year}
-                        title={card.title}
-                        src={card.src}
-                        partner={card.partner}
-                        href={card.href}
+                        card={card}
+                        // year={card.year}
+                        // title={card.title}
+                        // src={card.src}
+                        // partner={card.partner}
+                        // href={card.href}
                     />
                 ))}
             </div>

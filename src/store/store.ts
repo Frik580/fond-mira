@@ -3,6 +3,7 @@ import counterReducer from './reducers/counterSlice'
 import linkReduser from './reducers/linkSlice'
 import headerReduser from './reducers/headerSlice'
 import popupReduser from './reducers/popupSlice'
+import projectReduser from './reducers/projectSlice'
 
 export const store = configureStore({
     reducer: {
@@ -10,6 +11,7 @@ export const store = configureStore({
         link: linkReduser,
         header: headerReduser,
         popup: popupReduser,
+        project: projectReduser,
     },
 })
 
