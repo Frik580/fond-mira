@@ -49,7 +49,7 @@ export const HeaderLink: FC<HeaderLinkProps> = ({
             dispatch(setLinkDocuments(true));
         } else if (path === "/#contacts") {
             dispatch(setLinkContacts(true));
-        }
+        } 
     };
 
     return (

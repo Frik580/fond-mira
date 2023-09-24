@@ -4,32 +4,18 @@ import "./TopNews.css";
 import { useEffect, useRef } from "react";
 import { HeaderTitle } from "../../entities/HeaderTitle/HeaderTitle";
 import { useAppDispatch } from "../../shared/hooks/redux";
-import { setValueHeader } from "../../store/reducers/headerSlice";
-import { setLinkHome } from "../../store/reducers/linkSlice";
-import image from './news.webp'
+// import { setLinkHome } from "../../store/reducers/linkSlice";
+import image from "./news.webp";
+import useHeaderActive from "@/shared/hooks/UseHeaderActive";
 
 export const TopNews = () => {
     const ref = useRef<HTMLDivElement | null>(null);
+    useHeaderActive(ref);
     const dispatch = useAppDispatch();
 
-    useEffect(() => {
-        const currentRef = ref.current;
-
-        if (currentRef) {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach((entry) => {
-                    dispatch(setValueHeader(entry.isIntersecting));
-                    entry.isIntersecting && dispatch(setLinkHome());
-                });
-            });
-
-            observer.observe(currentRef);
-
-            return () => {
-                observer.unobserve(currentRef);
-            };
-        }
-    }, []);
+    // useEffect(() => {
+    //     dispatch(setLinkHome());
+    // }, []);
 
     return (
         <section

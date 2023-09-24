@@ -13,9 +13,7 @@ export const MainLogo = () => {
 
     return (
         <Link
-            onClick={
-                pathname === "/" ? () => dispatch(setLinkHome()) : () => {}
-            }
+            onClick={() => dispatch(setLinkHome())}
             href={pathname === "/" ? "#" : "/"}
             className="main-logo__conteiner"
         >
