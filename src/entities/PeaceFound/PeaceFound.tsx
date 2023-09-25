@@ -1,8 +1,10 @@
 import Link from "next/link";
 import "./PeaceFound.css";
 import Image from "next/image";
+import { memo } from "react";
+import logo from "./fond.png";
 
-export const PeaceFound = () => {
+const PeaceFound = memo(function PeaceFound() {
     return (
         <Link
             href="https://peacefound.ru"
@@ -11,7 +13,7 @@ export const PeaceFound = () => {
             rel="noreferrer"
         >
             <Image
-                src={require("@/shared/image/fond.png")}
+                src={logo}
                 width={200}
                 height={200}
                 className="found__image"
@@ -19,4 +21,6 @@ export const PeaceFound = () => {
             />
         </Link>
     );
-};
+});
+
+export default PeaceFound;

@@ -1,0 +1,53 @@
+.book {
+    background-color: var(--color-white);
+    border-radius: 20px;
+    padding: 0 20px;
+    height: 40px;
+    width: 180px;
+    color: var(--color-black);
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    transition: all 0.5s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    overflow: hidden;
+}
+
+.book:hover {
+    height: 270px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .1);
+}
+
+
+.book__title {
+    font-size: 20px;
+    line-height: 40px;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.book__text {
+    font-size: 16px;
+    line-height: 1.4;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    color: var(--color-black);
+    display: none;
+}
+
+.book:hover > .book__text {
+    display: block;
+}
+
+.book__image {
+    display: none;
+}
+
+.book:hover > .book__image {
+    display: block;
+}

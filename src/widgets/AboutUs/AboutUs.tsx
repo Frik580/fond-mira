@@ -4,7 +4,7 @@ import "./AboutUs.css";
 import { MainTitle } from "../../entities/MainTitle/MainTitle";
 import { TITLES } from "../../shared/Constants";
 import { Direction } from "../Direction/Direction";
-import { Member } from "../../entities/Member/Member";
+import Member from "../../entities/Member/Member";
 import { useRef } from "react";
 import { setLinkAboutus } from "../../store/reducers/linkSlice";
 import useLinkDeactive from "../../shared/hooks/UseLinkDeactive";

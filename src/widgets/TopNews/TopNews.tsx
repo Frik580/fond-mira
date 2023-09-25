@@ -1,21 +1,14 @@
 "use client";
 
 import "./TopNews.css";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { HeaderTitle } from "../../entities/HeaderTitle/HeaderTitle";
-import { useAppDispatch } from "../../shared/hooks/redux";
-// import { setLinkHome } from "../../store/reducers/linkSlice";
 import image from "./news.webp";
 import useHeaderActive from "@/shared/hooks/UseHeaderActive";
 
 export const TopNews = () => {
     const ref = useRef<HTMLDivElement | null>(null);
     useHeaderActive(ref);
-    const dispatch = useAppDispatch();
-
-    // useEffect(() => {
-    //     dispatch(setLinkHome());
-    // }, []);
 
     return (
         <section

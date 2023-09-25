@@ -20,6 +20,15 @@ export const TITLES = {
     CONTACTS: "Контакты",
 };
 
+export const PATH = {
+    ABOUT_US: "/#about-us",
+    NEWS: "/#news-list",
+    OUR_PROJECTS: "/#projects-list",
+    PARTNERS: "/#partners",
+    DOCUMENTS: "/documents",
+    CONTACTS: "/#contacts",
+};
+
 
 export type ProjectType = {
     id: Key | null | undefined;

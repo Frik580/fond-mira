@@ -1,14 +1,14 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { FC, useEffect, useMemo, useState } from "react";
 import "./DotsButton.css";
 
-type Props = {
+type DotsButtonProps = {
     lenght: number;
     index: any;
 };
 
-export const DotsButton = ({ lenght, index }: Props) => {
+export const DotsButton: FC<DotsButtonProps> = ({ lenght, index }) => {
     const [isActive, setIsActive] = useState<boolean[]>([]);
 
     useEffect(() => {
@@ -24,6 +24,8 @@ export const DotsButton = ({ lenght, index }: Props) => {
         setIsActive(data);
         index(i);
     };
+
+
 
     const resetActiveDots = (num: number) => {
         let dots = [];

@@ -1,17 +1,16 @@
 "use client";
 
 import "./Header.css";
-import Image from "next/image";
 import { BurgerButton } from "@/features/BurgerButton/BurgerButton";
 import { HeaderLink } from "@/entities/HeaderLink/HeaderLink";
-import { TITLES } from "../../shared/Constants";
-import { MainLogo } from "../../entities/MainLogo/MainLogo";
-import { PeaceFound } from "../../entities/PeaceFound/PeaceFound";
+import { TITLES, PATH } from "../../shared/Constants";
+import MainLogo from "../../entities/MainLogo/MainLogo";
+import PeaceFound from "../../entities/PeaceFound/PeaceFound";
 import { useAppDispatch, useAppSelector } from "../../shared/hooks/redux";
 import { headerValue } from "@/store/reducers/headerSlice";
 import { linkState } from "@/store/reducers/linkSlice";
 import { setValuePopup } from "@/store/reducers/popupSlice";
-import Link from "next/link";
+import Book from "@/entities/Book/Book";
 
 export const Header = () => {
     const dispatch = useAppDispatch();
@@ -31,7 +30,7 @@ export const Header = () => {
                     }}
                 />
                 <HeaderLink
-                    path={"/#about-us"}
+                    path={PATH.ABOUT_US}
                     title={TITLES.ABOUT_US}
                     active={link.aboutus}
                     style="header-link__conteiner"
@@ -39,7 +38,7 @@ export const Header = () => {
                     styleText="header-link__text"
                 />
                 <HeaderLink
-                    path={"/#news-list"}
+                    path={PATH.NEWS}
                     title={TITLES.NEWS}
                     active={link.newslist}
                     style="header-link__conteiner"
@@ -47,7 +46,7 @@ export const Header = () => {
                     styleText="header-link__text"
                 />
                 <HeaderLink
-                    path={"/#projects-list"}
+                    path={PATH.OUR_PROJECTS}
                     title={TITLES.OUR_PROJECTS}
                     active={link.projectslist}
                     style="header-link__conteiner"
@@ -55,7 +54,7 @@ export const Header = () => {
                     styleText="header-link__text"
                 />
                 <HeaderLink
-                    path={"/#partners"}
+                    path={PATH.PARTNERS}
                     title={TITLES.PARTNERS}
                     active={link.partners}
                     style="header-link__conteiner"
@@ -63,7 +62,7 @@ export const Header = () => {
                     styleText="header-link__text"
                 />
                 <HeaderLink
-                    path={"/documents"}
+                    path={PATH.DOCUMENTS}
                     title={TITLES.DOCUMENTS}
                     active={link.documents}
                     style="header-link__conteiner"
@@ -71,7 +70,7 @@ export const Header = () => {
                     styleText="header-link__text"
                 />
                 <HeaderLink
-                    path={"/#contacts"}
+                    path={PATH.CONTACTS}
                     title={TITLES.CONTACTS}
                     active={link.contacts}
                     style="header-link__conteiner"
@@ -79,25 +78,7 @@ export const Header = () => {
                     styleText="header-link__text"
                 />
                 {/* <button className="header__button">Помочь</button> */}
-                <Link
-                    className="header__button"
-                    href={"https://bank.permgaspi.ru/base.php?i=29"}
-                    target="_blank"
-                    rel="noreferrer"
-                >
-                    <Image
-                        src={require("@/shared/image/orden.png")}
-                        width={80}
-                        height={80}
-                        className="header__button-image"
-                        alt="логотип фонда мира"
-                    />
-                    <p className="header__button-title">Книга Памяти</p>
-                    <p className="header__button-text">1941 - 1945</p>
-                    <p className="header__button-text">
-                        База данных погибших военнослужащих Пермского Края
-                    </p>
-                </Link>
+                <Book />
             </nav>
         </header>
     );

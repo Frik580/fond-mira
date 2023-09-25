@@ -1,7 +1,7 @@
-import { useEffect } from "react";
+import { MutableRefObject, useEffect } from "react";
 import { useAppDispatch } from "./redux";
 
-export default function useLinkDeactive(ref: any, falsevalue: any) {
+export default function useLinkDeactive(ref: MutableRefObject<HTMLDivElement | null>, falsevalue: { payload: boolean; type: "link/setLinkProjectslist" | "link/setLinkAboutus" | "link/setLinkContacts" | "link/setLinkNewslist" | "link/setLinkPartners"; }) {
     const dispatch = useAppDispatch();
 
     useEffect(() => {

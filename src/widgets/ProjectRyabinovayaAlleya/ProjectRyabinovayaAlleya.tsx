@@ -14,7 +14,10 @@ export const ProjectRyabinovayaAlleya = () => {
     return (
         <>
             {projects[2] && (
-                <Project child={<p>ProjectRyabinovayaAlleya</p>} project={projects[2]} />
+                <Project
+                    child={<p>ProjectRyabinovayaAlleya</p>}
+                    project={projects[2]}
+                />
             )}
         </>
     );

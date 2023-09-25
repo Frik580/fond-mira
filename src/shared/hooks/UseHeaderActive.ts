@@ -1,8 +1,8 @@
-import { useEffect } from "react";
+import { MutableRefObject, useEffect } from "react";
 import { useAppDispatch } from "./redux";
 import { setValueHeader } from "@/store/reducers/headerSlice";
 
-export default function useHeaderActive(ref: any) {
+export default function useHeaderActive(ref: MutableRefObject<HTMLDivElement | null>) {
     const dispatch = useAppDispatch();
 
     useEffect(() => {

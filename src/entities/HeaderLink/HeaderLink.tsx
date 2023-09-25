@@ -14,6 +14,7 @@ import {
 } from "../../store/reducers/linkSlice";
 import { setValuePopup } from "@/store/reducers/popupSlice";
 import { FC } from "react";
+import { PATH } from "@/shared/Constants";
 
 type HeaderLinkProps = {
     title: string;
@@ -37,19 +38,19 @@ export const HeaderLink: FC<HeaderLinkProps> = ({
     const handleLinkState = () => {
         dispatch(setValuePopup(false));
         dispatch(setLinkHome());
-        if (path === "/#about-us") {
+        if (path === PATH.ABOUT_US) {
             dispatch(setLinkAboutus(true));
-        } else if (path === "/#news-list") {
+        } else if (path === PATH.NEWS) {
             dispatch(setLinkNewslist(true));
-        } else if (path === "/#projects-list") {
+        } else if (path === PATH.OUR_PROJECTS) {
             dispatch(setLinkProjectslist(true));
-        } else if (path === "/#partners") {
+        } else if (path === PATH.PARTNERS) {
             dispatch(setLinkPartners(true));
-        } else if (path === "/documents") {
+        } else if (path === PATH.DOCUMENTS) {
             dispatch(setLinkDocuments(true));
-        } else if (path === "/#contacts") {
+        } else if (path === PATH.CONTACTS) {
             dispatch(setLinkContacts(true));
-        } 
+        }
     };
 
     return (

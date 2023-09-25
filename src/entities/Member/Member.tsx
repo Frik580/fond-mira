@@ -1,6 +1,6 @@
 // "use client";
 
-import { FC } from "react";
+import { memo } from "react";
 import "./Member.css";
 import Image from "next/image";
 
@@ -10,7 +10,7 @@ type MemberProps = {
     alt: string;
 };
 
-export const Member: FC<MemberProps> = ({ image, text, alt }) => {
+const Member = memo(function Member({ image, text, alt }: MemberProps) {
     return (
         <li className="member">
             <Image
@@ -27,4 +27,6 @@ export const Member: FC<MemberProps> = ({ image, text, alt }) => {
             </p>
         </li>
     );
-};
+});
+
+export default Member;

@@ -1,6 +1,6 @@
 // "use client";
 
-import { Member } from "../../entities/Member/Member";
+import Member from "../../entities/Member/Member";
 import "./Direction.css";
 
 export const Direction = () => {
