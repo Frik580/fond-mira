@@ -1,17 +1,26 @@
-// "use client";
+"use client";
 
 import "./Documents.css";
 import Image from "next/image";
 import { MainTitle } from "../../entities/MainTitle/MainTitle";
-import { TITLES } from "../../shared/Constants";
-
+import { TITLES, DOCUMENTS, DocumentsType } from "../../shared/Constants";
+import { HeaderTitle } from "@/entities/HeaderTitle/HeaderTitle";
+import { useRef } from "react";
+import useHeaderActive from "@/shared/hooks/UseHeaderActive";
+import { Document } from "@/entities/Document/Document";
 
 export const Documents = () => {
+    const ref = useRef<HTMLDivElement | null>(null);
+    useHeaderActive(ref);
     return (
         <section className="documents">
-            <MainTitle id="documents" text={TITLES.DOCUMENTS} />
+            <div ref={ref} className="documents__title">
+                <HeaderTitle title={TITLES.DOCUMENTS} />
+            </div>
             <div className="documents__conteiner">
-               <p>Contacts</p>
+                {DOCUMENTS.map((doc: DocumentsType) => (
+                    <Document key={doc.id} title={doc.title} href={doc.href} />
+                ))}
             </div>
         </section>
     );

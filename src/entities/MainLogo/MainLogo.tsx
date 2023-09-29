@@ -5,17 +5,16 @@ import Image from "next/image";
 import { useAppDispatch } from "../../shared/hooks/redux";
 import { setLinkHome } from "../../store/reducers/linkSlice";
 import { memo } from "react";
-import { useRouter, usePathname } from "next/navigation";
-import logo from "./logo.png"
+import { useRouter } from "next/navigation";
+import logo from "./logo.png";
 
 const MainLogo = memo(function MainLogo() {
-    const pathname = usePathname();
     const dispatch = useAppDispatch();
     const router = useRouter();
 
     const routing = () => {
         dispatch(setLinkHome());
-        pathname === "/" ? router.push("/") : router.back();
+        router.push("/");
     };
 
     return (

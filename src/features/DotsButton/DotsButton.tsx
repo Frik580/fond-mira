@@ -1,7 +1,9 @@
 "use client";
 
-import { FC, useEffect, useMemo, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import "./DotsButton.css";
+import { NEWS_AMT } from "@/shared/Constants";
+import resetActiveDots from "./lib/ResetActiveDots";
 
 type DotsButtonProps = {
     lenght: number;
@@ -12,7 +14,7 @@ export const DotsButton: FC<DotsButtonProps> = ({ lenght, index }) => {
     const [isActive, setIsActive] = useState<boolean[]>([]);
 
     useEffect(() => {
-        const num = Math.ceil(lenght / 3);
+        const num = Math.ceil(lenght / NEWS_AMT);
         const data = resetActiveDots(num);
         data[0] = true;
         setIsActive(data);
@@ -23,16 +25,6 @@ export const DotsButton: FC<DotsButtonProps> = ({ lenght, index }) => {
         data[i] = true;
         setIsActive(data);
         index(i);
-    };
-
-
-
-    const resetActiveDots = (num: number) => {
-        let dots = [];
-        for (let count = num; count > 0; count--) {
-            dots.push(false);
-        }
-        return dots;
     };
 
     return (

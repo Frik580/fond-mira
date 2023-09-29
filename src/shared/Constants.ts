@@ -11,6 +11,8 @@ export const PHOTO_AMT = {
     SMALL: 1,
 };
 
+export const NEWS_AMT = 3;
+
 export const TITLES = {
     ABOUT_US: "Кто мы",
     NEWS: "Новости",
@@ -132,5 +134,50 @@ export const PROJECTS = [
         partner: 'guber',
         href: "/pro-dobro",
         photo: 0,
+    },
+];
+
+
+export type DocumentsType = {
+    id: Key | null | undefined;
+    title: string;
+    href: string;
+};
+
+export const DOCUMENTS = [
+    {
+        id: 1,
+        title: "Устав ПКО МОФ «Российский фонд мира»",
+        href: "ustav",
+    },
+    {
+        id: 2,
+        title: "Отчёт о деятельности ПКО МОФ «Российский фонд мира» за 2022 год",
+        href: "otchet_2022_1",
+    },
+    {
+        id: 3,
+        title: "Отчёт о целях расходования денежных средств ПКО МОФ «Российский фонд мира» за 2022 год",
+        href: "otchet_2022_2",
+    },
+    {
+        id: 4,
+        title: "Отчёт об объеме денежных средств и иного имущества ПКО МОФ «Российский фонд мира» за 2022 год",
+        href: "otchet_2022_3",
+    },
+    {
+        id: 5,
+        title: "Отчёт о деятельности ПКО МОФ «Российский фонд мира» за 2021 год",
+        href: "otchet_2021_1",
+    },
+    {
+        id: 6,
+        title: "Отчёт о целях расходования денежных средств ПКО МОФ «Российский фонд мира» за 2021 год",
+        href: "otchet_2021_2",
+    },
+    {
+        id: 7,
+        title: "Отчёт об объеме денежных средств и иного имущества ПКО МОФ «Российский фонд мира» за 2021 год",
+        href: "otchet_2021_3",
     },
 ];

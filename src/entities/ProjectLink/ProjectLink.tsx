@@ -13,8 +13,13 @@ type ProjectLinkProps = {
 
 export const ProjectLink: FC<ProjectLinkProps> = ({ card }) => {
     const router = useRouter();
+
+    const routing = () => {
+        router.push(card.href);
+    };
+
     return (
-        <button className="projectlink" onClick={() => router.push(card.href)}>
+        <button className="projectlink" onClick={routing}>
             <Image
                 src={require(`@/shared/image/projects/${card.src}.webp`)}
                 fill

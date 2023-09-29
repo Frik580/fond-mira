@@ -1,52 +1,68 @@
-.project-ra {
-    width: 100%;
-    min-height: 100vh;
+.project-card__conteiner {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    position: relative;
-    background-color: var(--color-white);
+    gap: 20px;
 }
 
-.project-ra__image {
-    position: absolute;
-    width: 100%;
-    height: 100vh;
-    top: 0;
-    left: 0;
-    background-position: center;
-    background-size: cover;
+.project-card__text {
+    font-size: 20px;
+    line-height: 1.4;
+    font-weight: 400;
+    font-style: normal;
 }
 
-.project-ra__title {
+@media (max-width: 1023px) {
+    .project-card__text {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 799px) {
+    .project-card__text {
+        font-size: 16px;
+    }
+}
+
+.project-card__article {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    width: 100%;
-    background-color: rgba(0, 61, 122, 0.6);
-    padding: 100px 30px 20px;
-    backdrop-filter: blur(10px);
-    z-index: 1;
-}
-
-.project-ra__conteiner {
-    display: flex;
-    flex-direction: column;
-    margin: auto;
-    width: calc(100% - 60px);
-    margin: 150px 0 50px;
-    padding: 20px 30px 50px;
-    border-radius: 20px;
-    background-color: var(--color-white);
-    max-width: 1200px;
-    min-height: 1000px;
-    z-index: 2;
-    box-shadow: 0px 0px 50px rgba(0, 0, 0, .1);
-}
-
-.project-ra__partner {
-    display: flex;
-    align-items: center;
-    align-self: flex-end;
     gap: 10px;
+}
+
+.project-card__title {
+    font-weight: 900;
+}
+
+.project-card__list {
+    list-style-type: " – ";
+    padding-left: 40px;
+}
+
+.project-card__numlist {
+    list-style-type: decimal;
+    padding-left: 40px;
+}
+
+.project-card__li {
+    font-size: 20px;
+    line-height: 1.4;
+    font-weight: 400;
+    font-style: normal;
+    padding-left: 10px;
+}
+
+@media (max-width: 1023px) {
+    .project-card__li {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 799px) {
+    .project-card__li {
+        font-size: 16px;
+    }
+}
+
+.project-card__link {
+    color: var(--color-marine);
 }
