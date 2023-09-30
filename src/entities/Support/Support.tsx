@@ -7,16 +7,19 @@ import Image from "next/image";
 type SupportProps = {
     partner: string;
     color?: string;
+    text?: boolean;
 };
 
-export const Support: FC<SupportProps> = ({ partner, color }) => {
+export const Support: FC<SupportProps> = ({ partner, color, text }) => {
     return (
         <>
             {partner && (
                 <>
-                    <p className="support__text" style={{ color: color }}>
-                        при поддержке:{" "}
-                    </p>
+                    {text && (
+                        <p className="support__text" style={{ color: color }}>
+                            при поддержке:{" "}
+                        </p>
+                    )}
                     <Image
                         src={require(`@/shared/image/partners/${partner}.png`)}
                         width={140}

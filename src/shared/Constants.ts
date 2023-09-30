@@ -118,7 +118,7 @@ export const PROJECTS = [
     {
         id: 8,
         year: 2022,
-        title: "Пермь великая – ПАРМА многоликая",
+        title: "Пермь великая – Парма многоликая",
         preview: "edededed",
         src: 'perm_velikaya',
         partner: 'pfki',
