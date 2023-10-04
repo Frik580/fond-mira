@@ -1,8 +1,6 @@
 "use client";
 
 import "./Documents.css";
-import Image from "next/image";
-import { MainTitle } from "../../entities/MainTitle/MainTitle";
 import { TITLES, DOCUMENTS, DocumentsType } from "../../shared/Constants";
 import { HeaderTitle } from "@/entities/HeaderTitle/HeaderTitle";
 import { useRef } from "react";

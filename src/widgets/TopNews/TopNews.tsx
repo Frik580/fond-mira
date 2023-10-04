@@ -1,10 +1,12 @@
 "use client";
 
 import "./TopNews.css";
+import Image from "next/image";
 import { useRef } from "react";
 import { HeaderTitle } from "../../entities/HeaderTitle/HeaderTitle";
-import image from "./news.webp";
 import useHeaderActive from "@/shared/hooks/UseHeaderActive";
+import { TopImage } from "@/entities/TopImage/TopImage";
+import image from './news.webp'
 
 export const TopNews = () => {
     const ref = useRef<HTMLDivElement | null>(null);
@@ -13,10 +15,11 @@ export const TopNews = () => {
     return (
         <section
             className="top-news"
-            style={{
-                backgroundImage: `url(${image.src})`,
-            }}
+            // style={{
+            //     backgroundImage: `url(${image.src})`,
+            // }}
         >
+            <TopImage src={image} />
             <div ref={ref} className="top-news__title-conteiner">
                 <HeaderTitle
                     title="Пермские региональное отделение Международного общественного фонда
@@ -34,3 +37,4 @@ export const TopNews = () => {
         </section>
     );
 };
+

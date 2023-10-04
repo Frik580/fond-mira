@@ -28,6 +28,8 @@ export const Carousel: FC<CarouselProps> = ({ href, photo }) => {
                             key={i}
                             className="carousel__image"
                             src={card}
+                            width={600}
+                            height={600}
                             alt={`фото ${i}`}
                         />
                     ))}

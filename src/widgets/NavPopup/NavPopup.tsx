@@ -3,25 +3,16 @@
 import "./NavPopup.css";
 import { useAppDispatch, useAppSelector } from "@/shared/hooks/redux";
 import { popupValue, setValuePopup } from "@/store/reducers/popupSlice";
-import { useEffect } from "react";
-import { HeaderLink } from "../../entities/HeaderLink/HeaderLink";
-import { TITLES } from "../../shared/Constants";
 import { linkState } from "@/store/reducers/linkSlice";
+import { HeaderLink } from "@/entities/HeaderLink/HeaderLink";
+import { TITLES } from "@/shared/Constants";
+import useCloseByEsc from "@/widgets/NavPopup/lib/UseCloseByEsc";
 
 export const NavPopup = () => {
     const dispatch = useAppDispatch();
     const openpopup = useAppSelector(popupValue);
     const link = useAppSelector(linkState);
-
-    useEffect(() => {
-        const handleEscClose = (e: { key: string; }) => {
-            e.key === "Escape" && dispatch(setValuePopup(false));
-        };
-        document.addEventListener("keyup", handleEscClose);
-        return () => {
-            document.removeEventListener("keyup", handleEscClose);
-        };
-    }, []);
+    useCloseByEsc(false)
 
     return (
         <div

@@ -5,13 +5,13 @@
     opacity: 0.6;
     border: none;
     background-color: transparent;
-    border-top: 5px solid transparent;
-    border-bottom: 5px solid transparent;
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
 }
 
 .header-link {
     font-size: 20px;
-    line-height: 51px;
+    line-height: 54px;
     font-weight: 400;
     font-style: normal;
     cursor: pointer;
@@ -21,8 +21,8 @@
 
 .header-link__conteiner:hover {
     opacity: 1;
-    border-top: 5px solid transparent;
-    border-bottom: 5px solid rgba(255, 255, 255, 0.7);
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.7);
 }
 
 @media (max-width: 1160px) {
@@ -33,13 +33,13 @@
 
 .header-link__text {
     font-size: 20px;
-    line-height: 51px;
+    line-height: 54px;
     font-weight: 400;
     font-style: normal;
     color: var(--color-white);
     background-color: transparent;
-    border-top: 5px solid transparent;
-    border-bottom: 5px solid rgba(255, 255, 255, 0.7);
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.7);
 }
 
 @media (max-width: 1160px) {

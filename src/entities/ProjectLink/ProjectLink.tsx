@@ -6,6 +6,7 @@ import { Support } from "../Support/Support";
 import { FC } from "react";
 import { ProjectType } from "@/shared/Constants";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 type ProjectLinkProps = {
     card: ProjectType;
@@ -19,7 +20,7 @@ export const ProjectLink: FC<ProjectLinkProps> = ({ card }) => {
     };
 
     return (
-        <button className="projectlink" onClick={routing}>
+        <Link className="projectlink" href={card.href}>
             <Image
                 src={require(`@/shared/image/projects/${card.src}.webp`)}
                 fill
@@ -40,6 +41,6 @@ export const ProjectLink: FC<ProjectLinkProps> = ({ card }) => {
                 </div>
                 <p className="projectlink__text">больше информации</p>
             </div>
-        </button>
+        </Link>
     );
 };

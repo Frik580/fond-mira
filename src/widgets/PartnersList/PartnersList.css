@@ -3,6 +3,7 @@
     flex-direction: column;
     padding-top: 100px;
     padding-bottom: 50px;
+    background-color: var(--color-white);
 }
 
 .partners__conteiner {

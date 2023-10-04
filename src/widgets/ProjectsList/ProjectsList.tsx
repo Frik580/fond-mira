@@ -14,7 +14,7 @@ import useFetchProjects from "@/shared/hooks/UseFetchProjects";
 
 export const ProjectsList = () => {
     const projects = useAppSelector(projectState);
-    useFetchProjects();
+    useFetchProjects(projects.length);
     const ref = useRef<HTMLDivElement | null>(null);
     useLinkDeactive(ref, setLinkProjectslist(false));
 

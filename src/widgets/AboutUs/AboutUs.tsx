@@ -17,14 +17,15 @@ export const AboutUs = () => {
         <section ref={ref} className="about-us">
             <MainTitle id="about-us" text={TITLES.ABOUT_US} />
             <div className="about-us__columns">
-                <Member
-                    image='ger'
-                    text=", 
-                    председатель Правления ПКО МОФ «Российский фонд мира», 
+                <div className="about-us__member">
+                    <Member
+                        image="gera"
+                        text="председатель Правления ПКО МОФ «Российский фонд мира», 
                     Председатель Совета ПРООУ «Ассоциация «ЛУЧ», 
                     Почётный работник общего образования РФ"
-                    alt="Герасимчук Любовь Арсеньевна"
-                />
+                        alt="Герасимчук Любовь Арсеньевна"
+                    />
+                </div>
                 <div className="about-us__conteiner">
                     <p className="about-us__text">
                         Международный общественный Фонд &#171;Российский Фонд

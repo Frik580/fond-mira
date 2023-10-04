@@ -2,7 +2,7 @@ import { Key } from "react";
 
 export const WINDOW_SIZE = {
     HIGH: 1000,
-    MIDDLE: 600,
+    MIDDLE: 660,
 };
 
 export const PHOTO_AMT = {
@@ -12,6 +12,8 @@ export const PHOTO_AMT = {
 };
 
 export const NEWS_AMT = 3;
+
+export const IMAGE_SERVER_URL = 'https://storage.yandexcloud.net/'
 
 export const TITLES = {
     ABOUT_US: "Кто мы",
@@ -63,7 +65,7 @@ export const PROJECTS = [
         src: 'vet',
         partner: 'gorod',
         href: "/vetvi",
-        photo: 0,
+        photo: 7,
     },
     {
         id: 3,

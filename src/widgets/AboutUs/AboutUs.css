@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     padding-top: 100px;
+    background-color: var(--color-white);
 }
 
 .about-us__columns {
@@ -15,7 +16,6 @@
 @media (max-width: 599px) {
     .about-us__columns {
         flex-direction: column;
-        gap: 0;
     }
 }
 
@@ -42,4 +42,8 @@
     .about-us__text {
         font-size: 16px;
     }
+}
+
+.about-us__member {
+    margin: 0 auto;
 }

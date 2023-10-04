@@ -1,3 +1,4 @@
+import { IMAGE_SERVER_URL } from "@/shared/Constants";
 import { useEffect, useState } from "react";
 
 export default function useHandleCarousel(
@@ -37,11 +38,18 @@ export default function useHandleCarousel(
         const array = [];
         for (let i = 1 + count * amt; i <= amt + count * amt; i++) {
             i <= photo &&
+                // array.push(
+                //     require(`@/shared/image/projects/${href.slice(
+                //         1
+                //     )}/${i}.webp`)
+                // );
+
                 array.push(
-                    require(`@/shared/image/projects/${href.slice(
+                    `${IMAGE_SERVER_URL}${href.slice(
                         1
-                    )}/${i}.webp`)
+                    )}/${i}.webp`
                 );
+
         }
         setImages(array);
     }, [amt, count, width]);

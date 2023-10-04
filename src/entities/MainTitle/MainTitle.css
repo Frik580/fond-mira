@@ -8,3 +8,15 @@
     border-bottom: 2px dashed var(--color-gray);
     color: var(--color-gray);
 }
+
+@media (max-width: 1023px) {
+    .main-title {
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 799px) {
+    .main-title {
+        font-size: 25px;
+    }
+}
