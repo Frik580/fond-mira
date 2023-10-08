@@ -1,12 +1,10 @@
 "use client";
 
 import "./ProjectMyIMir.css";
-import Image from "next/image";
 import { Project } from "../Project/Project";
 import { useAppSelector } from "@/shared/hooks/redux";
 import { projectState } from "@/store/reducers/projectSlice";
 import useFetchProjects from "@/shared/hooks/UseFetchProjects";
-import { useEffect } from "react";
 
 export const ProjectMyIMir = () => {
     const projects = useAppSelector(projectState);

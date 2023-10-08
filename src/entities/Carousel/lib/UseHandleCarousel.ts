@@ -1,11 +1,11 @@
-import { IMAGE_SERVER_URL } from "@/shared/Constants";
 import { useEffect, useState } from "react";
 
 export default function useHandleCarousel(
     photo: number,
-    href: string,
     size: { HIGH: number; MIDDLE: number; },
-    photoamt: { HIGH: number; MIDDLE: number; SMALL: number; }
+    photoamt: { HIGH: number; MIDDLE: number; SMALL: number; },
+    server: string,
+    extension: string
 ) {
     const [images, setImages] = useState<string[] | null>(null);
     const [count, setCount] = useState<number>(0);
@@ -38,16 +38,8 @@ export default function useHandleCarousel(
         const array = [];
         for (let i = 1 + count * amt; i <= amt + count * amt; i++) {
             i <= photo &&
-                // array.push(
-                //     require(`@/shared/image/projects/${href.slice(
-                //         1
-                //     )}/${i}.webp`)
-                // );
-
                 array.push(
-                    `${IMAGE_SERVER_URL}${href.slice(
-                        1
-                    )}/${i}.webp`
+                    `${server}${i}.${extension}`
                 );
 
         }

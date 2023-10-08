@@ -8,7 +8,6 @@ import { NewsList } from "@/widgets/NewsList/NewsList";
 import { PartnersList } from "@/widgets/PartnersList/PartnersList";
 import { ProjectsList } from "@/widgets/ProjectsList/ProjectsList";
 import { TopNews } from "@/widgets/TopNews/TopNews";
-import { TopImage } from "@/entities/TopImage/TopImage";
 
 export default function HomePage() {
     return (

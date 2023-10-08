@@ -4,10 +4,12 @@ import type { RootState } from '../store'
 
 type PopupState = {
     value: boolean,
+    valueNews: boolean,
 }
 
 const initialState: PopupState = {
     value: false,
+    valueNews: false,
 }
 
 export const popupSlice = createSlice({
@@ -18,12 +20,15 @@ export const popupSlice = createSlice({
         setValuePopup: (state, action: PayloadAction<boolean>) => {
             state.value = action.payload 
         },
+        setValueNewsPopup: (state, action: PayloadAction<boolean>) => {
+            state.valueNews = action.payload 
+        },
     },
 })
 
-export const { setValuePopup } = popupSlice.actions
+export const { setValuePopup, setValueNewsPopup } = popupSlice.actions
 
 // Other code such as selectors can use the imported `RootState` type
-export const popupValue = (state: RootState) => state.popup.value
+export const popupValue = (state: RootState) => state.popup
 
 export default popupSlice.reducer

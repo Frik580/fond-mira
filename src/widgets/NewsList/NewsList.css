@@ -22,15 +22,16 @@
 .news-list__block {
     display: flex;
     flex-direction: column;
-    width: 60%;
+    /* width: 60%; */
+    width: 100%;
     gap: 50px;
 }
 
-@media (max-width: 1023px) {
+/* @media (max-width: 1023px) {
     .news-list__block {
         width: 100%;
     }
-}
+} */
 
 .news-list__news {
     display: flex;

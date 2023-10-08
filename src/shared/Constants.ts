@@ -1,5 +1,3 @@
-import { Key } from "react";
-
 export const WINDOW_SIZE = {
     HIGH: 1000,
     MIDDLE: 660,
@@ -13,7 +11,18 @@ export const PHOTO_AMT = {
 
 export const NEWS_AMT = 3;
 
-export const IMAGE_SERVER_URL = 'https://storage.yandexcloud.net/'
+export const BASE_URL = 'https://fondmira-pk.ru/'
+export const SERVER_URL = 'https://storage.yandexcloud.net/'
+// export const SERVER_URL_DOCUMENTS = `${SERVER_URL}documents-file/`
+export const SERVER_URL_DOCUMENTS = 'documents/'
+export const SERVER_URL_DIRECTION = `${SERVER_URL}direction/`
+export const SERVER_URL_PARTNERS = `${SERVER_URL}partners-images/`
+export const SERVER_URL_PROJECTS_COVER = `${SERVER_URL}projects-cover/`
+export const SERVER_URL_PROJECTS_COVER_SMALL = `${SERVER_URL}projects-cover-small/`
+export const IMAGE_EXTENSION = 'webp'
+export const DOCUMENT_EXTENSION = 'pdf'
+export const PARTNERS_EXTENSION = 'png'
+export const API_BASE_URL = 'https://fondmira-pk-api.ru'
 
 export const TITLES = {
     ABOUT_US: "Кто мы",
@@ -29,20 +38,8 @@ export const PATH = {
     NEWS: "/#news-list",
     OUR_PROJECTS: "/#projects-list",
     PARTNERS: "/#partners",
-    DOCUMENTS: "/documents",
+    DOCUMENTS: '/documents',
     CONTACTS: "/#contacts",
-};
-
-
-export type ProjectType = {
-    id: Key | null | undefined;
-    year: number;
-    title: string;
-    preview: string;
-    src: string;
-    partner: string;
-    href: string;
-    photo: number;
 };
 
 export const PROJECTS = [
@@ -53,7 +50,7 @@ export const PROJECTS = [
         preview: "edededed",
         src: 'sol',
         partner: 'pg',
-        href: "/solnechnyy-krug",
+        href: "solnechnyy-krug",
         photo: 4,
     },
 
@@ -64,7 +61,7 @@ export const PROJECTS = [
         preview: "edededed",
         src: 'vet',
         partner: 'gorod',
-        href: "/vetvi",
+        href: "vetvi",
         photo: 7,
     },
     {
@@ -74,7 +71,7 @@ export const PROJECTS = [
         preview: "edededed",
         src: 'my',
         partner: 'guber',
-        href: "/my-i-mir",
+        href: "my-i-mir",
         photo: 11,
     },
     {
@@ -84,7 +81,7 @@ export const PROJECTS = [
         preview: "edededed",
         src: 'pobeda',
         partner: 'pg',
-        href: "/zhivaya-pamyat",
+        href: "zhivaya-pamyat",
         photo: 13,
     },
     {
@@ -94,7 +91,7 @@ export const PROJECTS = [
         preview: "edededed",
         src: 'vals',
         partner: 'gorod',
-        href: "/mayskiy-vals",
+        href: "mayskiy-vals",
         photo: 0,
     },
     {
@@ -104,7 +101,7 @@ export const PROJECTS = [
         preview: "edededed",
         src: 'kto',
         partner: 'guber',
-        href: "/kto-yesli-ne-ty",
+        href: "kto-yesli-ne-ty",
         photo: 5,
     },
     {
@@ -114,7 +111,7 @@ export const PROJECTS = [
         preview: "edededed",
         src: 'alleya',
         partner: 'pg',
-        href: "/ryabinovaya-alleya",
+        href: "ryabinovaya-alleya",
         photo: 26,
     },
     {
@@ -124,7 +121,7 @@ export const PROJECTS = [
         preview: "edededed",
         src: 'perm_velikaya',
         partner: 'pfki',
-        href: "/perm-velikaya",
+        href: "perm-velikaya",
         photo: 5,
     },
     {
@@ -134,17 +131,10 @@ export const PROJECTS = [
         preview: "edededed",
         src: 'dobro',
         partner: 'guber',
-        href: "/pro-dobro",
+        href: "pro-dobro",
         photo: 0,
     },
 ];
-
-
-export type DocumentsType = {
-    id: Key | null | undefined;
-    title: string;
-    href: string;
-};
 
 export const DOCUMENTS = [
     {

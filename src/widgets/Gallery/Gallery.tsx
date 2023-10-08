@@ -1,19 +1,15 @@
-"use client";
+// "use client";
 
 import { Carousel } from "@/entities/Carousel/Carousel";
 import "./Gallery.css";
 import { FC } from "react";
+import { GalleryType } from "@/shared/models/Models";
 
-type GalleryProps = {
-    href: string;
-    photo: number;
-};
-
-export const Gallery: FC<GalleryProps> = ({ href, photo }) => {
+export const Gallery: FC<GalleryType> = ({ photo, server, extension }) => {
     return (
         <section className="gallery">
             <div className="gallery__conteiner">
-                <Carousel href={href} photo={photo} />
+                <Carousel photo={photo} server={server} extension={extension} />
             </div>
         </section>
     );

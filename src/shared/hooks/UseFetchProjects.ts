@@ -8,7 +8,6 @@ export default function useFetchProjects(length: number) {
 
     useEffect(() => {
         if (length === 0) {
-            console.log('потеря')
             const array = [...PROJECTS];
             const newarray = array.sort(
                 (a, b) => (a.id < b.id && 1) || (a.id > b.id && -1) || 0,

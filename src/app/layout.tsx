@@ -6,6 +6,7 @@ import { Providers } from "./providers";
 import { Header } from "@/widgets/Header/Header";
 import { Footer } from "@/widgets/Footer/Footer";
 import { NavPopup } from "@/widgets/NavPopup/NavPopup";
+import { NewsPopup } from "@/widgets/NewsPopup/NewsPopup";
 
 export const metadata: Metadata = {
     title: "Фонд Мира Пермский край",
@@ -25,6 +26,7 @@ export default function RootLayout({
                     {children}
                     <Footer />
                     <NavPopup />
+                    <NewsPopup />
                 </Providers>
             </body>
         </html>

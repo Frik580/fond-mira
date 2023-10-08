@@ -1,8 +1,12 @@
-"use client";
+// "use client";
 
 import "./Project.css";
 import { HeaderTitle } from "@/entities/HeaderTitle/HeaderTitle";
-import { ProjectType } from "@/shared/Constants";
+import {
+    IMAGE_EXTENSION,
+    SERVER_URL,
+    SERVER_URL_PROJECTS_COVER,
+} from "@/shared/Constants";
 import { FC, useEffect, useRef, useState } from "react";
 import { Support } from "@/entities/Support/Support";
 import { Gallery } from "../Gallery/Gallery";
@@ -10,6 +14,7 @@ import useHeaderActive from "@/shared/hooks/UseHeaderActive";
 import { useAppDispatch } from "@/shared/hooks/redux";
 import { setLinkHome } from "@/store/reducers/linkSlice";
 import { TopImage } from "@/entities/TopImage/TopImage";
+import { ProjectType } from "@/shared/models/Models";
 
 type ProjectProps = {
     children: React.ReactNode;
@@ -17,15 +22,19 @@ type ProjectProps = {
 };
 
 export const Project: FC<ProjectProps> = ({ children, project }) => {
+    const [server, setServer] = useState('')
     const dispatch = useAppDispatch();
-    const [image, setImage] = useState("");
     const ref = useRef<HTMLDivElement | null>(null);
     useHeaderActive(ref);
+    
+    const backgroundImageWithPhoto =
+        "linear-gradient(rgba(255,255,255, 0) 20%, var(--color-dust-white) 70%)";
+    const backgroundImageWithoutPhoto =
+        "linear-gradient(rgba(255,255,255, 0) 20%, var(--color-dust-white) 90%)";
 
     useEffect(() => {
         dispatch(setLinkHome());
-        const image = require(`@/shared/image/projects/${project.src}.webp`);
-        setImage(image.default.src);
+        setServer(`${SERVER_URL}${project.href}/`)
     }, [project]);
 
     return (
@@ -34,16 +43,16 @@ export const Project: FC<ProjectProps> = ({ children, project }) => {
             style={
                 Boolean(project.photo)
                     ? {
-                          backgroundImage:
-                              "linear-gradient(rgba(255,255,255, 0) 20%, var(--color-dust-white) 70%)",
+                          backgroundImage: `${backgroundImageWithPhoto}`,
                       }
                     : {
-                          backgroundImage:
-                              "linear-gradient(rgba(255,255,255, 0) 20%, var(--color-dust-white) 90%)",
+                          backgroundImage: `${backgroundImageWithoutPhoto}`,
                       }
             }
         >
-            {Boolean(image) && <TopImage src={image} />}
+            <TopImage
+                src={`${SERVER_URL_PROJECTS_COVER}${project.src}.${IMAGE_EXTENSION}`}
+            />
             <div ref={ref} className="project__title">
                 <HeaderTitle title={project.title} />
             </div>
@@ -54,7 +63,7 @@ export const Project: FC<ProjectProps> = ({ children, project }) => {
                 {children}
             </div>
             {Boolean(project.photo) && (
-                <Gallery href={project.href} photo={project.photo} />
+                <Gallery photo={project.photo} server={server} extension={IMAGE_EXTENSION} />
             )}
         </section>
     );

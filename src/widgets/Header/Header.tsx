@@ -63,11 +63,13 @@ export const Header = () => {
                 />
                 <HeaderLink
                     path={PATH.DOCUMENTS}
+                    // path='/documents'
                     title={TITLES.DOCUMENTS}
                     active={link.documents}
                     style="header-link__conteiner"
                     styleLink="header-link"
                     styleText="header-link__text"
+
                 />
                 <HeaderLink
                     path={PATH.CONTACTS}

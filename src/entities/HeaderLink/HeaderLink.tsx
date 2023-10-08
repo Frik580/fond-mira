@@ -5,6 +5,7 @@ import { useAppDispatch } from "../../shared/hooks/redux";
 import { FC } from "react";
 import handleLinkState from "./lib/LinkState";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 type HeaderLinkProps = {
     title: string;

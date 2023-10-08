@@ -10,6 +10,7 @@ type DocumentProps = {
 };
 
 export const Document: FC<DocumentProps> = ({ title, href }) => {
+
     return (
         <div className="document">
             <p className="document__text">{title}</p>

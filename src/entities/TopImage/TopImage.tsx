@@ -11,16 +11,14 @@ type TopImageProps = {
 
 export const TopImage: FC<TopImageProps> = ({ src }) => {
     return (
-        <>
-            <div className="topimage">
-                <Image
-                    src={src}
-                    className="topimage__image"
-                    alt="Фоновая картинка"
-                    fill
-                    priority
-                />
-            </div>
-        </>
+        <div className="topimage">
+            <Image
+                src={src}
+                className="topimage__image"
+                alt="Фоновая картинка"
+                fill
+                priority
+            />
+        </div>
     );
 };

@@ -4,25 +4,22 @@ import "./ProjectLink.css";
 import Image from "next/image";
 import { Support } from "../Support/Support";
 import { FC } from "react";
-import { ProjectType } from "@/shared/Constants";
-import { useRouter } from "next/navigation";
+import {
+    IMAGE_EXTENSION,
+    SERVER_URL_PROJECTS_COVER_SMALL,
+} from "@/shared/Constants";
 import Link from "next/link";
+import { ProjectType } from "@/shared/models/Models";
 
 type ProjectLinkProps = {
     card: ProjectType;
 };
 
 export const ProjectLink: FC<ProjectLinkProps> = ({ card }) => {
-    const router = useRouter();
-
-    const routing = () => {
-        router.push(card.href);
-    };
-
     return (
         <Link className="projectlink" href={card.href}>
             <Image
-                src={require(`@/shared/image/projects/${card.src}.webp`)}
+                src={`${SERVER_URL_PROJECTS_COVER_SMALL}${card.src}.${IMAGE_EXTENSION}`}
                 fill
                 sizes="(max-width: 799px) 100vw, (max-width: 1199px) 50vw, 33vw"
                 style={{ objectFit: "cover" }}

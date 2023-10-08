@@ -17,9 +17,9 @@ export const NavPopup = () => {
     return (
         <div
             onClick={() => dispatch(setValuePopup(false))}
-            className={`navpopup ${openpopup && "navpopup_opened"}`}
+            className={`navpopup ${openpopup.value && "navpopup_opened"}`}
         >
-            {openpopup && (
+            {openpopup.value && (
                 <div
                     onClick={(e) => {
                         e.stopPropagation();

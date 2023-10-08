@@ -1,9 +1,11 @@
-import { configureStore } from '@reduxjs/toolkit'
+import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit'
 import counterReducer from './reducers/counterSlice'
 import linkReduser from './reducers/linkSlice'
 import headerReduser from './reducers/headerSlice'
 import popupReduser from './reducers/popupSlice'
 import projectReduser from './reducers/projectSlice'
+import newsReduser from './reducers/newsSlice'
+import { newsAPI } from '@/shared/services/NewsService'
 
 export const store = configureStore({
     reducer: {
@@ -12,7 +14,11 @@ export const store = configureStore({
         header: headerReduser,
         popup: popupReduser,
         project: projectReduser,
+        news: newsReduser,
+        [newsAPI.reducerPath]: newsAPI.reducer,
     },
+    middleware: (getDefaultMiddleware) =>
+        getDefaultMiddleware().concat(newsAPI.middleware)
 })
 
 export type RootState = ReturnType<typeof store.getState>

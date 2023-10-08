@@ -1,11 +1,12 @@
 "use client";
 
 import "./Documents.css";
-import { TITLES, DOCUMENTS, DocumentsType } from "../../shared/Constants";
+import { TITLES, DOCUMENTS } from "../../shared/Constants";
 import { HeaderTitle } from "@/entities/HeaderTitle/HeaderTitle";
 import { useRef } from "react";
 import useHeaderActive from "@/shared/hooks/UseHeaderActive";
 import { Document } from "@/entities/Document/Document";
+import { DocumentsType } from "@/shared/models/Models";
 
 export const Documents = () => {
     const ref = useRef<HTMLDivElement | null>(null);

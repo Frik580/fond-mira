@@ -1,21 +1,32 @@
 // "use client";
 
+import { FC } from "react";
 import "./News.css";
+import { NewsType } from "@/shared/models/Models";
+import { useAppDispatch } from "@/shared/hooks/redux";
+import { setValueNewsPopup } from "@/store/reducers/popupSlice";
+import { setNews } from "@/store/reducers/newsSlice";
 
-export const News = () => {
+type NewsProps = {
+    post: NewsType;
+};
+
+export const News: FC<NewsProps> = ({ post }) => {
+    const dispatch = useAppDispatch();
+
     return (
         <li onMouseEnter={() => console.log("Навел")} className="news">
             <button
                 className="news__button"
-                onClick={() => console.log("Кликнул")}
+                onClick={() => {
+                    dispatch(setNews(post))
+                    dispatch(setValueNewsPopup(true))
+                }}
             >
-                <div className="news__ikon"/>
+                <div className="news__ikon" />
             </button>
-            <p className="news__date">21 июля 2023</p>
-            <p className="news__text">
-                Савелий Хлуднев и Марина Беляева, выпускники школы, доброхоты,
-                посадили рябину у памятного знака подвигу роты Василия
-                Афанасьевича Полыгалова.
+            <p className="news__date">{post.createdAt}</p>
+            <p className="news__text">{post.preview}
             </p>
         </li>
     );

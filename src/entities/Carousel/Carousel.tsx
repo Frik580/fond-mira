@@ -5,18 +5,15 @@ import "./Carousel.css";
 import Image from "next/image";
 import { WINDOW_SIZE, PHOTO_AMT } from "@/shared/Constants";
 import useHandleCarousel from "./lib/UseHandleCarousel";
+import { GalleryType } from "@/shared/models/Models";
 
-type CarouselProps = {
-    href: string;
-    photo: number;
-};
-
-export const Carousel: FC<CarouselProps> = ({ href, photo }) => {
+export const Carousel: FC<GalleryType> = ({ photo, server, extension }) => {
     const { images, count, amt, setCount } = useHandleCarousel(
         photo,
-        href,
         WINDOW_SIZE,
         PHOTO_AMT,
+        server,
+        extension
     );
 
     return (

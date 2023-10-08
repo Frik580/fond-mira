@@ -40,12 +40,12 @@
     cursor: pointer;
     background: none;
     outline: none;
-    opacity: .7;
+    /* opacity: .5; */
     transition: all .3s ease-in-out;
 }
 
 .carousel__button:hover {
-    opacity: 1;
+    /* opacity: 1; */
 }
 
 .carousel__button_left {
@@ -60,21 +60,23 @@
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    margin: auto;position: absolute;
+    position: absolute;
     margin: 0;
     padding: 0;
     top: calc(50% - 25px);
-    background-color: var(--color-white);
+    background-color: rgba(255, 255, 255, .5);
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2px);
 }
 
 .carousel__arrow_left {
-    left: 20px;
-    transition: left .3s ease-in-out;
+    left: 10px;
+    transition: all .3s ease-in-out;
 }
 
 .carousel__button_left:hover > .carousel__arrow_left {
-    left: 10px;
+    background-color: rgba(255, 255, 255, .9);
+    left: 5px;
 }
 
 .carousel__arrow_left:before {
@@ -82,7 +84,7 @@
     content: "";
     height: 12.5px;
     border: 2px solid var(--color-blue);
-    top: calc(50% - 12.5px);
+    top: calc(50% - 12px);
     left: 45%;
     transform: rotate(45deg);
     border-radius: 2px;
@@ -94,7 +96,7 @@
     content: "";
     height: 12.5px;
     border: 2px solid var(--color-blue);
-    top: calc(50% - 3.5px);
+    top: calc(50% - 3px);
     left: 45%;
     transform: rotate(-45deg);
     border-radius: 2px;
@@ -102,12 +104,13 @@
 }
 
 .carousel__arrow_right {
-    right: 20px;
-    transition: right .3s ease-in-out;
+    right: 10px;
+    transition: all .3s ease-in-out;
 }
 
 .carousel__button_right:hover > .carousel__arrow_right {
-    right: 10px;
+    background-color: rgba(255, 255, 255, .9);
+    right: 5px;
 }
 
 .carousel__arrow_right:before {
@@ -115,7 +118,7 @@
     content: "";
     height: 12.5px;
     border: 2px solid var(--color-blue);
-    top: calc(50% - 12.5px);
+    top: calc(50% - 12px);
     right: 45%;
     transform: rotate(-45deg);
     border-radius: 2px;
@@ -127,7 +130,7 @@
     content: "";
     height: 12.5px;
     border: 2px solid var(--color-blue);
-    top: calc(50% - 3.5px);
+    top: calc(50% - 3px);
     right: 45%;
     transform: rotate(45deg);
     border-radius: 2px;

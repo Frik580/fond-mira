@@ -3,7 +3,7 @@
 import { memo } from "react";
 import "./Member.css";
 import Image from "next/image";
-import { IMAGE_SERVER_URL } from "@/shared/Constants";
+import { IMAGE_EXTENSION, SERVER_URL_DIRECTION } from "@/shared/Constants";
 
 type MemberProps = {
     image: string;
@@ -15,7 +15,7 @@ const Member = memo(function Member({ image, text, alt }: MemberProps) {
     return (
         <li className="member">
             <Image
-                src={`${IMAGE_SERVER_URL}direction/${image}.webp`}
+                src={`${SERVER_URL_DIRECTION}${image}.${IMAGE_EXTENSION}`}
                 width={300}
                 height={300}
                 className="member__image"
@@ -23,7 +23,8 @@ const Member = memo(function Member({ image, text, alt }: MemberProps) {
             />
             <p className="member__title">{alt}</p>
             <div className="member__conteiner">
-                <p className="member__text">{text}</p></div>
+                <p className="member__text">{text}</p>
+            </div>
         </li>
     );
 });
