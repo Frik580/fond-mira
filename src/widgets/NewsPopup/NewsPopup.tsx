@@ -7,7 +7,8 @@ import useCloseByEsc from "@/widgets/NewsPopup/lib/UseCloseByEsc";
 import { Gallery } from "../Gallery/Gallery";
 import { newsState } from "@/store/reducers/newsSlice";
 import { useEffect, useState } from "react";
-import { SERVER_URL } from "@/shared/Constants";
+import { IMAGE_EXTENSION, SERVER_URL_NEWS_IMAGE } from "@/shared/Constants";
+import VideoFrame from "@/entities/VideoFrame/VideoFrame";
 
 export const NewsPopup = () => {
     const [server, setServer] = useState("");
@@ -17,7 +18,7 @@ export const NewsPopup = () => {
     useCloseByEsc(false);
 
     useEffect(() => {
-        setServer(`${SERVER_URL}${post.slug}/`);
+        setServer(`${SERVER_URL_NEWS_IMAGE}${post.slug}/`);
     }, [post]);
 
     return (
@@ -47,12 +48,24 @@ export const NewsPopup = () => {
                                 </p>
                             ))}
                         </div>
+                        {post.video.length !== 0 && (
+                            <div className="newspopup__article">
+                                <div className="newspopup__video">
+                                    {post.video.map((item: string, i) => (
+                                        <VideoFrame key={i} video={item} />
+                                    ))}
+                                </div>
+                            </div>
+                        )}
                         {Boolean(post.photo) && (
-                            <Gallery
-                                photo={post.photo}
-                                server={server}
-                                extension={"jpg"}
-                            />
+                            <div className="newspopup__gallery">
+                                <Gallery
+                                    photo={post.photo}
+                                    server={server}
+                                    extension={IMAGE_EXTENSION}
+                                    hight={350}
+                                />
+                            </div>
                         )}
                     </div>
                 </div>

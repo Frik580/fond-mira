@@ -69,7 +69,6 @@ export const Header = () => {
                     style="header-link__conteiner"
                     styleLink="header-link"
                     styleText="header-link__text"
-
                 />
                 <HeaderLink
                     path={PATH.CONTACTS}
@@ -80,7 +79,9 @@ export const Header = () => {
                     styleText="header-link__text"
                 />
                 {/* <button className="header__button">Помочь</button> */}
-                <Book />
+                <div className="header__book">
+                    <Book />
+                </div>
             </nav>
         </header>
     );

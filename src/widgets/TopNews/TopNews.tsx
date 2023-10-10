@@ -5,7 +5,7 @@ import { useRef } from "react";
 import { HeaderTitle } from "../../entities/HeaderTitle/HeaderTitle";
 import useHeaderActive from "@/shared/hooks/UseHeaderActive";
 import { TopImage } from "@/entities/TopImage/TopImage";
-import image from "./New_header.png";
+import image from "./New_header_updated.png";
 import Link from "next/link";
 
 export const TopNews = () => {
@@ -29,13 +29,13 @@ export const TopNews = () => {
                     Фонда грантов губернатора Пермского края набирает силу
                     медиа-марафон «Кто, если не ТЫ!».
                 </p>
-                <p className="top-news__text">
+                {/* <p className="top-news__text">
                     Более 1000 участников приняли в нем участие: это школьники и
                     студенты из самых разных уголков Пермского края!
-                </p>
+                </p> */}
                 <Link
                     href="https://vk.com/public212800379"
-                    className="top-news__link"
+                    className="top-news__text top-news__link"
                     target="_blank"
                     rel="noreferrer"
                 >

@@ -22,11 +22,11 @@ type ProjectProps = {
 };
 
 export const Project: FC<ProjectProps> = ({ children, project }) => {
-    const [server, setServer] = useState('')
+    const [server, setServer] = useState("");
     const dispatch = useAppDispatch();
     const ref = useRef<HTMLDivElement | null>(null);
     useHeaderActive(ref);
-    
+
     const backgroundImageWithPhoto =
         "linear-gradient(rgba(255,255,255, 0) 20%, var(--color-dust-white) 70%)";
     const backgroundImageWithoutPhoto =
@@ -34,7 +34,7 @@ export const Project: FC<ProjectProps> = ({ children, project }) => {
 
     useEffect(() => {
         dispatch(setLinkHome());
-        setServer(`${SERVER_URL}${project.href}/`)
+        setServer(`${SERVER_URL}${project.href}/`);
     }, [project]);
 
     return (
@@ -63,7 +63,14 @@ export const Project: FC<ProjectProps> = ({ children, project }) => {
                 {children}
             </div>
             {Boolean(project.photo) && (
-                <Gallery photo={project.photo} server={server} extension={IMAGE_EXTENSION} />
+                <div className="project__gallery">
+                    <Gallery
+                        photo={project.photo}
+                        server={server}
+                        extension={IMAGE_EXTENSION}
+                        hight={400}
+                    />
+                </div>
             )}
         </section>
     );

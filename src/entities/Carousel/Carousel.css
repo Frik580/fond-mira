@@ -12,7 +12,7 @@
 
 .carousel__image {
     width: 33.3%;
-    height: 400px;
+    /* height: 400px; */
     object-fit: cover;
     position: relative;
 }

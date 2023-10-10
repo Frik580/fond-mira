@@ -21,6 +21,7 @@ export type GalleryType = {
     photo: number;
     server: string;
     extension: string;
+    hight: number;
 };
 
 export type NewsType = {

@@ -59,6 +59,7 @@
 .newspopup__article {
     display: flex;
     flex-direction: column;
+    /* align-items: center; */
     gap: 10px;
 }
 
@@ -121,6 +122,7 @@
     line-height: 1.4;
     font-weight: 400;
     font-style: normal;
+    /* text-align: start; */
     color: var(--color-black);
 }
 
@@ -138,4 +140,14 @@
     .newspopup__text {
         font-size: 16px;
     }
+}
+
+.newspopup__gallery {
+    margin-top: 20px;
+}
+
+.newspopup__video {
+    align-self: center;
+    width: 100%;
+    max-width: 600px;
 }

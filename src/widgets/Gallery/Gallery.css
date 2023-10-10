@@ -1,12 +1,13 @@
 .gallery {
     display: flex;
     justify-content: center;
-    padding: 50px 30px;
+    /* padding: 50px 30px; */
     width: 100%;
     background-color: var(--color-dust-white);
+    max-width: 1200px;
 }
 
-@media (max-width: 1023px) {
+/* @media (max-width: 1023px) {
     .gallery {
         padding: 50px 20px;
     }
@@ -16,14 +17,13 @@
     .gallery {
         padding: 50px 10px;
     }
-}
+} */
 
-.gallery__conteiner {
+/* .gallery__conteiner {
     display: flex;
     flex-direction: column;
     width: 100%;
-    background-color: var(--color-white);
     max-width: 1200px;
     z-index: 2;
     background-color: transparent;
-}
+} */

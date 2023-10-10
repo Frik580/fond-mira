@@ -7,13 +7,18 @@ import { WINDOW_SIZE, PHOTO_AMT } from "@/shared/Constants";
 import useHandleCarousel from "./lib/UseHandleCarousel";
 import { GalleryType } from "@/shared/models/Models";
 
-export const Carousel: FC<GalleryType> = ({ photo, server, extension }) => {
+export const Carousel: FC<GalleryType> = ({
+    photo,
+    server,
+    extension,
+    hight,
+}) => {
     const { images, count, amt, setCount } = useHandleCarousel(
         photo,
         WINDOW_SIZE,
         PHOTO_AMT,
         server,
-        extension
+        extension,
     );
 
     return (
@@ -24,6 +29,7 @@ export const Carousel: FC<GalleryType> = ({ photo, server, extension }) => {
                         <Image
                             key={i}
                             className="carousel__image"
+                            style={{ height: `${hight}px` }}
                             src={card}
                             width={600}
                             height={600}

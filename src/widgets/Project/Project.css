@@ -142,3 +142,19 @@
 .project-card__link {
     color: var(--color-marine);
 }
+
+.project__gallery {
+    padding: 50px 30px;
+}
+
+@media (max-width: 1023px) {
+    .project__gallery {
+        padding: 50px 20px;
+    }
+}
+
+@media (max-width: 799px) {
+    .project__gallery {
+        padding: 50px 10px;
+    }
+}
