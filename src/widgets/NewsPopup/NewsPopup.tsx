@@ -3,27 +3,33 @@
 import "./NewsPopup.css";
 import { useAppDispatch, useAppSelector } from "@/shared/hooks/redux";
 import { popupValue, setValueNewsPopup } from "@/store/reducers/popupSlice";
-import useCloseByEsc from "@/widgets/NewsPopup/lib/UseCloseByEsc";
+import useCloseByEsc from "@/shared/hooks/UseCloseByEsc";
 import { Gallery } from "../Gallery/Gallery";
 import { newsState } from "@/store/reducers/newsSlice";
 import { useEffect, useState } from "react";
 import { IMAGE_EXTENSION, SERVER_URL_NEWS_IMAGE } from "@/shared/Constants";
 import VideoFrame from "@/entities/VideoFrame/VideoFrame";
+import unfixedBody from "@/shared/lib/UnfixedBody";
 
 export const NewsPopup = () => {
     const [server, setServer] = useState("");
     const dispatch = useAppDispatch();
     const openpopup = useAppSelector(popupValue);
     const post = useAppSelector(newsState);
-    useCloseByEsc(false);
+    useCloseByEsc();
 
     useEffect(() => {
         setServer(`${SERVER_URL_NEWS_IMAGE}${post.slug}/`);
     }, [post]);
 
+    function closePopup() {
+        dispatch(setValueNewsPopup(false));
+        unfixedBody();
+    }
+
     return (
         <div
-            onClick={() => dispatch(setValueNewsPopup(false))}
+            onClick={closePopup}
             className={`newspopup ${openpopup.valueNews && "newspopup_opened"}`}
         >
             {openpopup.valueNews && (
@@ -34,7 +40,7 @@ export const NewsPopup = () => {
                     className="newspopup__conteiner"
                 >
                     <button
-                        onClick={() => dispatch(setValueNewsPopup(false))}
+                        onClick={closePopup}
                         className="newspopup__close-button"
                         type="button"
                     />

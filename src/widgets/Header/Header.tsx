@@ -9,8 +9,9 @@ import PeaceFound from "../../entities/PeaceFound/PeaceFound";
 import { useAppDispatch, useAppSelector } from "../../shared/hooks/redux";
 import { headerValue } from "@/store/reducers/headerSlice";
 import { linkState } from "@/store/reducers/linkSlice";
-import { setValuePopup } from "@/store/reducers/popupSlice";
+import { setValueNavPopup } from "@/store/reducers/popupSlice";
 import Book from "@/entities/Book/Book";
+import fixedBody from "@/shared/lib/FixedBody";
 
 export const Header = () => {
     const dispatch = useAppDispatch();
@@ -26,7 +27,8 @@ export const Header = () => {
             <nav className="header__navigation">
                 <BurgerButton
                     click={() => {
-                        dispatch(setValuePopup(true));
+                        dispatch(setValueNavPopup(true));
+                        fixedBody();
                     }}
                 />
                 <HeaderLink

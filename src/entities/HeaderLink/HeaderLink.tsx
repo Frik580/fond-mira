@@ -5,7 +5,7 @@ import { useAppDispatch } from "../../shared/hooks/redux";
 import { FC } from "react";
 import handleLinkState from "./lib/LinkState";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
+import unfixedBody from "@/shared/lib/UnfixedBody";
 
 type HeaderLinkProps = {
     title: string;
@@ -28,6 +28,7 @@ export const HeaderLink: FC<HeaderLinkProps> = ({
     const router = useRouter();
 
     const routing = () => {
+        unfixedBody();
         handleLinkState(path, dispatch);
         router.push(path);
     };

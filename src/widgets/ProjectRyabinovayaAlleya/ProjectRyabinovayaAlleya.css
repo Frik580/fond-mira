@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    position: relative;
 }
 
 .project-card__text {
@@ -65,4 +66,10 @@
 
 .project-card__link {
     color: var(--color-marine);
+}
+
+.project-card__qr {
+    align-self: center;
+    width: 132px;
+    height: 132px;
 }

@@ -8,11 +8,11 @@ import {
     setLinkPartners,
     setLinkProjectslist
 } from "@/store/reducers/linkSlice";
-import { setValuePopup } from "@/store/reducers/popupSlice";
+import { setValueNavPopup } from "@/store/reducers/popupSlice";
 
 
 export default function handleLinkState(path: string, dispatch: any) {
-    dispatch(setValuePopup(false));
+    dispatch(setValueNavPopup(false));
     dispatch(setLinkHome());
     path === PATH.ABOUT_US && dispatch(setLinkAboutus(true));
     path === PATH.NEWS && dispatch(setLinkNewslist(true));

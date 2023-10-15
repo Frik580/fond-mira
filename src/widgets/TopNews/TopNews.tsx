@@ -17,7 +17,7 @@ export const TopNews = () => {
             <TopImage src={image} />
             <div ref={ref} className="top-news__title-conteiner">
                 <HeaderTitle
-                    title="Пермские региональное отделение Международного общественного фонда
+                    title="Пермское региональное отделение Международного общественного фонда
             &#171;Российский фонд мира&#187;"
                 />
             </div>

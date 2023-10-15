@@ -2,24 +2,31 @@
 
 import "./NavPopup.css";
 import { useAppDispatch, useAppSelector } from "@/shared/hooks/redux";
-import { popupValue, setValuePopup } from "@/store/reducers/popupSlice";
+import { popupValue, setValueNavPopup } from "@/store/reducers/popupSlice";
 import { linkState } from "@/store/reducers/linkSlice";
 import { HeaderLink } from "@/entities/HeaderLink/HeaderLink";
 import { TITLES } from "@/shared/Constants";
-import useCloseByEsc from "@/widgets/NavPopup/lib/UseCloseByEsc";
+// import useCloseByEsc from "@/widgets/NavPopup/lib/UseCloseByEsc";
+import useCloseByEsc from "@/shared/hooks/UseCloseByEsc";
+import unfixedBody from "@/shared/lib/UnfixedBody";
 
 export const NavPopup = () => {
     const dispatch = useAppDispatch();
     const openpopup = useAppSelector(popupValue);
     const link = useAppSelector(linkState);
-    useCloseByEsc(false)
+    useCloseByEsc();
+
+    function closePopup() {
+        dispatch(setValueNavPopup(false));
+        unfixedBody();
+    }
 
     return (
         <div
-            onClick={() => dispatch(setValuePopup(false))}
-            className={`navpopup ${openpopup.value && "navpopup_opened"}`}
+            onClick={closePopup}
+            className={`navpopup ${openpopup.valueNav && "navpopup_opened"}`}
         >
-            {openpopup.value && (
+            {openpopup.valueNav && (
                 <div
                     onClick={(e) => {
                         e.stopPropagation();
@@ -27,7 +34,7 @@ export const NavPopup = () => {
                     className="navpopup__conteiner"
                 >
                     <button
-                        onClick={() => dispatch(setValuePopup(false))}
+                        onClick={closePopup}
                         className="navpopup__close-button"
                         type="button"
                     />

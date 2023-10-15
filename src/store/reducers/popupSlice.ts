@@ -3,12 +3,12 @@ import type { PayloadAction } from '@reduxjs/toolkit'
 import type { RootState } from '../store'
 
 type PopupState = {
-    value: boolean,
+    valueNav: boolean,
     valueNews: boolean,
 }
 
 const initialState: PopupState = {
-    value: false,
+    valueNav: false,
     valueNews: false,
 }
 
@@ -17,8 +17,8 @@ export const popupSlice = createSlice({
     // `createSlice` will infer the state type from the `initialState` argument
     initialState,
     reducers: {
-        setValuePopup: (state, action: PayloadAction<boolean>) => {
-            state.value = action.payload 
+        setValueNavPopup: (state, action: PayloadAction<boolean>) => {
+            state.valueNav = action.payload 
         },
         setValueNewsPopup: (state, action: PayloadAction<boolean>) => {
             state.valueNews = action.payload 
@@ -26,7 +26,7 @@ export const popupSlice = createSlice({
     },
 })
 
-export const { setValuePopup, setValueNewsPopup } = popupSlice.actions
+export const { setValueNavPopup, setValueNewsPopup } = popupSlice.actions
 
 // Other code such as selectors can use the imported `RootState` type
 export const popupValue = (state: RootState) => state.popup
