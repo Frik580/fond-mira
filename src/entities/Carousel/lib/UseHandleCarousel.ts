@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { SetStateAction, useEffect, useState } from "react";
 
 export default function useHandleCarousel(
     photo: number,
@@ -8,6 +8,7 @@ export default function useHandleCarousel(
     extension: string
 ) {
     const [images, setImages] = useState<string[] | null>(null);
+    const [imagesLite, setImagesLite] = useState<string[] | null>(null);
     const [count, setCount] = useState<number>(0);
     const [width, setWidth] = useState(window.innerWidth);
     const [amt, setAmt] = useState<number>(0);
@@ -36,15 +37,23 @@ export default function useHandleCarousel(
         }
 
         const array = [];
+        // const array2: SetStateAction<string[] | null> = [];
+
         for (let i = 1 + count * amt; i <= amt + count * amt; i++) {
-            i <= photo &&
+            if (i <= photo) {
                 array.push(
                     `${server}${i}.${extension}`
-                );
+                )
+                // array2.push(
+                //     `${server}lite/${i}.${extension}`
+                // )
+            }
 
         }
         setImages(array);
+        // setImagesLite(array2)
+
     }, [amt, count, width]);
 
-    return { images, count, amt, setCount };
+    return { images, imagesLite, count, amt, setCount };
 }

@@ -1,9 +1,9 @@
 .projects-list {
+    width: 100vw;
     display: flex;
     flex-direction: column;
     padding-top: 100px;
     padding-bottom: 5px;
-    /* background-color: var(--color-dust-white); */
     background-color: var(--color-black);
 
 }
@@ -12,7 +12,6 @@
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    /* grid-template-columns: repeat(auto-fit, 500px); */
     justify-content: center;
     list-style-type: none;
     padding-top: 50px;

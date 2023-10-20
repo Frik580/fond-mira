@@ -28,8 +28,8 @@ export const HeaderLink: FC<HeaderLinkProps> = ({
     const router = useRouter();
 
     const routing = () => {
-        unfixedBody();
         handleLinkState(path, dispatch);
+        unfixedBody();
         router.push(path);
     };
 

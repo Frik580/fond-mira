@@ -44,15 +44,17 @@ a {
 }
 
 html::-webkit-scrollbar {
-    width: 10px;
+    width: 8px;
 }
 
 html::-webkit-scrollbar-thumb {
-    background-color: var(--color-gray);
+    background-color: var(--color-white);
     border-radius: 4px;
-    width: 5px;
+    /* width: 5px; */
+    box-shadow:
+        inset 0px 0px 2px rgb(0 0 0 / 60%);
 }
 
-.main {
+/* .main {
     min-height: 100vh;
-}
+} */

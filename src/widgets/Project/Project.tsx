@@ -6,6 +6,7 @@ import {
     IMAGE_EXTENSION,
     SERVER_URL,
     SERVER_URL_PROJECTS_COVER,
+    SERVER_URL_PROJECTS_COVER_LITE,
 } from "@/shared/Constants";
 import { FC, useEffect, useRef, useState } from "react";
 import { Support } from "@/entities/Support/Support";
@@ -52,6 +53,7 @@ export const Project: FC<ProjectProps> = ({ children, project }) => {
         >
             <TopImage
                 src={`${SERVER_URL_PROJECTS_COVER}${project.src}.${IMAGE_EXTENSION}`}
+                srclite={`${SERVER_URL_PROJECTS_COVER_LITE}${project.src}.${IMAGE_EXTENSION}`}
             />
             <div ref={ref} className="project__title">
                 <HeaderTitle title={project.title} />

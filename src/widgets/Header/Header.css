@@ -20,7 +20,7 @@
 
 .header_visibility {
     width: 100%;
-    background-color: rgba(255, 255, 255, .3);
+    background-color: rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(20px);
     padding: 10px 30px;
     display: flex;
@@ -63,4 +63,8 @@
 .header__book {
     height: 40px;
     width: 180px;
+}
+
+.header_margin {
+    margin-right: 7.5px;
 }

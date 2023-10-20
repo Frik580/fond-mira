@@ -13,14 +13,12 @@ export const Gallery: FC<GalleryType> = ({
 }) => {
     return (
         <section className="gallery">
-            {/* <div className="gallery__conteiner"> */}
             <Carousel
                 photo={photo}
                 server={server}
                 extension={extension}
                 hight={hight}
             />
-            {/* </div> */}
         </section>
     );
 };

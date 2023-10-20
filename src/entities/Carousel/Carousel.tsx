@@ -1,6 +1,6 @@
 // "use client";
 
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import "./Carousel.css";
 import Image from "next/image";
 import { WINDOW_SIZE, PHOTO_AMT } from "@/shared/Constants";
@@ -24,17 +24,25 @@ export const Carousel: FC<GalleryType> = ({
     return (
         <>
             {images && (
-                <div className="carousel__conteiner">
+                <div className="carousel__conteiner" style={{ height: `${hight}px` }}>
                     {images.map((card: string, i: number) => (
-                        <Image
+                        <div
                             key={i}
                             className="carousel__image"
-                            style={{ height: `${hight}px` }}
-                            src={card}
-                            width={600}
-                            height={600}
-                            alt={`фото ${i}`}
-                        />
+                            // style={{
+                            //     height: `${hight}px`,
+                            //     backgroundImage: `url(${imagesLite[i]})`,
+                            // }}
+                        >
+                            <Image
+                                className="carousel__pic"
+                                style={{ height: `${hight}px` }}
+                                src={card}
+                                width={600}
+                                height={600}
+                                alt={`фото ${i}`}
+                            />
+                        </div>
                     ))}
                     {count !== 0 && (
                         <button
