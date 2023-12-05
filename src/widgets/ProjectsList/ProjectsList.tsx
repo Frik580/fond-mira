@@ -19,8 +19,8 @@ export const ProjectsList = () => {
     useLinkDeactive(ref, setLinkProjectslist(false));
 
     return (
-        <section ref={ref} className="projects-list">
-            <MainTitle id="projects-list" text={TITLES.OUR_PROJECTS} />
+        <section id="projects-list" ref={ref} className="projects-list">
+            <MainTitle text={TITLES.OUR_PROJECTS} />
             <div className="projects-list__conteiner">
                 {projects.length > 0 &&
                     projects.map((card: ProjectType) => (

@@ -13,8 +13,8 @@ export const PartnersList = () => {
     useLinkDeactive(ref, setLinkPartners(false));
 
     return (
-        <section ref={ref} className="partners">
-            <MainTitle id="partners" text={TITLES.PARTNERS} />
+        <section id="partners" ref={ref} className="partners">
+            <MainTitle text={TITLES.PARTNERS} />
             <div className="partners__conteiner">
                 <Partner
                     href="https://vklmolod.ru"

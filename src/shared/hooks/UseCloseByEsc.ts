@@ -1,13 +1,13 @@
 import { useEffect } from "react";
 import { useAppDispatch } from "./redux";
-import { setValueNavPopup, setValueNewsPopup } from "@/store/reducers/popupSlice";
+import { setValueNavPopup, setValuePhotoPopup } from "@/store/reducers/popupSlice";
 import unfixedBody from "../lib/UnfixedBody";
 
 export default function useCloseByEsc() {
     const dispatch = useAppDispatch();
     const disp = () => {
         unfixedBody();
-        dispatch(setValueNewsPopup(false));
+        dispatch(setValuePhotoPopup(false));
         dispatch(setValueNavPopup(false));
     }
 

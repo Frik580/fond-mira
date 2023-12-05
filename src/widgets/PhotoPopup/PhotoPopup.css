@@ -55,8 +55,7 @@
 .newspopup__post::-webkit-scrollbar-thumb {
     background-color: var(--color-white);
     border-radius: 4px;
-    box-shadow:
-        inset 0px 0px 2px rgb(0 0 0 / 60%);
+    box-shadow: inset 0px 0px 2px rgb(0 0 0 / 60%);
 }
 
 .newspopup__article {
@@ -144,8 +143,7 @@
 }
 
 .newspopup__gallery {
-    margin-top: 20px;
-    margin-bottom: 50px;
+    margin: 50px 0;
 }
 
 .newspopup__video {

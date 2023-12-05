@@ -12,6 +12,7 @@ import { linkState } from "@/store/reducers/linkSlice";
 import { setValueNavPopup } from "@/store/reducers/popupSlice";
 import Book from "@/entities/Book/Book";
 import fixedBody from "@/shared/lib/FixedBody";
+import Logo from "@/entities/Logo/Logo";
 
 export const Header = () => {
     const dispatch = useAppDispatch();
@@ -19,11 +20,18 @@ export const Header = () => {
     const link = useAppSelector(linkState);
 
     return (
-        <header className={header ? "header" : "header_visibility"}>
-            <div className="header__links">
-                <MainLogo />
-                <PeaceFound />
-            </div>
+        // <header className={`header ${header ? "" : "header_visibility"}`}>
+                    <header className="header">
+
+            {!header ? (
+                <div className="header__links">
+                    <MainLogo />
+                    <PeaceFound />
+                </div>
+            ) : (
+                <Logo />
+            )}
+
             <nav className="header__navigation">
                 <BurgerButton
                     click={() => {

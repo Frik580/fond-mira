@@ -13,10 +13,11 @@ export const Documents = () => {
     useHeaderActive(ref);
     return (
         <section className="documents">
-            <div ref={ref} className="documents__title">
-                <HeaderTitle title={TITLES.DOCUMENTS} />
+            <div ref={ref} style={{height: "20px"}}>
+                {/* <HeaderTitle title={TITLES.DOCUMENTS} /> */}
             </div>
             <div className="documents__conteiner">
+                <h1 className="documents__title">{TITLES.DOCUMENTS}</h1>
                 {DOCUMENTS.map((doc: DocumentsType) => (
                     <Document key={doc.id} title={doc.title} href={doc.href} />
                 ))}

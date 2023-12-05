@@ -10,12 +10,12 @@ import {
 } from "@/shared/Constants";
 import { FC, useEffect, useRef, useState } from "react";
 import { Support } from "@/entities/Support/Support";
-import { Gallery } from "../Gallery/Gallery";
 import useHeaderActive from "@/shared/hooks/UseHeaderActive";
 import { useAppDispatch } from "@/shared/hooks/redux";
 import { setLinkHome } from "@/store/reducers/linkSlice";
 import { TopImage } from "@/entities/TopImage/TopImage";
 import { ProjectType } from "@/shared/models/Models";
+import { Carousel } from "../Carousel/Carousel";
 
 type ProjectProps = {
     children: React.ReactNode;
@@ -55,18 +55,19 @@ export const Project: FC<ProjectProps> = ({ children, project }) => {
                 src={`${SERVER_URL_PROJECTS_COVER}${project.src}.${IMAGE_EXTENSION}`}
                 srclite={`${SERVER_URL_PROJECTS_COVER_LITE}${project.src}.${IMAGE_EXTENSION}`}
             />
-            <div ref={ref} className="project__title">
-                <HeaderTitle title={project.title} />
+            <div ref={ref} style={{height: "20px"}}>
+                {/* <HeaderTitle title={project.title} /> */}
             </div>
             <div className="project__conteiner">
                 <div className="project__partner">
                     <Support partner={project.partner} />
                 </div>
+                <h1 className="project__title">{project.title}</h1>
                 {children}
             </div>
             {Boolean(project.photo) && (
                 <div className="project__gallery">
-                    <Gallery
+                    <Carousel
                         photo={project.photo}
                         server={server}
                         extension={IMAGE_EXTENSION}

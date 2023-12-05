@@ -4,37 +4,11 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    border-radius: 20px;
+    /* border-radius: 20px; */
     overflow: hidden;
     gap: 10px;
-    background-color: transparent
-}
-
-.carousel__image {
-    width: 33.3%;
-    /* height: 400px; */
-    /* object-fit: cover; */
-    position: relative;
-    background-size: cover;
-    background-position: center;
-}
-
-@media (max-width: 1000px) {
-    .carousel__image {
-        width: 50%;
-    }
-}
-
-@media (max-width: 660px) {
-    .carousel__image {
-        width: 100%;
-    }
-}
-
-.carousel__pic {
-    width: 100%;
-    object-fit: cover;
-    object-position: center;
+    background-color: transparent;
+    max-width: 1200px;
 }
 
 .carousel__button {
@@ -48,12 +22,7 @@
     cursor: pointer;
     background: none;
     outline: none;
-    /* opacity: .5; */
-    transition: all .3s ease-in-out;
-}
-
-.carousel__button:hover {
-    /* opacity: 1; */
+    transition: all 0.3s ease-in-out;
 }
 
 .carousel__button_left {
@@ -72,18 +41,18 @@
     margin: 0;
     padding: 0;
     top: calc(50% - 25px);
-    background-color: rgba(255, 255, 255, .5);
+    background-color: rgba(255, 255, 255, 0.5);
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(2px);
 }
 
 .carousel__arrow_left {
     left: 10px;
-    transition: all .3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 .carousel__button_left:hover > .carousel__arrow_left {
-    background-color: rgba(255, 255, 255, .9);
+    background-color: rgba(255, 255, 255, 0.9);
     left: 5px;
 }
 
@@ -113,11 +82,11 @@
 
 .carousel__arrow_right {
     right: 10px;
-    transition: all .3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 .carousel__button_right:hover > .carousel__arrow_right {
-    background-color: rgba(255, 255, 255, .9);
+    background-color: rgba(255, 255, 255, 0.9);
     right: 5px;
 }
 

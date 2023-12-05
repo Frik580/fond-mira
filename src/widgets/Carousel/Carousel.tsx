@@ -1,11 +1,11 @@
 // "use client";
 
-import { FC, useEffect } from "react";
+import { FC } from "react";
 import "./Carousel.css";
-import Image from "next/image";
 import { WINDOW_SIZE, PHOTO_AMT } from "@/shared/Constants";
 import useHandleCarousel from "./lib/UseHandleCarousel";
 import { GalleryType } from "@/shared/models/Models";
+import { CarouselImage } from "@/entities/CarouselImage/CarouselImage";
 
 export const Carousel: FC<GalleryType> = ({
     photo,
@@ -13,7 +13,7 @@ export const Carousel: FC<GalleryType> = ({
     extension,
     hight,
 }) => {
-    const { images, count, amt, setCount } = useHandleCarousel(
+    const { images, imagesLite, count, amt, setCount } = useHandleCarousel(
         photo,
         WINDOW_SIZE,
         PHOTO_AMT,
@@ -23,26 +23,19 @@ export const Carousel: FC<GalleryType> = ({
 
     return (
         <>
-            {images && (
-                <div className="carousel__conteiner" style={{ height: `${hight}px` }}>
+            {images && imagesLite && (
+                <div
+                    className="carousel__conteiner"
+                    style={{ height: `${hight}px` }}
+                >
                     {images.map((card: string, i: number) => (
-                        <div
+                        <CarouselImage
                             key={i}
-                            className="carousel__image"
-                            // style={{
-                            //     height: `${hight}px`,
-                            //     backgroundImage: `url(${imagesLite[i]})`,
-                            // }}
-                        >
-                            <Image
-                                className="carousel__pic"
-                                style={{ height: `${hight}px` }}
-                                src={card}
-                                width={600}
-                                height={600}
-                                alt={`фото ${i}`}
-                            />
-                        </div>
+                            src={card}
+                            srclite={imagesLite[i]}
+                            hight={hight}
+                            i={i}
+                        />
                     ))}
                     {count !== 0 && (
                         <button

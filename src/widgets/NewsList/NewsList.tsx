@@ -1,56 +1,62 @@
 "use client";
 
 import "./NewsList.css";
-import Image from "next/image";
-import imageNews from "./image.png";
 import { MainTitle } from "../../entities/MainTitle/MainTitle";
 import { TITLES } from "../../shared/Constants";
-import { News } from "../../entities/News/News";
+import { News } from "../News/News";
 import { DotsButton } from "@/features/DotsButton/DotsButton";
 import { useEffect, useRef, useState } from "react";
 import { setLinkNewslist } from "../../store/reducers/linkSlice";
 import useLinkDeactive from "../../shared/hooks/UseLinkDeactive";
 import { newsAPI } from "@/shared/services/NewsService";
 import { NewsType } from "@/shared/models/Models";
+import { NEWS_AMT } from "@/shared/Constants";
 
 export const NewsList = () => {
-    const [newsArray, setNewsArray] = useState<NewsType[]>([]);
     const { data: news } = newsAPI.useFetchAllNewsQuery("");
+    const [newsArray, setNewsArray] = useState<NewsType[]>([]);
+    const [index, setIndex] = useState(0);
 
     useEffect(() => {
-        console.log(news)
         if (news) {
             const array = [...news];
-            const newarray = array.reverse();
-            setNewsArray(newarray);
+            const newArray = array.reverse();
+            const sortArray = newArray
+                .filter(function (item, i) {
+                    while (i < NEWS_AMT + index * NEWS_AMT) {
+                        return item;
+                    }
+                })
+                .filter(function (item, i) {
+                    while (i >= index * NEWS_AMT) {
+                        return item;
+                    }
+                });
+            setNewsArray(sortArray);
         }
-    }, [news]);
+    }, [news, index]);
 
-    const setIndex = (i: number) => {
-        console.log(i);
+    const handleIndex = (i: number) => {
+        setIndex(i);
     };
 
     const ref = useRef<HTMLDivElement | null>(null);
     useLinkDeactive(ref, setLinkNewslist(false));
 
     return (
-        <section ref={ref} className="news-list">
-            <MainTitle id="news-list" text={TITLES.NEWS} />
+        <section id="news-list" ref={ref} className="news-list">
+            <MainTitle text={TITLES.NEWS} />
             <div className="news-list__conteiner">
                 <div className="news-list__block">
                     <ul className="news-list__news">
-                        {news &&
-                            newsArray.map((post: NewsType) => (
-                                <News key={post._id} post={post} />
-                            ))}
+                        {newsArray.map((post: NewsType) => (
+                            <News key={post._id} post={post} />
+                        ))}
                     </ul>
-                    {/* <DotsButton lenght={18} index={setIndex} /> */}
+                    {news && (
+                        <DotsButton lenght={news.length} index={handleIndex} />
+                    )}
                 </div>
-                {/* <Image
-                    src={imageNews}
-                    className="news-list__image"
-                    alt="фото"
-                /> */}
             </div>
         </section>
     );

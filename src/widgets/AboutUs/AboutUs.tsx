@@ -14,12 +14,12 @@ export const AboutUs = () => {
     useLinkDeactive(ref, setLinkAboutus(false));
 
     return (
-        <section ref={ref} className="about-us">
-            <MainTitle id="about-us" text={TITLES.ABOUT_US} />
+        <section id="about-us" ref={ref} className="about-us">
+            <MainTitle text={TITLES.ABOUT_US} />
             <div className="about-us__columns">
                 <div className="about-us__member">
                     <Member
-                        image="gera"
+                        image="gera3"
                         text="председатель Правления ПКО МОФ «Российский фонд мира», 
                     Председатель Совета ПРООУ «Ассоциация «ЛУЧ», 
                     Почётный работник общего образования РФ"
@@ -51,7 +51,7 @@ export const AboutUs = () => {
                         деятельность по сохранению Живой Памяти о Героях – наших
                         земляках, погибших в годы Великой Отечественной войны.
                     </p>
-                    <p className="about-us__text">
+                    {/* <p className="about-us__text">
                         Реализация молодёжных добровольческих Проектов, развитие
                         молодёжной народной дипломатии, поддержка традиционных
                         духовных ценностей многонациональной культуры Пермского
@@ -63,7 +63,7 @@ export const AboutUs = () => {
                         единомышленников, сообщество неравнодушных людей
                         Пермского края и России, объединившихся для реализации
                         миротворческих инициатив и добровольческих проектов.
-                    </p>
+                    </p> */}
                     <p
                         className="about-us__text"
                         style={{ textAlign: "right" }}

@@ -1,0 +1,129 @@
+.carouselimage {
+    width: 33.3%;
+    /* width: 100%; */
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    /* max-width: 400px; */
+    border-radius: 20px;
+}
+
+.carouselimage_full {
+    position: fixed;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.8);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s;
+    backdrop-filter: blur(2px);
+}
+
+.carouselimage_full_opened {
+    cursor: pointer;
+    visibility: visible;
+    opacity: 1;
+}
+
+@media (max-width: 1000px) {
+    .carouselimage {
+        width: 50%;
+    }
+}
+
+@media (max-width: 660px) {
+    .carouselimage {
+        width: 100%;
+    }
+}
+
+.carouselimage::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    animation: pulse 2.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        background-color: rgba(255, 255, 255, 0);
+    }
+    50% {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+    100% {
+        background-color: rgba(255, 255, 255, 0);
+    }
+}
+
+.carouselimage__image {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+    position: relative;
+    border-radius: 20px;
+    margin: auto;
+}
+
+.carouselimage__image.loaded {
+    opacity: 1;
+}
+
+.carouselimage__image.loaded::before {
+    content: none;
+    animation: none;
+}
+
+.carouselimage__image_full {
+    margin: auto;
+    max-height: calc(100vh - 100px);
+    max-width: calc(100vw - 30px);
+    width: auto;
+    height: auto;
+    border-radius: 20px;
+    cursor: default;
+}
+
+.carouselimage__close-button {
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    border: none;
+    cursor: pointer;
+    background: none;
+    outline: none;
+}
+
+.carouselimage__close-button:before {
+    position: absolute;
+    content: "";
+    height: 15px;
+    border: 2px solid var(--color-gray);
+    top: -1px;
+    left: 6.5px;
+    background-color: var(--color-gray);
+    transform: rotate(45deg);
+    border-radius: 1px;
+}
+
+.carouselimage__close-button:after {
+    position: absolute;
+    content: "";
+    height: 15px;
+    border: 2px solid var(--color-gray);
+    top: -1px;
+    left: 6.5px;
+    background-color: var(--color-gray);
+    transform: rotate(-45deg);
+    border-radius: 1px;
+}

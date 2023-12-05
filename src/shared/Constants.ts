@@ -9,11 +9,10 @@ export const PHOTO_AMT = {
     SMALL: 1,
 };
 
-export const NEWS_AMT = 3;
+export const NEWS_AMT = 5;
 
 export const BASE_URL = 'https://fondmira-pk.ru/'
 export const SERVER_URL = 'https://storage.yandexcloud.net/'
-// export const SERVER_URL_DOCUMENTS = `${SERVER_URL}documents-file/`
 export const SERVER_URL_DOCUMENTS = 'documents/'
 export const SERVER_URL_DIRECTION = `${SERVER_URL}direction/`
 export const SERVER_URL_PARTNERS = `${SERVER_URL}partners-images/`

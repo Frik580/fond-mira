@@ -1,7 +1,0 @@
-.gallery {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    background-color: var(--color-dust-white);
-    max-width: 1200px;
-}

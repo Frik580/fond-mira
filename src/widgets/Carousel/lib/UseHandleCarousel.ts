@@ -37,21 +37,21 @@ export default function useHandleCarousel(
         }
 
         const array = [];
-        // const array2: SetStateAction<string[] | null> = [];
+        const array2: SetStateAction<string[] | null> = [];
 
         for (let i = 1 + count * amt; i <= amt + count * amt; i++) {
             if (i <= photo) {
                 array.push(
                     `${server}${i}.${extension}`
                 )
-                // array2.push(
-                //     `${server}lite/${i}.${extension}`
-                // )
+                array2.push(
+                    `${server}lite/${i}.${extension}`
+                )
             }
 
         }
         setImages(array);
-        // setImagesLite(array2)
+        setImagesLite(array2)
 
     }, [amt, count, width]);
 
