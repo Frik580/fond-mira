@@ -6,15 +6,12 @@ import { popupValue, setValueNavPopup } from "@/store/reducers/popupSlice";
 import { linkState } from "@/store/reducers/linkSlice";
 import { HeaderLink } from "@/entities/HeaderLink/HeaderLink";
 import { TITLES } from "@/shared/Constants";
-// import useCloseByEsc from "@/widgets/NavPopup/lib/UseCloseByEsc";
-import useCloseByEsc from "@/shared/hooks/UseCloseByEsc";
 import unfixedBody from "@/shared/lib/UnfixedBody";
 
 export const NavPopup = () => {
     const dispatch = useAppDispatch();
     const openpopup = useAppSelector(popupValue);
     const link = useAppSelector(linkState);
-    useCloseByEsc();
 
     function closePopup() {
         dispatch(setValueNavPopup(false));

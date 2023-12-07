@@ -19,7 +19,7 @@ const Book = memo(function Book() {
                 width={80}
                 height={80}
                 className="book__image"
-                alt="логотип фонда мира"
+                alt="орден ВОВ"
             />
             <p className="book__title">Книга Памяти</p>
             <p className="book__text">1941 - 1945</p>

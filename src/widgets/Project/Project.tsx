@@ -55,9 +55,7 @@ export const Project: FC<ProjectProps> = ({ children, project }) => {
                 src={`${SERVER_URL_PROJECTS_COVER}${project.src}.${IMAGE_EXTENSION}`}
                 srclite={`${SERVER_URL_PROJECTS_COVER_LITE}${project.src}.${IMAGE_EXTENSION}`}
             />
-            <div ref={ref} style={{height: "20px"}}>
-                {/* <HeaderTitle title={project.title} /> */}
-            </div>
+            <div ref={ref} style={{ height: "20px" }} />
             <div className="project__conteiner">
                 <div className="project__partner">
                     <Support partner={project.partner} />

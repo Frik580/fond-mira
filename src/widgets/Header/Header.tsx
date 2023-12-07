@@ -20,8 +20,8 @@ export const Header = () => {
     const link = useAppSelector(linkState);
 
     return (
-        // <header className={`header ${header ? "" : "header_visibility"}`}>
-                    <header className="header">
+        <header className={`header ${header ? "" : "header_visibility"}`}>
+                    {/* <header className="header"> */}
 
             {!header ? (
                 <div className="header__links">
