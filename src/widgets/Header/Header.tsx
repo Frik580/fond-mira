@@ -13,8 +13,10 @@ import { setValueNavPopup } from "@/store/reducers/popupSlice";
 import Book from "@/entities/Book/Book";
 import fixedBody from "@/shared/lib/FixedBody";
 import Logo from "@/entities/Logo/Logo";
+import useCloseByEsc from "@/shared/hooks/UseCloseByEsc";
 
 export const Header = () => {
+    useCloseByEsc();
     const dispatch = useAppDispatch();
     const header = useAppSelector(headerValue);
     const link = useAppSelector(linkState);
@@ -73,7 +75,6 @@ export const Header = () => {
                 />
                 <HeaderLink
                     path={PATH.DOCUMENTS}
-                    // path='/documents'
                     title={TITLES.DOCUMENTS}
                     active={link.documents}
                     style="header-link__conteiner"

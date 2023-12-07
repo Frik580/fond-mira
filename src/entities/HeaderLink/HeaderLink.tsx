@@ -27,10 +27,6 @@ export const HeaderLink: FC<HeaderLinkProps> = ({
     const dispatch = useAppDispatch();
     const router = useRouter();
 
-    // useEffect(() => {
-    //     handleLinkState(path, dispatch)
-    // }, [path]);
-
     const routing = () => {
         handleLinkState(path, dispatch);
         unfixedBody();

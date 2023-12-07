@@ -1,7 +1,6 @@
 // "use client";
 
 import "./Project.css";
-import { HeaderTitle } from "@/entities/HeaderTitle/HeaderTitle";
 import {
     IMAGE_EXTENSION,
     SERVER_URL,

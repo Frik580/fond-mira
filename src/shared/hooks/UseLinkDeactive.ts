@@ -12,7 +12,7 @@ export default function useLinkDeactive(ref: MutableRefObject<HTMLDivElement | n
                     !entry.isIntersecting && dispatch(falsevalue);
                 });
             }
-            , { threshold: 0.2 }
+                , { threshold: 0.2 }
             );
 
             observer.observe(currentRef);
