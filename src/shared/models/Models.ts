@@ -21,7 +21,8 @@ export type GalleryType = {
     photo: number;
     server: string;
     extension: string;
-    hight: number;
+    height: number;
+    width?: number;
 };
 
 export type NewsType = {

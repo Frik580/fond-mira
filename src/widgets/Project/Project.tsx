@@ -68,7 +68,7 @@ export const Project: FC<ProjectProps> = ({ children, project }) => {
                         photo={project.photo}
                         server={server}
                         extension={IMAGE_EXTENSION}
-                        hight={400}
+                        height={400}
                     />
                 </div>
             )}

@@ -12,23 +12,31 @@ import fixedBody from "@/shared/lib/FixedBody";
 type CarouselImageProps = {
     src: string | StaticImageData;
     srclite?: string | undefined;
-    hight: number;
+    height: number;
+    width?: number;
     i: number;
+    fullphoto?: number;
+    cursor: string;
 };
 
 export const CarouselImage: FC<CarouselImageProps> = ({
     src,
     srclite,
-    hight,
+    height,
+    width,
     i,
+    fullphoto,
+    cursor,
 }) => {
     const [loaded, setLoaded] = useState(false);
     const dispatch = useAppDispatch();
 
     function openPopup() {
-        dispatch(setValuePhoto(src));
-        dispatch(setValuePhotoPopup(true));
-        fixedBody();
+        if (fullphoto !== 0) {
+            dispatch(setValuePhoto(src));
+            dispatch(setValuePhotoPopup(true));
+            fixedBody();
+        }
     }
 
     return (
@@ -36,7 +44,8 @@ export const CarouselImage: FC<CarouselImageProps> = ({
             <div
                 className="carouselimage"
                 style={{
-                    height: `${hight}px`,
+                    height: height,
+                    width: width,
                     backgroundImage: `url(${srclite})`,
                 }}
                 onClick={openPopup}
@@ -44,7 +53,11 @@ export const CarouselImage: FC<CarouselImageProps> = ({
                 <Image
                     src={src}
                     className={`carouselimage__image ${loaded ? "loaded" : ""}`}
-                    style={{ height: `${hight}px`, cursor: "pointer" }}
+                    style={{
+                        height: height,
+                        width: width,
+                        cursor: cursor,
+                    }}
                     width={400}
                     height={400}
                     alt={`фото ${i}`}

@@ -11,7 +11,8 @@ export const Carousel: FC<GalleryType> = ({
     photo,
     server,
     extension,
-    hight,
+    height,
+    // width,
 }) => {
     const { images, imagesLite, count, amt, setCount } = useHandleCarousel(
         photo,
@@ -26,14 +27,15 @@ export const Carousel: FC<GalleryType> = ({
             {images && imagesLite && (
                 <div
                     className="carousel__conteiner"
-                    style={{ height: `${hight}px` }}
+                    style={{ height: `${height}px` }}
                 >
                     {images.map((card: string, i: number) => (
                         <CarouselImage
                             key={i}
                             src={card}
                             srclite={imagesLite[i]}
-                            hight={hight}
+                            height={height}
+                            cursor={"pointer"}
                             i={i}
                         />
                     ))}
