@@ -1,7 +1,6 @@
 "use client";
 
 import "./ProjectVetvi.css";
-import Image from "next/image";
 import { Project } from "../Project/Project";
 import { useAppSelector } from "@/shared/hooks/redux";
 import { projectState } from "@/store/reducers/projectSlice";

@@ -12,7 +12,6 @@ export const Carousel: FC<GalleryType> = ({
     server,
     extension,
     height,
-    // width,
 }) => {
     const { images, imagesLite, count, amt, setCount } = useHandleCarousel(
         photo,

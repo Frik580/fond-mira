@@ -32,7 +32,7 @@ export const CarouselImage: FC<CarouselImageProps> = ({
     const dispatch = useAppDispatch();
 
     function openPopup() {
-        if (fullphoto !== 0) {
+        if (fullphoto !== 0 && loaded) {
             dispatch(setValuePhoto(src));
             dispatch(setValuePhotoPopup(true));
             fixedBody();
@@ -53,15 +53,18 @@ export const CarouselImage: FC<CarouselImageProps> = ({
                 <Image
                     src={src}
                     className={`carouselimage__image ${loaded ? "loaded" : ""}`}
-                    style={{
+                    style={loaded ? {
                         height: height,
-                        width: width,
                         cursor: cursor,
+                    } : {
+                        // height: height,
+                        cursor: "default",
                     }}
                     width={400}
                     height={400}
                     alt={`фото ${i}`}
                     onLoad={() => setLoaded(true)}
+                    priority
                 />
             </div>
         </>

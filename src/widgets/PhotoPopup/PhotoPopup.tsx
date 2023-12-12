@@ -19,15 +19,15 @@ export const PhotoPopup = () => {
 
     return (
         <div
-            className={`carouselimage_full ${
-                openpopup.valuePhoto && "carouselimage_full_opened"
+            className={`photo_full ${
+                openpopup.valuePhoto && "photo_full_opened"
             }`}
             onClick={closePopup}
         >
             {src && (
                 <Image
                     src={src}
-                    className="carouselimage__image_full"
+                    className="photo__image_full"
                     width={800}
                     height={800}
                     alt="фото"
@@ -37,7 +37,7 @@ export const PhotoPopup = () => {
                 />
             )}
             <button
-                className="carouselimage__close-button"
+                className="photo__close-button"
                 type="button"
             />
         </div>

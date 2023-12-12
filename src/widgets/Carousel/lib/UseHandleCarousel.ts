@@ -16,8 +16,10 @@ export default function useHandleCarousel(
 
     useEffect(() => {
         const handleResizeWindow = () => {
-            setCount(0);
-            setTimeout(() => setWidth(window.innerWidth), 500);
+            setTimeout(() => {
+                setCount(0);
+                setWidth(window.innerWidth)
+            }, 1000);
         };
 
         window.addEventListener("resize", handleResizeWindow);

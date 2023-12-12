@@ -20,9 +20,10 @@ export default function useCloseByEsc() {
                 "--scroll-y",
                 `${window.scrollY}px`,
             );
-        });
+        }
+        );
         document.addEventListener("keyup", handleEscClose);
-        
+
         return () => {
             window.removeEventListener("scroll", () => {
                 document.documentElement.style.setProperty(

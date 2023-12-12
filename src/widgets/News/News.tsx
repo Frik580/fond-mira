@@ -22,14 +22,13 @@ export const News: FC<NewsProps> = ({ post }) => {
 
     return (
         <li className={`news ${fullNews ? "news_border" : ""}`}>
-            {/* <p className="news__date">{post.createdAt}</p> */}
             {!fullNews ? (
                 <>
                     <div className="news__conteiner">
                         <p className="news__date">{post.createdAt}</p>
                         <p className="news__text">{post.preview}</p>
-                        <div className="news__photo">
-                            {!!post.photo && !!server && (
+                        {!!post.photo && !!server && (
+                            <div className="news__photo">
                                 <CarouselImage
                                     src={`${server}1.webp`}
                                     srclite={`${server}lite/1.webp`}
@@ -39,8 +38,8 @@ export const News: FC<NewsProps> = ({ post }) => {
                                     fullphoto={0}
                                     cursor={"default"}
                                 />
-                            )}
-                        </div>
+                            </div>
+                        )}
                     </div>
                     <button
                         className="news__button_open"

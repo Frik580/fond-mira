@@ -23,7 +23,6 @@ export const Header = () => {
 
     return (
         <header className={`header ${header ? "" : "header_visibility"}`}>
-                    {/* <header className="header"> */}
 
             {!header ? (
                 <div className="header__links">
