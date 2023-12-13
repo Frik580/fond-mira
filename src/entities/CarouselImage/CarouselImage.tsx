@@ -55,9 +55,11 @@ export const CarouselImage: FC<CarouselImageProps> = ({
                     className={`carouselimage__image ${loaded ? "loaded" : ""}`}
                     style={loaded ? {
                         height: height,
+                        width: width,
                         cursor: cursor,
                     } : {
-                        // height: height,
+                        height: height,
+                        width: width,
                         cursor: "default",
                     }}
                     width={400}

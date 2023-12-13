@@ -4,7 +4,7 @@ import { Documents } from "@/widgets/Documents/Documents";
 
 export default function DocumentsPage() {
     return (
-        <main>
+        <main className="main">
             <Documents />
         </main>
     );
