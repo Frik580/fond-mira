@@ -4,7 +4,7 @@
     height: 24px;
     flex-shrink: 0;
     display: none;
-    opacity: .5;
+    opacity: .8;
     transition: opacity 0.3s ease-in-out;
 }
 
@@ -12,7 +12,7 @@
     opacity: 1;
 }
 
-@media (max-width: 1079px) {
+@media (max-width: 1175px) {
     .burger-button__conteiner {
       display: block;
     }
@@ -24,7 +24,6 @@
     position: absolute;
     left: 0px;
     top: 0px;
-    /* position: relative; */
     border: none;
     cursor: pointer;
     background: none;
