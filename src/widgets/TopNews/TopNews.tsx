@@ -4,8 +4,8 @@ import "./TopNews.css";
 import { useRef } from "react";
 import useHeaderActive from "@/shared/hooks/UseHeaderActive";
 import { TopImage } from "@/entities/TopImage/TopImage";
-import image from "./post_image_5.jpg";
-import imagelite from "./post_image_5_lite.jpg";
+import image from "./New_header.png";
+import imagelite from "./lite/New_header_lite.png";
 import Link from "next/link";
 
 export const TopNews = () => {
@@ -18,19 +18,21 @@ export const TopNews = () => {
             <div ref={ref} className="top-news__title-conteiner" />
             <div className="top-news__text-conteiner">
                 <div className="top-news__line" />
+                <p className="top-news__text">Конкурс «Ученик года 2024»!</p>
                 <p className="top-news__text">
-                    В рамках Проекта «ПЕРМЬ ВЕЛИКАЯ - ПАРМА МНОГОЛИКАЯ» при
-                    поддержке Президентского фонда культурных инициатив набирает
-                    силу Краевой молодежный медиа-марафон «Парма многоликая».
+                    Началась подготовка к Х юбилейному Краевому конкурсу
+                    обучающихся общеобразовательных организации Пермского края.
+                    В этом году ключевая тема: «Счастливая Семья - ЭТО....?»
                 </p>
-                <Link
-                    href="https://vk.com/club220023818"
+                <p className="top-news__text">Финал в апреле.</p>
+                {/* <Link
+                    href="https://vk.com/fond.mira2020"
                     className="top-news__text top-news__link"
                     target="_blank"
                     rel="noreferrer"
                 >
-                    группа ВК Солнечный круг
-                </Link>
+                    группа ВК российский фонд мира. Пермский край
+                </Link> */}
             </div>
         </section>
     );

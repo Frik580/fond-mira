@@ -11,6 +11,7 @@ import useLinkDeactive from "../../shared/hooks/UseLinkDeactive";
 import { newsAPI } from "@/shared/services/NewsService";
 import { NewsType } from "@/shared/models/Models";
 import { NEWS_AMT } from "@/shared/Constants";
+import { NEWS } from "@/shared/Constants";
 
 export const NewsList = () => {
     const { data: news } = newsAPI.useFetchAllNewsQuery("");
@@ -22,6 +23,11 @@ export const NewsList = () => {
             const array = [...news];
             const newArray = array.reverse();
             const sortArray = newArray
+                .filter(function (item, i) {
+                    while (i < NEWS) {
+                        return item;
+                    }
+                })
                 .filter(function (item, i) {
                     while (i < NEWS_AMT + index * NEWS_AMT) {
                         return item;
@@ -54,7 +60,10 @@ export const NewsList = () => {
                         ))}
                     </ul>
                     {news && (
-                        <DotsButton lenght={news.length} index={handleIndex} />
+                        <DotsButton
+                            lenght={news.length < NEWS ? news.length : NEWS}
+                            index={handleIndex}
+                        />
                     )}
                 </div>
             </div>

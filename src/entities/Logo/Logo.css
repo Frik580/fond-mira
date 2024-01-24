@@ -4,13 +4,16 @@
     border: none;
     cursor: pointer;
     align-items: center;
-    background-color: transparent;
+    /* background-color: transparent; */
+    background-color: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(8px);
     margin-top: 5px;
     gap: 5px;
     padding:  10px 15px;
     flex-direction: column;
     max-width: 200px;
     flex-shrink: 1;
+    border-radius: 23px;
 }
 
 .logo__image {
@@ -22,12 +25,12 @@
 }
 
 .logo__text {
-    font-size: 24px;
+    font-size: 22px;
     line-height: 1.2;
     font-weight: 500;
     font-style: normal;
     color: var(--color-white);
-    text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+    /* text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7); */
 }
 
 @media (max-width: 500px) {

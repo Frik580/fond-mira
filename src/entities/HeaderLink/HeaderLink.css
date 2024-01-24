@@ -23,7 +23,7 @@
 .header-link__conteiner:hover {
     opacity: 1;
     border-top: 3px solid transparent;
-    border-bottom: 3px solid rgba(255, 255, 255, 0.7);
+    border-bottom: 3px solid rgba(255, 255, 255, 1);
 }
 
 @media (max-width: 1175px) {
@@ -40,10 +40,10 @@
     color: var(--color-white);
     background-color: transparent;
     border-top: 3px solid transparent;
-    border-bottom: 3px solid rgba(255, 255, 255, 0.7);
+    border-bottom: 3px solid rgba(255, 255, 255, 1);
 }
 
-@media (max-width: 1079px) {
+@media (max-width: 1175px) {
     .header-link__text {
         display: none;
     }

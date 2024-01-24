@@ -6,7 +6,7 @@ import { useAppDispatch } from "../../shared/hooks/redux";
 import { setLinkHome } from "../../store/reducers/linkSlice";
 import { memo } from "react";
 import { useRouter } from "next/navigation";
-import logo from "./logo2.png";
+import logo from "./logo.png";
 
 const MainLogo = memo(function MainLogo() {
     const dispatch = useAppDispatch();

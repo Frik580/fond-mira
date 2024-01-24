@@ -11,6 +11,7 @@ html,
 body {
     max-width: 100vw;
     overflow-x: hidden;
+    /* scroll-behavior: smooth; */
 }
 
 a {
@@ -37,7 +38,7 @@ a {
     --color-black: #212120;
     --color-white: #ffffff;
     --color-dust-white: #f9faf7;
-    --color-blue: #003d7a;
+    --color-blue: rgb(0, 61, 122);
     --color-marine: rgb(92, 183, 212);
     --color-pink: #c09085;
     --color-gray: #b6b6b6;

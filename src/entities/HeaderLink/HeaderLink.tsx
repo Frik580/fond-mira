@@ -1,11 +1,12 @@
-// "use client";
+"use client";
 
 import "./HeaderLink.css";
 import { useAppDispatch } from "../../shared/hooks/redux";
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import handleLinkState from "./lib/LinkState";
 import { useRouter } from "next/navigation";
 import unfixedBody from "@/shared/lib/UnfixedBody";
+// import Link from "next/link";
 
 type HeaderLinkProps = {
     title: string;
@@ -28,10 +29,15 @@ export const HeaderLink: FC<HeaderLinkProps> = ({
     const router = useRouter();
 
     const routing = () => {
-        handleLinkState(path, dispatch);
         unfixedBody();
         router.push(path);
+        handleLinkState(path, dispatch);
     };
+
+    useEffect(() => {
+        console.log(path)
+    
+    }, [path]);
 
     return (
         <>
@@ -40,6 +46,7 @@ export const HeaderLink: FC<HeaderLinkProps> = ({
             ) : (
                 <button onClick={routing} className={style}>
                     <p className={styleLink}>{title}</p>
+                    {/* <Link href={path} prefetch={false} className={styleLink}>{title}</Link> */}
                 </button>
             )}
         </>
