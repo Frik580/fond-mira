@@ -1,5 +1,6 @@
 @import url(../shared/Styles/normalize.css);
 @import url(../shared/Styles/fonts/fonts.css);
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;900&display=swap');
 
 * {
     box-sizing: border-box;
@@ -20,7 +21,7 @@ a {
 }
 
 :root {
-    font-family: "Inter", Arial, sans-serif;
+    font-family: "Roboto", Arial, sans-serif;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     -webkit-text-size-adjust: 100%;

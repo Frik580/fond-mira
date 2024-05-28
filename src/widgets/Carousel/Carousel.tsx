@@ -1,6 +1,6 @@
 // "use client";
 
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import "./Carousel.css";
 import { WINDOW_SIZE, PHOTO_AMT } from "@/shared/Constants";
 import useHandleCarousel from "./lib/UseHandleCarousel";
@@ -20,6 +20,11 @@ export const Carousel: FC<GalleryType> = ({
         server,
         extension,
     );
+
+    useEffect(() => {
+        console.log(images)
+
+    }, [images]);
 
     return (
         <>
