@@ -41,48 +41,42 @@ export const NavPopup = () => {
                             title={TITLES.ABOUT_US}
                             active={link.aboutus}
                             style="header-link__conteiner_burger"
-                            styleLink="header-link_burger"
-                            styleText="header-link__text_burger"
+                            headerValue={false}
                         />
                         <HeaderLink
                             path={"/#news-list"}
                             title={TITLES.NEWS}
                             active={link.newslist}
                             style="header-link__conteiner_burger"
-                            styleLink="header-link_burger"
-                            styleText="header-link__text_burger"
+                            headerValue={false}
                         />
                         <HeaderLink
                             path={"/#projects-list"}
                             title={TITLES.OUR_PROJECTS}
                             active={link.projectslist}
                             style="header-link__conteiner_burger"
-                            styleLink="header-link_burger"
-                            styleText="header-link__text_burger"
+                            headerValue={false}
                         />
                         <HeaderLink
                             path={"/#partners"}
                             title={TITLES.PARTNERS}
                             active={link.partners}
                             style="header-link__conteiner_burger"
-                            styleLink="header-link_burger"
-                            styleText="header-link__text_burger"
+                            headerValue={false}
                         />
                         <HeaderLink
                             path={"/documents"}
                             title={TITLES.DOCUMENTS}
                             active={link.documents}
                             style="header-link__conteiner_burger"
-                            styleLink="header-link_burger"
-                            styleText="header-link__text_burger"
+                            headerValue={false}
                         />
                         <HeaderLink
                             path={"/#contacts"}
                             title={TITLES.CONTACTS}
                             active={link.contacts}
                             style="header-link__conteiner_burger"
-                            styleLink="header-link_burger"
-                            styleText="header-link__text_burger"
+                            headerValue={false}
                         />
                     </div>
                 </div>

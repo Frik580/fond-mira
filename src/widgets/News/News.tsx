@@ -9,7 +9,7 @@ import { IMAGE_EXTENSION, SERVER_URL_NEWS_IMAGE } from "@/shared/Constants";
 import { CarouselImage } from "@/entities/CarouselImage/CarouselImage";
 
 type NewsProps = {
-    post: NewsType;
+    post: NewsType; //
 };
 
 export const News: FC<NewsProps> = ({ post }) => {
@@ -24,22 +24,27 @@ export const News: FC<NewsProps> = ({ post }) => {
         <li className={`news ${fullNews ? "news_border" : ""}`}>
             {!fullNews ? (
                 <>
-                    <div className="news__conteiner">
-                        <p className="news__date">{post.createdAt}</p>
-                        <p className="news__text">{post.preview}</p>
-                        {!!post.photo && !!server && (
-                            <div className="news__photo">
-                                <CarouselImage
-                                    src={`${server}1.webp`}
-                                    srclite={`${server}lite/1.webp`}
-                                    height={200}
-                                    width={200}
-                                    i={1}
-                                    fullphoto={0}
-                                    cursor={"default"}
-                                />
+                    <div className="news__box">
+                        <div className="news__conteiner">
+                            <p className="news__date">{post.createdAt}</p>
+                            <div>
+                                <p className="news__preview">{post.title}</p>
+                                <p className="news__text">{post.article[0]}</p>
                             </div>
-                        )}
+                            {!!post.photo && !!server && (
+                                <div className="news__photo">
+                                    <CarouselImage
+                                        src={`${server}1.webp`}
+                                        srclite={`${server}lite/1.webp`}
+                                        height={200}
+                                        width={200}
+                                        i={1}
+                                        fullphoto={0}
+                                        cursor={"default"}
+                                    />
+                                </div>
+                            )}
+                        </div>
                     </div>
                     <button
                         className="news__button_open"
@@ -51,7 +56,7 @@ export const News: FC<NewsProps> = ({ post }) => {
                     </button>
                 </>
             ) : (
-                <>
+                <div className="news__box">
                     <p className="news__date">{post.createdAt}</p>
                     <p className="news__title">{post.title}</p>
                     <div className="news__article">
@@ -86,7 +91,7 @@ export const News: FC<NewsProps> = ({ post }) => {
                             setFullNews(!fullNews);
                         }}
                     />
-                </>
+                </div>
             )}
         </li>
     );

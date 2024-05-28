@@ -32,7 +32,7 @@ export type NewsType = {
     slug: string;
     tags: [];
     preview: string;
-    article: [];
+    article: [string];
     photo: number;
     video: [];
 };

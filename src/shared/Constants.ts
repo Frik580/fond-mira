@@ -9,8 +9,8 @@ export const PHOTO_AMT = {
     SMALL: 1,
 };
 
-export const NEWS_AMT = 5;
-export const NEWS = 20;
+export const NEWS_AMT = 10;
+export const NEWS = 80;
 
 export const BASE_URL = 'https://fondmira-pk.ru/'
 export const SERVER_URL = 'https://storage.yandexcloud.net/'
@@ -173,5 +173,20 @@ export const DOCUMENTS = [
         id: 7,
         title: "Отчёт об объеме денежных средств и иного имущества ПКО МОФ «Российский фонд мира» за 2021 год",
         href: "otchet_2021_3",
+    },
+    {
+        id: 8,
+        title: "Справка № 5330 об исполнении налогоплательщиком (плательщиком сбора, плательщиком страховых взносов, налоговым агентом) обязанности по уплате налогов, сборов, страховых взносов, пеней, штрафов, процентов",
+        href: "spravka_ifns_17.01.2023",
+    },
+    {
+        id: 9,
+        title: "Свидетельство о государственной регистрации некоммерческой организации",
+        href: "svid",
+    },
+    {
+        id: 10,
+        title: "Свидетельство о внесении записи в Единый государственный реестр юридических лиц",
+        href: "svid2",
     },
 ];

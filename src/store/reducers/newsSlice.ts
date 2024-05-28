@@ -11,7 +11,7 @@ const initialState = {
         slug: '',
         tags: [],
         preview: '',
-        article: [],
+        article: [''],
         photo: 0,
         video: [],
     }

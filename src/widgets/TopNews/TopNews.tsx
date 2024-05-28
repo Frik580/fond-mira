@@ -18,21 +18,44 @@ export const TopNews = () => {
             <div ref={ref} className="top-news__title-conteiner" />
             <div className="top-news__text-conteiner">
                 <div className="top-news__line" />
-                <p className="top-news__text">Конкурс «Ученик года 2024»!</p>
-                <p className="top-news__text">
-                    Началась подготовка к Х юбилейному Краевому конкурсу
-                    обучающихся общеобразовательных организации Пермского края.
-                    В этом году ключевая тема: «Счастливая Семья - ЭТО....?»
-                </p>
-                <p className="top-news__text">Финал в апреле.</p>
-                {/* <Link
-                    href="https://vk.com/fond.mira2020"
-                    className="top-news__text top-news__link"
-                    target="_blank"
-                    rel="noreferrer"
-                >
-                    группа ВК российский фонд мира. Пермский край
-                </Link> */}
+                <p className="top-news__text">НАША ВЕСНА - 2024</p>
+                {/* <p className="top-news__text">
+                    - Краевой конкурс &quot;Ученик года - 2024&quot;. Финал - 13
+                    апреля 2024{" "} */}
+                    <Link
+                        href="https://vk.com/pkuchenikgoda"
+                        className="top-news__text top-news__link"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        - Краевой конкурс &#171;Ученик года - 2024&#187;. Финал - 13
+                    апреля 2024
+                    </Link>
+                {/* </p> */}
+                {/* <p className="top-news__text">
+                    - Региональный этап Всероссийского конкурса &quot;Учитель
+                    года - 2024&quot;{" "} */}
+                    <Link
+                        href="https://vk.com/club220023818"
+                        className="top-news__text top-news__link"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        - Региональный этап Всероссийского конкурса &#171;Учитель
+                    года - 2024&#187;
+                    </Link>
+                {/* </p> */}
+                {/* <p className="top-news__text">
+                    - Проект &quot;Рябиновык рассветы. Живая Память&quot;{" "} */}
+                    <Link
+                        href="https://vk.com/fond.mira2020"
+                        className="top-news__text top-news__link"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        - Проект &#171;Рябиновык рассветы. Живая Память&#187;
+                    </Link>
+                {/* </p> */}
             </div>
         </section>
     );

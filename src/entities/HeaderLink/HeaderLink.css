@@ -1,29 +1,9 @@
 .header-link__conteiner {
     display: flex;
     align-items: center;
-    transition: opacity 0.5s ease-in-out;
-    opacity: 0.8;
     border: none;
     background-color: transparent;
-    border-top: 3px solid transparent;
-    border-bottom: 3px solid transparent;
-    flex-shrink: 0; 
-}
-
-.header-link {
-    font-size: 20px;
-    line-height: 45px;
-    font-weight: 400;
-    font-style: normal;
-    cursor: pointer;
-    text-decoration: none;
-    color: var(--color-white);
-}
-
-.header-link__conteiner:hover {
-    opacity: 1;
-    border-top: 3px solid transparent;
-    border-bottom: 3px solid rgba(255, 255, 255, 1);
+    flex-shrink: 0;
 }
 
 @media (max-width: 1175px) {
@@ -32,57 +12,47 @@
     }
 }
 
-.header-link__text {
+.header-link {
     font-size: 20px;
-    line-height: 45px;
+    line-height: 36px;
     font-weight: 400;
     font-style: normal;
+    cursor: pointer;
+    text-decoration: none;
     color: var(--color-white);
-    background-color: transparent;
-    border-top: 3px solid transparent;
-    border-bottom: 3px solid rgba(255, 255, 255, 1);
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0.7;
+    border-top: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+    width: 100%;
 }
 
-@media (max-width: 1175px) {
-    .header-link__text {
-        display: none;
-    }
+.header-link:hover {
+    opacity: 1;
+    border-bottom: 2px solid var(--color-marine);
+}
+
+.header-link__text {
+    font-size: 20px;
+    line-height: 36px;
+    font-weight: 500;
+    font-style: normal;
+    cursor: default;
+    color: var(--color-white);
+    background-color: transparent;
+    border-top: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+    width: 100%;
+    text-align: center;
+}
+
+.header-link_black {
+    color: var(--color-black);
 }
 
 .header-link__conteiner_burger {
     display: flex;
     align-items: center;
-    transition: all 0.5s ease-in-out;
-    opacity: 0.6;
     border: none;
     background-color: transparent;
-    border-top: 1px solid transparent;
-    border-bottom: 1px solid transparent;
-}
-
-.header-link__conteiner_burger:hover {
-    opacity: 1;
-    border-top: 1px solid transparent;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.7);
-}
-
-.header-link_burger {
-    font-size: 20px;
-    line-height: 1.4;
-    font-weight: 400;
-    font-style: normal;
-    cursor: pointer;
-    text-decoration: none;
-    color: var(--color-black);
-}
-
-.header-link__text_burger {
-    font-size: 20px;
-    line-height: 1.4;
-    font-weight: 400;
-    font-style: normal;
-    color: var(--color-black);
-    background-color: transparent;
-    border-top: 1px solid transparent;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.7);
 }

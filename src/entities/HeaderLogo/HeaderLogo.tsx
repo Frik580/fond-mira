@@ -1,14 +1,18 @@
 // "use client";
 
-import "./Logo.css";
+import "./HeaderLogo.css";
 import Image from "next/image";
 import { useAppDispatch } from "../../shared/hooks/redux";
 import { setLinkHome } from "../../store/reducers/linkSlice";
-import { memo } from "react";
+import { FC} from "react";
 import { useRouter } from "next/navigation";
 import logo from "./logo.png";
 
-const MainLogo = memo(function MainLogo() {
+type HeaderLogoProps = {
+    headerValue: boolean;
+};
+
+export const HeaderLogo: FC<HeaderLogoProps> = ({ headerValue }) => {
     const dispatch = useAppDispatch();
     const router = useRouter();
 
@@ -23,14 +27,14 @@ const MainLogo = memo(function MainLogo() {
                 src={logo}
                 width={200}
                 height={200}
-                className="logo__image"
+                className={headerValue ? "logo__image" : "logo__image_visibility"}
                 alt="голубь мира"
             />
-            <p className="logo__text">
-                ПРО МОФ &#171;Российский фонд мира&#187;
-            </p>
+            {headerValue && (
+                <p className="logo__text">
+                    ПРО МОФ &#171;Российский фонд мира&#187;
+                </p>
+            )}
         </button>
     );
-});
-
-export default MainLogo;
+};
