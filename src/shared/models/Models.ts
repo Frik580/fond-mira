@@ -1,9 +1,27 @@
+import { StaticImageData } from "next/dist/shared/lib/get-img-props";
 import { Key } from "react";
+
+export type IconNameType = "arrow-left" | "arrow-right"
+
+export type ComponentProps = {
+    children?: React.ReactNode;
+    className?: string;
+}
 
 export type DocumentsType = {
     id: Key | null | undefined;
     title: string;
     href: string;
+};
+
+export type CarouselItemType = {
+    src: string | StaticImageData;
+    srclite?: string | undefined;
+    height: number;
+    width?: number;
+    i: number;
+    fullphoto?: number;
+    cursor: string;
 };
 
 export type ProjectType = {

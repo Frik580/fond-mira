@@ -5,6 +5,7 @@ import "./News.css";
 import { NewsType } from "@/shared/models/Models";
 import VideoFrame from "@/entities/VideoFrame/VideoFrame";
 import { Carousel } from "@/widgets/Carousel/Carousel";
+import { NewCarousel } from "@/widgets/NewCarousel/NewCarousel";
 import { IMAGE_EXTENSION, SERVER_URL_NEWS_IMAGE } from "@/shared/Constants";
 import { CarouselImage } from "@/entities/CarouselImage/CarouselImage";
 
@@ -77,13 +78,23 @@ export const News: FC<NewsProps> = ({ post }) => {
                     )}
                     {Boolean(post.photo) && (
                         <div className="news__gallery">
-                            <Carousel
+                            <NewCarousel
                                 photo={post.photo}
                                 server={server}
                                 extension={IMAGE_EXTENSION}
                                 height={350}
                             />
                         </div>
+
+
+                        // <div className="news__gallery">
+                        //     <Carousel
+                        //         photo={post.photo}
+                        //         server={server}
+                        //         extension={IMAGE_EXTENSION}
+                        //         height={350}
+                        //     />
+                        // </div>
                     )}
                     <button
                         className="news__button_close"

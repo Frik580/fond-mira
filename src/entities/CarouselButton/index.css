@@ -1,0 +1,21 @@
+.button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin: auto;
+    padding: 0;
+    display: inline-flex;
+    opacity: 0.4;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.button:hover {
+    opacity: .8;
+}
+
+.button:disabled {
+    cursor: default;
+    opacity: .2;
+}

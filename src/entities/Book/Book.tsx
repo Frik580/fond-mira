@@ -4,7 +4,7 @@ import "./Book.css";
 import Link from "next/link";
 import Image from "next/image";
 import { memo } from "react";
-import orden from "./orden.png";
+import orden from "./images/orden.png";
 
 const Book = memo(function Book() {
     return (
