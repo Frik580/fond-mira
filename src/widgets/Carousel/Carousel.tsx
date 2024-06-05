@@ -5,7 +5,7 @@ import "./Carousel.css";
 import { WINDOW_SIZE, PHOTO_AMT } from "@/shared/Constants";
 import useHandleCarousel from "./lib/UseHandleCarousel";
 import { GalleryType } from "@/shared/models/Models";
-import { CarouselImage } from "@/entities/CarouselImage/CarouselImage";
+import { CarouselImage } from "@/entities/Image/Image";
 
 export const Carousel: FC<GalleryType> = ({
     photo,

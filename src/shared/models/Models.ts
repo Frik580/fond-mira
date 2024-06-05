@@ -21,7 +21,7 @@ export type CarouselItemType = {
     width?: number;
     i: number;
     fullphoto?: number;
-    cursor: string;
+    cursor?: string;
 };
 
 export type ProjectType = {

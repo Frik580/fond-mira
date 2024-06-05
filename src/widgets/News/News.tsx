@@ -4,10 +4,9 @@ import { FC, useEffect, useState } from "react";
 import "./News.css";
 import { NewsType } from "@/shared/models/Models";
 import VideoFrame from "@/entities/VideoFrame/VideoFrame";
-import { Carousel } from "@/widgets/Carousel/Carousel";
 import { NewCarousel } from "@/widgets/NewCarousel/NewCarousel";
 import { IMAGE_EXTENSION, SERVER_URL_NEWS_IMAGE } from "@/shared/Constants";
-import { CarouselImage } from "@/entities/CarouselImage/CarouselImage";
+import { NewsImage } from "@/entities/Image/Image";
 
 type NewsProps = {
     post: NewsType; //
@@ -34,14 +33,13 @@ export const News: FC<NewsProps> = ({ post }) => {
                             </div>
                             {!!post.photo && !!server && (
                                 <div className="news__photo">
-                                    <CarouselImage
+                                    <NewsImage
                                         src={`${server}1.webp`}
                                         srclite={`${server}lite/1.webp`}
                                         height={200}
                                         width={200}
                                         i={1}
                                         fullphoto={0}
-                                        cursor={"default"}
                                     />
                                 </div>
                             )}
@@ -85,16 +83,6 @@ export const News: FC<NewsProps> = ({ post }) => {
                                 height={350}
                             />
                         </div>
-
-
-                        // <div className="news__gallery">
-                        //     <Carousel
-                        //         photo={post.photo}
-                        //         server={server}
-                        //         extension={IMAGE_EXTENSION}
-                        //         height={350}
-                        //     />
-                        // </div>
                     )}
                     <button
                         className="news__button_close"

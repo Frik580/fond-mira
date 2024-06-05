@@ -13,10 +13,10 @@
     object-fit: cover;
     object-position: center;
     opacity: 0;
-    transition: opacity .3s ease-in-out;
+    /* transition: opacity .3s ease-in-out; */
 }
 
-.topimage::before {
+/* .topimage::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -33,13 +33,13 @@
     100% {
         background-color: rgba(255, 255, 255, 0);
     }
-}
+} */
 
 .topimage__image.loaded {
     opacity: 1;
 }
 
-.topimage__image.loaded::before {
+/* .topimage__image.loaded::before {
     content: none;
     animation: none;
-}
+} */

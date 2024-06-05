@@ -8,7 +8,6 @@ import { setValuePhoto } from "@/store/reducers/photoSlice";
 import { setValuePhotoPopup } from "@/store/reducers/popupSlice";
 import { CarouselItemType } from "@/shared/models/Models";
 import fixedBody from "@/shared/lib/FixedBody";
-// import gif from "./loader.gif"
 
 export const CarouselItem: FC<CarouselItemType> = ({
     src,

@@ -14,7 +14,7 @@ import { useAppDispatch } from "@/shared/hooks/redux";
 import { setLinkHome } from "@/store/reducers/linkSlice";
 import { TopImage } from "@/entities/TopImage/TopImage";
 import { ProjectType } from "@/shared/models/Models";
-import { Carousel } from "../Carousel/Carousel";
+import { NewCarousel } from "../NewCarousel/NewCarousel";
 
 type ProjectProps = {
     children: React.ReactNode;
@@ -64,7 +64,7 @@ export const Project: FC<ProjectProps> = ({ children, project }) => {
             </div>
             {Boolean(project.photo) && (
                 <div className="project__gallery">
-                    <Carousel
+                    <NewCarousel
                         photo={project.photo}
                         server={server}
                         extension={IMAGE_EXTENSION}
