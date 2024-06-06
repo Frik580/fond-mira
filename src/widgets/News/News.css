@@ -82,10 +82,11 @@
     align-self: center;
     width: 100%;
     max-width: 600px;
+    margin: auto;
 }
 
 .news__gallery {
-    padding-top: 20px; 
+    padding: 15px 0; 
 }
 
 .news__button_close {

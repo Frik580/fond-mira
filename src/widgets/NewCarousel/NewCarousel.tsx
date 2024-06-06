@@ -49,6 +49,8 @@ export const NewCarousel: FC<GalleryType> = ({
             array.push(`${server}${i}.${extension}`);
         }
         setImages(array);
+
+        console.log(photo);
     }, [extension, photo, server]);
 
     return (
@@ -71,21 +73,26 @@ export const NewCarousel: FC<GalleryType> = ({
                         </div>
                     ))}
                 </div>
-                <div className="gallery__navigation">
-                    <CarouselButton
-                        onClick={() => move(decreaseIndex(activIndex))}
-                        iconName="arrow-left"
-                        disabled={activIndex === 0}
-                    />
-                    <Counter activIndex={activIndex + 1} size={images.length} />
-                    <CarouselButton
-                        onClick={() =>
-                            move(increaseIndex(activIndex, images.length))
-                        }
-                        iconName="arrow-right"
-                        disabled={activIndex === images.length - 1}
-                    />
-                </div>
+                {photo > 1 && (
+                    <div className="gallery__navigation">
+                        <CarouselButton
+                            onClick={() => move(decreaseIndex(activIndex))}
+                            iconName="arrow-left"
+                            disabled={activIndex === 0}
+                        />
+                        <Counter
+                            activIndex={activIndex + 1}
+                            size={images.length}
+                        />
+                        <CarouselButton
+                            onClick={() =>
+                                move(increaseIndex(activIndex, images.length))
+                            }
+                            iconName="arrow-right"
+                            disabled={activIndex === images.length - 1}
+                        />
+                    </div>
+                )}
             </div>
         </>
     );

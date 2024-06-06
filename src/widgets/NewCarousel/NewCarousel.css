@@ -27,7 +27,7 @@ background-size: 30px 30px;
 }
 
 .gallery__navigation {
-    padding: 15px 0;
+    padding-top: 15px;
     margin: auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;

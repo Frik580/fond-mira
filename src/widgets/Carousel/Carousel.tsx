@@ -5,7 +5,7 @@ import "./Carousel.css";
 import { WINDOW_SIZE, PHOTO_AMT } from "@/shared/Constants";
 import useHandleCarousel from "./lib/UseHandleCarousel";
 import { GalleryType } from "@/shared/models/Models";
-import { CarouselImage } from "@/entities/Image/Image";
+import { NewsImage } from "@/entities/Image/Image";
 
 export const Carousel: FC<GalleryType> = ({
     photo,
@@ -34,7 +34,7 @@ export const Carousel: FC<GalleryType> = ({
                     style={{ height: `${height}px` }}
                 >
                     {images.map((card: string, i: number) => (
-                        <CarouselImage
+                        <NewsImage
                             key={i}
                             src={card}
                             srclite={imagesLite[i]}

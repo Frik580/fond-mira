@@ -66,12 +66,14 @@ export const News: FC<NewsProps> = ({ post }) => {
                         ))}
                     </div>
                     {post.video.length !== 0 && (
-                        <div className="news__article">
-                            <div className="news__video">
-                                {post.video.map((item: string, i) => (
-                                    <VideoFrame key={i} video={item} />
-                                ))}
-                            </div>
+                        <div className="news__video">
+                            {post.video.map((item: string, i) => (
+                                <VideoFrame
+                                    key={i}
+                                    video={item}
+                                    title={post.title}
+                                />
+                            ))}
                         </div>
                     )}
                     {Boolean(post.photo) && (

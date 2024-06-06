@@ -5,11 +5,11 @@ import "./Member.css";
 import Image from "next/image";
 import { IMAGE_EXTENSION, SERVER_URL_DIRECTION } from "@/shared/Constants";
 
-type MemberProps = {
+interface MemberProps {
     image: string;
     text: string;
     alt: string;
-};
+}
 
 const Member = memo(function Member({ image, text, alt }: MemberProps) {
     return (

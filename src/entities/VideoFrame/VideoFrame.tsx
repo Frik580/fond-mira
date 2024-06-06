@@ -3,30 +3,33 @@
 import "./VideoFrame.css";
 import { memo, useEffect, useState } from "react";
 
-type VideoFraimeType = {
+interface VideoFraimeProps {
     video: string;
-};
+    title: string;
+}
 
-const VideoFraime = memo(function VideoFrame({ video }: VideoFraimeType) {
+const VideoFraime = memo(function VideoFrame({
+    video,
+    title,
+}: VideoFraimeProps) {
     const [vissible, setVissible] = useState(true);
-    useEffect(() => {
-        fetchVideo();
-    }, []);
 
-    const fetchVideo = async () => {
+    async function fetchVideo() {
         await fetch(`${video}`, { mode: "no-cors" })
             .then((res) => {
                 return res;
             })
             .catch((err) => {
-                console.log(err);
                 if (err.name === "TypeError") {
                     setVissible(false);
                 } else {
                     setVissible(true);
                 }
             });
-    };
+    }
+    useEffect(() => {
+        fetchVideo();
+    }, [video]);
 
     return (
         <>
@@ -35,7 +38,7 @@ const VideoFraime = memo(function VideoFrame({ video }: VideoFraimeType) {
                     <iframe
                         src={video}
                         className="video__iframe"
-                        title={`фрайм`}
+                        title={title}
                         allowFullScreen
                     />
                 </div>
