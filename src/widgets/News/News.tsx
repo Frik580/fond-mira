@@ -21,7 +21,9 @@ export const News: FC<NewsProps> = ({ post }) => {
     }, [post]);
 
     return (
-        <li className={`news ${fullNews ? "news_border" : ""}`}>
+        <li
+            className={`news ${fullNews ? "news_border" : ""}`}
+        >
             {!fullNews ? (
                 <>
                     <div className="news__box">

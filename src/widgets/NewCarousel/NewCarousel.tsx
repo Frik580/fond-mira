@@ -44,13 +44,10 @@ export const NewCarousel: FC<GalleryType> = ({
 
     useEffect(() => {
         const array = [];
-
         for (let i = 1; i <= photo; i++) {
             array.push(`${server}${i}.${extension}`);
         }
         setImages(array);
-
-        console.log(photo);
     }, [extension, photo, server]);
 
     return (
