@@ -4,6 +4,7 @@ import "./PhotoPopup.css";
 import { useAppDispatch, useAppSelector } from "@/shared/hooks/redux";
 import { popupValue, setValuePhotoPopup } from "@/store/reducers/popupSlice";
 import unfixedBody from "@/shared/lib/UnfixedBody";
+import useKeyEvents from "@/shared/hooks/useKeyEvents";
 import Image from "next/image";
 import { photoState } from "@/store/reducers/photoSlice";
 
@@ -16,6 +17,11 @@ export const PhotoPopup = () => {
         unfixedBody();
         dispatch(setValuePhotoPopup(false));
     }
+
+    useKeyEvents((key) => {
+        key === "Escape" && closePopup();
+        console.log("PHOTO")
+    });
 
     return (
         <div

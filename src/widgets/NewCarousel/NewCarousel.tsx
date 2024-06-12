@@ -6,7 +6,11 @@ import { GalleryType } from "@/shared/models/Models";
 import { CarouselItem } from "@/entities/CarouselItem/CarouselItem";
 import { CarouselButton } from "@/entities/CarouselButton/CarouselButton";
 import { Counter } from "@/entities/Counter/Counter";
-import useUpdateActiveIndex from "./lib/useUpdateActiveIndex";
+import useUpdateActiveIndexBySwipe from "./lib/useUpdateActiveIndexBySwipe";
+import useCreateImagesLinks from "./lib/useCreateImagesLinks";
+import useKeyEvents from "../../shared/hooks/useKeyEvents";
+import { useAppDispatch } from "@/shared/hooks/redux";
+import { setValuePhoto } from "@/store/reducers/photoSlice";
 
 const increaseIndex = (index: number, size: number) =>
     Math.min(index + 1, size - 1);
@@ -18,14 +22,19 @@ export const NewCarousel: FC<GalleryType> = ({
     extension,
     height,
 }) => {
-    const [images, setImages] = useState<string[]>([]);
-    const [activIndex, setActiveIndex] = useState(0);
+    const [activeIndex, setActiveIndex] = useState(0);
     const conteinerRef = useRef<HTMLDivElement>(null);
-    const scrollActiveIndex = useUpdateActiveIndex(conteinerRef);
+    const scrollActiveIndex = useUpdateActiveIndexBySwipe(conteinerRef);
+    const images = useCreateImagesLinks(photo, server, extension);
+    const dispatch = useAppDispatch();
 
     useEffect(() => {
         setActiveIndex(scrollActiveIndex);
     }, [scrollActiveIndex]);
+
+    useEffect(() => {
+        dispatch(setValuePhoto(`${server}${activeIndex + 1}.${extension}`));
+    }, [activeIndex, extension, server]);
 
     const move = (newActiveIndex: number) => {
         const currentNode = conteinerRef?.current;
@@ -35,20 +44,16 @@ export const NewCarousel: FC<GalleryType> = ({
         }
 
         const dataConteiner = currentNode.getBoundingClientRect();
-        setActiveIndex(newActiveIndex);
         currentNode.scrollTo({
             left: newActiveIndex * dataConteiner.width,
             behavior: "smooth",
         });
     };
 
-    useEffect(() => {
-        const array = [];
-        for (let i = 1; i <= photo; i++) {
-            array.push(`${server}${i}.${extension}`);
-        }
-        setImages(array);
-    }, [extension, photo, server]);
+    useKeyEvents((key) => {
+        key === "ArrowLeft" && move(decreaseIndex(activeIndex));
+        key === "ArrowRight" && move(increaseIndex(activeIndex, images.length));
+    });
 
     return (
         <>
@@ -58,7 +63,7 @@ export const NewCarousel: FC<GalleryType> = ({
                     ref={conteinerRef}
                     style={{ height: height }}
                 >
-                    {images?.map((image, index) => (
+                    {images.map((image, index) => (
                         <div key={index} className="gallery__item">
                             <CarouselItem
                                 key={index}
@@ -73,20 +78,22 @@ export const NewCarousel: FC<GalleryType> = ({
                 {photo > 1 && (
                     <div className="gallery__navigation">
                         <CarouselButton
-                            onClick={() => move(decreaseIndex(activIndex))}
+                            onClick={() => {
+                                move(decreaseIndex(activeIndex));
+                            }}
                             iconName="arrow-left"
-                            disabled={activIndex === 0}
+                            disabled={activeIndex === 0}
                         />
                         <Counter
-                            activIndex={activIndex + 1}
+                            activIndex={activeIndex + 1}
                             size={images.length}
                         />
                         <CarouselButton
-                            onClick={() =>
-                                move(increaseIndex(activIndex, images.length))
-                            }
+                            onClick={() => {
+                                move(increaseIndex(activeIndex, images.length));
+                            }}
                             iconName="arrow-right"
-                            disabled={activIndex === images.length - 1}
+                            disabled={activeIndex === images.length - 1}
                         />
                     </div>
                 )}

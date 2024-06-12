@@ -22,9 +22,7 @@ const Member = memo(function Member({ image, text, alt }: MemberProps) {
                 alt={alt}
             />
             <p className="member__title">{alt}</p>
-            <div className="member__conteiner">
-                <p className="member__text">{text}</p>
-            </div>
+            <p className="member__text">{text}</p>
         </li>
     );
 });

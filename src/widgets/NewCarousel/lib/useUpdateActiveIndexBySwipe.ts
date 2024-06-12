@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-export default function useUpdateActiveIndex(conteinerRef: React.RefObject<HTMLDivElement>
-
+export default function useUpdateActiveIndexBySwipe(conteinerRef: React.RefObject<HTMLDivElement>
 ) {
     const [activeIndex, setActiveIndex] = useState(0)
 
@@ -29,9 +28,7 @@ export default function useUpdateActiveIndex(conteinerRef: React.RefObject<HTMLD
         return () => {
             currentNode.removeEventListener("scroll", scroll)
         };
-
     }, [conteinerRef]);
-
 
     return activeIndex;
 }

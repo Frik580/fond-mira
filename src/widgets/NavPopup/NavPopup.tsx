@@ -7,6 +7,7 @@ import { linkState } from "@/store/reducers/linkSlice";
 import { HeaderLink } from "@/entities/HeaderLink/HeaderLink";
 import { TITLES } from "@/shared/Constants";
 import unfixedBody from "@/shared/lib/UnfixedBody";
+import useKeyEvents from "@/shared/hooks/useKeyEvents";
 
 export const NavPopup = () => {
     const dispatch = useAppDispatch();
@@ -14,9 +15,14 @@ export const NavPopup = () => {
     const link = useAppSelector(linkState);
 
     function closePopup() {
-        dispatch(setValueNavPopup(false));
         unfixedBody();
+        dispatch(setValueNavPopup(false));
     }
+
+    useKeyEvents((key) => {
+        key === "Escape" && closePopup();
+        console.log("NAV")
+    });
 
     return (
         <div

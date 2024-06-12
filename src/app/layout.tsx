@@ -5,10 +5,9 @@ import type { Metadata } from "next";
 import { Providers } from "./providers";
 import { Header } from "@/widgets/Header/Header";
 import { Footer } from "@/widgets/Footer/Footer";
-import { NavPopup } from "@/widgets/NavPopup/NavPopup";
-import { PhotoPopup } from "@/widgets/PhotoPopup/PhotoPopup";
 import Script from "next/script";
 import YandexMetrika from "@/features/YandexMetrika/YandexMetrika";
+import { Popups } from "@/widgets/Popups/Popups";
 
 export const metadata: Metadata = {
     title: "Фонд Мира Пермский край",
@@ -43,8 +42,7 @@ export default function RootLayout({
                     <Header />
                     {children}
                     <Footer />
-                    <NavPopup />
-                    <PhotoPopup />
+                    <Popups />
                 </Providers>
             </body>
         </html>

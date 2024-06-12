@@ -11,10 +11,10 @@ import { setValueNavPopup } from "@/store/reducers/popupSlice";
 import Book from "@/entities/Book/Book";
 import fixedBody from "@/shared/lib/FixedBody";
 import { HeaderLogo } from "@/entities/HeaderLogo/HeaderLogo";
-import useCloseByEsc from "@/shared/hooks/UseCloseByEsc";
+import useScrollControl from "@/shared/hooks/useScrollControl";
 
 export const Header = () => {
-    useCloseByEsc();
+    useScrollControl();
     const dispatch = useAppDispatch();
     const header = useAppSelector(headerValue);
     const link = useAppSelector(linkState);

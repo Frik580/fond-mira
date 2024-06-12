@@ -2,12 +2,13 @@
 
 import "./index.css";
 import Image from "next/image";
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import { useAppDispatch } from "@/shared/hooks/redux";
 import { setValuePhoto } from "@/store/reducers/photoSlice";
 import { setValuePhotoPopup } from "@/store/reducers/popupSlice";
 import { CarouselItemType } from "@/shared/models/Models";
 import fixedBody from "@/shared/lib/FixedBody";
+import useKeyEvents from "@/shared/hooks/useKeyEvents";
 
 export const CarouselItem: FC<CarouselItemType> = ({
     src,
@@ -21,11 +22,20 @@ export const CarouselItem: FC<CarouselItemType> = ({
 
     function openPopup() {
         if (fullphoto !== 0 && loaded) {
-            dispatch(setValuePhoto(src));
+            // dispatch(setValuePhoto(src));
             dispatch(setValuePhotoPopup(true));
             fixedBody();
         }
     }
+
+    // useKeyEvents((key) => {
+    //     key === "Enter" && openPopup();
+    //     console.log("Нажал")
+    // });
+
+    useEffect(() => {
+        console.log(src)
+    }, [src]);
 
     return (
         <>
