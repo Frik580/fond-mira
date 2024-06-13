@@ -2,15 +2,24 @@
 
 import "./TopNews.css";
 import { useRef } from "react";
-import useHeaderActive from "@/shared/hooks/UseHeaderActive";
+import useElementVisible from "@/shared/hooks/useElementVisible";
 import { TopImage } from "@/entities/TopImage/TopImage";
 import image from "./New_header.webp";
 import imagelite from "./lite/New_header _lite.webp";
 import Link from "next/link";
+import { useAppDispatch } from "@/shared/hooks/redux";
+import { setValueHeader } from "@/store/reducers/headerSlice";
 
 export const TopNews = () => {
     const ref = useRef<HTMLDivElement | null>(null);
-    useHeaderActive(ref);
+    const dispatch = useAppDispatch();
+
+    const visibilityRef =(value: boolean) => {
+        dispatch(setValueHeader(value));
+    }
+
+    useElementVisible(ref, visibilityRef);
+
 
     return (
         <section className="top-news">

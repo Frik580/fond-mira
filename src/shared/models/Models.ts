@@ -16,6 +16,7 @@ export type DocumentsType = {
 
 export type CarouselItemType = {
     src: string | StaticImageData;
+    srcfullphoto?: string | StaticImageData;
     srclite?: string | undefined;
     height: number;
     width?: number;

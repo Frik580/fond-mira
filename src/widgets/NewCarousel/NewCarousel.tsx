@@ -9,8 +9,7 @@ import { Counter } from "@/entities/Counter/Counter";
 import useUpdateActiveIndexBySwipe from "./lib/useUpdateActiveIndexBySwipe";
 import useCreateImagesLinks from "./lib/useCreateImagesLinks";
 import useKeyEvents from "../../shared/hooks/useKeyEvents";
-import { useAppDispatch } from "@/shared/hooks/redux";
-import { setValuePhoto } from "@/store/reducers/photoSlice";
+import useElementVisible from "@/shared/hooks/useElementVisible";
 
 const increaseIndex = (index: number, size: number) =>
     Math.min(index + 1, size - 1);
@@ -23,18 +22,28 @@ export const NewCarousel: FC<GalleryType> = ({
     height,
 }) => {
     const [activeIndex, setActiveIndex] = useState(0);
+    const [visibility, setVisibility] = useState(false);
     const conteinerRef = useRef<HTMLDivElement>(null);
     const scrollActiveIndex = useUpdateActiveIndexBySwipe(conteinerRef);
     const images = useCreateImagesLinks(photo, server, extension);
-    const dispatch = useAppDispatch();
+
+    const visibilityRef = (value: boolean) => {
+        setVisibility(value);
+    };
+
+    useKeyEvents((key) => {
+        if (visibility) {
+            key === "ArrowLeft" && move(decreaseIndex(activeIndex));
+            key === "ArrowRight" &&
+                move(increaseIndex(activeIndex, images.length));
+        }
+    });
+
+    useElementVisible(conteinerRef, visibilityRef);
 
     useEffect(() => {
         setActiveIndex(scrollActiveIndex);
     }, [scrollActiveIndex]);
-
-    useEffect(() => {
-        dispatch(setValuePhoto(`${server}${activeIndex + 1}.${extension}`));
-    }, [activeIndex, extension, server]);
 
     const move = (newActiveIndex: number) => {
         const currentNode = conteinerRef?.current;
@@ -50,11 +59,6 @@ export const NewCarousel: FC<GalleryType> = ({
         });
     };
 
-    useKeyEvents((key) => {
-        key === "ArrowLeft" && move(decreaseIndex(activeIndex));
-        key === "ArrowRight" && move(increaseIndex(activeIndex, images.length));
-    });
-
     return (
         <>
             <div className="gallery">
@@ -67,6 +71,7 @@ export const NewCarousel: FC<GalleryType> = ({
                         <div key={index} className="gallery__item">
                             <CarouselItem
                                 key={index}
+                                srcfullphoto={`${server}${activeIndex + 1}.${extension}`}
                                 src={image}
                                 height={height}
                                 cursor={"pointer"}

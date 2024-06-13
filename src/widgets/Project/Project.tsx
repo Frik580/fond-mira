@@ -9,12 +9,13 @@ import {
 } from "@/shared/Constants";
 import { FC, useEffect, useRef, useState } from "react";
 import { Support } from "@/entities/Support/Support";
-import useHeaderActive from "@/shared/hooks/UseHeaderActive";
 import { useAppDispatch } from "@/shared/hooks/redux";
 import { setLinkHome } from "@/store/reducers/linkSlice";
 import { TopImage } from "@/entities/TopImage/TopImage";
 import { ProjectType } from "@/shared/models/Models";
 import { NewCarousel } from "../NewCarousel/NewCarousel";
+import useElementVisible from "@/shared/hooks/useElementVisible";
+import { setValueHeader } from "@/store/reducers/headerSlice";
 
 type ProjectProps = {
     children: React.ReactNode;
@@ -25,7 +26,12 @@ export const Project: FC<ProjectProps> = ({ children, project }) => {
     const [server, setServer] = useState("");
     const dispatch = useAppDispatch();
     const ref = useRef<HTMLDivElement | null>(null);
-    useHeaderActive(ref);
+
+    const visibilityRef =(value: boolean) => {
+        dispatch(setValueHeader(value));
+    }
+
+    useElementVisible(ref, visibilityRef);
 
     const backgroundImageWithPhoto =
         "linear-gradient(rgba(255,255,255, 0) 20%, var(--color-dust-white) 70%)";

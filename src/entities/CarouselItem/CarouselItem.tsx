@@ -12,6 +12,7 @@ import useKeyEvents from "@/shared/hooks/useKeyEvents";
 
 export const CarouselItem: FC<CarouselItemType> = ({
     src,
+    srcfullphoto,
     height,
     i,
     fullphoto,
@@ -20,9 +21,13 @@ export const CarouselItem: FC<CarouselItemType> = ({
     const [loaded, setLoaded] = useState(false);
     const dispatch = useAppDispatch();
 
+    useEffect(() => {
+        srcfullphoto && dispatch(setValuePhoto(srcfullphoto));
+    }, [srcfullphoto]);
+
     function openPopup() {
         if (fullphoto !== 0 && loaded) {
-            // dispatch(setValuePhoto(src));
+            dispatch(setValuePhoto(src));
             dispatch(setValuePhotoPopup(true));
             fixedBody();
         }
@@ -30,31 +35,31 @@ export const CarouselItem: FC<CarouselItemType> = ({
 
     // useKeyEvents((key) => {
     //     key === "Enter" && openPopup();
-    //     console.log("Нажал")
+    //     openPopup;
     // });
-
-    useEffect(() => {
-        console.log(src)
-    }, [src]);
 
     return (
         <>
-                <Image
-                    src={src}
-                    className="carouselitem"
-                    style={loaded ? {
-                        height: height,
-                        cursor: cursor,
-                    } : {
-                        height: height,
-                        cursor: "default",
-                    }}
-                    width={400}
-                    height={400}
-                    alt={`фото ${i}`}
-                    onLoad={() => setLoaded(true)}
-                    onClick={openPopup}
-                />
+            <Image
+                src={src}
+                className="carouselitem"
+                style={
+                    loaded
+                        ? {
+                              height: height,
+                              cursor: cursor,
+                          }
+                        : {
+                              height: height,
+                              cursor: "default",
+                          }
+                }
+                width={400}
+                height={400}
+                alt={`фото ${i}`}
+                onLoad={() => setLoaded(true)}
+                onClick={openPopup}
+            />
         </>
     );
 };

@@ -1,17 +1,15 @@
 import { MutableRefObject, useEffect } from "react";
-import { useAppDispatch } from "./redux";
-import { setValueHeader } from "@/store/reducers/headerSlice";
 
-export default function useHeaderActive(ref: MutableRefObject<HTMLDivElement | null>) {
-    const dispatch = useAppDispatch();
+export default function useElementVisible(ref: MutableRefObject<HTMLDivElement | null>, visibilityRef: { (value: boolean): void; (arg0: boolean): void; }) {
 
     useEffect(() => {
+
         const currentRef = ref.current;
 
         if (currentRef) {
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach((entry) => {
-                    dispatch(setValueHeader(entry.isIntersecting));
+                    visibilityRef(entry.isIntersecting)
                 });
             });
 
