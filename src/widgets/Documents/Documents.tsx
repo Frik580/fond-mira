@@ -3,13 +3,22 @@
 import "./Documents.css";
 import { TITLES, DOCUMENTS } from "../../shared/Constants";
 import { useRef } from "react";
-import useHeaderActive from "@/shared/hooks/UseHeaderActive";
 import { Document } from "@/entities/Document/Document";
 import { DocumentsType } from "@/shared/models/Models";
+import { useAppDispatch } from "@/shared/hooks/redux";
+import { setValueHeader } from "@/store/reducers/headerSlice";
+import useElementVisible from "@/shared/hooks/useElementVisible";
 
 export const Documents = () => {
     const ref = useRef<HTMLDivElement | null>(null);
-    useHeaderActive(ref);
+    const dispatch = useAppDispatch();
+
+    const visibilityRef = (value: boolean) => {
+        dispatch(setValueHeader(value));
+    };
+
+    useElementVisible(ref, visibilityRef);
+
     return (
         <section className="documents">
             <div ref={ref} style={{ height: "20px" }} />

@@ -2,12 +2,13 @@
 
 import "./HeaderLink.css";
 import { useAppDispatch } from "../../shared/hooks/redux";
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import handleLinkState from "./lib/LinkState";
-import { useRouter } from "next/navigation";
 import unfixedBody from "@/shared/lib/UnfixedBody";
-import { newsAPI } from "@/shared/services/NewsService";
+import { PATH } from "@/shared/Constants";
 import Link from "next/link";
+import { setLinkHome } from "@/store/reducers/linkSlice";
+import { usePathname, useRouter } from "next/navigation";
 
 type HeaderLinkProps = {
     title: string;
@@ -24,22 +25,20 @@ export const HeaderLink: FC<HeaderLinkProps> = ({
     style,
     headerValue,
 }) => {
-    const { data: news } = newsAPI.useFetchAllNewsQuery("");
     const dispatch = useAppDispatch();
     const router = useRouter();
+    const pathname = usePathname();
 
     const routing = () => {
-        console.log(news?.length);
-        // router.push("/");
-        // if (news?.length !== 0) {
         unfixedBody();
-        // router.push("/");
-        // setTimeout(() => {
-        //     router.push(path);
-        // }, 1);
-        // router.push(path);
         handleLinkState(path, dispatch);
-        // }
+
+        if (pathname === PATH.DOCUMENTS) {
+            dispatch(setLinkHome());
+            router.push("/");
+            setTimeout(() => handleLinkState(path, dispatch), 100)
+        }
+
     };
 
     return (
@@ -56,15 +55,25 @@ export const HeaderLink: FC<HeaderLinkProps> = ({
                 </div>
             ) : (
                 <button onClick={routing} className={style}>
-                    <Link
-                        href={path}
-                        prefetch={false}
-                        className={`header-link ${
-                            headerValue ? "" : "header-link_black"
-                        }`}
-                    >
-                        {title}
-                    </Link>
+                    {path === PATH.DOCUMENTS ? (
+                        <Link
+                            href={path}
+                            className={`header-link ${
+                                headerValue ? "" : "header-link_black"
+                            }`}
+                        >
+                            {title}
+                        </Link>
+                    ) : (
+                        <p
+                            // href={path}
+                            className={`header-link ${
+                                headerValue ? "" : "header-link_black"
+                            }`}
+                        >
+                            {title}
+                        </p>
+                    )}
                 </button>
             )}
         </>

@@ -7,11 +7,17 @@
     font-weight: 400;
     font-style: normal;
     border-radius: 20px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1),
-    inset 0px 0px 3px 3px rgba(251, 191, 178, 0.5);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    /* inset 0px 0px 3px 3px rgba(251, 191, 178, 0.5); */
     overflow: hidden;
     background-color: var(--color-pink);
     margin: 1.9px;
+    transition: all 0.3s ease-in-out;
+}
+
+.news:hover {
+    box-shadow: 0px 0px 25px 3px rgba(0, 0, 0, 0.2);
+    /* inset 0px 0px 3px 3px rgba(251, 191, 178, 0.5); */
 }
 
 @media (max-width: 1023px) {

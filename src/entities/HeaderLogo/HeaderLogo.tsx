@@ -27,7 +27,7 @@ export const HeaderLogo: FC<HeaderLogoProps> = ({ headerValue }) => {
                 src={logo}
                 width={200}
                 height={200}
-                className={headerValue ? "logo__image" : "logo__image_visibility"}
+                className={headerValue ? "logo__image_large" : "logo__image"}
                 alt="голубь мира"
             />
             {headerValue && (

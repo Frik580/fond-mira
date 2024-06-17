@@ -5,15 +5,19 @@ import Image from "next/image";
 import imgAdds from "./adds3.png";
 import imgEmail from "./email4.png";
 import { useRef } from "react";
+import { linkState, setLinkContacts } from "@/store/reducers/linkSlice";
+import { useAppSelector } from "@/shared/hooks/redux";
 import useLinkDeactive from "@/shared/hooks/UseLinkDeactive";
-import { setLinkContacts } from "@/store/reducers/linkSlice";
+import useLink from "@/shared/hooks/useLink";
 
 export const Contacts = () => {
-    const ref = useRef<HTMLDivElement | null>(null);
-    useLinkDeactive(ref, setLinkContacts(false));
+    const sectionContacts = useRef<HTMLDivElement | null>(null);
+    useLinkDeactive(sectionContacts, setLinkContacts(false));
+    const { contacts } = useAppSelector(linkState);
+    useLink(sectionContacts, contacts);
 
     return (
-        <section id="contacts" ref={ref} className="contacts">
+        <section id="contacts" ref={sectionContacts} className="contacts">
             <div className="contacts__conteiner">
                 <p className="contacts__text">
                     Контакты ПКО МОФ «Российский фонд мира»

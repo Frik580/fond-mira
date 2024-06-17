@@ -2,7 +2,7 @@ import { FC } from "react";
 import "./BurgerButton.css";
 
 type BurgerButtonProps = {
-    click: any;
+    click: () => void;
     headerValue: boolean;
 };
 

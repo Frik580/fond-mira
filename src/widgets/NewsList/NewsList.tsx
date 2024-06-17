@@ -1,17 +1,19 @@
 "use client";
 
 import "./NewsList.css";
-import { MainTitle } from "../../entities/MainTitle/MainTitle";
-import { TITLES } from "../../shared/Constants";
+import { MainTitle } from "@/entities/MainTitle/MainTitle";
+import { TITLES } from "@/shared/Constants";
 import { News } from "../News/News";
 import { DotsButton } from "@/features/DotsButton/DotsButton";
 import { useEffect, useRef, useState } from "react";
-import { setLinkNewslist } from "../../store/reducers/linkSlice";
-import useLinkDeactive from "../../shared/hooks/UseLinkDeactive";
+import { linkState, setLinkNewslist } from "@/store/reducers/linkSlice";
 import { newsAPI } from "@/shared/services/NewsService";
 import { NewsType } from "@/shared/models/Models";
 import { NEWS_AMT } from "@/shared/Constants";
 import { NEWS } from "@/shared/Constants";
+import { useAppSelector } from "@/shared/hooks/redux";
+import useLinkDeactive from "../../shared/hooks/UseLinkDeactive";
+import useLink from "@/shared/hooks/useLink";
 
 export const NewsList = () => {
     const { data: news } = newsAPI.useFetchAllNewsQuery("");
@@ -46,11 +48,13 @@ export const NewsList = () => {
         setIndex(i);
     };
 
-    const ref = useRef<HTMLDivElement | null>(null);
-    useLinkDeactive(ref, setLinkNewslist(false));
+    const sectionNews = useRef<HTMLDivElement | null>(null);
+    useLinkDeactive(sectionNews, setLinkNewslist(false));
+    const { newslist } = useAppSelector(linkState);
+    useLink(sectionNews, newslist)
 
     return (
-        <section id="news-list" ref={ref} className="news-list">
+        <section id="news-list" ref={sectionNews} className="news-list">
             <MainTitle text={TITLES.NEWS} />
             <div className="news-list__conteiner">
                 <div className="news-list__block">

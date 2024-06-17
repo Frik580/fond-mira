@@ -12,18 +12,18 @@
 }
 
 .logo__image {
-    width: 100%;
-    height: auto;
-    max-width: 100px;
-    margin: auto;
-    margin: 25px 0 15px;
-}
-
-.logo__image_visibility {
     width: auto;
     height: 60px;
-    margin: auto;
     padding: 5px 0;
+    transition: height .5s ease-out;
+}
+
+.logo__image_large {
+    width: auto;
+    height: 140px;
+    max-width: 100px;
+    margin: 25px 0 15px;
+    transition: none;
 }
 
 .logo__text {

@@ -1,19 +1,23 @@
 "use client";
 
 import "./PartnersList.css";
-import { MainTitle } from "../../entities/MainTitle/MainTitle";
-import { TITLES } from "../../shared/Constants";
-import { Partner } from "../../entities/Partner/Partner";
+import { MainTitle } from "@/entities/MainTitle/MainTitle";
+import { TITLES } from "@/shared/Constants";
+import { Partner } from "@/entities/Partner/Partner";
 import { useRef } from "react";
+import { linkState, setLinkPartners } from "@/store/reducers/linkSlice";
+import { useAppSelector } from "@/shared/hooks/redux";
 import useLinkDeactive from "@/shared/hooks/UseLinkDeactive";
-import { setLinkPartners } from "@/store/reducers/linkSlice";
+import useLink from "@/shared/hooks/useLink";
 
 export const PartnersList = () => {
-    const ref = useRef<HTMLDivElement | null>(null);
-    useLinkDeactive(ref, setLinkPartners(false));
+    const sectionPartners = useRef<HTMLDivElement | null>(null);
+    useLinkDeactive(sectionPartners, setLinkPartners(false));
+    const { partners } = useAppSelector(linkState);
+    useLink(sectionPartners, partners);
 
     return (
-        <section id="partners" ref={ref} className="partners">
+        <section id="partners" ref={sectionPartners} className="partners">
             <MainTitle text={TITLES.PARTNERS} />
             <div className="partners__conteiner">
                 <Partner

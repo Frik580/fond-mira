@@ -1,25 +1,28 @@
 "use client";
 
 import "./ProjectsList.css";
-import { MainTitle } from "../../entities/MainTitle/MainTitle";
-import { ProjectLink } from "../../entities/ProjectLink/ProjectLink";
-import { TITLES } from "../../shared/Constants";
+import { MainTitle } from "@/entities/MainTitle/MainTitle";
+import { ProjectLink } from "@/entities/ProjectLink/ProjectLink";
+import { TITLES } from "@/shared/Constants";
 import { useRef } from "react";
-import useLinkDeactive from "@/shared/hooks/UseLinkDeactive";
-import { setLinkProjectslist } from "@/store/reducers/linkSlice";
+import { linkState, setLinkProjectslist } from "@/store/reducers/linkSlice";
 import { useAppSelector } from "@/shared/hooks/redux";
 import { projectState } from "@/store/reducers/projectSlice";
-import useFetchProjects from "@/shared/hooks/UseFetchProjects";
 import { ProjectType } from "@/shared/models/Models";
+import useLinkDeactive from "@/shared/hooks/UseLinkDeactive";
+import useFetchProjects from "@/shared/hooks/UseFetchProjects";
+import useLink from "@/shared/hooks/useLink";
 
 export const ProjectsList = () => {
     const projects = useAppSelector(projectState);
     useFetchProjects(projects.length);
-    const ref = useRef<HTMLDivElement | null>(null);
-    useLinkDeactive(ref, setLinkProjectslist(false));
+    const sectionProjects = useRef<HTMLDivElement | null>(null);
+    useLinkDeactive(sectionProjects, setLinkProjectslist(false));
+    const { projectslist } = useAppSelector(linkState);
+    useLink(sectionProjects, projectslist)
 
     return (
-        <section id="projects-list" ref={ref} className="projects-list">
+        <section id="projects-list" ref={sectionProjects} className="projects-list">
             <MainTitle text={TITLES.OUR_PROJECTS} />
             <div className="projects-list__conteiner">
                 {projects.length > 0 &&

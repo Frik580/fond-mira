@@ -6,15 +6,19 @@ import { TITLES } from "../../shared/Constants";
 import { Direction } from "../Direction/Direction";
 import Member from "../../entities/Member/Member";
 import { useRef } from "react";
-import { setLinkAboutus } from "../../store/reducers/linkSlice";
+import { linkState, setLinkAboutus } from "../../store/reducers/linkSlice";
 import useLinkDeactive from "../../shared/hooks/UseLinkDeactive";
+import useLink from "@/shared/hooks/useLink";
+import { useAppSelector } from "@/shared/hooks/redux";
 
 export const AboutUs = () => {
-    const ref = useRef<HTMLDivElement | null>(null);
-    useLinkDeactive(ref, setLinkAboutus(false));
+    const sectionAboutUs = useRef<HTMLDivElement>(null);
+    useLinkDeactive(sectionAboutUs, setLinkAboutus(false));
+    const { aboutus } = useAppSelector(linkState);
+    useLink(sectionAboutUs, aboutus)
 
     return (
-        <section id="about-us" ref={ref} className="about-us">
+        <section id="about-us" ref={sectionAboutUs} className="about-us">
             <MainTitle text={TITLES.ABOUT_US} />
             <div className="about-us__columns">
                 <div className="about-us__member">
