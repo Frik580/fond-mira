@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 import type { RootState } from '../store'
+import { ProjectType } from '@/shared/models/Models'
 
 const initialState = {
     projects: []

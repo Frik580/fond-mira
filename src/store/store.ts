@@ -1,6 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit'
 import counterReducer from './reducers/counterSlice'
 import linkReduser from './reducers/linkSlice'
+import loadedRefReduser from './reducers/loadedRefSlice'
 import headerReduser from './reducers/headerSlice'
 import popupReduser from './reducers/popupSlice'
 import photoReduser from './reducers/photoSlice'
@@ -12,6 +13,7 @@ export const store = configureStore({
     reducer: {
         counter: counterReducer,
         link: linkReduser,
+        loadedRef: loadedRefReduser,
         header: headerReduser,
         popup: popupReduser,
         project: projectReduser,

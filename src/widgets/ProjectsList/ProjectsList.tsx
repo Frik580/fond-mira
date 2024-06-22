@@ -22,13 +22,15 @@ export const ProjectsList = () => {
     useLink(sectionProjects, projectslist)
 
     return (
-        <section id="projects-list" ref={sectionProjects} className="projects-list">
+        <section ref={sectionProjects} id="projects-list" className="projects-list">
+            {/* <div className="projects-list__ref"> */}
             <MainTitle text={TITLES.OUR_PROJECTS} />
             <div className="projects-list__conteiner">
                 {projects.length > 0 &&
                     projects.map((card: ProjectType) => (
                         <ProjectLink key={card.id} card={card} />
                     ))}
+            {/* </div> */}
             </div>
         </section>
     );

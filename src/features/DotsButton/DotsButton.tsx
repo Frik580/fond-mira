@@ -2,9 +2,8 @@
 
 import { FC, useEffect, useState } from "react";
 import "./DotsButton.css";
-import { NEWS_AMT, PATH } from "@/shared/Constants";
+import { NEWS_AMT } from "@/shared/Constants";
 import resetActiveDots from "./lib/ResetActiveDots";
-import { useRouter } from "next/navigation";
 
 type DotsButtonProps = {
     lenght: number;
@@ -13,7 +12,6 @@ type DotsButtonProps = {
 
 export const DotsButton: FC<DotsButtonProps> = ({ lenght, index }) => {
     const [isActive, setIsActive] = useState<boolean[]>([]);
-    const router = useRouter();
 
     useEffect(() => {
         const num = Math.ceil(lenght / NEWS_AMT);
@@ -27,7 +25,6 @@ export const DotsButton: FC<DotsButtonProps> = ({ lenght, index }) => {
         data[i] = true;
         setIsActive(data);
         index(i);
-        router.push(PATH.NEWS);
     };
 
     return (

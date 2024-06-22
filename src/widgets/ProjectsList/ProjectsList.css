@@ -2,6 +2,13 @@
     width: 100vw;
     display: flex;
     flex-direction: column;
+    background-color: var(--color-black);
+    padding-top: 100px;
+    padding-bottom: 1px;
+}
+
+.projects-list__ref {
+    margin-top: 50px;
     padding-top: 100px;
     padding-bottom: 1px;
     background-color: var(--color-black);

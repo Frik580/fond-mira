@@ -10,7 +10,6 @@ import {
 } from "@/store/reducers/linkSlice";
 import { setValueNavPopup } from "@/store/reducers/popupSlice";
 
-
 export default function handleLinkState(path: string, dispatch: any) {
     dispatch(setValueNavPopup(false));
     dispatch(setLinkHome());

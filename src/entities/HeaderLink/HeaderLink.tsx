@@ -1,14 +1,14 @@
 "use client";
 
 import "./HeaderLink.css";
-import { useAppDispatch } from "../../shared/hooks/redux";
-import { FC, useEffect } from "react";
+import { FC, useEffect, useState } from "react";
 import handleLinkState from "./lib/LinkState";
 import unfixedBody from "@/shared/lib/UnfixedBody";
 import { PATH } from "@/shared/Constants";
 import Link from "next/link";
-import { setLinkHome } from "@/store/reducers/linkSlice";
 import { usePathname, useRouter } from "next/navigation";
+import { loadedRefState } from "@/store/reducers/loadedRefSlice";
+import { useAppDispatch, useAppSelector } from "@/shared/hooks/redux";
 
 type HeaderLinkProps = {
     title: string;
@@ -28,17 +28,22 @@ export const HeaderLink: FC<HeaderLinkProps> = ({
     const dispatch = useAppDispatch();
     const router = useRouter();
     const pathname = usePathname();
+    const { newslist } = useAppSelector(loadedRefState);
 
     const routing = () => {
         unfixedBody();
-        handleLinkState(path, dispatch);
-
-        if (pathname === PATH.DOCUMENTS) {
-            dispatch(setLinkHome());
+        if (pathname !== "/") {
             router.push("/");
-            setTimeout(() => handleLinkState(path, dispatch), 100)
+            if (path === PATH.OUR_PROJECTS) {
+                setTimeout(() => {
+                    handleLinkState(path, dispatch);
+                }, 100);
+            } else {
+                handleLinkState(path, dispatch);
+            }
+        } else {
+            handleLinkState(path, dispatch);
         }
-
     };
 
     return (
@@ -66,7 +71,6 @@ export const HeaderLink: FC<HeaderLinkProps> = ({
                         </Link>
                     ) : (
                         <p
-                            // href={path}
                             className={`header-link ${
                                 headerValue ? "" : "header-link_black"
                             }`}
@@ -79,3 +83,5 @@ export const HeaderLink: FC<HeaderLinkProps> = ({
         </>
     );
 };
+
+export type dispatchType = typeof useAppDispatch;
