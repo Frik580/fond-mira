@@ -4,14 +4,10 @@ import { FC } from "react";
 import "./MainTitle.css";
 
 type MainTitleProps = {
-    id?: string;
+    id?: number;
     text: string;
 };
 
 export const MainTitle: FC<MainTitleProps> = ({ id, text }) => {
-    return (
-        <h2 id={id} className="main-title">
-            {text}
-        </h2>
-    );
+    return <h2 className="main-title">{text}</h2>;
 };

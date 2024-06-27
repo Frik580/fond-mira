@@ -1,14 +1,13 @@
 "use client";
 
 import "./HeaderLink.css";
-import { FC, useEffect, useState } from "react";
+import { FC } from "react";
 import handleLinkState from "./lib/LinkState";
 import unfixedBody from "@/shared/lib/UnfixedBody";
 import { PATH } from "@/shared/Constants";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { loadedRefState } from "@/store/reducers/loadedRefSlice";
-import { useAppDispatch, useAppSelector } from "@/shared/hooks/redux";
+import { useAppDispatch } from "@/shared/hooks/redux";
 
 type HeaderLinkProps = {
     title: string;
@@ -28,16 +27,13 @@ export const HeaderLink: FC<HeaderLinkProps> = ({
     const dispatch = useAppDispatch();
     const router = useRouter();
     const pathname = usePathname();
-    const { newslist } = useAppSelector(loadedRefState);
 
     const routing = () => {
         unfixedBody();
         if (pathname !== "/") {
             router.push("/");
             if (path === PATH.OUR_PROJECTS) {
-                setTimeout(() => {
-                    handleLinkState(path, dispatch);
-                }, 100);
+                handleLinkState(path, dispatch);
             } else {
                 handleLinkState(path, dispatch);
             }

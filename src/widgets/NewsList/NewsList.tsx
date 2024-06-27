@@ -5,7 +5,7 @@ import { MainTitle } from "@/entities/MainTitle/MainTitle";
 import { TITLES } from "@/shared/Constants";
 import { News } from "../News/News";
 import { DotsButton } from "@/features/DotsButton/DotsButton";
-import { useEffect, useRef, useState } from "react";
+import { memo, useEffect, useRef, useState } from "react";
 import {
     linkState,
     setLinkHome,
@@ -65,11 +65,11 @@ export const NewsList = () => {
 
     useEffect(() => {
         dataConteiner && setConteinerHight(dataConteiner);
-        // console.log(dataConteiner)
-    }, [dataConteiner]);
+        console.log(dataConteiner)
+    }, [loaded]);
 
     useEffect(() => {
-        console.log(loaded);
+        // console.log(loaded);
         dispatch(setLoadedRefNewslist(loaded))
     }, [loaded]);
 
@@ -82,7 +82,7 @@ export const NewsList = () => {
                     className="news-list"
                     onLoad={() => setLoaded(true)}
                 >
-                    <MainTitle text={TITLES.NEWS} />
+                    <MainTitle text={TITLES.NEWS}/>
                     <div className="news-list__conteiner">
                         <div className="news-list__block">
                             <ul className="news-list__news">

@@ -1,4 +1,4 @@
-import { MutableRefObject, RefObject, useEffect } from "react";
+import { MutableRefObject, useEffect } from "react";
 
 export default function useLink(
     ref: MutableRefObject<HTMLDivElement | null>,
@@ -16,7 +16,7 @@ export default function useLink(
 
     useEffect(() => {
         if (value) {
-            scrollToSection(ref)
+                scrollToSection(ref)
         }
     }, [value]);
 

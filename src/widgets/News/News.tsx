@@ -3,13 +3,12 @@
 import { FC, useEffect, useState } from "react";
 import "./News.css";
 import { NewsType } from "@/shared/models/Models";
-import VideoFrame from "@/entities/VideoFrame/VideoFrame";
-import { NewCarousel } from "@/widgets/NewCarousel/NewCarousel";
-import { IMAGE_EXTENSION, SERVER_URL_NEWS_IMAGE } from "@/shared/Constants";
-import { NewsImage } from "@/entities/Image/Image";
+import { SERVER_URL_NEWS_IMAGE } from "@/shared/Constants";
+import { NewsNoFull } from "@/entities/NewsNoFull/NewsNoFull";
+import { NewsFull } from "@/entities/NewsFull/NewsFull";
 
 type NewsProps = {
-    post: NewsType; //
+    post: NewsType;
 };
 
 export const News: FC<NewsProps> = ({ post }) => {
@@ -21,80 +20,23 @@ export const News: FC<NewsProps> = ({ post }) => {
     }, [post]);
 
     return (
-        <li
-            className={`news ${!fullNews ? "news_nofull" : ""}`}
-        >
+        <li className={`news ${!fullNews ? "news_nofull" : ""}`}>
             {!fullNews ? (
-                <>
-                    <div className="news__box news_border_white">
-                        <div className="news__conteiner">
-                            <p className="news__date">{post.createdAt}</p>
-                            <div>
-                                <p className="news__preview">{post.title}</p>
-                                <p className="news__text">{post.article[0]}</p>
-                            </div>
-                            {!!post.photo && !!server && (
-                                <div className="news__photo">
-                                    <NewsImage
-                                        src={`${server}1.webp`}
-                                        srclite={`${server}lite/1.webp`}
-                                        height={200}
-                                        width={200}
-                                        i={1}
-                                        fullphoto={0}
-                                    />
-                                </div>
-                            )}
-                        </div>
-                    </div>
-                    <button
-                        className="news__button_open"
-                        onClick={() => {
-                            setFullNews(!fullNews);
-                        }}
-                    >
-                        подробнее
-                    </button>
-                </>
+                <NewsNoFull
+                    post={post}
+                    server={server}
+                    onClickOpenButton={() => {
+                        setFullNews(true);
+                    }}
+                />
             ) : (
-                <div className="news__box news_border_pink">
-                    <p className="news__date">{post.createdAt}</p>
-                    <p className="news__title">{post.title}</p>
-                    <div className="news__article">
-                        {post.article.map((item: string, i) => (
-                            <p key={i} className="news__text">
-                                {item}
-                            </p>
-                        ))}
-                    </div>
-                    {post.video.length !== 0 && (
-                        <div className="news__video">
-                            {post.video.map((item: string, i) => (
-                                <VideoFrame
-                                    key={i}
-                                    video={item}
-                                    title={post.title}
-                                />
-                            ))}
-                        </div>
-                    )}
-                    {Boolean(post.photo) && (
-                        <div className="news__gallery">
-                            <NewCarousel
-                                photo={post.photo}
-                                server={server}
-                                extension={IMAGE_EXTENSION}
-                                height={350}
-                            />
-                        </div>
-                    )}
-                    <button
-                        className="news__button_close"
-                        onClick={() => {
-                            setFullNews(!fullNews);
-                        }}
-                    />
-                </div>
+                <NewsFull
+                    post={post}
+                    server={server}
+                    onClickCloseButton={() => {
+                        setFullNews(false);
+                    }}
+                />
             )}
         </li>
     );
