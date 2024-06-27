@@ -1,9 +1,9 @@
 // "use client";
 
-import { FC } from "react";
+import { FC, useState } from "react";
 import "./NewsNoFull.css";
 import { NewsType } from "@/shared/models/Models";
-import { NewsImage } from "@/entities/Image/Image";
+import Image from "next/image";
 
 type NewsConteinerProps = {
     post: NewsType;
@@ -16,6 +16,8 @@ export const NewsNoFull: FC<NewsConteinerProps> = ({
     server,
     onClickOpenButton,
 }) => {
+    const [loaded, setLoaded] = useState(false);
+
     return (
         <>
             <div className="news__box news_border_white">
@@ -26,15 +28,26 @@ export const NewsNoFull: FC<NewsConteinerProps> = ({
                         <p className="news__text">{post.article[0]}</p>
                     </div>
                     {!!post.photo && !!server && (
-                        <div className="news__photo">
-                            <NewsImage
-                                src={`${server}1.webp`}
-                                srclite={`${server}lite/1.webp`}
-                                height={200}
-                                width={200}
-                                i={1}
-                                fullphoto={0}
-                            />
+                        <div>
+                            <div
+                                className="news__photoconteiner"
+                                style={{
+                                    height: 200,
+                                    width: 200,
+                                    backgroundImage: `url(${`${server}lite/1.webp`})`,
+                                }}
+                            >
+                                <Image
+                                    src={`${server}1.webp`}
+                                    className={`news__photo ${
+                                        loaded ? "news__photo_loaded" : ""
+                                    }`}
+                                    width={400}
+                                    height={400}
+                                    alt="фото 1"
+                                    onLoad={() => setLoaded(true)}
+                                />
+                            </div>
                         </div>
                     )}
                 </div>
