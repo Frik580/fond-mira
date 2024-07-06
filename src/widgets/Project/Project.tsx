@@ -27,9 +27,9 @@ export const Project: FC<ProjectProps> = ({ children, project }) => {
     const dispatch = useAppDispatch();
     const ref = useRef<HTMLDivElement | null>(null);
 
-    const visibilityRef =(value: boolean) => {
+    const visibilityRef = (value: boolean) => {
         dispatch(setValueHeader(value));
-    }
+    };
 
     useElementVisible(ref, visibilityRef);
 
@@ -47,7 +47,7 @@ export const Project: FC<ProjectProps> = ({ children, project }) => {
         <section
             className="project"
             style={
-                Boolean(project.photo)
+                !!project.photo
                     ? {
                           backgroundImage: `${backgroundImageWithPhoto}`,
                       }
@@ -60,7 +60,7 @@ export const Project: FC<ProjectProps> = ({ children, project }) => {
                 src={`${SERVER_URL_PROJECTS_COVER}${project.src}.${IMAGE_EXTENSION}`}
                 srclite={`${SERVER_URL_PROJECTS_COVER_LITE}${project.src}.${IMAGE_EXTENSION}`}
             />
-            <div ref={ref} style={{ height: "20px" }} />
+            <div ref={ref} style={{ height: "35px" }} />
             <div className="project__conteiner">
                 <div className="project__partner">
                     <Support partner={project.partner} />
@@ -68,7 +68,7 @@ export const Project: FC<ProjectProps> = ({ children, project }) => {
                 <h1 className="project__title">{project.title}</h1>
                 {children}
             </div>
-            {Boolean(project.photo) && (
+            {!!project.photo && (
                 <div className="project__gallery">
                     <NewCarousel
                         photo={project.photo}

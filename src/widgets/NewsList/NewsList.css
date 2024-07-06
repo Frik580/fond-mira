@@ -9,6 +9,7 @@
         var(--color-white) 0%,
         var(--color-dust-white) 100%
     );
+    /* min-height: 3100px; */
 }
 
 .news-list__conteiner {

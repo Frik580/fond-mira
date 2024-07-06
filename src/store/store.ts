@@ -6,7 +6,7 @@ import headerReduser from './reducers/headerSlice'
 import popupReduser from './reducers/popupSlice'
 import photoReduser from './reducers/photoSlice'
 import projectReduser from './reducers/projectSlice'
-import newsReduser from './reducers/newsSlice'
+import newsReduser from './reducers/newsHightSlice'
 import { newsAPI } from '@/shared/services/NewsService'
 
 export const store = configureStore({

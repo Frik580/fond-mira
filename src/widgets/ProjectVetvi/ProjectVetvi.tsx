@@ -4,11 +4,9 @@ import "./ProjectVetvi.css";
 import { Project } from "../Project/Project";
 import { useAppSelector } from "@/shared/hooks/redux";
 import { projectState } from "@/store/reducers/projectSlice";
-import useFetchProjects from "@/shared/hooks/UseFetchProjects";
 
 export const ProjectVetvi = () => {
     const projects = useAppSelector(projectState);
-    useFetchProjects(projects.length);
 
     return (
         <>

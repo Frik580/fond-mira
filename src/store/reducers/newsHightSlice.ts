@@ -1,20 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 import type { RootState } from '../store'
-import { NewsType } from '@/shared/models/Models'
 
-const initialState = {
-    post: {
-        _id: '',
-        createdAt: '',
-        title: '',
-        slug: '',
-        tags: [],
-        preview: '',
-        article: [''],
-        photo: 0,
-        video: [],
-    }
+interface HightState {
+    value: number
+}
+
+const initialState: HightState = {
+    value: 100
 }
 
 export const newsSlice = createSlice({
@@ -22,8 +15,8 @@ export const newsSlice = createSlice({
     // `createSlice` will infer the state type from the `initialState` argument
     initialState,
     reducers: {
-        setNews: (state, action: PayloadAction<NewsType>) => {
-            state.post = action.payload
+        setNews: (state, action: PayloadAction<number>) => {
+            state.value = action.payload
         },
     },
 })
@@ -33,6 +26,6 @@ export const {
 } = newsSlice.actions
 
 // Other code such as selectors can use the imported `RootState` type
-export const newsState = (state: RootState) => state.news.post
+export const newsState = (state: RootState) => state.news.value
 
 export default newsSlice.reducer

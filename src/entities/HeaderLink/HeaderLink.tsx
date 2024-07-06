@@ -5,7 +5,6 @@ import { FC } from "react";
 import handleLinkState from "./lib/LinkState";
 import unfixedBody from "@/shared/lib/UnfixedBody";
 import { PATH } from "@/shared/Constants";
-import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useAppDispatch } from "@/shared/hooks/redux";
 
@@ -30,54 +29,34 @@ export const HeaderLink: FC<HeaderLinkProps> = ({
 
     const routing = () => {
         unfixedBody();
-        if (pathname !== "/") {
-            router.push("/");
-            if (path === PATH.OUR_PROJECTS) {
+
+        if (path === PATH.DOCUMENTS) {
+            router.push(path);
+            handleLinkState(path, dispatch);
+        } else {
+            if (pathname !== "/") {
+                router.push("/");
                 handleLinkState(path, dispatch);
+                // if (path === PATH.OUR_PROJECTS) {
+                //     setTimeout(() => {
+                //         handleLinkState(path, dispatch);
+                //     }, 300);
+                // }
             } else {
                 handleLinkState(path, dispatch);
             }
-        } else {
-            handleLinkState(path, dispatch);
         }
     };
 
     return (
-        <>
-            {active ? (
-                <div className={style}>
-                    <p
-                        className={`header-link__text ${
-                            headerValue ? "" : "header-link_black"
-                        }`}
-                    >
-                        {title}
-                    </p>
-                </div>
-            ) : (
-                <button onClick={routing} className={style}>
-                    {path === PATH.DOCUMENTS ? (
-                        <Link
-                            href={path}
-                            className={`header-link ${
-                                headerValue ? "" : "header-link_black"
-                            }`}
-                        >
-                            {title}
-                        </Link>
-                    ) : (
-                        <p
-                            className={`header-link ${
-                                headerValue ? "" : "header-link_black"
-                            }`}
-                        >
-                            {title}
-                        </p>
-                    )}
-                </button>
-            )}
-        </>
+        <button
+            onClick={routing}
+            className={`${style} header-link ${
+                !headerValue && "header-link_black"
+            }`}
+            disabled={active}
+        >
+            {title}
+        </button>
     );
 };
-
-export type dispatchType = typeof useAppDispatch;

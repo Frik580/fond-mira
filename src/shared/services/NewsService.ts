@@ -6,7 +6,7 @@ export const newsAPI = createApi({
     reducerPath: 'newsAPI',
     baseQuery: fetchBaseQuery({ baseUrl: `${API_BASE_URL}` }),
     endpoints: (builder) => ({
-        fetchAllNews: builder.query<NewsType[], any>({
+        fetchAllNews: builder.query<NewsType[], string>({
             query: () => ({
                 url: '/news'
             }),

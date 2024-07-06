@@ -12,9 +12,11 @@ import Book from "@/entities/Book/Book";
 import fixedBody from "@/shared/lib/FixedBody";
 import { HeaderLogo } from "@/entities/HeaderLogo/HeaderLogo";
 import useScrollControl from "@/shared/hooks/useScrollControl";
+import useFetchProjects from "@/shared/hooks/useFetchProjects";
 
 export const Header = () => {
     useScrollControl();
+    useFetchProjects();
     const dispatch = useAppDispatch();
     const header = useAppSelector(headerValue);
     const link = useAppSelector(linkState);

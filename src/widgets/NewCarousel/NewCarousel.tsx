@@ -31,6 +31,8 @@ export const NewCarousel: FC<GalleryType> = ({
         setVisibility(value);
     };
 
+    useElementVisible(conteinerRef, visibilityRef);
+
     useKeyEvents((key) => {
         if (visibility) {
             key === "ArrowLeft" && move(decreaseIndex(activeIndex));
@@ -38,8 +40,6 @@ export const NewCarousel: FC<GalleryType> = ({
                 move(increaseIndex(activeIndex, images.length));
         }
     });
-
-    useElementVisible(conteinerRef, visibilityRef);
 
     useEffect(() => {
         setActiveIndex(scrollActiveIndex);
