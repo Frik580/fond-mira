@@ -15,6 +15,6 @@ export default function useFetchProjects() {
             );
             dispatch(setProject(newarray));
         } else { return }
-    }, [projects.length]);
+    }, [dispatch, projects.length]);
 
 }

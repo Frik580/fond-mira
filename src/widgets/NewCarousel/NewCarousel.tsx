@@ -1,6 +1,6 @@
 // "use client";
 
-import { FC, useEffect, useRef, useState } from "react";
+import { FC, useCallback, useEffect, useRef, useState } from "react";
 import "./NewCarousel.css";
 import { GalleryType } from "@/shared/models/Models";
 import { CarouselItem } from "@/entities/CarouselItem/CarouselItem";
@@ -45,7 +45,7 @@ export const NewCarousel: FC<GalleryType> = ({
         setActiveIndex(scrollActiveIndex);
     }, [scrollActiveIndex]);
 
-    const move = (newActiveIndex: number) => {
+    const move = useCallback((newActiveIndex: number) => {
         const currentNode = conteinerRef?.current;
 
         if (!currentNode) {
@@ -57,7 +57,7 @@ export const NewCarousel: FC<GalleryType> = ({
             left: newActiveIndex * dataConteiner.width,
             behavior: "smooth",
         });
-    };
+    }, []);
 
     return (
         <>
@@ -71,7 +71,9 @@ export const NewCarousel: FC<GalleryType> = ({
                         <div key={index} className="gallery__item">
                             <CarouselItem
                                 key={index}
-                                srcfullphoto={`${server}${activeIndex + 1}.${extension}`}
+                                srcfullphoto={`${server}${
+                                    activeIndex + 1
+                                }.${extension}`}
                                 src={image}
                                 height={height}
                                 cursor={"pointer"}

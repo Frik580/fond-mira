@@ -1,12 +1,8 @@
 "use client";
 
 import "./HeaderLink.css";
-import { FC } from "react";
-import handleLinkState from "./lib/LinkState";
-import unfixedBody from "@/shared/lib/UnfixedBody";
-import { PATH } from "@/shared/Constants";
-import { usePathname, useRouter } from "next/navigation";
-import { useAppDispatch } from "@/shared/hooks/redux";
+import { FC, useState } from "react";
+import useRouting from "./lib/useRouting";
 
 type HeaderLinkProps = {
     title: string;
@@ -23,34 +19,12 @@ export const HeaderLink: FC<HeaderLinkProps> = ({
     style,
     headerValue,
 }) => {
-    const dispatch = useAppDispatch();
-    const router = useRouter();
-    const pathname = usePathname();
-
-    const routing = () => {
-        unfixedBody();
-
-        if (path === PATH.DOCUMENTS) {
-            router.push(path);
-            handleLinkState(path, dispatch);
-        } else {
-            if (pathname !== "/") {
-                router.push("/");
-                handleLinkState(path, dispatch);
-                // if (path === PATH.OUR_PROJECTS) {
-                //     setTimeout(() => {
-                //         handleLinkState(path, dispatch);
-                //     }, 300);
-                // }
-            } else {
-                handleLinkState(path, dispatch);
-            }
-        }
-    };
+    const [value, setValue] = useState<null | boolean>(null);
+    useRouting(value, path);
 
     return (
         <button
-            onClick={routing}
+            onClick={() => (value === null ? setValue(true) : setValue(!value))}
             className={`${style} header-link ${
                 !headerValue && "header-link_black"
             }`}

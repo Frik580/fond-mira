@@ -29,20 +29,17 @@ export const DotsButton: FC<DotsButtonProps> = ({ lenght, index }) => {
 
     return (
         <div className="dots-button__conteiner">
-            {isActive.map((item, i) =>
-                item ? (
-                    <div key={i} className="dots-button_active" />
-                ) : (
-                    <button
-                        key={i}
-                        onClick={() => {
-                            handleDotsButton(i);
-                        }}
-                        className="dots-button"
-                        type="button"
-                    />
-                ),
-            )}
+            {isActive.map((item, i) => (
+                <button
+                    key={i}
+                    onClick={() => {
+                        handleDotsButton(i);
+                    }}
+                    className="dots-button"
+                    type="button"
+                    disabled={item}
+                />
+            ))}
         </div>
     );
 };

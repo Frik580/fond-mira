@@ -19,6 +19,6 @@ export default function useElementVisible(ref: MutableRefObject<HTMLDivElement |
                 observer.unobserve(currentRef);
             };
         }
-    }, []);
+    }, [ref, visibilityRef]);
 
 }

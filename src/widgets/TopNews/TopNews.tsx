@@ -1,7 +1,7 @@
 "use client";
 
 import "./TopNews.css";
-import { useRef } from "react";
+import { useCallback, useRef } from "react";
 import useElementVisible from "@/shared/hooks/useElementVisible";
 import { TopImage } from "@/entities/TopImage/TopImage";
 import image from "./New_header.webp";
@@ -14,22 +14,24 @@ export const TopNews = () => {
     const ref = useRef<HTMLDivElement | null>(null);
     const dispatch = useAppDispatch();
 
-    const visibilityRef =(value: boolean) => {
-        dispatch(setValueHeader(value));
-    }
+    const visibilityRef = useCallback(
+        (value: boolean) => {
+            dispatch(setValueHeader(value));
+        },
+        [dispatch],
+    );
 
     useElementVisible(ref, visibilityRef);
-
 
     return (
         <section className="top-news">
             <TopImage src={image} srclite={imagelite.src} />
             <div ref={ref} className="top-news__title-conteiner" />
             <div className="top-news__text-conteiner">
-                {/* <div className="top-news__line" /> */}
                 <p className="top-news__title">Наше лето - 2024</p>
                 <p className="top-news__text">
-                    Реализация проекта &laquo;КОД Семьи по-Пермски&raquo;<br/>
+                    Реализация проекта &laquo;КОД Семьи по-Пермски&raquo;
+                    <br />
                     (городской конкурс &laquo;Город - это мы!&raquo;).{" "}
                     {/* <Link
                         href="https://vk.com/pkuchenikgoda"

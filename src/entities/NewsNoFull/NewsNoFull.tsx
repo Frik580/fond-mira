@@ -23,8 +23,8 @@ export const NewsNoFull: FC<NewsConteinerProps> = ({
             <div className="news__box news_border_white">
                 <div className="news__conteiner">
                     <p className="news__date">{post.createdAt}</p>
-                    <div>
-                        <h3 className="news__preview">{post.title}</h3>
+                    <div className="news__block">
+                        <h3 className="news__title">{post.title}</h3>
                         <p className="news__text">{post.article[0]}</p>
                     </div>
                     {!!post.photo && !!server && (

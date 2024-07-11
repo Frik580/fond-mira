@@ -33,9 +33,7 @@ export const ProjectLink: FC<ProjectLinkProps> = ({ card }) => {
                         color="var(--color-dust-white)"
                     />
                 </div>
-                <div className="projectlink__info">
-                    <p className="projectlink__title">{card.title}</p>
-                </div>
+                <p className="projectlink__title">{card.title}</p>
                 <p className="projectlink__text">больше информации</p>
             </div>
         </Link>

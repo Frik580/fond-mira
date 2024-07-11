@@ -23,7 +23,7 @@ export const CarouselItem: FC<CarouselItemType> = ({
 
     useEffect(() => {
         srcfullphoto && dispatch(setValuePhoto(srcfullphoto));
-    }, [srcfullphoto]);
+    }, [dispatch, srcfullphoto]);
 
     function openPopup() {
         if (fullphoto !== 0 && loaded) {
@@ -33,33 +33,16 @@ export const CarouselItem: FC<CarouselItemType> = ({
         }
     }
 
-    // useKeyEvents((key) => {
-    //     key === "Enter" && openPopup();
-    //     openPopup;
-    // });
-
     return (
-        <>
-            <Image
-                src={src}
-                className="carouselitem"
-                style={
-                    loaded
-                        ? {
-                              height: height,
-                              cursor: cursor,
-                          }
-                        : {
-                              height: height,
-                              cursor: "default",
-                          }
-                }
-                width={400}
-                height={400}
-                alt={`фото ${i}`}
-                onLoad={() => setLoaded(true)}
-                onClick={openPopup}
-            />
-        </>
+        <Image
+            src={src}
+            className="carouselitem"
+            style={{ height: height, cursor: loaded ? cursor : "default" }}
+            width={400}
+            height={400}
+            alt={`фото ${i}`}
+            onLoad={() => setLoaded(true)}
+            onClick={openPopup}
+        />
     );
 };

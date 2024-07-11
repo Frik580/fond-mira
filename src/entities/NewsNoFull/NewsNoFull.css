@@ -52,10 +52,10 @@
     }
 }
 
-.news__preview {
+/* .news__preview {
     font-weight: 500;
     margin-bottom: 15px;
-}
+} */
 
 .news__photoconteiner {
     position: relative;
@@ -109,4 +109,24 @@
 .news__photo.news__photo_loaded::before {
     content: none;
     animation: none;
+}
+
+.news__block {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.news__title {
+    font-size: 20px;
+    line-height: 1.4;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.news__text {
+    font-size: 20px;
+    line-height: 1.4;
+    font-style: normal;
+    font-weight: 400;
 }

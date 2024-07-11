@@ -7,7 +7,7 @@ import {
     SERVER_URL_PROJECTS_COVER,
     SERVER_URL_PROJECTS_COVER_LITE,
 } from "@/shared/Constants";
-import { FC, useEffect, useRef, useState } from "react";
+import { FC, useCallback, useEffect, useRef, useState } from "react";
 import { Support } from "@/entities/Support/Support";
 import { useAppDispatch } from "@/shared/hooks/redux";
 import { setLinkHome } from "@/store/reducers/linkSlice";
@@ -27,9 +27,12 @@ export const Project: FC<ProjectProps> = ({ children, project }) => {
     const dispatch = useAppDispatch();
     const ref = useRef<HTMLDivElement | null>(null);
 
-    const visibilityRef = (value: boolean) => {
-        dispatch(setValueHeader(value));
-    };
+    const visibilityRef = useCallback(
+        (value: boolean) => {
+            dispatch(setValueHeader(value));
+        },
+        [dispatch],
+    );
 
     useElementVisible(ref, visibilityRef);
 

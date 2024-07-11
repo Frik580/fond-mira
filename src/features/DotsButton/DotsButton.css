@@ -15,10 +15,11 @@
     border: 2px solid var(--color-pink);
 }
 
-.dots-button_active {
+.dots-button:disabled {
     width: 15px;
     height: 15px;
     border-radius: 50%;
     border: 2px solid var(--color-pink);
     background-color: var(--color-pink);
+    cursor: default;
 }

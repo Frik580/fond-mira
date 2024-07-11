@@ -5,23 +5,23 @@ import { useAppDispatch, useAppSelector } from "@/shared/hooks/redux";
 import { popupValue, setValueNavPopup } from "@/store/reducers/popupSlice";
 import { linkState } from "@/store/reducers/linkSlice";
 import { HeaderLink } from "@/entities/HeaderLink/HeaderLink";
-import { TITLES } from "@/shared/Constants";
+import { PATH, TITLES } from "@/shared/Constants";
 import unfixedBody from "@/shared/lib/UnfixedBody";
 import useKeyEvents from "@/shared/hooks/useKeyEvents";
+import { useCallback } from "react";
 
 export const NavPopup = () => {
     const dispatch = useAppDispatch();
     const openpopup = useAppSelector(popupValue);
     const link = useAppSelector(linkState);
 
-    function closePopup() {
+    const closePopup = useCallback(() => {
         unfixedBody();
         dispatch(setValueNavPopup(false));
-    }
+    }, [dispatch])
 
     useKeyEvents((key) => {
         key === "Escape" && closePopup();
-        console.log("NAV")
     });
 
     return (
@@ -43,42 +43,42 @@ export const NavPopup = () => {
                     />
                     <div className="navpopup__links">
                         <HeaderLink
-                            path={"/#about-us"}
+                            path={PATH.ABOUT_US}
                             title={TITLES.ABOUT_US}
                             active={link.aboutus}
                             style="header-link__conteiner_burger"
                             headerValue={false}
                         />
                         <HeaderLink
-                            path={"/#news-list"}
+                            path={PATH.NEWS}
                             title={TITLES.NEWS}
                             active={link.newslist}
                             style="header-link__conteiner_burger"
                             headerValue={false}
                         />
                         <HeaderLink
-                            path={"/#projects-list"}
+                            path={PATH.OUR_PROJECTS}
                             title={TITLES.OUR_PROJECTS}
                             active={link.projectslist}
                             style="header-link__conteiner_burger"
                             headerValue={false}
                         />
                         <HeaderLink
-                            path={"/#partners"}
+                            path={PATH.PARTNERS}
                             title={TITLES.PARTNERS}
                             active={link.partners}
                             style="header-link__conteiner_burger"
                             headerValue={false}
                         />
                         <HeaderLink
-                            path={"/documents"}
+                            path={PATH.DOCUMENTS}
                             title={TITLES.DOCUMENTS}
                             active={link.documents}
                             style="header-link__conteiner_burger"
                             headerValue={false}
                         />
                         <HeaderLink
-                            path={"/#contacts"}
+                            path={PATH.CONTACTS}
                             title={TITLES.CONTACTS}
                             active={link.contacts}
                             style="header-link__conteiner_burger"

@@ -3,21 +3,17 @@ import { useEffect } from "react";
 export default function useScrollControl() {
 
     useEffect(() => {
-        window.addEventListener("scroll", () => {
+        const callback = () => {
             document.documentElement.style.setProperty(
                 "--scroll-y",
                 `${window.scrollY}px`,
             );
         }
-        );
+
+        window.addEventListener("scroll", callback);
 
         return () => {
-            window.removeEventListener("scroll", () => {
-                document.documentElement.style.setProperty(
-                    "--scroll-y",
-                    `${window.scrollY}px`,
-                );
-            });
+            window.removeEventListener("scroll", callback);
         };
     }, [])
 }

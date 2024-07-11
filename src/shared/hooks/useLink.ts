@@ -16,8 +16,8 @@ export default function useLink(
 
     useEffect(() => {
         if (value) {
-                scrollToSection(ref)
+            scrollToSection(ref)
         }
-    }, [value]);
+    }, [ref, value]);
 
 }

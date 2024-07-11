@@ -21,6 +21,6 @@ export default function useLinkDeactive(ref: MutableRefObject<HTMLDivElement | n
                 observer.unobserve(currentRef);
             };
         }
-    }, []);
+    }, [dispatch, falsevalue, ref]);
 
 }

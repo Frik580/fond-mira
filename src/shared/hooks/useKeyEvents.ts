@@ -11,11 +11,9 @@ export default function useKeyEvents(callback: (event: Keys) => void) {
         }
 
         document.addEventListener("keydown", keyboardEvents)
-        // console.log("открыто")
 
         return () => {
             document.removeEventListener("keydown", keyboardEvents)
-            // console.log("закрыто")
         }
     }, [callback]);
 

@@ -3,11 +3,11 @@ import type { PayloadAction } from '@reduxjs/toolkit'
 import type { RootState } from '../store'
 
 interface HightState {
-    value: number
+    value: number | undefined
 }
 
 const initialState: HightState = {
-    value: 100
+    value: undefined
 }
 
 export const newsSlice = createSlice({

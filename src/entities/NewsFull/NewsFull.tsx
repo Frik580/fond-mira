@@ -36,15 +36,13 @@ export const NewsFull: FC<NewsConteinerProps> = ({
                     ))}
                 </div>
             )}
-            {Boolean(post.photo) && (
-                <div className="news__gallery">
-                    <NewCarousel
-                        photo={post.photo}
-                        server={server}
-                        extension={IMAGE_EXTENSION}
-                        height={350}
-                    />
-                </div>
+            {!!post.photo && (
+                <NewCarousel
+                    photo={post.photo}
+                    server={server}
+                    extension={IMAGE_EXTENSION}
+                    height={350}
+                />
             )}
             <button
                 className="news__button_close"

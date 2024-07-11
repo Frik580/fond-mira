@@ -8,7 +8,6 @@ import { DotsButton } from "@/features/DotsButton/DotsButton";
 import { useEffect, useRef, useState } from "react";
 import {
     linkState,
-    setLinkHome,
     setLinkNewslist,
 } from "@/store/reducers/linkSlice";
 import { NewsType } from "@/shared/models/Models";
@@ -17,31 +16,32 @@ import { useAppDispatch, useAppSelector } from "@/shared/hooks/redux";
 import useLink from "@/shared/hooks/useLink";
 import useLinkDeactive from "@/shared/hooks/UseLinkDeactive";
 import useSortNews from "./lib/useSortNews";
-import { newsState, setNews } from "@/store/reducers/newsHightSlice";
+import { newsState } from "@/store/reducers/newsHightSlice";
+import { newsAPI } from "@/shared/services/NewsService";
+import useSetTheHight from "./lib/useSetTheHight";
 
 export const NewsList = () => {
+    const { data: news } = newsAPI.useFetchAllNewsQuery("");
     const sectionNews = useRef<HTMLDivElement>(null);
     const dispatch = useAppDispatch();
     const [index, setIndex] = useState(0);
     const [loaded, setLoaded] = useState(false);
-    const dataConteiner = sectionNews.current?.clientHeight;
-    useLinkDeactive(sectionNews, setLinkNewslist(false));
     const { newslist } = useAppSelector(linkState);
-    useLink(sectionNews, newslist);
-    const { newsArray, news } = useSortNews(index);
+    const newsArray = useSortNews(index, news);
     const hightValue = useAppSelector(newsState);
+    useLinkDeactive(sectionNews, setLinkNewslist(false));
+    useLink(sectionNews, newslist);
+    useSetTheHight(sectionNews, index, loaded)
 
     const handleIndex = (i: number) => {
         setIndex(i);
-        dispatch(setLinkHome());
+        dispatch(setLinkNewslist(false));
         dispatch(setLinkNewslist(true));
     };
 
     useEffect(() => {
-        console.log(dataConteiner);
-        dataConteiner && dispatch(setNews(dataConteiner));
         console.log(hightValue);
-    }, [hightValue, loaded]);
+    }, [hightValue]);
 
     if (!news) {
         return null;
@@ -54,21 +54,19 @@ export const NewsList = () => {
                 ref={sectionNews}
                 className="news-list"
                 onLoad={() => setLoaded(true)}
-                style={{ minHeight: hightValue }}
+                style={{ minHeight: index === 0 ? hightValue : 2000 }}
             >
                 <MainTitle text={TITLES.NEWS} />
                 <div className="news-list__conteiner">
-                    <div className="news-list__block">
-                        <ul className="news-list__news">
-                            {newsArray.map((post: NewsType) => (
-                                <News key={post._id} post={post} />
-                            ))}
-                        </ul>
-                        <DotsButton
-                            lenght={news.length < NEWS ? news.length : NEWS}
-                            index={handleIndex}
-                        />
-                    </div>
+                    <ul className="news-list__block">
+                        {newsArray.map((post: NewsType) => (
+                            <News key={post._id} post={post} />
+                        ))}
+                    </ul>
+                    <DotsButton
+                        lenght={news.length < NEWS ? news.length : NEWS}
+                        index={handleIndex}
+                    />
                 </div>
             </section>
         </>

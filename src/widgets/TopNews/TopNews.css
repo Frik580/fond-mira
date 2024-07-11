@@ -41,20 +41,6 @@
     }
 }
 
-.top-news__line {
-    width: 10%;
-    height: 2px;
-    background-color: var(--color-pink);
-    border-radius: 1px;
-    margin-bottom: 10px;
-}
-
-@media (max-width: 1023px) {
-    .top-news__line {
-        margin-bottom: 10px;
-    }
-}
-
 .top-news__title {
     font-size: 24px;
     line-height: 1.4;

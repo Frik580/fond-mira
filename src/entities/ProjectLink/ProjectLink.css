@@ -44,10 +44,6 @@
     border-bottom: 1px solid var(--color-dust-white);
 }
 
-.projectlink__info {
-    margin: auto;
-}
-
 .projectlink__title {
     font-size: 25px;
     line-height: 1.4;
