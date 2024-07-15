@@ -1,5 +1,5 @@
 .news__box {
-    padding: 20px;
+    /* padding: 20px; */
     background-color: var(--color-white);
     border-radius: 20px;
     transition: all 0.5s ease-in-out;
@@ -9,6 +9,7 @@
 }
 
 .news_border_pink {
+    padding: 20px;
     border: 2px solid var(--color-pink);
 }
 

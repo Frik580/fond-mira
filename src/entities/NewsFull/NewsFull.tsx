@@ -5,7 +5,7 @@ import "./NewsFull.css";
 import { NewsType } from "@/shared/models/Models";
 import VideoFrame from "@/entities/VideoFrame/VideoFrame";
 import { NewCarousel } from "@/widgets/NewCarousel/NewCarousel";
-import { IMAGE_EXTENSION } from "@/shared/Constants";
+import { IMAGE_PERMISSION } from "@/shared/Constants";
 
 type NewsConteinerProps = {
     post: NewsType;
@@ -40,7 +40,7 @@ export const NewsFull: FC<NewsConteinerProps> = ({
                 <NewCarousel
                     photo={post.photo}
                     server={server}
-                    extension={IMAGE_EXTENSION}
+                    extension={IMAGE_PERMISSION}
                     height={350}
                 />
             )}

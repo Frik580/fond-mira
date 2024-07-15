@@ -1,7 +1,5 @@
-import { DOCUMENT_EXTENSION, SERVER_URL_DOCUMENTS } from "@/shared/Constants";
-
-export default function downloadFile(href: string) {
-    fetch(`${SERVER_URL_DOCUMENTS}${href}.${DOCUMENT_EXTENSION}`, {
+export default function downloadFile(server: string, href: string, permission: string) {
+    fetch(`${server}${href}.${permission}`, {
         method: 'GET',
         headers: {
             "Content-Type": "application/pdf",
@@ -13,7 +11,7 @@ export default function downloadFile(href: string) {
         })
         .then(blob => {
             const blobURL = window.URL.createObjectURL(new Blob([blob]))
-            const fileName = `${href}.${DOCUMENT_EXTENSION}`;
+            const fileName = `${href}.${permission}`;
             const aTag = document.createElement("a");
             aTag.href = blobURL;
             aTag.setAttribute("download", fileName);

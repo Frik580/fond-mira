@@ -1,7 +1,15 @@
 import { PATH } from "@/shared/Constants";
 import { useAppDispatch } from "@/shared/hooks/redux";
 import unfixedBody from "@/shared/lib/UnfixedBody";
-import { setLinkAboutus, setLinkContacts, setLinkDocuments, setLinkHome, setLinkNewslist, setLinkPartners, setLinkProjectslist } from "@/store/reducers/linkSlice";
+import { 
+    setLinkAboutus, 
+    setLinkContacts, 
+    setLinkDocuments, 
+    setLinkHome, 
+    setLinkNewslist, 
+    setLinkPartners, 
+    setLinkProjectslist 
+} from "@/store/reducers/linkSlice";
 import { setValueNavPopup } from "@/store/reducers/popupSlice";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect } from "react";

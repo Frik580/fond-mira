@@ -21,9 +21,9 @@ export const SERVER_URL_NEWS_IMAGE = `${SERVER_URL}news/`
 export const SERVER_URL_PROJECTS_COVER = `${SERVER_URL}projects-cover/`
 export const SERVER_URL_PROJECTS_COVER_SMALL = `${SERVER_URL}projects-cover-small/`
 export const SERVER_URL_PROJECTS_COVER_LITE = `${SERVER_URL}projects-cover-lite/`
-export const IMAGE_EXTENSION = 'webp'
-export const DOCUMENT_EXTENSION = 'pdf'
-export const PARTNERS_EXTENSION = 'png'
+export const IMAGE_PERMISSION = 'webp'
+export const DOCUMENT_PERMISSION = 'pdf'
+export const PARTNERS_PERMISSION = 'png'
 export const API_BASE_URL = 'https://fondmira-pk-api.ru'
 
 export const TITLES = {

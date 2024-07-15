@@ -31,7 +31,7 @@ export const NewsList = () => {
     const hightValue = useAppSelector(newsState);
     useLinkDeactive(sectionNews, setLinkNewslist(false));
     useLink(sectionNews, newslist);
-    useSetTheHight(sectionNews, index, loaded)
+    useSetTheHight(sectionNews, index, loaded, hightValue)
 
     const handleIndex = (i: number) => {
         setIndex(i);

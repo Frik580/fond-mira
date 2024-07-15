@@ -28,26 +28,22 @@ export const NewsNoFull: FC<NewsConteinerProps> = ({
                         <p className="news__text">{post.article[0]}</p>
                     </div>
                     {!!post.photo && !!server && (
-                        <div>
-                            <div
-                                className="news__photoconteiner"
-                                style={{
-                                    height: 200,
-                                    width: 200,
-                                    backgroundImage: `url(${`${server}lite/1.webp`})`,
-                                }}
-                            >
-                                <Image
-                                    src={`${server}1.webp`}
-                                    className={`news__photo ${
-                                        loaded ? "news__photo_loaded" : ""
-                                    }`}
-                                    width={400}
-                                    height={400}
-                                    alt="фото 1"
-                                    onLoad={() => setLoaded(true)}
-                                />
-                            </div>
+                        <div
+                            className="news__photoconteiner"
+                            style={{
+                                backgroundImage: `url(${`${server}lite/1.webp`})`,
+                            }}
+                        >
+                            <Image
+                                src={`${server}1.webp`}
+                                className={`news__photo ${
+                                    loaded ? "news__photo_loaded" : ""
+                                }`}
+                                width={400}
+                                height={400}
+                                alt="фото 1"
+                                onLoad={() => setLoaded(true)}
+                            />
                         </div>
                     )}
                 </div>

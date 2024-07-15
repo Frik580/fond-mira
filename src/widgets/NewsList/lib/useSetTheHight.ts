@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 
 import { useAppDispatch } from "@/shared/hooks/redux";
 import { setNews } from "@/store/reducers/newsHightSlice";
@@ -8,9 +8,10 @@ export default function useSetTheHight(
     ref: MutableRefObject<HTMLDivElement | null>,
     index: number,
     loaded: boolean,
+    hightValue?: number,
 ) {
     const dispatch = useAppDispatch();
-    const [width, setWidth] = useState(window.innerWidth);
+    const [width, setWidth] = useState(0);
 
     useEffect(() => {
         const handleResizeWindow = () => {
@@ -27,12 +28,12 @@ export default function useSetTheHight(
         return () => {
             window.removeEventListener("resize", handleResizeWindow);
         };
-    }, []);
+    }, [width]);
 
     useEffect(() => {
         const dataConteiner = ref.current?.clientHeight;
         if (index === 0 && dataConteiner) {
             dispatch(setNews(dataConteiner));
         }
-    }, [dispatch, index, loaded, ref, width]);
+    }, [loaded, width]);
 }

@@ -53,11 +53,15 @@
 
 .top-news__text {
     font-size: 20px;
-    line-height: 1.4;
+    line-height: 1.2;
     font-weight: 400;
     font-style: normal;
     margin: 0 auto;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    list-style: none;
 }
 
 @media (max-width: 1023px) {

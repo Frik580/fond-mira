@@ -2,7 +2,7 @@
 
 import "./Project.css";
 import {
-    IMAGE_EXTENSION,
+    IMAGE_PERMISSION,
     SERVER_URL,
     SERVER_URL_PROJECTS_COVER,
     SERVER_URL_PROJECTS_COVER_LITE,
@@ -60,8 +60,8 @@ export const Project: FC<ProjectProps> = ({ children, project }) => {
             }
         >
             <TopImage
-                src={`${SERVER_URL_PROJECTS_COVER}${project.src}.${IMAGE_EXTENSION}`}
-                srclite={`${SERVER_URL_PROJECTS_COVER_LITE}${project.src}.${IMAGE_EXTENSION}`}
+                src={`${SERVER_URL_PROJECTS_COVER}${project.src}.${IMAGE_PERMISSION}`}
+                srclite={`${SERVER_URL_PROJECTS_COVER_LITE}${project.src}.${IMAGE_PERMISSION}`}
             />
             <div ref={ref} style={{ height: "35px" }} />
             <div className="project__conteiner">
@@ -76,7 +76,7 @@ export const Project: FC<ProjectProps> = ({ children, project }) => {
                     <NewCarousel
                         photo={project.photo}
                         server={server}
-                        extension={IMAGE_EXTENSION}
+                        extension={IMAGE_PERMISSION}
                         height={400}
                     />
                 </div>

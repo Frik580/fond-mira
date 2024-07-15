@@ -3,7 +3,7 @@
 import { FC } from "react";
 import "./Support.css";
 import Image from "next/image";
-import { PARTNERS_EXTENSION, SERVER_URL_PARTNERS } from "@/shared/Constants";
+import { PARTNERS_PERMISSION, SERVER_URL_PARTNERS } from "@/shared/Constants";
 
 type SupportProps = {
     partner: string;
@@ -22,7 +22,7 @@ export const Support: FC<SupportProps> = ({ partner, color, text }) => {
                         </p>
                     )}
                     <Image
-                        src={`${SERVER_URL_PARTNERS}${partner}.${PARTNERS_EXTENSION}`}
+                        src={`${SERVER_URL_PARTNERS}${partner}.${PARTNERS_PERMISSION}`}
                         width={140}
                         height={60}
                         className="support__image"

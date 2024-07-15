@@ -29,10 +29,13 @@ export const TopNews = () => {
             <div ref={ref} className="top-news__title-conteiner" />
             <div className="top-news__text-conteiner">
                 <p className="top-news__title">Наше лето - 2024</p>
-                <p className="top-news__text">
-                    Реализация проекта &laquo;КОД Семьи по-Пермски&raquo;
+                <ul className="top-news__text">
+                Полным ходом идет реализация Проектов:
+                <li>&laquo;КОД Семьи по-Пермски&raquo; (При поддержке Администрации г. Перми, конкурс &laquo;Город - это МЫ!&raquo; )</li>
+                <li>&laquo;Рябиновые рассветы. Живая Память&raquo; (при поддержке Фонда президентских грантов)</li>
+                    {/* Реализация проекта &laquo;КОД Семьи по-Пермски&raquo;
                     <br />
-                    (городской конкурс &laquo;Город - это мы!&raquo;).{" "}
+                    (городской конкурс &laquo;Город - это мы!&raquo;).{" "} */}
                     {/* <Link
                         href="https://vk.com/pkuchenikgoda"
                         className="top-news__text top-news__link"
@@ -42,7 +45,7 @@ export const TopNews = () => {
                         - Краевой конкурс &#171;Ученик года - 2024&#187;. Финал - 13
                     апреля 2024
                     </Link> */}
-                </p>
+                </ul>
             </div>
         </section>
     );

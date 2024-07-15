@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useAppDispatch } from "../../shared/hooks/redux";
 import { setLinkHome } from "../../store/reducers/linkSlice";
 import { FC} from "react";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import logo from "./logo.png";
 
 type HeaderLogoProps = {
@@ -15,6 +15,7 @@ type HeaderLogoProps = {
 export const HeaderLogo: FC<HeaderLogoProps> = ({ headerValue }) => {
     const dispatch = useAppDispatch();
     const router = useRouter();
+    const pathname = usePathname();
 
     const routing = () => {
         dispatch(setLinkHome());
@@ -27,10 +28,10 @@ export const HeaderLogo: FC<HeaderLogoProps> = ({ headerValue }) => {
                 src={logo}
                 width={200}
                 height={200}
-                className={headerValue ? "logo__image_large" : "logo__image"}
+                className={headerValue && pathname === "/" ? "logo__image_large" : "logo__image"}
                 alt="голубь мира"
             />
-            {headerValue && (
+            {headerValue && pathname === "/" && (
                 <p className="logo__text">
                     ПРО МОФ &#171;Российский фонд мира&#187;
                 </p>

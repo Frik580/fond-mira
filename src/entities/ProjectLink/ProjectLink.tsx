@@ -5,7 +5,7 @@ import Image from "next/image";
 import { Support } from "../Support/Support";
 import { FC } from "react";
 import {
-    IMAGE_EXTENSION,
+    IMAGE_PERMISSION,
     SERVER_URL_PROJECTS_COVER_SMALL,
 } from "@/shared/Constants";
 import Link from "next/link";
@@ -19,7 +19,7 @@ export const ProjectLink: FC<ProjectLinkProps> = ({ card }) => {
     return (
         <Link className="projectlink" href={card.href}>
             <Image
-                src={`${SERVER_URL_PROJECTS_COVER_SMALL}${card.src}.${IMAGE_EXTENSION}`}
+                src={`${SERVER_URL_PROJECTS_COVER_SMALL}${card.src}.${IMAGE_PERMISSION}`}
                 fill
                 sizes="(max-width: 799px) 100vw, (max-width: 1199px) 50vw, 33vw"
                 style={{ objectFit: "cover" }}
