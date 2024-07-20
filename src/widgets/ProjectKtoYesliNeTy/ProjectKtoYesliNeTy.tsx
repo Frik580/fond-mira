@@ -1,17 +1,14 @@
-"use client";
+// "use client";
 
 import "../Project/Project.css";
 import { Project } from "../Project/Project";
-import { useAppSelector } from "@/shared/hooks/redux";
-import { projectState } from "@/store/reducers/projectSlice";
+import { PROJECTS } from "@/shared/Constants";
 
 export const ProjectKtoYesliNeTy = () => {
-    const projects = useAppSelector(projectState);
-
     return (
         <>
-            {projects[3] && (
-                <Project project={projects[3]}>
+            {PROJECTS[5] && (
+                <Project project={PROJECTS[5]}>
                     <div className="project-card__conteiner">
                         <p className="project-card__text">
                             Пандемия так или иначе, коснулась каждого из нас,

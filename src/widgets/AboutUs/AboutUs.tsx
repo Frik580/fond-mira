@@ -15,20 +15,22 @@ export const AboutUs = () => {
     const sectionAboutUs = useRef<HTMLDivElement>(null);
     useLinkDeactive(sectionAboutUs, setLinkAboutus(false));
     const { aboutus } = useAppSelector(linkState);
-    useLink(sectionAboutUs, aboutus)
+    useLink(sectionAboutUs, aboutus);
 
     return (
         <section id="about-us" ref={sectionAboutUs} className="about-us">
             <MainTitle text={TITLES.ABOUT_US} />
             <div className="about-us__columns">
                 <div className="about-us__member">
-                    <Member
-                        image="gera3"
-                        text="Председатель Правления ПКО МОФ «Российский фонд мира», 
+                    <ul>
+                        <Member
+                            image="gera3"
+                            text="Председатель Правления ПКО МОФ «Российский фонд мира», 
                     Председатель Совета ПРООУ «Ассоциация «ЛУЧ», 
                     Почётный работник общего образования РФ"
-                        alt="Герасимчук Любовь Арсеньевна"
-                    />
+                            alt="Герасимчук Любовь Арсеньевна"
+                        />
+                    </ul>
                 </div>
                 <div className="about-us__conteiner">
                     <p className="about-us__text">

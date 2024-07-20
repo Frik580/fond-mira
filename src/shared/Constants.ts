@@ -190,3 +190,8 @@ export const DOCUMENTS = [
         href: "svid2",
     },
 ];
+
+export const backgroundImageWithPhoto =
+"linear-gradient(rgba(255,255,255, 0) 20%, var(--color-dust-white) 70%)";
+export const backgroundImageWithoutPhoto =
+"linear-gradient(rgba(255,255,255, 0) 20%, var(--color-dust-white) 90%)";

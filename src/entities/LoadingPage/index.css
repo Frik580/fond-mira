@@ -1,0 +1,10 @@
+.loading {
+    height: 100vh;
+    width: 100vw;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url('/loader.gif') center center no-repeat;
+    background-size: 30px 30px;
+}

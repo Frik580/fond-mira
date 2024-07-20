@@ -1,20 +1,17 @@
-"use client";
+// "use client";
 
 import "./ProjectRyabinovayaAlleya.css";
 import Image from "next/image";
 import { Project } from "../Project/Project";
-import { useAppSelector } from "@/shared/hooks/redux";
-import { projectState } from "@/store/reducers/projectSlice";
 import Link from "next/link";
 import qrcode from "./qr-code.gif";
+import { PROJECTS } from "@/shared/Constants";
 
 export const ProjectRyabinovayaAlleya = () => {
-    const projects = useAppSelector(projectState);
-
     return (
         <>
-            {projects[2] && (
-                <Project project={projects[2]}>
+            {PROJECTS[6] && (
+                <Project project={PROJECTS[6]}>
                     <div className="project-card__conteiner">
                         <p className="project-card__text">
                             Все сложнее говорить о войне с теми, кто о суровом

@@ -1,17 +1,15 @@
-"use client";
+// "use client";
 
 import "./ProjectPermVelikaya.css";
 import { Project } from "../Project/Project";
-import { useAppSelector } from "@/shared/hooks/redux";
-import { projectState } from "@/store/reducers/projectSlice";
+import { PROJECTS } from "@/shared/Constants";
 
 export const ProjectPermVelikaya = () => {
-    const projects = useAppSelector(projectState);
 
     return (
         <>
-            {projects[1] && (
-                <Project project={projects[1]}>
+            {PROJECTS[7] && (
+                <Project project={PROJECTS[7]}>
                     <div className="project-card__conteiner">
                         <p className="project-card__text">
                             Проект «Пермь великая - Парма многоликая» - это

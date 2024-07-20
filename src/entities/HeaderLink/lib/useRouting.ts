@@ -35,8 +35,6 @@ export default function useRouting(value: null | boolean, path: string) {
             return
         }
 
-        unfixedBody();
-
         if (path === PATH.DOCUMENTS) {
             router.push(path);
             handleLinkState(path);
@@ -49,5 +47,6 @@ export default function useRouting(value: null | boolean, path: string) {
             }
         }
 
+        unfixedBody();
     }, [value, path]);
 }

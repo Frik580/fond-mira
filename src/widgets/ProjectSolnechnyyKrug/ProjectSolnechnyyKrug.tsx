@@ -1,17 +1,14 @@
-"use client";
+// "use client";
 
 import "./ProjectSolnechnyyKrug.css";
 import { Project } from "../Project/Project";
-import { useAppSelector } from "@/shared/hooks/redux";
-import { projectState } from "@/store/reducers/projectSlice";
+import { PROJECTS } from "@/shared/Constants";
 
 export const ProjectSolnechnyyKrug = () => {
-    const projects = useAppSelector(projectState);
-
     return (
         <>
-            {projects[8] && (
-                <Project project={projects[8]}>
+            {PROJECTS[0] && (
+                <Project project={PROJECTS[0]}>
                     <div className="project-card__conteiner">
                         <p className="project-card__text">
                             Целью данного Проекта является формирование и

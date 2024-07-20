@@ -1,13 +1,14 @@
-// "use client";
+"use client";
 
 import "./TopImage.css";
 import Image from "next/image";
 import { StaticImageData } from "next/dist/shared/lib/get-img-props";
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
+import { url } from "inspector";
 
 type TopImageProps = {
     src: string | StaticImageData;
-    srclite?: string | undefined;
+    srclite?: string | StaticImageData;
 };
 
 export const TopImage: FC<TopImageProps> = ({ src, srclite }) => {
@@ -17,7 +18,7 @@ export const TopImage: FC<TopImageProps> = ({ src, srclite }) => {
         <div
             className="topimage"
             style={{
-                backgroundImage: `url(${srclite})`,
+                backgroundImage: `url(${srclite})`
             }}
         >
             <Image

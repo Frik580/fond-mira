@@ -5,7 +5,6 @@ import { BurgerButton } from "@/features/BurgerButton/BurgerButton";
 import { HeaderLink } from "@/entities/HeaderLink/HeaderLink";
 import { TITLES, PATH } from "../../shared/Constants";
 import { useAppDispatch, useAppSelector } from "../../shared/hooks/redux";
-import { headerValue } from "@/store/reducers/headerSlice";
 import { linkState } from "@/store/reducers/linkSlice";
 import { setValueNavPopup } from "@/store/reducers/popupSlice";
 import Book from "@/entities/Book/Book";
@@ -15,10 +14,9 @@ import useScrollControl from "@/shared/hooks/useScrollControl";
 import useFetchProjects from "@/shared/hooks/useFetchProjects";
 
 export const Header = () => {
-    useScrollControl();
+    const header = useScrollControl();
     useFetchProjects();
     const dispatch = useAppDispatch();
-    const header = useAppSelector(headerValue);
     const link = useAppSelector(linkState);
 
     return (

@@ -4,7 +4,6 @@ import "./index.css";
 import cl from "classnames";
 import { IconNameType, ComponentProps } from "@/shared/models/Models";
 import { CarouselIcon } from "../CarouselIcon/CarouselIcon";
-import { useEffect } from "react";
 
 interface ButtonProps extends ComponentProps {
     onClick: () => void;
@@ -19,10 +18,10 @@ export const CarouselButton = ({
     children,
     className,
 }: ButtonProps) => {
-
     return (
         <button
             onClick={onClick}
+            id={iconName}
             className={cl("button", className)}
             disabled={disabled}
         >

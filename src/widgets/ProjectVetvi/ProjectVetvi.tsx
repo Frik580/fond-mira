@@ -1,17 +1,14 @@
-"use client";
+// "use client";
 
 import "./ProjectVetvi.css";
 import { Project } from "../Project/Project";
-import { useAppSelector } from "@/shared/hooks/redux";
-import { projectState } from "@/store/reducers/projectSlice";
+import { PROJECTS } from "@/shared/Constants";
 
 export const ProjectVetvi = () => {
-    const projects = useAppSelector(projectState);
-
     return (
         <>
-            {projects[7] && (
-                <Project project={projects[7]}>
+            {PROJECTS[1] && (
+                <Project project={PROJECTS[1]}>
                     <div className="project-card__conteiner">
                         <p className="project-card__text">
                             В настоящее время вопросы духовно-нравственного

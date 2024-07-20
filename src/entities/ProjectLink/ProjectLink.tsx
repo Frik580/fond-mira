@@ -16,6 +16,7 @@ type ProjectLinkProps = {
 };
 
 export const ProjectLink: FC<ProjectLinkProps> = ({ card }) => {
+
     return (
         <Link className="projectlink" href={card.href}>
             <Image

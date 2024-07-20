@@ -32,6 +32,7 @@ export const DotsButton: FC<DotsButtonProps> = ({ lenght, index }) => {
             {isActive.map((item, i) => (
                 <button
                     key={i}
+                    id="dots"
                     onClick={() => {
                         handleDotsButton(i);
                     }}

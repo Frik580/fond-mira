@@ -1,17 +1,14 @@
-"use client";
+// "use client";
 
 import "./ProjectMayskiyVals.css";
 import { Project } from "../Project/Project";
-import { useAppSelector } from "@/shared/hooks/redux";
-import { projectState } from "@/store/reducers/projectSlice";
+import { PROJECTS } from "@/shared/Constants";
 
 export const ProjectMayskiyVals = () => {
-    const projects = useAppSelector(projectState);
-
     return (
         <>
-            {projects[4] && (
-                <Project project={projects[4]}>
+            {PROJECTS[4] && (
+                <Project project={PROJECTS[4]}>
                     <div className="project-card__conteiner">
                         <p className="project-card__text project-card__title">
                             Как говорить с молодыми о Великой Отечественной,

@@ -1,17 +1,14 @@
-"use client";
+// "use client";
 
 import "./ProjectMyIMir.css";
 import { Project } from "../Project/Project";
-import { useAppSelector } from "@/shared/hooks/redux";
-import { projectState } from "@/store/reducers/projectSlice";
+import { PROJECTS } from "@/shared/Constants";
 
 export const ProjectMyIMir = () => {
-    const projects = useAppSelector(projectState);
-
     return (
         <>
-            {projects[6] && (
-                <Project project={projects[6]}>
+            {PROJECTS[2] && (
+                <Project project={PROJECTS[2]}>
                     <div className="project-card__conteiner">
                         <p className="project-card__text">
                             В настоящее время вопросы сохранения МИРА носят

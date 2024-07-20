@@ -1,27 +1,26 @@
-"use client";
+// "use client";
 
 import "./Documents.css";
-import { TITLES, DOCUMENTS } from "../../shared/Constants";
-import { useRef } from "react";
+import {
+    TITLES,
+    DOCUMENTS,
+    backgroundImageWithoutPhoto,
+} from "../../shared/Constants";
 import { Document } from "@/entities/Document/Document";
 import { DocumentsType } from "@/shared/models/Models";
-import { useAppDispatch } from "@/shared/hooks/redux";
-import { setValueHeader } from "@/store/reducers/headerSlice";
-import useElementVisible from "@/shared/hooks/useElementVisible";
+import image from "./Documents.webp";
+import imagelite from "./Documents_lite.webp";
+import { TopImage } from "@/entities/TopImage/TopImage";
 
 export const Documents = () => {
-    const ref = useRef<HTMLDivElement | null>(null);
-    const dispatch = useAppDispatch();
-
-    const visibilityRef = (value: boolean) => {
-        dispatch(setValueHeader(value));
-    };
-
-    useElementVisible(ref, visibilityRef);
-
     return (
-        <section className="documents">
-            <div ref={ref} style={{ height: "20px" }} />
+        <section
+            className="documents"
+            style={{
+                backgroundImage: `${backgroundImageWithoutPhoto}`,
+            }}
+        >
+            <TopImage src={image} srclite={imagelite.src} />
             <div className="documents__conteiner">
                 <h1 className="documents__title">{TITLES.DOCUMENTS}</h1>
                 {DOCUMENTS.map((doc: DocumentsType) => (

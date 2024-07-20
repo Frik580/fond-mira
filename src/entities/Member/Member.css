@@ -2,9 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* background-color: var(--color-white); */
     padding: 10px;
-    /* border: 2px solid var(--color-white); */
     border-radius: 30px;
     width: 250px;
     gap: 10px;
@@ -29,8 +27,8 @@
 
 .member__title {
     text-align: center;
-    font-size: 16px;
-    line-height: 1.4;
+    font-size: 18px;
+    line-height: 1.2;
     font-weight: 500;
     font-style: normal;
 }
@@ -44,7 +42,7 @@
 .member__text {
     text-align: center;
     font-size: 16px;
-    line-height: 1.4;
+    line-height: 1.2;
     font-weight: 400;
     font-style: normal;
 }

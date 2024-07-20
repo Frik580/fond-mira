@@ -1,17 +1,14 @@
-"use client";
+// "use client";
 
 import "./ProjectProDobro.css";
 import { Project } from "../Project/Project";
-import { useAppSelector } from "@/shared/hooks/redux";
-import { projectState } from "@/store/reducers/projectSlice";
+import { PROJECTS } from "@/shared/Constants";
 
 export const ProjectProDobro = () => {
-    const projects = useAppSelector(projectState);
-
     return (
         <>
-            {projects[0] && (
-                <Project project={projects[0]}>
+            {PROJECTS[8] && (
+                <Project project={PROJECTS[8]}>
                     <div className="project-card__conteiner">
                         <p className="project-card__text">
                             Проект «Кто, если не ТЫ! PRO-ДОБРО» направлен на

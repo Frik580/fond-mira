@@ -6,6 +6,6 @@ export default function VetviPage() {
     return (
         <main className="main">
             <ProjectVetvi />
-        </main>
+        </main> 
     );
 }
