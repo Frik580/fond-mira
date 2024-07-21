@@ -8,7 +8,7 @@ import { HeaderLink } from "@/entities/HeaderLink/HeaderLink";
 import { PATH, TITLES } from "@/shared/Constants";
 import unfixedBody from "@/shared/lib/UnfixedBody";
 import useKeyEvents from "@/shared/hooks/useKeyEvents";
-import { useCallback } from "react";
+import { useCallback, useEffect } from "react";
 
 export const NavPopup = () => {
     const dispatch = useAppDispatch();

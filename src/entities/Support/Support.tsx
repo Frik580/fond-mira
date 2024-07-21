@@ -6,21 +6,27 @@ import Image from "next/image";
 import { PARTNERS_PERMISSION, SERVER_URL_PARTNERS } from "@/shared/Constants";
 
 type SupportProps = {
-    partner: string;
+    partner?: string;
     color?: string;
     text?: boolean;
+    children?: React.ReactNode;
 };
 
-export const Support: FC<SupportProps> = ({ partner, color, text }) => {
+export const Support: FC<SupportProps> = ({
+    partner,
+    color,
+    text,
+    children,
+}) => {
     return (
         <>
-            {partner && (
-                <>
-                    {text && (
-                        <p className="support__text" style={{ color: color }}>
-                            при поддержке:{" "}
-                        </p>
-                    )}
+            <>
+                {text && (
+                    <p className="support__text" style={{ color: color }}>
+                        при поддержке:{" "}
+                    </p>
+                )}
+                {partner && (
                     <Image
                         src={`${SERVER_URL_PARTNERS}${partner}.${PARTNERS_PERMISSION}`}
                         width={140}
@@ -29,8 +35,9 @@ export const Support: FC<SupportProps> = ({ partner, color, text }) => {
                         style={{ backgroundColor: color }}
                         alt=""
                     />
-                </>
-            )}
+                )}
+                {children}
+            </>
         </>
     );
 };

@@ -12,12 +12,16 @@ import fixedBody from "@/shared/lib/FixedBody";
 import { HeaderLogo } from "@/entities/HeaderLogo/HeaderLogo";
 import useScrollControl from "@/shared/hooks/useScrollControl";
 import useFetchProjects from "@/shared/hooks/useFetchProjects";
+import { loadedRefState } from "@/store/reducers/loadedRefSlice";
+import { newsAPI } from "@/shared/services/NewsService";
 
 export const Header = () => {
     const header = useScrollControl();
     useFetchProjects();
     const dispatch = useAppDispatch();
     const link = useAppSelector(linkState);
+    const loadedRef = useAppSelector(loadedRefState);
+    const { data: news } = newsAPI.useFetchAllNewsQuery("");
 
     return (
         <header
@@ -44,13 +48,15 @@ export const Header = () => {
                     style="header-link__conteiner"
                     headerValue={header}
                 />
-                <HeaderLink
-                    path={PATH.NEWS}
-                    title={TITLES.NEWS}
-                    active={link.newslist}
-                    style="header-link__conteiner"
-                    headerValue={header}
-                />
+                {news && (
+                    <HeaderLink
+                        path={PATH.NEWS}
+                        title={TITLES.NEWS}
+                        active={link.newslist}
+                        style="header-link__conteiner"
+                        headerValue={header}
+                    />
+                )}
                 <HeaderLink
                     path={PATH.OUR_PROJECTS}
                     title={TITLES.OUR_PROJECTS}

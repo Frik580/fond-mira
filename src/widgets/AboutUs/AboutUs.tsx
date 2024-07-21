@@ -12,13 +12,13 @@ import useLink from "@/shared/hooks/useLink";
 import { useAppSelector } from "@/shared/hooks/redux";
 
 export const AboutUs = () => {
-    const sectionAboutUs = useRef<HTMLDivElement>(null);
+    const sectionAboutUs = useRef<HTMLDivElement | null>(null);
     useLinkDeactive(sectionAboutUs, setLinkAboutus(false));
     const { aboutus } = useAppSelector(linkState);
     useLink(sectionAboutUs, aboutus);
 
     return (
-        <section id="about-us" ref={sectionAboutUs} className="about-us">
+        <section ref={sectionAboutUs} id="about-us" className="about-us">
             <MainTitle text={TITLES.ABOUT_US} />
             <div className="about-us__columns">
                 <div className="about-us__member">

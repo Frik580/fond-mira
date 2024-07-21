@@ -42,7 +42,7 @@ export const Project: FC<ProjectProps> = ({ children, project }) => {
             />
             <div className="project__conteiner">
                 <div className="project__partner">
-                    <Support partner={project.partner} />
+                    <Support partner={project.partner} color="var(--color-dust-white)" />
                 </div>
                 <h1 className="project__title">{project.title}</h1>
                 {children}

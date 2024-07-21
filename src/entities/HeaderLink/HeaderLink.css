@@ -41,6 +41,20 @@
     opacity: 1;
 }
 
+.header-link_noloaded {
+    font-size: 20px;
+    line-height: 36px;
+    font-weight: 400;
+    font-style: normal;
+    cursor: default;
+    color: var(--color-white);
+    cursor: default;
+    background-color: transparent;
+    border-top: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+    opacity: 0.7;
+}
+
 .header-link_black {
     color: var(--color-black);
 }

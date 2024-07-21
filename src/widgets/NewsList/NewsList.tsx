@@ -5,7 +5,7 @@ import { MainTitle } from "@/entities/MainTitle/MainTitle";
 import { TITLES } from "@/shared/Constants";
 import { News } from "../News/News";
 import { DotsButton } from "@/features/DotsButton/DotsButton";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import {
     linkState,
     setLinkNewslist,
@@ -22,7 +22,7 @@ import useSetTheHight from "./lib/useSetTheHight";
 
 export const NewsList = () => {
     const { data: news } = newsAPI.useFetchAllNewsQuery("");
-    const sectionNews = useRef<HTMLDivElement>(null);
+    const sectionNews = useRef<HTMLDivElement | null>(null);
     const dispatch = useAppDispatch();
     const [index, setIndex] = useState(0);
     const [loaded, setLoaded] = useState(false);
@@ -39,10 +39,6 @@ export const NewsList = () => {
         dispatch(setLinkNewslist(true));
     };
 
-    useEffect(() => {
-        console.log(hightValue);
-    }, [hightValue]);
-
     if (!news) {
         return null;
     }
@@ -53,7 +49,9 @@ export const NewsList = () => {
                 id="news-list"
                 ref={sectionNews}
                 className="news-list"
-                onLoad={() => setLoaded(true)}
+                onLoad={() => 
+                    setLoaded(true)
+                }
                 style={{ minHeight: index === 0 ? hightValue : 2000 }}
             >
                 <MainTitle text={TITLES.NEWS} />

@@ -94,7 +94,7 @@ export const PROJECTS = [
         src: 'vals',
         partner: 'gorod',
         href: "mayskiy-vals",
-        photo: 0,
+        photo: 8,
     },
     {
         id: 6,
@@ -104,7 +104,7 @@ export const PROJECTS = [
         src: 'kto',
         partner: 'guber',
         href: "kto-yesli-ne-ty",
-        photo: 5,
+        photo: 8,
     },
     {
         id: 7,
@@ -124,7 +124,7 @@ export const PROJECTS = [
         src: 'perm_velikaya',
         partner: 'pfki',
         href: "perm-velikaya",
-        photo: 5,
+        photo: 20,
     },
     {
         id: 9,
@@ -134,7 +134,7 @@ export const PROJECTS = [
         src: 'dobro',
         partner: 'guber',
         href: "pro-dobro",
-        photo: 0,
+        photo: 12,
     },
 ];
 

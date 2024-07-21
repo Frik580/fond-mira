@@ -21,7 +21,7 @@ export default function useRouting(value: null | boolean, path: string) {
 
     function handleLinkState(path: string) {
         dispatch(setValueNavPopup(false));
-        dispatch(setLinkHome());
+        // dispatch(setLinkHome());
         path === PATH.ABOUT_US && dispatch(setLinkAboutus(true));
         path === PATH.NEWS && dispatch(setLinkNewslist(true));
         path === PATH.OUR_PROJECTS && dispatch(setLinkProjectslist(true));
@@ -42,7 +42,8 @@ export default function useRouting(value: null | boolean, path: string) {
             if (pathname !== "/") {
                 router.push("/");
                 handleLinkState(path);
-            } else {
+            } 
+            else {
                 handleLinkState(path);
             }
         }

@@ -32,6 +32,7 @@ export const ProjectLink: FC<ProjectLinkProps> = ({ card }) => {
                     <Support
                         partner={card.partner}
                         color="var(--color-dust-white)"
+                        text={true}
                     />
                 </div>
                 <p className="projectlink__title">{card.title}</p>
