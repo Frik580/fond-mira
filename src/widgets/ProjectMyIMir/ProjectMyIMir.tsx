@@ -1,6 +1,5 @@
 // "use client";
 
-import "./ProjectMyIMir.css";
 import { Project } from "../Project/Project";
 import { PROJECTS } from "@/shared/Constants";
 
@@ -98,9 +97,9 @@ export const ProjectMyIMir = () => {
                         </p>
 
                         <article className="project-card__article">
-                            <h3 className="project-card__text project-card__title">
+                            <h2 className="project-card__text project-card__title">
                                 Задачи проекта:
-                            </h3>
+                            </h2>
                             <ul className="project-card__list">
                                 <li className="project-card__li">
                                     сохранение исторической памяти через систему

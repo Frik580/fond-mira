@@ -3,10 +3,10 @@
 import "./Book.css";
 import Link from "next/link";
 import Image from "next/image";
-import { memo } from "react";
 import orden from "./images/orden.png";
+import ordenLite from "./images/orden-lite.png";
 
-const Book = memo(function Book() {
+export default function Book() {
     return (
         <Link
             className="book"
@@ -20,6 +20,8 @@ const Book = memo(function Book() {
                 height={80}
                 className="book__image"
                 alt="орден ВОВ"
+                blurDataURL={ordenLite.src}
+                placeholder="blur"
             />
             <p className="book__title">Книга Памяти</p>
             <p className="book__text">1941 - 1945</p>
@@ -28,6 +30,4 @@ const Book = memo(function Book() {
             </p>
         </Link>
     );
-});
-
-export default Book;
+};

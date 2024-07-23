@@ -6,10 +6,7 @@ import { TITLES } from "@/shared/Constants";
 import { News } from "../News/News";
 import { DotsButton } from "@/features/DotsButton/DotsButton";
 import { useRef, useState } from "react";
-import {
-    linkState,
-    setLinkNewslist,
-} from "@/store/reducers/linkSlice";
+import { linkState, setLinkNewslist } from "@/store/reducers/linkSlice";
 import { NewsType } from "@/shared/models/Models";
 import { NEWS } from "@/shared/Constants";
 import { useAppDispatch, useAppSelector } from "@/shared/hooks/redux";
@@ -31,7 +28,7 @@ export const NewsList = () => {
     const hightValue = useAppSelector(newsState);
     useLinkDeactive(sectionNews, setLinkNewslist(false));
     useLink(sectionNews, newslist);
-    useSetTheHight(sectionNews, index, loaded, hightValue)
+    useSetTheHight(sectionNews, index, loaded, hightValue);
 
     const handleIndex = (i: number) => {
         setIndex(i);
@@ -49,9 +46,7 @@ export const NewsList = () => {
                 id="news-list"
                 ref={sectionNews}
                 className="news-list"
-                onLoad={() => 
-                    setLoaded(true)
-                }
+                onLoad={() => setLoaded(true)}
                 style={{ minHeight: index === 0 ? hightValue : 2000 }}
             >
                 <MainTitle text={TITLES.NEWS} />

@@ -1,6 +1,5 @@
 // "use client";
 
-import "./ProjectRyabinovayaAlleya.css";
 import Image from "next/image";
 import { Project } from "../Project/Project";
 import Link from "next/link";
@@ -98,9 +97,9 @@ export const ProjectRyabinovayaAlleya = () => {
                             </ol>
                         </article>
                         <article className="project-card__article">
-                            <h3 className="project-card__text project-card__title">
+                            <h2 className="project-card__text project-card__title">
                                 Результаты реализации проекта
-                            </h3>
+                            </h2>
                             <p className="project-card__text">
                                 В рамках реализации Проекта создан сайт
                                 «Рябиновая аллея Героев» о подвиге и судьбе

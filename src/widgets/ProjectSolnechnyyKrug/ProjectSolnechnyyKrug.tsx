@@ -1,6 +1,5 @@
 // "use client";
 
-import "./ProjectSolnechnyyKrug.css";
 import { Project } from "../Project/Project";
 import { PROJECTS } from "@/shared/Constants";
 
@@ -27,9 +26,9 @@ export const ProjectSolnechnyyKrug = () => {
                             в рамках Фестиваля.
                         </p>
                         <article className="project-card__article">
-                            <h3 className="project-card__text project-card__title">
+                            <h2 className="project-card__text project-card__title">
                                 Задачи проекта:
-                            </h3>
+                            </h2>
                             <ul className="project-card__list">
                                 <li className="project-card__li">
                                     содействие гражданско-патриотическому
@@ -61,9 +60,9 @@ export const ProjectSolnechnyyKrug = () => {
                             </ul>
                         </article>
                         <article className="project-card__article">
-                            <h3 className="project-card__text project-card__title">
+                            <h2 className="project-card__text project-card__title">
                                 Ключевые мероприятия проекта.
-                            </h3>
+                            </h2>
                             <ol className="project-card__numlist project-card__article">
                                 <li className="project-card__li">
                                     Создать интерактивную молодежную площадку
@@ -129,10 +128,10 @@ export const ProjectSolnechnyyKrug = () => {
                             </ol>
                         </article>
                         <article className="project-card__article">
-                            <h3 className="project-card__text project-card__title">
+                            <h2 className="project-card__text project-card__title">
                                 Результаты деятельности в рамках Проекта
                                 «Солнечный круг».
-                            </h3>
+                            </h2>
                             <p className="project-card__text">
                                 Фестиваль стал стартом нового этапа
                                 взаимодействия межнациональных молодежных групп

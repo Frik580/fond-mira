@@ -1,6 +1,5 @@
 // "use client";
 
-import "./ProjectPermVelikaya.css";
 import { Project } from "../Project/Project";
 import { PROJECTS } from "@/shared/Constants";
 

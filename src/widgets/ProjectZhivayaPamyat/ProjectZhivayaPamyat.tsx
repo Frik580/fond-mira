@@ -1,6 +1,5 @@
 // "use client";
 
-import "./ProjectZhivayaPamyat.css";
 import { Project } from "../Project/Project";
 import { PROJECTS } from "@/shared/Constants";
 
@@ -72,9 +71,9 @@ export const ProjectZhivayaPamyat = () => {
                         </p>
 
                         <article className="project-card__article">
-                            <h3 className="project-card__text project-card__title">
+                            <h2 className="project-card__text project-card__title">
                                 Результаты реализации Проекта
-                            </h3>
+                            </h2>
                             <p className="project-card__text">
                                 В ходе реализации Проекта были созданы
                                 оптимальные условия для вовлечения участников

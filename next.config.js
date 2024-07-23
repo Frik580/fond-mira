@@ -9,9 +9,10 @@ const nextConfig = {
         remotePatterns: [
           {
             protocol: 'https',
-            hostname: '*',
+            hostname: 'https://storage.yandexcloud.net',
           },
         ],
+        domains: ['storage.yandexcloud.net'],
       },
 }
 

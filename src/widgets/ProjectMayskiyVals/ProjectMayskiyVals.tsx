@@ -1,6 +1,5 @@
 // "use client";
 
-import "./ProjectMayskiyVals.css";
 import { Project } from "../Project/Project";
 import { PROJECTS } from "@/shared/Constants";
 
@@ -73,9 +72,9 @@ export const ProjectMayskiyVals = () => {
                             </ol>
                         </article>
                         <article className="project-card__article">
-                            <h3 className="project-card__text project-card__title">
+                            <h2 className="project-card__text project-card__title">
                                 Результаты реализации проекта
-                            </h3>
+                            </h2>
                             <ul className="project-card__list">
                                 <li className="project-card__li">
                                     В рамках реализации Проекта созданы

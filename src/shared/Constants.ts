@@ -19,6 +19,8 @@ export const SERVER_URL_DIRECTION = `${SERVER_URL}direction/`
 export const SERVER_URL_PARTNERS = `${SERVER_URL}partners-images/`
 export const SERVER_URL_NEWS_IMAGE = `${SERVER_URL}news/`
 export const SERVER_URL_PROJECTS_COVER = `${SERVER_URL}projects-cover/`
+export const TOP_NEWS_COVER = `${SERVER_URL}top-news-cover/New_header.webp`
+export const TOP_NEWS_COVER_LITE = `${SERVER_URL}top-news-cover/lite/New_header_lite.webp`
 export const SERVER_URL_PROJECTS_COVER_SMALL = `${SERVER_URL}projects-cover-small/`
 export const SERVER_URL_PROJECTS_COVER_LITE = `${SERVER_URL}projects-cover-lite/`
 export const IMAGE_PERMISSION = 'webp'
@@ -135,6 +137,26 @@ export const PROJECTS = [
         partner: 'guber',
         href: "pro-dobro",
         photo: 12,
+    },
+    {
+        id: 10,
+        year: 2024,
+        title: "КОД Семьи по - Пермски",
+        preview: "edededed",
+        src: 'kod',
+        partner: 'gorod',
+        href: "kod-semyi",
+        photo: 0,
+    },
+    {
+        id: 11,
+        year: 2024,
+        title: "Рябиновые рассветы",
+        preview: "edededed",
+        src: 'ras',
+        partner: 'pg',
+        href: "rassveti",
+        photo: 0,
     },
 ];
 

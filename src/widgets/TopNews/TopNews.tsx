@@ -2,13 +2,12 @@
 
 import "./TopNews.css";
 import { TopImage } from "@/entities/TopImage/TopImage";
-import image from "./New_header.webp";
-import imagelite from "./Header_lite.webp";
+import { TOP_NEWS_COVER, TOP_NEWS_COVER_LITE } from "@/shared/Constants";
 
 export const TopNews = () => {
     return (
         <section className="top-news">
-            <TopImage src={image} srclite={imagelite.src} />
+            <TopImage src={TOP_NEWS_COVER} srclite={TOP_NEWS_COVER_LITE} />
             <div className="top-news__title-conteiner" />
             <div className="top-news__text-conteiner">
                 <p className="top-news__title">Наше лето - 2024</p>
