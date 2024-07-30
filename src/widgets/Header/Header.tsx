@@ -5,27 +5,47 @@ import { BurgerButton } from "@/features/BurgerButton/BurgerButton";
 import { HeaderLink } from "@/entities/HeaderLink/HeaderLink";
 import { TITLES, PATH } from "../../shared/Constants";
 import { useAppDispatch, useAppSelector } from "../../shared/hooks/redux";
-import { linkState } from "@/store/reducers/linkSlice";
+import { linkState, setLinkHome } from "@/store/reducers/linkSlice";
 import { setValueNavPopup } from "@/store/reducers/popupSlice";
 import Book from "@/entities/Book/Book";
 import fixedBody from "@/shared/lib/FixedBody";
 import { HeaderLogo } from "@/entities/HeaderLogo/HeaderLogo";
 import useScrollControl from "@/shared/hooks/useScrollControl";
-import useFetchProjects from "@/shared/hooks/useFetchProjects";
 import { newsAPI } from "@/shared/services/NewsService";
+import { usePathname } from "next/navigation";
+import { useEffect } from "react";
+import { setValueHeader } from "@/store/reducers/headerSlice";
 
 export const Header = () => {
+    const pathname = usePathname();
     const header = useScrollControl();
-    useFetchProjects();
     const dispatch = useAppDispatch();
     const link = useAppSelector(linkState);
     const { data: news } = newsAPI.useFetchAllNewsQuery("");
+
+    useEffect(() => {
+        if (pathname !== "/" && pathname !== "/documents") {
+            dispatch(setLinkHome());
+        }
+    }, [dispatch, pathname]);
 
     return (
         <header
             className={`header ${
                 header ? "header_gradient" : "header_visibility"
             }`}
+            style={{
+                backgroundImage: `${
+                    header && pathname !== "/"
+                        ? "linear-gradient(rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 110%)"
+                        : ""
+                }`,
+                height: `${
+                    header && pathname !== "/"
+                        ? "auto"
+                        : ""
+                }`
+            }}
         >
             <div className="header__links">
                 <HeaderLogo headerValue={header} />
@@ -35,6 +55,7 @@ export const Header = () => {
                 <BurgerButton
                     headerValue={header}
                     click={() => {
+                        dispatch(setValueHeader(header));
                         dispatch(setValueNavPopup(true));
                         fixedBody();
                     }}
@@ -84,10 +105,13 @@ export const Header = () => {
                     headerValue={header}
                 />
                 {/* <button className="header__button">Помочь</button> */}
-                <div className="header__book">
+                {/* <div className="header__book">
+                    <Book />
+                </div> */}
+            </nav>
+            <div className="header__book">
                     <Book />
                 </div>
-            </nav>
         </header>
     );
 };

@@ -19,8 +19,10 @@ export const SERVER_URL_DIRECTION = `${SERVER_URL}direction/`
 export const SERVER_URL_PARTNERS = `${SERVER_URL}partners-images/`
 export const SERVER_URL_NEWS_IMAGE = `${SERVER_URL}news/`
 export const SERVER_URL_PROJECTS_COVER = `${SERVER_URL}projects-cover/`
-export const TOP_NEWS_COVER = `${SERVER_URL}top-news-cover/New_header.webp`
-export const TOP_NEWS_COVER_LITE = `${SERVER_URL}top-news-cover/lite/New_header_lite.webp`
+export const TOP_NEWS_COVER = `${SERVER_URL}cover/Header.webp`
+export const TOP_NEWS_COVER_LITE = `${SERVER_URL}cover/lite/Header_lite3.webp`
+export const DOCUMENTS_COVER = `${SERVER_URL}cover/Documents.webp`
+export const DOCUMENTS_COVER_LITE = `${SERVER_URL}cover/lite/Documents_lite.webp`
 export const SERVER_URL_PROJECTS_COVER_SMALL = `${SERVER_URL}projects-cover-small/`
 export const SERVER_URL_PROJECTS_COVER_LITE = `${SERVER_URL}projects-cover-lite/`
 export const IMAGE_PERMISSION = 'webp'
@@ -38,6 +40,7 @@ export const TITLES = {
 };
 
 export const PATH = {
+    HOME: "/",
     ABOUT_US: "/#about-us",
     NEWS: "/#news-list",
     OUR_PROJECTS: "/#projects-list",

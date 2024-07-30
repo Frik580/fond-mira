@@ -3,16 +3,17 @@ const nextConfig = {
 //     experimental: {
 //     missingSuspenseWithCSRBailout: false,
 //   },
-    output: 'export',
+    // output: 'export',
     images: {
-        unoptimized: true,
+        // unoptimized: true,
+        // formats: ['image/avif', 'image/webp'],
         remotePatterns: [
           {
             protocol: 'https',
-            hostname: 'https://storage.yandexcloud.net',
+            hostname: 'storage.yandexcloud.net',
+            // domains: ['storage.yandexcloud.net'],
           },
         ],
-        domains: ['storage.yandexcloud.net'],
       },
 }
 

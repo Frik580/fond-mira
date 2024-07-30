@@ -7,6 +7,7 @@ import unfixedBody from "@/shared/lib/UnfixedBody";
 import useKeyEvents from "@/shared/hooks/useKeyEvents";
 import Image from "next/image";
 import { photoState } from "@/store/reducers/photoSlice";
+import { setValueHeader } from "@/store/reducers/headerSlice";
 
 export const PhotoPopup = () => {
     const dispatch = useAppDispatch();
@@ -14,13 +15,13 @@ export const PhotoPopup = () => {
     const src = useAppSelector(photoState);
 
     function closePopup() {
+        dispatch(setValueHeader(null))
         unfixedBody();
         dispatch(setValuePhotoPopup(false));
     }
 
     useKeyEvents((key) => {
         key === "Escape" && closePopup();
-        console.log("PHOTO")
     });
 
     return (

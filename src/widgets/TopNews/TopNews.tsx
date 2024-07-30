@@ -8,8 +8,7 @@ export const TopNews = () => {
     return (
         <section className="top-news">
             <TopImage src={TOP_NEWS_COVER} srclite={TOP_NEWS_COVER_LITE} />
-            <div className="top-news__title-conteiner" />
-            <div className="top-news__text-conteiner">
+            <div className="top-news__conteiner">
                 <p className="top-news__title">Наше лето - 2024</p>
                 <ul className="top-news__text">
                     <li>Полным ходом идет реализация Проектов:</li>

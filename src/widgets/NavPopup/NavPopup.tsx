@@ -9,6 +9,7 @@ import { PATH, TITLES } from "@/shared/Constants";
 import unfixedBody from "@/shared/lib/UnfixedBody";
 import useKeyEvents from "@/shared/hooks/useKeyEvents";
 import { useCallback, useEffect } from "react";
+import { setValueHeader } from "@/store/reducers/headerSlice";
 
 export const NavPopup = () => {
     const dispatch = useAppDispatch();
@@ -16,6 +17,7 @@ export const NavPopup = () => {
     const link = useAppSelector(linkState);
 
     const closePopup = useCallback(() => {
+        dispatch(setValueHeader(null))
         unfixedBody();
         dispatch(setValueNavPopup(false));
     }, [dispatch])

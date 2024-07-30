@@ -10,7 +10,7 @@
     visibility: hidden;
     opacity: 0;
     transition: opacity 0.3s;
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(10px);
 }
 
 .photo_full_opened {

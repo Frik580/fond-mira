@@ -8,6 +8,7 @@ import { setValuePhoto } from "@/store/reducers/photoSlice";
 import { setValuePhotoPopup } from "@/store/reducers/popupSlice";
 import { CarouselItemType } from "@/shared/models/Models";
 import fixedBody from "@/shared/lib/FixedBody";
+import { setValueHeader } from "@/store/reducers/headerSlice";
 
 export const CarouselItem: FC<CarouselItemType> = ({
     src,
@@ -26,6 +27,7 @@ export const CarouselItem: FC<CarouselItemType> = ({
 
     function openPopup() {
         if (fullphoto !== 0 && loaded) {
+            dispatch(setValueHeader(false));
             dispatch(setValuePhoto(src));
             dispatch(setValuePhotoPopup(true));
             fixedBody();

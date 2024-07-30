@@ -10,7 +10,7 @@
     visibility: hidden;
     opacity: 0;
     transition: opacity .3s;
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(10px);
   }
   
   .navpopup_opened {

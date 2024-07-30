@@ -1,6 +1,7 @@
 import { PATH } from "@/shared/Constants";
 import { useAppDispatch } from "@/shared/hooks/redux";
 import unfixedBody from "@/shared/lib/UnfixedBody";
+import { setValueHeader } from "@/store/reducers/headerSlice";
 import { 
     setLinkAboutus, 
     setLinkContacts, 
@@ -48,6 +49,7 @@ export default function useRouting(value: null | boolean, path: string) {
             }
         }
 
+        dispatch(setValueHeader(null))
         unfixedBody();
     }, [value, path]);
 }

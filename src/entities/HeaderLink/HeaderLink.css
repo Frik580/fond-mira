@@ -33,7 +33,7 @@
 }
 
 .header-link:disabled {
-    font-weight: 500;
+    font-weight: 400;
     cursor: default;
     background-color: transparent;
     border-top: 2px solid transparent;

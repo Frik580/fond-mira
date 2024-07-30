@@ -3,19 +3,19 @@ import type { PayloadAction } from '@reduxjs/toolkit'
 import type { RootState } from '../store'
 
 type HeaderState = {
-    value: boolean,
+    value: boolean | null,
 }
 
 const initialState: HeaderState = {
-    value: true,
+    value: null,
 }
 
 export const headerSlice = createSlice({
-    name: 'header',
+    name: 'headerVisibility',
     // `createSlice` will infer the state type from the `initialState` argument
     initialState,
     reducers: {
-        setValueHeader: (state, action: PayloadAction<boolean>) => {
+        setValueHeader: (state, action: PayloadAction<boolean | null>) => {
             state.value = action.payload 
         },
     },
@@ -24,6 +24,6 @@ export const headerSlice = createSlice({
 export const { setValueHeader } = headerSlice.actions
 
 // Other code such as selectors can use the imported `RootState` type
-export const headerValue = (state: RootState) => state.header.value
+export const headerState = (state: RootState) => state.header.value
 
 export default headerSlice.reducer

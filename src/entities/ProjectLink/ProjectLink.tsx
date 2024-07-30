@@ -21,7 +21,9 @@ export const ProjectLink: FC<ProjectLinkProps> = ({ card }) => {
             <Image
                 src={`${SERVER_URL_PROJECTS_COVER_SMALL}${card.src}.${IMAGE_PERMISSION}`}
                 fill
-                sizes="(max-width: 799px) 100vw, (max-width: 1199px) 50vw, 33vw"
+                // sizes="(max-width: 799px) 100vw, (max-width: 1199px) 80vw, 75vw"
+                // placeholder="blur"
+                // blurDataURL={`${SERVER_URL_PROJECTS_COVER_SMALL}${card.src}.${IMAGE_PERMISSION}`}
                 style={{ objectFit: "cover" }}
                 alt={card.title}
             />

@@ -5,11 +5,11 @@ import {
     TITLES,
     DOCUMENTS,
     backgroundImageWithoutPhoto,
+    DOCUMENTS_COVER,
+    DOCUMENTS_COVER_LITE,
 } from "../../shared/Constants";
 import { Document } from "@/entities/Document/Document";
 import { DocumentsType } from "@/shared/models/Models";
-import image from "./Documents.webp";
-import imagelite from "./Documents_lite.webp";
 import { TopImage } from "@/entities/TopImage/TopImage";
 import { Support } from "@/entities/Support/Support";
 
@@ -21,7 +21,7 @@ export const Documents = () => {
                 backgroundImage: `${backgroundImageWithoutPhoto}`,
             }}
         >
-            <TopImage src={image} srclite={imagelite.src} />
+            <TopImage src={DOCUMENTS_COVER} srclite={DOCUMENTS_COVER_LITE} />
             <div className="documents__conteiner">
                 <div className="documents__label">
                     <Support>

@@ -21,6 +21,7 @@ type ProjectProps = {
 };
 
 export const Project: FC<ProjectProps> = ({ children, project }) => {
+
     const server = `${SERVER_URL}${project.href}/`
 
     return (

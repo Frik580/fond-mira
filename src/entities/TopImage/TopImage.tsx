@@ -2,7 +2,7 @@
 
 import "./TopImage.css";
 import Image from "next/image";
-import { FC, useEffect, useState } from "react";
+import { FC, useState } from "react";
 
 type TopImageProps = {
     src: string;
@@ -22,13 +22,11 @@ export const TopImage: FC<TopImageProps> = ({ src, srclite }) => {
             <Image
                 src={src}
                 className={`topimage__image ${loaded ? "loaded" : ""}`}
-                // className="topimage__image"
                 alt="Фоновая картинка"
                 fill
-                priority
-                // blurDataURL={srclite}
-                // placeholder="blur"
+                // priority
                 onLoad={() => setLoaded(true)}
+                sizes="(max-width: 425px) 75vw, 100vw"
             />
         </div>
     );
