@@ -5,6 +5,7 @@ import { TopImage } from "@/entities/TopImage/TopImage";
 import { TOP_NEWS_COVER, TOP_NEWS_COVER_LITE } from "@/shared/Constants";
 
 export const TopNews = () => {
+
     return (
         <section className="top-news">
             <TopImage src={TOP_NEWS_COVER} srclite={TOP_NEWS_COVER_LITE} />

@@ -36,7 +36,7 @@ export const HeaderLogo: FC<HeaderLogoProps> = ({ headerValue }) => {
                         : "logo__image"
                 }
                 alt="голубь мира"
-                placeholder="blur"
+                // placeholder="blur"
             />
             {headerValue && pathname === "/" && !popup.valuePhoto && (
                 <p className="logo__text">

@@ -12,9 +12,9 @@
 .topimage__image {
     object-fit: cover;
     object-position: center;
-    opacity: 0;
+    /* opacity: 0; */
 }
 
-.topimage__image.loaded {
+/* .topimage__image.loaded {
     opacity: 1;
-}
+} */

@@ -21,6 +21,7 @@ export const SERVER_URL_NEWS_IMAGE = `${SERVER_URL}news/`
 export const SERVER_URL_PROJECTS_COVER = `${SERVER_URL}projects-cover/`
 export const TOP_NEWS_COVER = `${SERVER_URL}cover/Header.webp`
 export const TOP_NEWS_COVER_LITE = `${SERVER_URL}cover/lite/Header_lite3.webp`
+// export const TOP_NEWS_COVER_LITE = "https://i.postimg.cc/0Qb3rxYm/Header-lite3.webp"
 export const DOCUMENTS_COVER = `${SERVER_URL}cover/Documents.webp`
 export const DOCUMENTS_COVER_LITE = `${SERVER_URL}cover/lite/Documents_lite.webp`
 export const SERVER_URL_PROJECTS_COVER_SMALL = `${SERVER_URL}projects-cover-small/`

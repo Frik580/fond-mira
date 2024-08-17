@@ -41,27 +41,25 @@ export const NewsList = () => {
     }
 
     return (
-        <>
-            <section
-                id="news-list"
-                ref={sectionNews}
-                className="news-list"
-                onLoad={() => setLoaded(true)}
-                style={{ minHeight: index === 0 ? hightValue : 2000 }}
-            >
-                <MainTitle text={TITLES.NEWS} />
-                <div className="news-list__conteiner">
-                    <ul className="news-list__block">
-                        {newsArray.map((post: NewsType) => (
-                            <News key={post._id} post={post} />
-                        ))}
-                    </ul>
-                    <DotsButton
-                        lenght={news.length < NEWS ? news.length : NEWS}
-                        index={handleIndex}
-                    />
-                </div>
-            </section>
-        </>
+        <section
+            id="news-list"
+            ref={sectionNews}
+            className="news-list"
+            onLoad={() => setLoaded(true)}
+            style={{ minHeight: index === 0 ? hightValue : 2000 }}
+        >
+            <MainTitle text={TITLES.NEWS} />
+            <div className="news-list__conteiner">
+                <ul className="news-list__block">
+                    {newsArray.map((post: NewsType) => (
+                        <News key={post._id} post={post} />
+                    ))}
+                </ul>
+                <DotsButton
+                    lenght={news.length < NEWS ? news.length : NEWS}
+                    index={handleIndex}
+                />
+            </div>
+        </section>
     );
 };

@@ -1,9 +1,10 @@
 // "use client";
 
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import "./NewsNoFull.css";
 import { NewsType } from "@/shared/models/Models";
 import Image from "next/image";
+import toDataURL from "@/features/ToDataUrl/ToDataUrl";
 
 type NewsConteinerProps = {
     post: NewsType;
@@ -16,7 +17,14 @@ export const NewsNoFull: FC<NewsConteinerProps> = ({
     server,
     onClickOpenButton,
 }) => {
-    const [loaded, setLoaded] = useState(false);
+    const [srcBase64, setSrcBase64] = useState("");
+
+    useEffect(() => {
+        !!server &&
+            toDataURL(`${server}lite/1.webp`).then((dataUrl) => {
+                typeof dataUrl === "string" && setSrcBase64(dataUrl);
+            });
+    }, [server]);
 
     return (
         <>
@@ -28,23 +36,15 @@ export const NewsNoFull: FC<NewsConteinerProps> = ({
                         <p className="news__text">{post.article[0]}</p>
                     </div>
                     {!!post.photo && !!server && (
-                        <div
-                            className="news__photoconteiner"
-                            style={{
-                                backgroundImage: `url(${`${server}lite/1.webp`})`,
-                            }}
-                        >
-                            <Image
-                                src={`${server}1.webp`}
-                                className={`news__photo ${
-                                    loaded ? "news__photo_loaded" : ""
-                                }`}
-                                width={400}
-                                height={400}
-                                alt="фото 1"
-                                onLoad={() => setLoaded(true)}
-                            />
-                        </div>
+                        <Image
+                            src={`${server}1.webp`}
+                            className="news__photo"
+                            width={400}
+                            height={400}
+                            alt="фото 1"
+                            placeholder={!!srcBase64 ? "blur" : "empty"}
+                            blurDataURL={!!srcBase64 ? srcBase64 : ""}
+                        />
                     )}
                 </div>
             </div>
