@@ -2,14 +2,15 @@ import { PATH } from "@/shared/Constants";
 import { useAppDispatch } from "@/shared/hooks/redux";
 import unfixedBody from "@/shared/lib/UnfixedBody";
 import { setValueHeader } from "@/store/reducers/headerSlice";
-import { 
-    setLinkAboutus, 
-    setLinkContacts, 
-    setLinkDocuments, 
-    setLinkHome, 
-    setLinkNewslist, 
-    setLinkPartners, 
-    setLinkProjectslist 
+import {
+    setLinkAboutus,
+    setLinkContacts,
+    setLinkDocuments,
+    setLinkHelp,
+    setLinkHome,
+    setLinkNewslist,
+    setLinkPartners,
+    setLinkProjectslist
 } from "@/store/reducers/linkSlice";
 import { setValueNavPopup } from "@/store/reducers/popupSlice";
 import { usePathname, useRouter } from "next/navigation";
@@ -29,6 +30,7 @@ export default function useRouting(value: null | boolean, path: string) {
         path === PATH.PARTNERS && dispatch(setLinkPartners(true));
         path === PATH.DOCUMENTS && dispatch(setLinkDocuments(true));
         path === PATH.CONTACTS && dispatch(setLinkContacts(true));
+        path === PATH.HELP && dispatch(setLinkHelp(true));
     }
 
     useEffect(() => {
@@ -36,14 +38,14 @@ export default function useRouting(value: null | boolean, path: string) {
             return
         }
 
-        if (path === PATH.DOCUMENTS) {
+        if (path === PATH.DOCUMENTS || path === PATH.HELP) {
             router.push(path);
             handleLinkState(path);
         } else {
             if (pathname !== "/") {
                 router.push("/");
                 handleLinkState(path);
-            } 
+            }
             else {
                 handleLinkState(path);
             }

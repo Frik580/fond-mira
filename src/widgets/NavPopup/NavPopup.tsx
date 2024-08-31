@@ -86,6 +86,13 @@ export const NavPopup = () => {
                             style="header-link__conteiner_burger"
                             headerValue={false}
                         />
+                        <HeaderLink
+                            path={PATH.HELP}
+                            title={TITLES.HELP}
+                            active={link.help}
+                            style="header-link__conteiner_burger"
+                            headerValue={false}
+                        />
                     </div>
                 </div>
             )}

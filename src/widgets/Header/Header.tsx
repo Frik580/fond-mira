@@ -15,6 +15,7 @@ import { newsAPI } from "@/shared/services/NewsService";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 import { setValueHeader } from "@/store/reducers/headerSlice";
+import Link from "next/link";
 
 export const Header = () => {
     const pathname = usePathname();
@@ -24,7 +25,11 @@ export const Header = () => {
     const { data: news } = newsAPI.useFetchAllNewsQuery("");
 
     useEffect(() => {
-        if (pathname !== "/" && pathname !== "/documents") {
+        if (
+            pathname !== "/" &&
+            pathname !== "/documents" &&
+            pathname !== "/helpus"
+        ) {
             dispatch(setLinkHome());
         }
     }, [dispatch, pathname]);
@@ -40,11 +45,7 @@ export const Header = () => {
                         ? "linear-gradient(rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 110%)"
                         : ""
                 }`,
-                height: `${
-                    header && pathname !== "/"
-                        ? "auto"
-                        : ""
-                }`
+                height: `${header && pathname !== "/" ? "auto" : ""}`,
             }}
         >
             <div className="header__links">
@@ -104,14 +105,21 @@ export const Header = () => {
                     style="header-link__conteiner"
                     headerValue={header}
                 />
-                {/* <button className="header__button">Помочь</button> */}
+                <HeaderLink
+                    path={PATH.HELP}
+                    title={TITLES.HELP}
+                    active={link.help}
+                    style="header-link__conteiner"
+                    headerValue={header}
+                />
+                {/* <Link href="/helpus" className="header__button">{TITLES.HELP}</Link> */}
                 {/* <div className="header__book">
                     <Book />
                 </div> */}
             </nav>
             <div className="header__book">
-                    <Book />
-                </div>
+                <Book />
+            </div>
         </header>
     );
 };

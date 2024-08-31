@@ -77,23 +77,18 @@
 
 .header__book {
     width: 110px;
-    margin-left: auto;
     position: absolute;
     right: 30px;
 }
 
 @media (max-width: 1023px) {
-    .header__links {
+    .header__book {
         right: 20px;
     }
 }
 
 @media (max-width: 799px) {
-    .header__links {
+    .header__book {
         right: 10px;
     }
 }
-
-/* .header_margin {
-    margin-right: 7.5px;
-} */

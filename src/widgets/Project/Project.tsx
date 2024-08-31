@@ -5,7 +5,9 @@ import {
     backgroundImageWithoutPhoto,
     backgroundImageWithPhoto,
     IMAGE_PERMISSION,
+    PARTNERS_PERMISSION,
     SERVER_URL,
+    SERVER_URL_PARTNERS,
     SERVER_URL_PROJECTS_COVER,
     SERVER_URL_PROJECTS_COVER_LITE,
 } from "@/shared/Constants";
@@ -21,8 +23,7 @@ type ProjectProps = {
 };
 
 export const Project: FC<ProjectProps> = ({ children, project }) => {
-
-    const server = `${SERVER_URL}${project.href}/`
+    const server = `${SERVER_URL}${project.href}/`;
 
     return (
         <section
@@ -42,9 +43,12 @@ export const Project: FC<ProjectProps> = ({ children, project }) => {
                 srclite={`${SERVER_URL_PROJECTS_COVER_LITE}${project.src}.${IMAGE_PERMISSION}`}
             />
             <div className="project__conteiner">
-                <div className="project__partner">
-                    <Support partner={project.partner} color="var(--color-dust-white)" />
-                </div>
+                <div
+                    className="project__partner"
+                    style={{
+                        backgroundImage: `url(${SERVER_URL_PARTNERS}${project.partner}.${PARTNERS_PERMISSION})`,
+                    }}
+                />
                 <h1 className="project__title">{project.title}</h1>
                 {children}
             </div>

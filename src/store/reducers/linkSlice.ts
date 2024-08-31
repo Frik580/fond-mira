@@ -10,6 +10,7 @@ type LinkState = {
     partners: boolean,
     documents: boolean,
     contacts: boolean,
+    help: boolean,
 }
 
 const initialState: LinkState = {
@@ -20,6 +21,7 @@ const initialState: LinkState = {
     partners: false,
     documents: false,
     contacts: false,
+    help: false,
 }
 
 export const linkSlice = createSlice({
@@ -35,6 +37,7 @@ export const linkSlice = createSlice({
             state.partners = false
             state.documents = false
             state.contacts = false
+            state.help = false
         },
         setLinkAboutus: (state, action: PayloadAction<boolean>) => {
             state.aboutus = action.payload
@@ -54,6 +57,9 @@ export const linkSlice = createSlice({
         setLinkContacts: (state, action: PayloadAction<boolean>) => {
             state.contacts = action.payload
         },
+        setLinkHelp: (state, action: PayloadAction<boolean>) => {
+            state.help = action.payload
+        },
     },
 })
 
@@ -64,7 +70,8 @@ export const {
     setLinkProjectslist,
     setLinkPartners,
     setLinkDocuments,
-    setLinkContacts
+    setLinkContacts,
+    setLinkHelp
 } = linkSlice.actions
 
 // Other code such as selectors can use the imported `RootState` type
