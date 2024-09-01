@@ -22,7 +22,7 @@
   .navpopup__conteiner {
     position: relative;
     background-color: #fff;
-    height: 100vh;
+    /* height: 100vh; */
     padding: 10px 50px;
     display: flex;
     justify-content: center;

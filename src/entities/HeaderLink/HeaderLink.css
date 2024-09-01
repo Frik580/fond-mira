@@ -1,60 +1,72 @@
-.header-link__conteiner {
+.header-link__conteiner,
+.header-link__conteiner_disabled {
     display: block;
+    position: relative;
 }
 
 @media (max-width: 1175px) {
-    .header-link__conteiner {
+    .header-link__conteiner,
+    .header-link__conteiner_disabled {
         display: none;
     }
 }
 
-.header-link__conteiner_burger {
+.header-link__conteiner_burger,
+.header-link__conteiner_burger_disabled {
     display: block;
+    position: relative;
+    margin: auto;
 }
 
 .header-link {
     border: none;
     background-color: transparent;
     font-size: 20px;
-    line-height: 36px;
+    line-height: 40px;
     font-weight: 400;
     font-style: normal;
     cursor: pointer;
     color: var(--color-white);
     transition: opacity 0.5s ease-in-out;
     opacity: 0.6;
-    border-top: 2px solid transparent;
-    border-bottom: 2px solid transparent;
 }
 
 .header-link:hover {
     opacity: 0.9;
-    border-bottom: 2px solid var(--color-marine);
 }
 
 .header-link:disabled {
     font-weight: 500;
     cursor: default;
     background-color: transparent;
-    border-top: 2px solid transparent;
-    border-bottom: 2px solid transparent;
     opacity: 1;
-}
-
-.header-link_noloaded {
-    font-size: 20px;
-    line-height: 36px;
-    font-weight: 400;
-    font-style: normal;
-    cursor: default;
-    color: var(--color-white);
-    cursor: default;
-    background-color: transparent;
-    border-top: 2px solid transparent;
-    border-bottom: 2px solid transparent;
-    opacity: 0.7;
 }
 
 .header-link_black {
     color: var(--color-black);
+}
+
+.header-link__border {
+    position: absolute;
+    top: 35px;
+    left: 50%;
+    width: 0%;
+    height: 4px;
+    background-color: var(--color-marine);
+    transition: all 0.5s ease-in-out;
+    border-radius: 2px;
+}
+
+.header-link__conteiner:hover > .header-link__border {
+    left: 0;
+    width: 100%;
+    height: 2px;
+    border-radius: 1px;
+}
+
+.header-link__conteiner_burger:hover > .header-link__border {
+    left: 0;
+    width: 100%;
+    height: 2px;
+    border-radius: 1px;
 }

@@ -23,14 +23,19 @@ export const HeaderLink: FC<HeaderLinkProps> = ({
     useRouting(value, path);
 
     return (
-        <button
-            onClick={() => (value === null ? setValue(true) : setValue(!value))}
-            className={`${style} header-link ${
-                !headerValue && "header-link_black"
-            }`}
-            disabled={active}
-        >
-            {title}
-        </button>
+        <div className={active ? `${style}_disabled` : style}>
+            <button
+                onClick={() =>
+                    value === null ? setValue(true) : setValue(!value)
+                }
+                className={`${style} header-link ${
+                    !headerValue && "header-link_black"
+                }`}
+                disabled={active}
+            >
+                {title}
+            </button>
+            <span className={`header-link__border`} />
+        </div>
     );
 };
