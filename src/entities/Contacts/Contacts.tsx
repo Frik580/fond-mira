@@ -19,21 +19,36 @@ export const Contacts = () => {
     return (
         <section id="contacts" ref={sectionContacts} className="contacts">
             <div className="contacts__conteiner">
-                <p className="contacts__text">
+                {/* <p className="contacts__text">
                     Контакты ПКО МОФ «Российский фонд мира»
-                </p>
+                </p> */}
                 <a
                     href="mailto:fondmira.perm@gmail.com"
                     className="contacts__link"
                 >
-                    <Image className="contacts__icon" src={imgEmail} alt="" />
+                    <Image
+                        className="contacts__icon"
+                        src={imgEmail}
+                        alt="почта"
+                    />
                     fondmira.perm@gmail.com
                 </a>
                 <p className="contacts__text">
-                    <Image className="contacts__icon" src={imgAdds} alt="" />
+                    <Image
+                        className="contacts__icon"
+                        src={imgAdds}
+                        alt="адрес"
+                    />
                     Пермь, ул. Ленина 51, каб. 103
                 </p>
             </div>
+            <Image
+                src="https://static-maps.yandex.ru/v1?lang=ru_RU&ll=56.230712%2C58.010863&pt=56.232399,58.010727,pm2rdl&z=17&style=elements:geometry|stylers.hue:0d69f2~elements:label.icon|stylers.hue:0d69f2~elements:label.text.fill|stylers.color:083f91&apikey=025e9292-14a5-4cd0-993b-bb480882f651"
+                alt="карта"
+                width={600}
+                height={450}
+                className="contacts__map"
+            />
         </section>
     );
 };
