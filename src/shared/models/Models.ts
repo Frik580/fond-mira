@@ -9,7 +9,8 @@ export type ComponentProps = {
 }
 
 export type DocumentsType = {
-    id: Key | null | undefined;
+    // id: Key | null | undefined;
+    id: number;
     title: string;
     href: string;
 };

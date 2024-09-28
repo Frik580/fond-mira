@@ -39,9 +39,9 @@ a {
     --color-black: #212120;
     --color-white: #ffffff;
     --color-dust-white: #f9faf7;
-    --color-blue: rgb(0, 61, 122);
-    --color-marine: rgb(92, 183, 212);
-    --color-pink: rgb(192, 144, 133);
+    --color-blue: #003d7a;
+    --color-marine: #5cb7d4;
+    --color-pink: #c09085;
     --color-gray: #b6b6b6;
 }
 

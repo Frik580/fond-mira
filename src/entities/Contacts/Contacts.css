@@ -1,5 +1,7 @@
 .contacts {
     width: 100vw;
+    /* position: relative; */
+    /* height: 600px; */
     display: flex;
     background-color: var(--color-marine);
     background-image: linear-gradient(var(--color-marine), var(--color-blue) 150%);
@@ -20,6 +22,9 @@
 .contacts__conteiner {
     display: flex;
     flex-direction: column;
+    /* position: absolute;
+    top: 50%;
+    left: 50%; */
 }
 
 .contacts__text {
@@ -54,5 +59,8 @@
 .contacts__map {
     max-width: 100%;
     height: auto;
-    border-radius: 20px;
+    /* max-height: 450px; */
+    /* width: 100%; */
+    /* object-fit: cover; */
+    border-radius: 6px;
 }

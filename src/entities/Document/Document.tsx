@@ -9,12 +9,16 @@ import { DOCUMENT_PERMISSION, SERVER_URL_DOCUMENTS } from "@/shared/Constants";
 type DocumentProps = {
     title: string;
     href: string;
+    num?: number;
 };
 
-export const Document: FC<DocumentProps> = ({ title, href }) => {
+export const Document: FC<DocumentProps> = ({ title, href, num }) => {
     return (
         <div className="document">
-            <p className="document__text">{title}</p>
+            <div className="document__text">
+                {num && <p style={{ paddingRight: "10px" }}>{num}.</p>}
+                <p>{title}</p>
+            </div>
             <button
                 name="button"
                 className="document__button"

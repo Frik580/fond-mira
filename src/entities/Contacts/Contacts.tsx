@@ -19,9 +19,6 @@ export const Contacts = () => {
     return (
         <section id="contacts" ref={sectionContacts} className="contacts">
             <div className="contacts__conteiner">
-                {/* <p className="contacts__text">
-                    Контакты ПКО МОФ «Российский фонд мира»
-                </p> */}
                 <a
                     href="mailto:fondmira.perm@gmail.com"
                     className="contacts__link"
@@ -43,8 +40,9 @@ export const Contacts = () => {
                 </p>
             </div>
             <Image
-                src="https://static-maps.yandex.ru/v1?lang=ru_RU&ll=56.230712%2C58.010863&pt=56.232399,58.010727,pm2rdl&z=17&style=elements:geometry|stylers.hue:0d69f2~elements:label.icon|stylers.hue:0d69f2~elements:label.text.fill|stylers.color:083f91&apikey=025e9292-14a5-4cd0-993b-bb480882f651"
+                src="https://static-maps.yandex.ru/v1?lang=ru_RU&ll=56.230712%2C58.010863&pt=56.232399,58.010727,pm2rdl&z=16&size=650,450&style=elements:geometry|stylers.hue:0d69f2~elements:label.icon|stylers.hue:0d69f2~elements:label.text.fill|stylers.color:083f91&apikey=025e9292-14a5-4cd0-993b-bb480882f651"
                 alt="карта"
+                // fill
                 width={600}
                 height={450}
                 className="contacts__map"

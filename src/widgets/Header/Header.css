@@ -77,6 +77,8 @@
 
 .header__book {
     width: 110px;
+/* max-width: 110px; */
+/* width: auto; */
     position: absolute;
     right: 30px;
 }

@@ -10,9 +10,14 @@ export const TopNews = () => {
         <section className="top-news">
             <TopImage src={TOP_NEWS_COVER} srclite={TOP_NEWS_COVER_LITE} />
             <div className="top-news__conteiner">
-                <p className="top-news__title">Наше лето - 2024</p>
+                <p className="top-news__title">Наша осень - 2024</p>
                 <ul className="top-news__text">
-                    <li>Полным ходом идет реализация Проектов:</li>
+                    <li>
+                        Идёт подготовка к Х Краевому педагогическому Фестивалю
+                        &laquo;Солнечный круг&raquo;, посвященному 20-летию
+                        Ассоциации &laquo;ЛУЧ&raquo;
+                    </li>
+                    <li>Полным ходом идёт реализация Проектов:</li>
                     <li>
                         <Link
                             href={"/projects/kod-semyi"}

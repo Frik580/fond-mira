@@ -7,7 +7,7 @@ import { TITLES, PATH } from "../../shared/Constants";
 import { useAppDispatch, useAppSelector } from "../../shared/hooks/redux";
 import { linkState, setLinkHome } from "@/store/reducers/linkSlice";
 import { setValueNavPopup } from "@/store/reducers/popupSlice";
-import Book from "@/entities/Book/Book";
+import { Book } from "@/entities/Book/Book";
 import fixedBody from "@/shared/lib/FixedBody";
 import { HeaderLogo } from "@/entities/HeaderLogo/HeaderLogo";
 import useScrollControl from "@/shared/hooks/useScrollControl";
@@ -15,7 +15,6 @@ import { newsAPI } from "@/shared/services/NewsService";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 import { setValueHeader } from "@/store/reducers/headerSlice";
-import Link from "next/link";
 
 export const Header = () => {
     const pathname = usePathname();
@@ -118,7 +117,7 @@ export const Header = () => {
                 </div> */}
             </nav>
             <div className="header__book">
-                <Book />
+                <Book header={header} />
             </div>
         </header>
     );

@@ -2,6 +2,8 @@
 
 import { Project } from "../Project/Project";
 import { PROJECTS } from "@/shared/Constants";
+import { Document } from "@/entities/Document/Document";
+
 
 export const ProjectKodSemyi = () => {
     return (
@@ -119,6 +121,7 @@ export const ProjectKodSemyi = () => {
                                 </li>
                             </ul>
                         </article>
+                        <Document title="ПОЛОЖЕНИЕ о проведении городского Медиа-марафона «Калейдоскоп семейных ценностей»" href="kod" />
                     </div>
                 </Project>
             )}

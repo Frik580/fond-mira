@@ -20,11 +20,13 @@ export const Documents = () => {
             }}
         >
             <TopImage src={DOCUMENTS_COVER} srclite={DOCUMENTS_COVER_LITE} />
-            <div className="documents__conteiner">
+            <ul className="documents__conteiner">
                 {DOCUMENTS.map((doc: DocumentsType) => (
-                    <Document key={doc.id} title={doc.title} href={doc.href} />
+                    <li className="documents__li" key={doc.id}>
+                        <Document title={doc.title} href={doc.href} num={doc.id} />
+                    </li>
                 ))}
-            </div>
+            </ul>
         </section>
     );
 };
