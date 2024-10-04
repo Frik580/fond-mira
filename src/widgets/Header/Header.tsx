@@ -11,17 +11,17 @@ import { Book } from "@/entities/Book/Book";
 import fixedBody from "@/shared/lib/FixedBody";
 import { HeaderLogo } from "@/entities/HeaderLogo/HeaderLogo";
 import useScrollControl from "@/shared/hooks/useScrollControl";
-import { newsAPI } from "@/shared/services/NewsService";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 import { setValueHeader } from "@/store/reducers/headerSlice";
+import { newsState } from "@/store/reducers/newsSlice";
 
 export const Header = () => {
     const pathname = usePathname();
     const header = useScrollControl();
     const dispatch = useAppDispatch();
     const link = useAppSelector(linkState);
-    const { data: news } = newsAPI.useFetchAllNewsQuery("");
+    const { news } = useAppSelector(newsState);
 
     useEffect(() => {
         if (

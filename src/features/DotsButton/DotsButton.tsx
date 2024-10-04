@@ -38,6 +38,7 @@ export const DotsButton: FC<DotsButtonProps> = ({ lenght, index }) => {
                     }}
                     className="dots-button"
                     type="button"
+                    aria-label="кнопка"
                     disabled={item}
                 />
             ))}

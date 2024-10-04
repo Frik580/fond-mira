@@ -1,7 +1,7 @@
 // "use client";
 
 import { useAppDispatch } from "@/shared/hooks/redux";
-import { setNews } from "@/store/reducers/newsHightSlice";
+import { setNewsHight } from "@/store/reducers/newsSlice";
 import { MutableRefObject, useEffect, useState } from "react";
 
 export default function useSetTheHight(
@@ -16,7 +16,7 @@ export default function useSetTheHight(
     useEffect(() => {
         const handleResizeWindow = () => {
             if (window.innerWidth > width) {
-                dispatch(setNews(0));
+                dispatch(setNewsHight(0));
             }
             setTimeout(() => {
                 setWidth(window.innerWidth);
@@ -33,7 +33,7 @@ export default function useSetTheHight(
     useEffect(() => {
         const dataConteiner = ref.current?.clientHeight;
         if (index === 0 && dataConteiner) {
-            dispatch(setNews(dataConteiner));
+            dispatch(setNewsHight(dataConteiner));
         }
     }, [loaded, width]);
 }

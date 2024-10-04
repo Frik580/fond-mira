@@ -6,6 +6,7 @@ import { Providers } from "./providers";
 import { Header } from "@/widgets/Header/Header";
 import { Footer } from "@/widgets/Footer/Footer";
 import { Popups } from "@/widgets/Popups/Popups";
+import { Suspense } from "react";
 
 export const metadata: Metadata = {
     title: "Фонд Мира Пермский край",

@@ -5,7 +5,7 @@ import { MainTitle } from "@/entities/MainTitle/MainTitle";
 import { TITLES } from "@/shared/Constants";
 import { News } from "../News/News";
 import { DotsButton } from "@/features/DotsButton/DotsButton";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { linkState, setLinkNewslist } from "@/store/reducers/linkSlice";
 import { NewsType } from "@/shared/models/Models";
 import { NEWS } from "@/shared/Constants";
@@ -13,9 +13,9 @@ import { useAppDispatch, useAppSelector } from "@/shared/hooks/redux";
 import useLink from "@/shared/hooks/useLink";
 import useLinkDeactive from "@/shared/hooks/UseLinkDeactive";
 import useSortNews from "./lib/useSortNews";
-import { newsState } from "@/store/reducers/newsHightSlice";
-import { newsAPI } from "@/shared/services/NewsService";
+import { newsState, setNewsList } from "@/store/reducers/newsSlice";
 import useSetTheHight from "./lib/useSetTheHight";
+import { newsAPI } from "@/shared/services/NewsService";
 
 export const NewsList = () => {
     const { data: news } = newsAPI.useFetchAllNewsQuery("");
@@ -24,17 +24,21 @@ export const NewsList = () => {
     const [index, setIndex] = useState(0);
     const [loaded, setLoaded] = useState(false);
     const { newslist } = useAppSelector(linkState);
+    const { value } = useAppSelector(newsState);
     const newsArray = useSortNews(index, news);
-    const hightValue = useAppSelector(newsState);
     useLinkDeactive(sectionNews, setLinkNewslist(false));
     useLink(sectionNews, newslist);
-    useSetTheHight(sectionNews, index, loaded, hightValue);
+    useSetTheHight(sectionNews, index, loaded, value);
 
     const handleIndex = (i: number) => {
         setIndex(i);
         dispatch(setLinkNewslist(false));
         dispatch(setLinkNewslist(true));
     };
+
+    useEffect(() => {
+        news && dispatch(setNewsList(news));
+    }, [news]);
 
     if (!news) {
         return null;
@@ -46,7 +50,7 @@ export const NewsList = () => {
             ref={sectionNews}
             className="news-list"
             onLoad={() => setLoaded(true)}
-            style={{ minHeight: index === 0 ? hightValue : 2000 }}
+            style={{ minHeight: index === 0 ? value : 2000 }}
         >
             <MainTitle text={TITLES.NEWS} />
             <div className="news-list__conteiner">

@@ -24,6 +24,10 @@ export const PhotoPopup = () => {
         key === "Escape" && closePopup();
     });
 
+    if (!openpopup.valuePhoto) {
+        return null;
+    }
+
     return (
         <div
             className={`photo_full ${
@@ -31,6 +35,7 @@ export const PhotoPopup = () => {
             }`}
             onClick={closePopup}
         >
+            <div className="photo__loader"/>
             {src && (
                 <Image
                     src={src}

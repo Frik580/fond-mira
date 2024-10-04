@@ -26,6 +26,10 @@ export const NavPopup = () => {
         key === "Escape" && closePopup();
     });
 
+    if (!openpopup.valueNav) {
+        return null;
+    }
+
     return (
         <div
             onClick={closePopup}
