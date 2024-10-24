@@ -99,7 +99,7 @@
 
 @media (max-width: 870px) {
     .news__img {
-        align-self: center;
+        margin: auto;
     }
 }
 
