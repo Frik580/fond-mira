@@ -11,7 +11,9 @@ import { projectState } from "@/store/reducers/projectSlice";
 import { ProjectType } from "@/shared/models/Models";
 import useLinkDeactive from "@/shared/hooks/UseLinkDeactive";
 import useLink from "@/shared/hooks/useLink";
-import useFetchProjects from "@/shared/hooks/useFetchProjects";
+import useFetchProjects from "@/shared/hooks/UseFetchProjects";
+// import useFetchProjects from "@/shared/hooks/useFetchProjects";
+
 
 export const ProjectsList = () => {
     useFetchProjects();
