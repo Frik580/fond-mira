@@ -30,25 +30,21 @@ export const NewsNoFull: FC<NewsConteinerProps> = ({
         <>
             <div className="news__box news_border_white">
                 <div className="news__conteiner">
-                    <div className="news__tex">
-                        <p className="news__date">{post.createdAt}</p>
-                        <div className="news__block">
-                            <h3 className="news__title">{post.title}</h3>
-                            <p className="news__text">{post.article[0]}</p>
-                        </div>
+                    <p className="news__date">{post.createdAt}</p>
+                    <div className="news__block">
+                        <h3 className="news__title">{post.title}</h3>
+                        <p className="news__text">{post.article[0]}</p>
                     </div>
                     {!!post.photo && !!server && (
-                        <div className="news__img">
-                            <Image
-                                src={`${server}1.webp`}
-                                className="news__photo"
-                                width={250}
-                                height={250}
-                                alt="фото 1"
-                                placeholder={!!srcBase64 ? "blur" : "empty"}
-                                blurDataURL={!!srcBase64 ? srcBase64 : ""}
-                            />
-                        </div>
+                        <Image
+                            src={`${server}1.webp`}
+                            className="news__photo"
+                            width={400}
+                            height={400}
+                            alt="фото 1"
+                            placeholder={!!srcBase64 ? "blur" : "empty"}
+                            blurDataURL={!!srcBase64 ? srcBase64 : ""}
+                        />
                     )}
                 </div>
             </div>
