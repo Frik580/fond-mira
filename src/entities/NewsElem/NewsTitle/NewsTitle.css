@@ -1,0 +1,7 @@
+.news-title {
+    font-size: 20px;
+    line-height: 1.4;
+    font-style: normal;
+    font-weight: 500;
+    color: var(--color-black);
+}

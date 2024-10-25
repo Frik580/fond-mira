@@ -4,8 +4,8 @@ import { FC, useEffect, useState } from "react";
 import "./News.css";
 import { NewsType } from "@/shared/models/Models";
 import { SERVER_URL_NEWS_IMAGE } from "@/shared/Constants";
-import { NewsNoFull } from "@/entities/NewsNoFull/NewsNoFull";
-import { NewsFull } from "@/entities/NewsFull/NewsFull";
+import { NewsNoFull } from "@/widgets/NewsNoFull/NewsNoFull";
+import { NewsFull } from "@/widgets/NewsFull/NewsFull";
 
 type NewsProps = {
     post: NewsType;

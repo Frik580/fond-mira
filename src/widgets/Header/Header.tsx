@@ -2,14 +2,14 @@
 
 import "./Header.css";
 import { BurgerButton } from "@/features/BurgerButton/BurgerButton";
-import { HeaderLink } from "@/entities/HeaderLink/HeaderLink";
+import { HeaderLink } from "@/entities/HeaderElem/HeaderLink/HeaderLink";
 import { TITLES, PATH } from "../../shared/Constants";
 import { useAppDispatch, useAppSelector } from "../../shared/hooks/redux";
 import { linkState, setLinkHome } from "@/store/reducers/linkSlice";
 import { setValueNavPopup } from "@/store/reducers/popupSlice";
 import { Book } from "@/entities/Book/Book";
 import fixedBody from "@/shared/lib/FixedBody";
-import { HeaderLogo } from "@/entities/HeaderLogo/HeaderLogo";
+import { HeaderLogo } from "@/entities/HeaderElem/HeaderLogo/HeaderLogo";
 import useScrollControl from "@/shared/hooks/useScrollControl";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";

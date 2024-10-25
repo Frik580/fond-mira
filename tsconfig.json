@@ -35,7 +35,7 @@
         "src/entities/MainLogo/MainLogo.tsx",
         "src/widgets/NavPopup/NavPopup.jsx",
         "src/features/YandexMetrika/YandexMetrika.jsx",
-        "src/entities/HeaderLink/HeaderLink.jsx",
+        "src/entities/HeaderElem/HeaderLink/HeaderLink.jsx",
         "src/features/StaticBlurDataUrl/StaticBlurDataUrl.js"
     ],
     "exclude": ["node_modules"]

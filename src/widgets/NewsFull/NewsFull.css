@@ -1,5 +1,4 @@
 .news__box {
-    /* padding: 20px; */
     background-color: var(--color-white);
     border-radius: 20px;
     transition: all 0.5s ease-in-out;
@@ -11,11 +10,6 @@
 .news_border_pink {
     padding: 20px;
     border: 2px solid var(--color-pink);
-}
-
-.news__date {
-    flex-shrink: 0;
-    color: var(--color-pink);
 }
 
 .news__article {
@@ -71,18 +65,4 @@
     background-color: var(--color-pink);
     transform: rotate(-45deg);
     border-radius: 1px;
-}
-
-.news__title {
-    font-size: 20px;
-    line-height: 1.4;
-    font-style: normal;
-    font-weight: 500;
-}
-
-.news__text {
-    font-size: 20px;
-    line-height: 1.4;
-    font-style: normal;
-    font-weight: 400;
 }

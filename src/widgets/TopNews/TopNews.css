@@ -13,7 +13,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* gap: 10px; */
     background-color: var(--color-white);
     max-width: 800px;
     margin: auto 50px 30px;

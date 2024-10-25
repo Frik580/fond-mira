@@ -3,13 +3,13 @@
 import { FC, useCallback, useEffect, useRef, useState } from "react";
 import "./NewCarousel.css";
 import { GalleryType } from "@/shared/models/Models";
-import { CarouselItem } from "@/entities/CarouselItem/CarouselItem";
-import { CarouselButton } from "@/entities/CarouselButton/CarouselButton";
+import { CarouselItem } from "@/entities/CarouselElem/CarouselItem/CarouselItem";
 import { Counter } from "@/entities/Counter/Counter";
 import useUpdateActiveIndexBySwipe from "./lib/useUpdateActiveIndexBySwipe";
 import useCreateImagesLinks from "./lib/useCreateImagesLinks";
 import useKeyEvents from "../../shared/hooks/useKeyEvents";
 import useElementVisible from "@/shared/hooks/useElementVisible";
+import { CarouselButton } from "@/entities/CarouselElem/CarouselButton/CarouselButton";
 
 const increaseIndex = (index: number, size: number) =>
     Math.min(index + 1, size - 1);

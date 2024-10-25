@@ -5,6 +5,9 @@ import "./NewsNoFull.css";
 import { NewsType } from "@/shared/models/Models";
 import Image from "next/image";
 import toDataURL from "@/features/ToDataUrl/ToDataUrl";
+import { NewsDate } from "@/entities/NewsElem/NewsDate/NewsDate";
+import { NewsTitle } from "@/entities/NewsElem/NewsTitle/NewsTitle";
+import { TextMain } from "@/entities/TextMain/TextMain";
 
 type NewsConteinerProps = {
     post: NewsType;
@@ -31,10 +34,10 @@ export const NewsNoFull: FC<NewsConteinerProps> = ({
             <div className="news__box news_border_white">
                 <div className="news__conteiner">
                     <div className="news__tex">
-                        <p className="news__date">{post.createdAt}</p>
+                        <NewsDate date={post.createdAt} />
                         <div className="news__block">
-                            <h3 className="news__title">{post.title}</h3>
-                            <p className="news__text">{post.article[0]}</p>
+                            <NewsTitle title={post.title} />
+                            <TextMain text={post.article[0]} />
                         </div>
                     </div>
                     {!!post.photo && !!server && (

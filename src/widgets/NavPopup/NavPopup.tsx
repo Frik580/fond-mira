@@ -4,7 +4,7 @@ import "./NavPopup.css";
 import { useAppDispatch, useAppSelector } from "@/shared/hooks/redux";
 import { popupValue, setValueNavPopup } from "@/store/reducers/popupSlice";
 import { linkState } from "@/store/reducers/linkSlice";
-import { HeaderLink } from "@/entities/HeaderLink/HeaderLink";
+import { HeaderLink } from "@/entities/HeaderElem/HeaderLink/HeaderLink";
 import { PATH, TITLES } from "@/shared/Constants";
 import unfixedBody from "@/shared/lib/UnfixedBody";
 import useKeyEvents from "@/shared/hooks/useKeyEvents";
