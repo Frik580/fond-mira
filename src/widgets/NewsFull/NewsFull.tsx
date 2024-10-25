@@ -8,7 +8,7 @@ import { NewCarousel } from "@/widgets/NewCarousel/NewCarousel";
 import { IMAGE_PERMISSION } from "@/shared/Constants";
 import { NewsDate } from "@/entities/NewsElem/NewsDate/NewsDate";
 import { NewsTitle } from "@/entities/NewsElem/NewsTitle/NewsTitle";
-import { TextMain } from "@/entities/TextMain/TextMain";
+import { TextMain } from "@/entities/NewsElem/TextMain/TextMain";
 
 type NewsConteinerProps = {
     post: NewsType;

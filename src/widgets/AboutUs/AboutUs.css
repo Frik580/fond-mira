@@ -31,17 +31,12 @@
     line-height: 1.4;
     font-weight: 400;
     font-style: normal;
+    color: var(--color-text);
 }
 
 @media (max-width: 1023px) {
     .about-us__text {
         font-size: 18px;
-    }
-}
-
-@media (max-width: 799px) {
-    .about-us__text {
-        font-size: 16px;
     }
 }
 

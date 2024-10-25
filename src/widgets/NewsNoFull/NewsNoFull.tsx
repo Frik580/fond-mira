@@ -7,7 +7,7 @@ import Image from "next/image";
 import toDataURL from "@/features/ToDataUrl/ToDataUrl";
 import { NewsDate } from "@/entities/NewsElem/NewsDate/NewsDate";
 import { NewsTitle } from "@/entities/NewsElem/NewsTitle/NewsTitle";
-import { TextMain } from "@/entities/TextMain/TextMain";
+import { TextMain } from "@/entities/NewsElem/TextMain/TextMain";
 
 type NewsConteinerProps = {
     post: NewsType;
