@@ -79,12 +79,6 @@
     }
 }
 
-@media (max-width: 799px) {
-    .helpus__li {
-        font-size: 16px;
-    }
-}
-
 .helpus__article {
     display: flex;
     flex-direction: column;
@@ -101,12 +95,6 @@
 @media (max-width: 1023px) {
     .helpus__text {
         font-size: 18px;
-    }
-}
-
-@media (max-width: 799px) {
-    .helpus__text {
-        font-size: 16px;
     }
 }
 

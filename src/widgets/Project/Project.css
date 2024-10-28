@@ -94,12 +94,6 @@
     }
 }
 
-/* @media (max-width: 799px) {
-    .project-card__text {
-        font-size: 16px;
-    }
-} */
-
 .project-card__article {
     display: flex;
     flex-direction: column;
@@ -133,12 +127,6 @@
         font-size: 18px;
     }
 }
-
-/* @media (max-width: 799px) {
-    .project-card__li {
-        font-size: 16px;
-    }
-} */
 
 .project-card__link {
     color: var(--color-marine);
