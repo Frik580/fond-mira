@@ -43,9 +43,7 @@
     gap: 25px;
     align-items: center;
     margin: 0 auto;
-    /* padding: 0 0 0 30px; */
     height: 60px;
-    /* margin-left: auto; */
     flex-shrink: 0;
 }
 
@@ -77,8 +75,6 @@
 
 .header__book {
     width: 110px;
-/* max-width: 110px; */
-/* width: auto; */
     position: absolute;
     right: 30px;
 }

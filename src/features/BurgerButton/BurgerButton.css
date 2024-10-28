@@ -12,7 +12,7 @@
     opacity: 1;
 }
 
-@media (max-width: 1175px) {
+@media (max-width: 1400px) {
     .burger-button__conteiner {
       display: block;
     }

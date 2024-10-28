@@ -27,7 +27,8 @@ export const Header = () => {
         if (
             pathname !== "/" &&
             pathname !== "/documents" &&
-            pathname !== "/helpus"
+            pathname !== "/helpus" && 
+            pathname !== "/luch"
         ) {
             dispatch(setLinkHome());
         }
@@ -108,6 +109,13 @@ export const Header = () => {
                     path={PATH.HELP}
                     title={TITLES.HELP}
                     active={link.help}
+                    style="header-link__conteiner"
+                    headerValue={header}
+                />
+                <HeaderLink
+                    path={PATH.LUCH}
+                    title={TITLES.LUCH}
+                    active={link.luch}
                     style="header-link__conteiner"
                     headerValue={header}
                 />

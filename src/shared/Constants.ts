@@ -25,6 +25,8 @@ export const DOCUMENTS_COVER = `${SERVER_URL}cover/Documents.webp`
 export const DOCUMENTS_COVER_LITE = `${SERVER_URL}cover/lite/Documents_lite.webp`
 export const HELP_COVER = `${SERVER_URL}cover/Help.webp`
 export const HELP_COVER_LITE = `${SERVER_URL}cover/lite/Help_lite.webp`
+export const LUCH_COVER = `${SERVER_URL}cover/Luch.webp`
+export const LUCH_COVER_LITE = `${SERVER_URL}cover/lite/Luch_lite.webp`
 export const SERVER_URL_PROJECTS_COVER_SMALL = `${SERVER_URL}projects-cover-small/`
 export const SERVER_URL_PROJECTS_COVER_LITE = `${SERVER_URL}projects-cover-lite/`
 export const IMAGE_PERMISSION = 'webp'
@@ -39,7 +41,8 @@ export const TITLES = {
     PARTNERS: "Партнёры",
     DOCUMENTS: "Документы",
     CONTACTS: "Контакты",
-    HELP: "Помочь нам"
+    HELP: "Помочь нам",
+    LUCH: "Ассоциация Луч"
 };
 
 export const PATH = {
@@ -50,7 +53,8 @@ export const PATH = {
     PARTNERS: "/#partners",
     DOCUMENTS: '/documents',
     CONTACTS: "/#contacts",
-    HELP: "/helpus"
+    HELP: "/helpus",
+    LUCH: "/luch"
 };
 
 export const PROJECTS = [

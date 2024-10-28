@@ -1,17 +1,18 @@
-import { createSlice } from '@reduxjs/toolkit'
-import type { PayloadAction } from '@reduxjs/toolkit'
-import type { RootState } from '../store'
+import { createSlice } from "@reduxjs/toolkit";
+import type { PayloadAction } from "@reduxjs/toolkit";
+import type { RootState } from "../store";
 
 type LinkState = {
-    home: boolean,
-    aboutus: boolean,
-    newslist: boolean,
-    projectslist: boolean,
-    partners: boolean,
-    documents: boolean,
-    contacts: boolean,
-    help: boolean,
-}
+    home: boolean;
+    aboutus: boolean;
+    newslist: boolean;
+    projectslist: boolean;
+    partners: boolean;
+    documents: boolean;
+    contacts: boolean;
+    help: boolean;
+    luch: boolean;
+};
 
 const initialState: LinkState = {
     home: false,
@@ -22,46 +23,51 @@ const initialState: LinkState = {
     documents: false,
     contacts: false,
     help: false,
-}
+    luch: false,
+};
 
 export const linkSlice = createSlice({
-    name: 'link',
+    name: "link",
     // `createSlice` will infer the state type from the `initialState` argument
     initialState,
     reducers: {
         setLinkHome: (state) => {
-            state.home = false
-            state.aboutus = false
-            state.newslist = false
-            state.projectslist = false
-            state.partners = false
-            state.documents = false
-            state.contacts = false
-            state.help = false
+            state.home = false;
+            state.aboutus = false;
+            state.newslist = false;
+            state.projectslist = false;
+            state.partners = false;
+            state.documents = false;
+            state.contacts = false;
+            state.help = false;
+            state.luch = false;
         },
         setLinkAboutus: (state, action: PayloadAction<boolean>) => {
-            state.aboutus = action.payload
+            state.aboutus = action.payload;
         },
         setLinkNewslist: (state, action: PayloadAction<boolean>) => {
-            state.newslist = action.payload
+            state.newslist = action.payload;
         },
         setLinkProjectslist: (state, action: PayloadAction<boolean>) => {
-            state.projectslist = action.payload
+            state.projectslist = action.payload;
         },
         setLinkPartners: (state, action: PayloadAction<boolean>) => {
-            state.partners = action.payload
+            state.partners = action.payload;
         },
         setLinkDocuments: (state, action: PayloadAction<boolean>) => {
-            state.documents = action.payload
+            state.documents = action.payload;
         },
         setLinkContacts: (state, action: PayloadAction<boolean>) => {
-            state.contacts = action.payload
+            state.contacts = action.payload;
         },
         setLinkHelp: (state, action: PayloadAction<boolean>) => {
-            state.help = action.payload
+            state.help = action.payload;
+        },
+        setLinkLuch: (state, action: PayloadAction<boolean>) => {
+            state.luch = action.payload;
         },
     },
-})
+});
 
 export const {
     setLinkHome,
@@ -71,10 +77,11 @@ export const {
     setLinkPartners,
     setLinkDocuments,
     setLinkContacts,
-    setLinkHelp
-} = linkSlice.actions
+    setLinkHelp,
+    setLinkLuch,
+} = linkSlice.actions;
 
 // Other code such as selectors can use the imported `RootState` type
-export const linkState = (state: RootState) => state.link
+export const linkState = (state: RootState) => state.link;
 
-export default linkSlice.reducer
+export default linkSlice.reducer;

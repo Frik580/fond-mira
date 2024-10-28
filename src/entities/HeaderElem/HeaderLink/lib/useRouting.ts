@@ -8,9 +8,10 @@ import {
     setLinkDocuments,
     setLinkHelp,
     setLinkHome,
+    setLinkLuch,
     setLinkNewslist,
     setLinkPartners,
-    setLinkProjectslist
+    setLinkProjectslist,
 } from "@/store/reducers/linkSlice";
 import { setValueNavPopup } from "@/store/reducers/popupSlice";
 import { usePathname, useRouter } from "next/navigation";
@@ -31,27 +32,31 @@ export default function useRouting(value: null | boolean, path: string) {
         path === PATH.DOCUMENTS && dispatch(setLinkDocuments(true));
         path === PATH.CONTACTS && dispatch(setLinkContacts(true));
         path === PATH.HELP && dispatch(setLinkHelp(true));
+        path === PATH.LUCH && dispatch(setLinkLuch(true));
     }
 
     useEffect(() => {
         if (value === null) {
-            return
+            return;
         }
 
-        if (path === PATH.DOCUMENTS || path === PATH.HELP) {
+        if (
+            path === PATH.DOCUMENTS ||
+            path === PATH.HELP ||
+            path === PATH.LUCH
+        ) {
             router.push(path);
             handleLinkState(path);
         } else {
             if (pathname !== "/") {
                 router.push("/");
                 handleLinkState(path);
-            }
-            else {
+            } else {
                 handleLinkState(path);
             }
         }
 
-        dispatch(setValueHeader(null))
+        dispatch(setValueHeader(null));
         unfixedBody();
     }, [value, path]);
 }

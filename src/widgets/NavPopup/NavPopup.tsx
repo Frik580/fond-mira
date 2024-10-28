@@ -97,6 +97,13 @@ export const NavPopup = () => {
                             style="header-link__conteiner_burger"
                             headerValue={false}
                         />
+                        <HeaderLink
+                            path={PATH.LUCH}
+                            title={TITLES.LUCH}
+                            active={link.luch}
+                            style="header-link__conteiner_burger"
+                            headerValue={false}
+                        />
                     </div>
                 </div>
             )}
