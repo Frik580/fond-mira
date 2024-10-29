@@ -49,7 +49,7 @@ export const Project: FC<ProjectProps> = ({ children, project }) => {
                         backgroundImage: `url(${SERVER_URL_PARTNERS}${project.partner}.${PARTNERS_PERMISSION})`,
                     }}
                 />
-                <h1 className="project__title">{project.title}</h1>
+                <h1 className="title">{project.title}</h1>
                 {children}
             </div>
             {!!project.photo && (

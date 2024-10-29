@@ -9,14 +9,14 @@ export const ProjectSolnechnyyKrug = () => {
             {PROJECTS[0] && (
                 <Project project={PROJECTS[0]}>
                     <div className="project-card__conteiner">
-                        <p className="project-card__text">
+                        <p className="text">
                             Целью данного Проекта является формирование и
                             укрепление в многонациональной молодёжной среде
                             Пермского края патриотизма, гражданского
                             самосознания, понимания единства действий для
                             достижения общей цели.
                         </p>
-                        <p className="project-card__text">
+                        <p className="text">
                             Поставленная Цель достигается в рамках организации и
                             проведения выездного двухдневного молодежного
                             фестиваля национальных культур Пермского края
@@ -26,33 +26,33 @@ export const ProjectSolnechnyyKrug = () => {
                             в рамках Фестиваля.
                         </p>
                         <article className="project-card__article">
-                            <h2 className="project-card__text project-card__title">
+                            <h2 className="text project-card__title">
                                 Задачи проекта:
                             </h2>
                             <ul className="project-card__list">
-                                <li className="project-card__li">
+                                <li className="li">
                                     содействие гражданско-патриотическому
                                     воспитанию молодежи Прикамья на основе
                                     краеведческого материала;
                                 </li>
-                                <li className="project-card__li">
+                                <li className="li">
                                     содействие развитию межкультурных и
                                     межнациональных связей молодых людей,
                                     проживающих на территории Пермского края;
                                 </li>
-                                <li className="project-card__li">
+                                <li className="li">
                                     координация деятельности образовательных
                                     учреждений, частных лиц и общественных
                                     организаций в сфере изучения и популяризации
                                     культуры, традиций и истории народов,
                                     проживающих в Пермском крае;
                                 </li>
-                                <li className="project-card__li">
+                                <li className="li">
                                     создание благоприятных условий для
                                     реализации творческого и социального
                                     потенциала участников Фестиваля;
                                 </li>
-                                <li className="project-card__li">
+                                <li className="li">
                                     привлечение внимания общественности к
                                     деятельности по укреплению единства
                                     российской нации.
@@ -60,11 +60,11 @@ export const ProjectSolnechnyyKrug = () => {
                             </ul>
                         </article>
                         <article className="project-card__article">
-                            <h2 className="project-card__text project-card__title">
+                            <h2 className="text project-card__title">
                                 Ключевые мероприятия проекта.
                             </h2>
                             <ol className="project-card__numlist project-card__article">
-                                <li className="project-card__li">
+                                <li className="li">
                                     Создать интерактивную молодежную площадку
                                     для тесного взаимодействия представителей
                                     разных культур Пермского края в сфере
@@ -74,27 +74,27 @@ export const ProjectSolnechnyyKrug = () => {
                                     молодежных групп и объединений Пермского
                                     края.
                                 </li>
-                                <li className="project-card__li">
+                                <li className="li">
                                     В рамках фестиваля провести:
                                     <ul className="project-card__list">
-                                        <li className="project-card__li">
+                                        <li className="li">
                                             творческие мастерские по знакомству
                                             с национальными культурами Пермского
                                             края;
                                         </li>
-                                        <li className="project-card__li">
+                                        <li className="li">
                                             игры на сплочение межнациональными
                                             команд, сформированных в рамках
                                             фестиваля;
                                         </li>
-                                        <li className="project-card__li">
+                                        <li className="li">
                                             интерактивный квест по изучению
                                             культуры и традиционных ценностей
                                             народов современного Прикамья для
                                             укрепления межнационального и
                                             межконфессионального согласия;
                                         </li>
-                                        <li className="project-card__li">
+                                        <li className="li">
                                             организовать работу коммуникационных
                                             площадок, направленных на
                                             преодоление барьеров в межличностных
@@ -106,7 +106,7 @@ export const ProjectSolnechnyyKrug = () => {
                                             формирования толерантности в
                                             молодежной среде;
                                         </li>
-                                        <li className="project-card__li">
+                                        <li className="li">
                                             провести 4-часовой «Культурный
                                             хакатон» по разработке
                                             добровольческих, миротворческих
@@ -114,40 +114,40 @@ export const ProjectSolnechnyyKrug = () => {
                                         </li>
                                     </ul>
                                 </li>
-                                <li className="project-card__li">
+                                <li className="li">
                                     Организовать в социальных сетях группу
                                     «Солнечный круг» для обмена идеями и
                                     проектами, направленными на формирование
                                     единого информационного банка «Наш Пермский
                                     край, нам вместе за руку идти».
                                 </li>
-                                <li className="project-card__li">
+                                <li className="li">
                                     Провести телемост с молодежью города
                                     Петрозаводска, (Красноярск).
                                 </li>
                             </ol>
                         </article>
                         <article className="project-card__article">
-                            <h2 className="project-card__text project-card__title">
+                            <h2 className="text project-card__title">
                                 Результаты деятельности в рамках Проекта
                                 «Солнечный круг».
                             </h2>
-                            <p className="project-card__text">
+                            <p className="text">
                                 Фестиваль стал стартом нового этапа
                                 взаимодействия межнациональных молодежных групп
                                 и объединений Пермского края и городов России.
                             </p>
                             <ol className="project-card__numlist project-card__article">
-                                <li className="project-card__li">
+                                <li className="li">
                                     В молодежном фестивале приняли участие более
                                     200 человек, молодежь Пермского края и гости
                                     края.
                                 </li>
-                                <li className="project-card__li">
+                                <li className="li">
                                     Проведен телемост «Я - Человек Мира!»,
                                     (Красноярск).
                                 </li>
-                                <li className="project-card__li">
+                                <li className="li">
                                     В рамках работы проектных площадок
                                     разработаны социальные (добровольческие)
                                     проекты для реализации «на местах» на

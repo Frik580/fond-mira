@@ -9,7 +9,7 @@ export const ProjectMyIMir = () => {
             {PROJECTS[2] && (
                 <Project project={PROJECTS[2]}>
                     <div className="project-card__conteiner">
-                        <p className="project-card__text">
+                        <p className="text">
                             В настоящее время вопросы сохранения МИРА носят
                             глобальных характер (на мировом, государственном,
                             межличностном уровнях), в этой связи гражданские
@@ -18,14 +18,14 @@ export const ProjectMyIMir = () => {
                             миротворческой позиции у молодёжи становится
                             чрезвычайно актуальной задачей.
                         </p>
-                        <p className="project-card__text">
+                        <p className="text">
                             Учитывая участившиеся в последнее время случаи
                             агрессии, враждебных проявлений в молодёжной среде
                             по отношению друг к другу, окружающим людям и в
                             Пермском крае, миротворческие инициативы Проекта
                             своевременны и востребованы.
                         </p>
-                        <p className="project-card__text">
+                        <p className="text">
                             В Пермского края проживает свыше 733 тыс. молодых
                             людей в возрасте от 14 до 30 лет, что составляет 26%
                             всего населения Прикамья. Молодые граждане
@@ -34,7 +34,7 @@ export const ProjectMyIMir = () => {
                             горожанами, 20,4% (или около 150 тыс. человек)
                             проживают в сельской местности.
                         </p>
-                        <p className="project-card__text">
+                        <p className="text">
                             Проект представляет собой комплекс мероприятий,
                             направленных на формирование Человека – Миротворца.
                             В основе практической деятельности лежат три
@@ -43,11 +43,11 @@ export const ProjectMyIMir = () => {
                         </p>
 
                         <article className="project-card__article">
-                            <p className="project-card__text">
+                            <p className="text">
                                 В контексте нашего Проекта следует понимать:
                             </p>
                             <ol className="project-card__numlist project-card__article">
-                                <li className="project-card__li">
+                                <li className="li">
                                     «МИРОвосприятие» как способность человека
                                     воспринимать окружающий мир с позиций
                                     гуманизма, духовно-нравственных категорий,
@@ -57,7 +57,7 @@ export const ProjectMyIMir = () => {
                                     в моём сердце», Краевой образовательный
                                     десант «Уроки Мира»)
                                 </li>
-                                <li className="project-card__li">
+                                <li className="li">
                                     «МИРОвоззрение» как система взглядов,
                                     убеждений, гражданской позиции человека;
                                     (Краевой конкурс школьников Пермского края
@@ -68,7 +68,7 @@ export const ProjectMyIMir = () => {
                                     этапе», молодёжный дискуссионный клуб «МЫ и
                                     МИР»)
                                 </li>
-                                <li className="project-card__li">
+                                <li className="li">
                                     «МИРОустройство» как потребность к активной
                                     созидательной деятельности, направленной на
                                     практические дела. (Краевая акция «День
@@ -78,7 +78,7 @@ export const ProjectMyIMir = () => {
                                 </li>
                             </ol>
                         </article>
-                        <p className="project-card__text">
+                        <p className="text">
                             Систему мероприятий в рамках Проекта следует
                             рассматривать как единый, взаимосвязанный процесс,
                             работающий на конечный результат: активное включение
@@ -87,8 +87,8 @@ export const ProjectMyIMir = () => {
                             (благотворительные акции, волонтёрское движение,
                             краеведение, поисковую деятельность и др.).
                         </p>
-                        <p className="project-card__text">
-                            <span className="project-card__text project-card__title">
+                        <p className="text">
+                            <span className="text project-card__title">
                                 Цель Проекта:{" "}
                             </span>
                             создание условий для активного включения в
@@ -97,20 +97,20 @@ export const ProjectMyIMir = () => {
                         </p>
 
                         <article className="project-card__article">
-                            <h2 className="project-card__text project-card__title">
+                            <h2 className="text project-card__title">
                                 Задачи проекта:
                             </h2>
                             <ul className="project-card__list">
-                                <li className="project-card__li">
+                                <li className="li">
                                     сохранение исторической памяти через систему
                                     мероприятий с молодёжью;
                                 </li>
-                                <li className="project-card__li">
+                                <li className="li">
                                     вовлечение молодёжи Пермского края в
                                     разноуровневые процессы МИРотворческой
                                     деятельности;
                                 </li>
-                                <li className="project-card__li">
+                                <li className="li">
                                     поддержка добровольческих, волонтёрских
                                     инициатив в молодёжной среде.
                                 </li>
@@ -118,18 +118,18 @@ export const ProjectMyIMir = () => {
                         </article>
 
                         <article className="project-card__article">
-                            <p className="project-card__text">
+                            <p className="text">
                                 Поставленные задачи решались через комплекс
                                 (систему) мероприятий, направленных на
                                 формирование Человека – Миротворца:
                             </p>
                             <ol className="project-card__numlist project-card__article">
-                                <li className="project-card__li">
+                                <li className="li">
                                     Краевой конкурс общеобразовательных
                                     организаций «Ученик года – Я - гражданин
                                     России».
                                     <p
-                                        className="project-card__text"
+                                        className="text"
                                         style={{ marginTop: "10px" }}
                                     >
                                         В конкурсе приняли участие более 400
@@ -137,11 +137,11 @@ export const ProjectMyIMir = () => {
                                         Пермского края.
                                     </p>
                                 </li>
-                                <li className="project-card__li">
+                                <li className="li">
                                     Краевой миротворческий образовательный
                                     десант «Уроки Мира».
                                     <p
-                                        className="project-card__text"
+                                        className="text"
                                         style={{ marginTop: "10px" }}
                                     >
                                         В рамках десанта проведено более 80
@@ -151,11 +151,11 @@ export const ProjectMyIMir = () => {
                                         стало более 800 учащихся Пермского края.
                                     </p>
                                 </li>
-                                <li className="project-card__li">
+                                <li className="li">
                                     Организована работа молодёжного
                                     дискуссионного клуба «МЫ и МИР».
                                     <p
-                                        className="project-card__text"
+                                        className="text"
                                         style={{ marginTop: "10px" }}
                                     >
                                         В рамках Клуба проведено 4 дискуссионных
@@ -169,7 +169,7 @@ export const ProjectMyIMir = () => {
                                         Заёздный).
                                     </p>
                                     <p
-                                        className="project-card__text"
+                                        className="text"
                                         style={{ marginTop: "10px" }}
                                     >
                                         В работе Клуба приняли участие более 200
@@ -179,10 +179,10 @@ export const ProjectMyIMir = () => {
                                     </p>
                                 </li>
 
-                                <li className="project-card__li">
+                                <li className="li">
                                     Акция «День Победы – не в День Победы».
                                     <p
-                                        className="project-card__text"
+                                        className="text"
                                         style={{ marginTop: "10px" }}
                                     >
                                         Проведен цикл тематических мероприятий в
@@ -195,7 +195,7 @@ export const ProjectMyIMir = () => {
                                         Т.М. Вотиновой.
                                     </p>
                                     <p
-                                        className="project-card__text"
+                                        className="text"
                                         style={{ marginTop: "10px" }}
                                     >
                                         В акции приняли участие более 2000 детей
@@ -214,11 +214,11 @@ export const ProjectMyIMir = () => {
                                         остался жив.
                                     </p>
                                 </li>
-                                <li className="project-card__li">
+                                <li className="li">
                                     Благотворительная акция «Посади дерево
                                     Мира!».
                                     <p
-                                        className="project-card__text"
+                                        className="text"
                                         style={{ marginTop: "10px" }}
                                     >
                                         МИРотворческая благотворительная акция
@@ -233,13 +233,13 @@ export const ProjectMyIMir = () => {
                                         Михайлов
                                     </p>
                                 </li>
-                                <li className="project-card__li">
+                                <li className="li">
                                     Научно-практическая конференция школьников и
                                     студентов и многофункциональная
                                     интеллектуальная ролевая игра «Пермская
                                     Детская Модель ООН».
                                     <p
-                                        className="project-card__text"
+                                        className="text"
                                         style={{ marginTop: "10px" }}
                                     >
                                         В мероприятии приняли участие 192
@@ -251,11 +251,11 @@ export const ProjectMyIMir = () => {
                                         МИР».
                                     </p>
                                 </li>
-                                <li className="project-card__li">
+                                <li className="li">
                                     Краевой Молодёжный фестиваль «Диалог
                                     культур».
                                     <p
-                                        className="project-card__text"
+                                        className="text"
                                         style={{ marginTop: "10px" }}
                                     >
                                         Участниками Фестиваля стали молодёжные
@@ -269,7 +269,7 @@ export const ProjectMyIMir = () => {
                                 </li>
                             </ol>
                         </article>
-                        <p className="project-card__text">
+                        <p className="text">
                             В реализации проекта особо следует отметить
                             эффективное взаимодействие с социальными партнёрами.
                             В качестве партнёров стоит отметить плодотворное

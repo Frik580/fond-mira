@@ -9,7 +9,7 @@ export const ProjectZhivayaPamyat = () => {
             {PROJECTS[3] && (
                 <Project project={PROJECTS[3]}>
                     <div className="project-card__conteiner">
-                        <p className="project-card__text">
+                        <p className="text">
                             75-летие Победы в Великой Отечественной войне..
                             Время неумолимо стирает из памяти человеческой
                             многие факты, события, имена. Все сложнее говорить о
@@ -26,35 +26,35 @@ export const ProjectZhivayaPamyat = () => {
                         </p>
 
                         <article className="project-card__article">
-                            <p className="project-card__text">
+                            <p className="text">
                                 Комплекс мероприятий в рамках Проекта системно
                                 выстроен, предполагает 3 взаимосвязанных события
                                 (3 этапа реализации):
                             </p>
                             <ol className="project-card__numlist project-card__article">
-                                <li className="project-card__li">
+                                <li className="li">
                                     Краевой конкурс творческих
                                     (исследовательских) работ «Они ковали Победу
                                     в тылу» (в муниципалитетах Пермского края)
                                 </li>
-                                <li className="project-card__li">
+                                <li className="li">
                                     «Десант Победы» в территории (округа)
                                     Пермского края.
                                 </li>
-                                <li className="project-card__li">
+                                <li className="li">
                                     Краевая Акция «Живая память» ( в
                                     муниципалитетах Пермского края)
                                 </li>
                             </ol>
                         </article>
-                        <p className="project-card__text">
+                        <p className="text">
                             Конкурс «Они ковали Победу в тылу» предполагала
                             встречи участников Проекта с ветеранами, тружениками
                             тыла, работу с архивными материалами, с семейными
                             хрониками, создание семейной летописи. По итогам
                             Конкурса - издание сборника.
                         </p>
-                        <p className="project-card__text">
+                        <p className="text">
                             «Десант Победы» прошел на базе профессиональных
                             колледжей в 4 территориях Пермского края (Березники,
                             Кунгур, Лысьва, Пермский район) и предполагает
@@ -63,7 +63,7 @@ export const ProjectZhivayaPamyat = () => {
                             рамках интерактивных площадок участники окажутся
                             «эпицентре» событий военного тыла.
                         </p>
-                        <p className="project-card__text">
+                        <p className="text">
                             В реализации Проекта приняли участие не менее 1000
                             человек в возрасте от 12 до 18 лет, учащиеся 7-11
                             классов, студенты учреждений профессионального
@@ -71,10 +71,10 @@ export const ProjectZhivayaPamyat = () => {
                         </p>
 
                         <article className="project-card__article">
-                            <h2 className="project-card__text project-card__title">
+                            <h2 className="text project-card__title">
                                 Результаты реализации Проекта
                             </h2>
-                            <p className="project-card__text">
+                            <p className="text">
                                 В ходе реализации Проекта были созданы
                                 оптимальные условия для вовлечения участников
                                 Проекта в атмосферу военного времени через
@@ -83,7 +83,7 @@ export const ProjectZhivayaPamyat = () => {
                                 дети войны своими реальными делами приближали
                                 день Победы.
                             </p>
-                            <p className="project-card__text">
+                            <p className="text">
                                 Благодаря участию в Проекте произошло
                                 объединение детей и взрослых вокруг семейных
                                 реликвий, формирование и пополнение школьных и
@@ -92,7 +92,7 @@ export const ProjectZhivayaPamyat = () => {
                                 земляках и членах семьи, тружениках тыла в годы
                                 ВОВ.
                             </p>
-                            <p className="project-card__text">
+                            <p className="text">
                                 Разработан пакет (кейс) методических материалов
                                 по технологиям организации деятельности по
                                 сохранению памяти и исторической правды о

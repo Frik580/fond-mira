@@ -12,7 +12,7 @@ export const ProjectRyabinovayaAlleya = () => {
             {PROJECTS[6] && (
                 <Project project={PROJECTS[6]}>
                     <div className="project-card__conteiner">
-                        <p className="project-card__text">
+                        <p className="text">
                             Все сложнее говорить о войне с теми, кто о суровом
                             военном времени узнает из текста параграфа учебника
                             истории и фильма, снятого по законам Голливуда. Все
@@ -23,7 +23,7 @@ export const ProjectRyabinovayaAlleya = () => {
                             эффективных подходов к организации системной
                             деятельности в этом направлении.
                         </p>
-                        <p className="project-card__text">
+                        <p className="text">
                             Уникальность проекта в том, что Ключевая идея
                             предложена самими школьниками: включение молодёжи в
                             активный процесс по созданию медиа-продукта:
@@ -33,12 +33,12 @@ export const ProjectRyabinovayaAlleya = () => {
                             Советского Союза, нашим землякам.
                         </p>
                         <article className="project-card__article">
-                            <p className="project-card__text">
+                            <p className="text">
                                 Проект предоставил возможность молодым людям 13-
                                 17 лет:
                             </p>
-                            <ol className="project-card__numlist project-card__article">
-                                <li className="project-card__li">
+                            <ol className="project-card__list project-card__article">
+                                <li className="li">
                                     Стать разработчиками медиа- продукта:
                                     виртуальной экскурсии «Рябиновая аллея
                                     Героев» о героях Советского Союза- наших
@@ -47,13 +47,13 @@ export const ProjectRyabinovayaAlleya = () => {
                                     Стелы и судьбах Героев сегодня знает - 98%
                                     из числа опрошенных старшеклассников.
                                 </li>
-                                <li className="project-card__li">
+                                <li className="li">
                                     Получить практические знания об
                                     использовании современных IT технологий при
                                     создании медиа-продукта , приобрести навыки
                                     работы с архивными документами.
                                 </li>
-                                <li className="project-card__li">
+                                <li className="li">
                                     Включиться в активную исследовательскую,
                                     творческую, добровольческую деятельность в
                                     ходе реализации Проекта и по его завершению
@@ -61,7 +61,7 @@ export const ProjectRyabinovayaAlleya = () => {
                                     событий для молодёжи на Рябиновой Аллее
                                     Героев).
                                 </li>
-                                <li className="project-card__li">
+                                <li className="li">
                                     Получить общественное признание,
                                     почувствовать себя причастными к созданию
                                     Места Памяти о наших земляках Героях
@@ -73,21 +73,21 @@ export const ProjectRyabinovayaAlleya = () => {
                             </ol>
                         </article>
                         <article className="project-card__article">
-                            <p className="project-card__text">
+                            <p className="text">
                                 Проект - это комплекс взаимосвязанных этапов:
                             </p>
                             <ol className="project-card__numlist project-card__article">
-                                <li className="project-card__li">
+                                <li className="li">
                                     Формирование и обучение творческих
                                     (исследовательских) команд.
                                 </li>
-                                <li className="project-card__li">
+                                <li className="li">
                                     Создание виртуальной экскурсии «Рябиновая
                                     аллея Героев», установка на Рябиновой Аллее
                                     информационного билборда с QR-кодами для
                                     выхода на Виртуальную экскурсию.
                                 </li>
-                                <li className="project-card__li">
+                                <li className="li">
                                     Краевые Публичные слушания по защите
                                     созданных молодёжных проектов «Рябиновой
                                     аллее Героев БЫТЬ!» с участием
@@ -97,10 +97,10 @@ export const ProjectRyabinovayaAlleya = () => {
                             </ol>
                         </article>
                         <article className="project-card__article">
-                            <h2 className="project-card__text project-card__title">
+                            <h2 className="text project-card__title">
                                 Результаты реализации проекта
                             </h2>
-                            <p className="project-card__text">
+                            <p className="text">
                                 В рамках реализации Проекта создан сайт
                                 «Рябиновая аллея Героев» о подвиге и судьбе
                                 50-ти Героев Советского Союза, наших земляках,
@@ -119,7 +119,7 @@ export const ProjectRyabinovayaAlleya = () => {
                                 «Эксклюзивный дизайн» - партнёры проекта) Фонда
                                 мира.
                             </p>
-                            <p className="project-card__text">
+                            <p className="text">
                                 9 мая 2023 года состоялась Городская молодёжная
                                 Акция Памяти в Рябиновой аллее Героев, в рамках
                                 Акции состоялось тожественное открытие
@@ -130,7 +130,7 @@ export const ProjectRyabinovayaAlleya = () => {
                                 Союза - наших земляках и информацией о ходе
                                 реализации Проекта.
                             </p>
-                            <p className="project-card__text">
+                            <p className="text">
                                 Проведены Городские Публичные слушания
                                 «Рябиновой аллее Героев БЫТЬ!», где были
                                 подведены итоги реализации Проекта, состоялась

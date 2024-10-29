@@ -8,7 +8,6 @@ import { NewCarousel } from "@/widgets/NewCarousel/NewCarousel";
 import { IMAGE_PERMISSION } from "@/shared/Constants";
 import { NewsDate } from "@/entities/NewsElem/NewsDate/NewsDate";
 import { NewsTitle } from "@/entities/NewsElem/NewsTitle/NewsTitle";
-import { TextMain } from "@/entities/NewsElem/TextMain/TextMain";
 
 type NewsConteinerProps = {
     post: NewsType;
@@ -27,7 +26,9 @@ export const NewsFull: FC<NewsConteinerProps> = ({
             <NewsTitle title={post.title} />
             <div className="news__article">
                 {post.article.map((item: string, i) => (
-                    <TextMain key={i} text={item} />
+                    <p key={i} className="text">
+                        {item}
+                    </p>
                 ))}
             </div>
             {post.video.length !== 0 && (

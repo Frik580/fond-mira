@@ -11,29 +11,29 @@ import { TopImage } from "@/entities/TopImage/TopImage";
 export const Luch = () => {
     return (
         <section
-            className="helpus"
+            className="luch"
             style={{
                 backgroundImage: `${backgroundImageWithoutPhoto}`,
             }}
         >
             <TopImage src={LUCH_COVER} srclite={LUCH_COVER_LITE} />
-            <div className="helpus__conteiner">
-                <h1 className="helpus__title">Ассоциация &laquo;Луч&raquo;</h1>
-                <article className="helpus__article">
-                    <p className="helpus__text">
+            <div className="luch__conteiner">
+            <h1 className="title">Ассоциация &laquo;Луч&raquo;</h1>
+                <article className="luch__article">
+                    <p className="text">
                         Конкурс &laquo;Учитель года&raquo; – это всегда
                         фейерверк педагогического таланта, это обретение
                         единомышленников, друзей, это уникальная возможность
                         подняться на свой педагогический Олимп. Это старт!
                     </p>
-                    <p className="helpus__text">
+                    <p className="text">
                         В 2004 году учителя – победители Краевого Конкурса
                         «Учитель года» Пермского края объединились в
                         профессиональное педагогическое сообщество! Была создана
                         Пермская региональная общественная организация учителей
                         &laquo;Ассоциация &laquo;ЛУЧ&raquo;.
                     </p>
-                    <p className="helpus__text">
+                    <p className="text">
                         Конкурс &laquo;Учитель года&raquo; стал судьбоносным для
                         каждого из нас, стал стартом для покорения новых
                         профессиональных вершин: сейчас это руководители
@@ -42,7 +42,7 @@ export const Luch = () => {
                         по-прежнему, творческие, креативные, ЛУЧистые УЧИТЕЛЯ
                         Прикамья! Настоящие Мастера своего дела!
                     </p>
-                    <p className="helpus__text">
+                    <p className="text">
                         Двадцатилетняя история Ассоциации &laquo;ЛУЧ&raquo;
                         уникальна! Лучистское движение объединило педагогическое
                         сообщество Прикамья: Ассоциация «ЛУЧ» стала своеобразным
@@ -57,7 +57,7 @@ export const Luch = () => {
                         Миротворческие молодёжные проекты совместно Российским
                         фондом мира Пермского края и многое другое...
                     </p>
-                    <p className="helpus__text">
+                    <p className="text">
                         С 2019 года началось плодотворное сотрудничество
                         Ассоциации с Российским фондом мира Пермского края, это
                         новый и перспективный этап деятельности Ассоциации
@@ -67,7 +67,7 @@ export const Luch = () => {
                         создание Краевого молодёжного Штаба &laquo;МИР&raquo;
                         (&laquo;Молодёжные Инициативы - Родине&raquo;).
                     </p>
-                    <p className="helpus__text">
+                    <p className="text">
                         И сегодня актив ПКО МОФ &laquo;Российский фонд
                         мира&raquo; - это педагоги &laquo;лучисты&raquo;! И мы
                         уверены, что ВМЕСТЕ мы сможем сделать наш МИР

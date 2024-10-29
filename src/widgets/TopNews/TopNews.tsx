@@ -19,20 +19,14 @@ export const TopNews = () => {
                     </li>
                     <li>Полным ходом идёт реализация Проектов:</li>
                     <li>
-                        <Link
-                            href={"/projects/kod-semyi"}
-                            className="top-news__link"
-                        >
+                        <Link href={"/projects/kod-semyi"} className="link">
                             &laquo;КОД Семьи по-Пермски&raquo;
                         </Link>{" "}
                         (при поддержке Администрации города Перми, конкурс
                         &laquo;Город - это МЫ!&raquo; )
                     </li>
                     <li>
-                        <Link
-                            href={"/projects/rassveti"}
-                            className="top-news__link"
-                        >
+                        <Link href={"/projects/rassveti"} className="link">
                             &laquo;Рябиновые рассветы. Живая Память&raquo;
                         </Link>{" "}
                         (при поддержке Фонда президентских грантов)

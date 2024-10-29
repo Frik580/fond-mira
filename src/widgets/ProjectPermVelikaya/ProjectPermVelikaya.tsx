@@ -10,7 +10,7 @@ export const ProjectPermVelikaya = () => {
             {PROJECTS[7] && (
                 <Project project={PROJECTS[7]}>
                     <div className="project-card__conteiner">
-                        <p className="project-card__text">
+                        <p className="text">
                             Проект «Пермь великая - Парма многоликая» - это
                             комплекс взаимосвязанных событий, направленных на
                             объединение молодых людей разных национальностей
@@ -30,7 +30,7 @@ export const ProjectPermVelikaya = () => {
                             Краснокамский МР (армяне), Березниковский МР
                             (немцы). Количество участников - не менее 800 чел.
                         </p>
-                        <p className="project-card__text">
+                        <p className="text">
                             Комплекс мероприятий Проекта системно выстроен,
                             включает 2 этапа: В рамках 1-го этапа: определён
                             круг потенциальных участников, сформированы
@@ -48,37 +48,37 @@ export const ProjectPermVelikaya = () => {
                             конструктивного взаимодействия участников Проекта.
                         </p>
                         <article className="project-card__article">
-                            <p className="project-card__text">
+                            <p className="text">
                                 В программе Фестиваля:
                             </p>
-                            <ol className="project-card__numlist project-card__article">
-                                <li className="project-card__li">
+                            <ol className="project-card__list project-card__article">
+                                <li className="li">
                                     Открытая дискуссия «Мы разные, но у нас
                                     общая история, мы в ответе за наше
                                     будущее!».
                                 </li>
-                                <li className="project-card__li">
+                                <li className="li">
                                     Творческие мастерские для знакомства с
                                     национальными культурами жителей Прикамья.
                                 </li>
-                                <li className="project-card__li">
+                                <li className="li">
                                     Ролевые игры на сплочение межнациональными
                                     команд.
                                 </li>
-                                <li className="project-card__li">
+                                <li className="li">
                                     Интерактивный квест по изучению культуры,
                                     традиционных ценностей народов Прикамья.
                                 </li>
-                                <li className="project-card__li">
+                                <li className="li">
                                     Ярмарка талантов «Солнечный круг».
                                 </li>
-                                <li className="project-card__li">
+                                <li className="li">
                                     «Проектный Хакатон» по разработке
                                     социально-значимых культурных проектов.
                                 </li>
                             </ol>
                         </article>
-                        <p className="project-card__text">
+                        <p className="text">
                             Уникальность Проекта в том, что смысловой акцент
                             перенесён с культурно-развлекательной деятельности
                             участников на активный процесс осознания и принятия
@@ -89,7 +89,7 @@ export const ProjectPermVelikaya = () => {
                             разноплановую информацию о многообразии национальных
                             культур нашей общей Родины.
                         </p>
-                        <p className="project-card__text">
+                        <p className="text">
                             Пермский край уникален по своему этнокультурному
                             многообразию: в Прикамье проживают представители 144
                             народностей, действуют 28 национально-культурных
@@ -102,7 +102,7 @@ export const ProjectPermVelikaya = () => {
                             согласии», с другой - чрезвычайно актуальна для
                             Прикамья.
                         </p>
-                        <p className="project-card__text">
+                        <p className="text">
                             В реальной жизни нам достаточно часто приходится
                             сталкиваться с примерами непонимания и неприятия
                             культуры и традиций разных народов в молодёжной
@@ -116,18 +116,18 @@ export const ProjectPermVelikaya = () => {
                             компетентности молодёжи Прикамья.
                         </p>
                         <article className="project-card__article">
-                            <p className="project-card__text">
+                            <p className="text">
                                 Первичный анализ позволил выявить ряд причин
                                 сложившейся ситуации:
                             </p>
                             <ol className="project-card__numlist project-card__article">
-                                <li className="project-card__li">
+                                <li className="li">
                                     Недостаточное освещение этнокультурного
                                     многообразия в молодёжных информационных
                                     источниках (в частности - соцсети, Youtube и
                                     т.д.).
                                 </li>
-                                <li className="project-card__li">
+                                <li className="li">
                                     Клишированное представление о культуре,
                                     менталитете, нормах поведения представителей
                                     разных национальностей, наличие культурных
@@ -136,7 +136,7 @@ export const ProjectPermVelikaya = () => {
                             </ol>
                         </article>
 
-                        <p className="project-card__text">
+                        <p className="text">
                             Проект направлен на устранение в молодежной среде
                             штампов, клишированности, псевдопонимания и
                             псевдовосприятия этнических особенностей. Как

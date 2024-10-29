@@ -10,7 +10,7 @@ export const ProjectKtoYesliNeTy = () => {
             {PROJECTS[5] && (
                 <Project project={PROJECTS[5]}>
                     <div className="project-card__conteiner">
-                        <p className="project-card__text">
+                        <p className="text">
                             Пандемия так или иначе, коснулась каждого из нас,
                             внесла серьезные коррективы в привычный уклад жизни.
                             В этих условиях мощный потенциал добровольческого
@@ -20,24 +20,24 @@ export const ProjectKtoYesliNeTy = () => {
                         </p>
 
                         <article className="project-card__article">
-                            <p className="project-card__text">
+                            <p className="text">
                                 Проведённый первичный анализ ситуации показал
                                 крайне низкий уровень включённости молодых людей
                                 края (14-18 лет) в добровольческую деятельность
                                 и позволил выявить ряд причин этому факту:
                             </p>
-                            <ul className="project-card__numlist project-card__article">
-                                <li className="project-card__li">
+                            <ul className="project-card__list project-card__article">
+                                <li className="li">
                                     недостаточное освещение молодёжного
                                     добровольчества в информационном
                                     пространстве;
                                 </li>
-                                <li className="project-card__li">
+                                <li className="li">
                                     отсутствие мотивационной информации о
                                     позитивных практиках и результатах
                                     молодёжного добровольчества в Прикамье;
                                 </li>
-                                <li className="project-card__li">
+                                <li className="li">
                                     «уход» молодёжи в возрасте 14-18 лет из
                                     «реального» мира в «виртуальный», зачастую с
                                     деструктивным контентом
@@ -45,8 +45,8 @@ export const ProjectKtoYesliNeTy = () => {
                                 </li>
                             </ul>
                         </article>
-                        <p className="project-card__text">
-                            <span className="project-card__text project-card__title">
+                        <p className="text">
+                            <span className="text project-card__title">
                                 Цель:{" "}
                             </span>{" "}
                             Создание условий для поддержки и активизации
@@ -55,7 +55,7 @@ export const ProjectKtoYesliNeTy = () => {
                             учащихся 8-11 классов не менее чем в 20
                             муниципальных образованиях Прикамья.
                         </p>
-                        <p className="project-card__text">
+                        <p className="text">
                             Мы рассматриваем участие в добровольческом движении
                             как одно из условий включения молодых людей в
                             «активный позитивный контекст» жизнеустройства и
@@ -67,21 +67,21 @@ export const ProjectKtoYesliNeTy = () => {
                             и потенциальные добровольцы.
                         </p>
                         <article className="project-card__article">
-                            <p className="project-card__text">
+                            <p className="text">
                                 Комплекс мероприятий в рамках Проекта
                                 взаимосвязан, предполагает 3 этапа:
                             </p>
                             <ul className="project-card__numlist project-card__article">
-                                <li className="project-card__li">
+                                <li className="li">
                                     подготовительный этап - мониторинг ситуации,
                                     информирование потенциальных участников
                                     (пакет документов);
                                 </li>
-                                <li className="project-card__li">
+                                <li className="li">
                                     краевой молодёжный Медиа-марафон «Кто, если
                                     не ТЫ!»;
                                 </li>
-                                <li className="project-card__li">
+                                <li className="li">
                                     ключевое мероприятие – краевой молодёжный
                                     Форум «Кто, если не ТЫ!» (выездной - 2 дня,
                                     лагерь «Новое поколение»).
@@ -89,13 +89,13 @@ export const ProjectKtoYesliNeTy = () => {
                             </ul>
                         </article>
                         <article className="project-card__article">
-                            <p className="project-card__text">
+                            <p className="text">
                                 Проект в настоящее время востребован, так как
                                 предоставляет возможность молодым людям 14- 18
                                 лет:
                             </p>
-                            <ul className="project-card__numlist project-card__article">
-                                <li className="project-card__li">
+                            <ul className="project-card__list project-card__article">
+                                <li className="li">
                                     получить разноплановую информацию об
                                     активных практиках молодёжного
                                     добровольчества, транслировать свой опыт
@@ -103,13 +103,13 @@ export const ProjectKtoYesliNeTy = () => {
                                     аккаунтах социальных сетей в качестве
                                     «позитивного контента» (Медиа-марафон);
                                 </li>
-                                <li className="project-card__li">
+                                <li className="li">
                                     стать разработчиками и организаторами
                                     актуальных добровольческих проектов,
                                     созданных в рамках работы проектных площадок
                                     Форума;
                                 </li>
-                                <li className="project-card__li">
+                                <li className="li">
                                     включиться в активную добровольческую
                                     деятельность на территории своего места
                                     проживания (места обучения), получить
@@ -117,7 +117,7 @@ export const ProjectKtoYesliNeTy = () => {
                                 </li>
                             </ul>
                         </article>
-                        <p className="project-card__text">
+                        <p className="text">
                             Деятельность в рамах Форума стала стартом молодежных
                             добровольческих инициатив «на местах». Создано 5
                             центров Добровольчества на базе школ Пермского края.

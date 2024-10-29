@@ -7,7 +7,6 @@ import Image from "next/image";
 import toDataURL from "@/features/ToDataUrl/ToDataUrl";
 import { NewsDate } from "@/entities/NewsElem/NewsDate/NewsDate";
 import { NewsTitle } from "@/entities/NewsElem/NewsTitle/NewsTitle";
-import { TextMain } from "@/entities/NewsElem/TextMain/TextMain";
 
 type NewsConteinerProps = {
     post: NewsType;
@@ -37,7 +36,7 @@ export const NewsNoFull: FC<NewsConteinerProps> = ({
                         <NewsDate date={post.createdAt} />
                         <div className="news__block">
                             <NewsTitle title={post.title} />
-                            <TextMain text={post.article[0]} />
+                            <p className="text">{post.article[0]}</p>
                         </div>
                     </div>
                     {!!post.photo && !!server && (

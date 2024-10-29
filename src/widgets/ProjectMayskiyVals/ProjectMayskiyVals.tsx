@@ -9,12 +9,12 @@ export const ProjectMayskiyVals = () => {
             {PROJECTS[4] && (
                 <Project project={PROJECTS[4]}>
                     <div className="project-card__conteiner">
-                        <p className="project-card__text project-card__title">
+                        <p className="text project-card__title">
                             Как говорить с молодыми о Великой Отечественной,
                             чтобы сохранить память и правду о героическом
                             времени в истории страны?
                         </p>
-                        <p className="project-card__text">
+                        <p className="text">
                             Один из эффективных путей - это возможности «детской
                             дипломатии», деятельностное, активное включение
                             молодёжи в процесс сохранения исторической памяти.
@@ -27,20 +27,20 @@ export const ProjectMayskiyVals = () => {
                             Проект в полной мере соответствует этим вызовам
                             времени.
                         </p>
-                        <p className="project-card__text">
+                        <p className="text">
                             Проект «Майский вальс. Виват, Победа!» предлагает
                             один из возможных эффективных подходов организации
                             системной деятельности с молодёжной среде города
                             Перми.
                         </p>
                         <article className="project-card__article">
-                            <p className="project-card__text">
+                            <p className="text">
                                 Проект включает в себя проведение комплекса
                                 взаимосвязанных мероприятий (событий) с
                                 молодёжью города Перми:
                             </p>
                             <ol className="project-card__numlist project-card__article">
-                                <li className="project-card__li">
+                                <li className="li">
                                     Городская молодёжная акция «Майский вальс.
                                     Виват, Победа!». В рамках Акции дан старт
                                     реализации Проекта, проведена интерактивная
@@ -49,7 +49,7 @@ export const ProjectMayskiyVals = () => {
                                     «Майский вальс. Виват, Победа!» (не менее
                                     150 участников).
                                 </li>
-                                <li className="project-card__li">
+                                <li className="li">
                                     Театрализованная интерактивная программа
                                     «Майский вальс. Живая Память» в Краевом
                                     госпитале для ветеранов войн и на площадках
@@ -61,7 +61,7 @@ export const ProjectMayskiyVals = () => {
                                     войны и труда. Не менее 5 площадок, не менее
                                     500 участников.
                                 </li>
-                                <li className="project-card__li">
+                                <li className="li">
                                     Городской молодёжный медиа-марафон «Моя
                                     Пермь. Живая Память» по созданию цифрового
                                     контента (видео-роликов и инфорграфики) о
@@ -72,11 +72,11 @@ export const ProjectMayskiyVals = () => {
                             </ol>
                         </article>
                         <article className="project-card__article">
-                            <h2 className="project-card__text project-card__title">
+                            <h2 className="text project-card__title">
                                 Результаты реализации проекта
                             </h2>
                             <ul className="project-card__list">
-                                <li className="project-card__li">
+                                <li className="li">
                                     В рамках реализации Проекта созданы
                                     благоприятные условия для сохранения
                                     исторической Памяти, исторической Правды о
@@ -85,7 +85,7 @@ export const ProjectMayskiyVals = () => {
                                     укрепление в молодёжной среде города Перми
                                     патриотизма, гражданского самосознания.
                                 </li>
-                                <li className="project-card__li">
+                                <li className="li">
                                     Сформированы и пополнены школьные и семейные
                                     архивы о событиях Великой Отечественной
                                     войны с целью сохранения памяти о земляках и
@@ -93,19 +93,19 @@ export const ProjectMayskiyVals = () => {
                                     (Видеоролики, созданные участниками Медиа
                                     марафона «Моя Пермь. Живая Память»).
                                 </li>
-                                <li className="project-card__li">
+                                <li className="li">
                                     Разработано методическое сопровождение для
                                     участников Медиа марафона «Моя Пермь. Живая
                                     Память» (проведено 2 мастер – класса в
                                     формате дистанционного обучения).
                                 </li>
-                                <li className="project-card__li">
+                                <li className="li">
                                     Создан медиа-ресурс в сети Интернет
                                     (интернет-портал «Моя Пермь. Живая Память»
                                     для размещения цифрового контента,
                                     созданного участниками Медиа-марафона).
                                 </li>
-                                <li className="project-card__li">
+                                <li className="li">
                                     Сформировано пространство для
                                     интернет-общения, в котором возможно
                                     взаимодействие участников Форума с
@@ -114,7 +114,7 @@ export const ProjectMayskiyVals = () => {
                                     актуальных для молодёжи тем, в том числе по
                                     вопросам «народной дипломатии».
                                 </li>
-                                <li className="project-card__li">
+                                <li className="li">
                                     Информационные материалы о реализации
                                     Проекта размещены на сайте ПКО МОФ
                                     «Российский фонд мира», в социальных сетях и

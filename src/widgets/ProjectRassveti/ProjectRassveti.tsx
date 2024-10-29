@@ -9,7 +9,7 @@ export const ProjectRassveti = () => {
             {PROJECTS[10] && (
                 <Project project={PROJECTS[10]}>
                     <div className="project-card__conteiner">
-                        <p className="project-card__text">
+                        <p className="text">
                             Проект «Рябиновые рассветы. Живая Память» -
                             продолжение масштабной работы учащихся Пермского
                             края, проведенной в рамках проекта «Рябиновая аллея
@@ -21,13 +21,13 @@ export const ProjectRassveti = () => {
                             краеведческого материала.
                         </p>
                         <article className="project-card__article">
-                            <p className="project-card__text">
+                            <p className="text">
                                 Все этапы Проекта предполагают использование
                                 интерактивных практик включения молодёжи в
                                 деятельность:
                             </p>
                             <ul className="project-card__numlist project-card__article">
-                                <li className="project-card__li">
+                                <li className="li">
                                     Создание школьниками 2-го содержательного
                                     блока Виртуальной экскурсии «Рябиновая аллея
                                     Героев»: видео-ролики о подвиге и судьбе
@@ -35,7 +35,7 @@ export const ProjectRassveti = () => {
                                     их размещением на специально созданном сайте{" "}
                                     <a
                                         href="https://rowan-alley.ru"
-                                        className="project-card__link"
+                                        className="link"
                                         target="_blank"
                                         rel="noreferrer"
                                     >
@@ -46,7 +46,7 @@ export const ProjectRassveti = () => {
                                     стенд с QR-кодом для выхода на Виртуальную
                                     экскурсию).
                                 </li>
-                                <li className="project-card__li">
+                                <li className="li">
                                     Разработка, организация, проведение
                                     школьниками - участниками цикла молодёжных
                                     мероприятий «Рябиновые рассветы» в Рябиновой
@@ -55,21 +55,21 @@ export const ProjectRassveti = () => {
                             </ul>
                         </article>
                         <article className="project-card__article">
-                            <p className="project-card__text">
+                            <p className="text">
                                 Проект «Рябиновые рассветы. Живая Память» - это
                                 комплекс взаимосвязанных этапов:
                             </p>
                             <ul className="project-card__numlist project-card__article">
-                                <li className="project-card__li">
+                                <li className="li">
                                     Формирование проектных площадок в школах и
                                     обучение команд.
                                 </li>
-                                <li className="project-card__li">
+                                <li className="li">
                                     Создание медиа-продукта (видео-ролики о
                                     судьбе и подвиге Героев Советского Союза -
                                     земляках, не менее 30).
                                 </li>
-                                <li className="project-card__li">
+                                <li className="li">
                                     Организация и проведение годового цикла
                                     мероприятий (событий) патриотической
                                     направленности «Рябиновые рассветы» для
@@ -79,7 +79,7 @@ export const ProjectRassveti = () => {
                                     предполагает проведение разноформатных
                                     молодёжных событий.
                                 </li>
-                                <li className="project-card__li">
+                                <li className="li">
                                     Итоговое событие - Краевой молодёжный Слет
                                     «Путь Героя. Живая Память».
                                 </li>
@@ -87,30 +87,30 @@ export const ProjectRassveti = () => {
                         </article>
 
                         <article className="project-card__article">
-                            <p className="project-card__text">
+                            <p className="text">
                                 Проект предоставляет молодежи Прикамья
                                 возможность:
                             </p>
                             <ul className="project-card__numlist project-card__article">
-                                <li className="project-card__li">
+                                <li className="li">
                                     Стать разработчиками медиа-продукта
                                     (видео-ролик) о героях Советского Союза -
                                     земляках.
                                 </li>
-                                <li className="project-card__li">
+                                <li className="li">
                                     Получить практические знания использования
                                     современных IT технологий при создании
                                     медиа-продукта, приобрести навыки работы с
                                     архивными документами, технологиями поиска
                                     информации из различных источников.
                                 </li>
-                                <li className="project-card__li">
+                                <li className="li">
                                     Включиться в активную исследовательскую,
                                     творческую, добровольческую деятельность
                                     (подготовка, проведение интерактивных
                                     событий для молодёжи в Рябиновой Аллее).
                                 </li>
-                                <li className="project-card__li">
+                                <li className="li">
                                     Получить общественное признание,
                                     почувствовать свою причастность к созданию
                                     особого места Живой Памяти в центре города

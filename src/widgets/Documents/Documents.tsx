@@ -22,7 +22,7 @@ export const Documents = () => {
             <TopImage src={DOCUMENTS_COVER} srclite={DOCUMENTS_COVER_LITE} />
             <ul className="documents__conteiner">
                 {DOCUMENTS.map((doc: DocumentsType) => (
-                    <li className="documents__li" key={doc.id}>
+                    <li className="li" key={doc.id}>
                         <Document title={doc.title} href={doc.href} num={doc.id} />
                     </li>
                 ))}
