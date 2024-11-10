@@ -2,23 +2,27 @@
 
 import "./Luch.css";
 import {
-    backgroundImageWithoutPhoto,
+    backgroundImageWithPhoto,
+    IMAGE_PERMISSION,
     LUCH_COVER,
     LUCH_COVER_LITE,
+    SERVER_URL,
 } from "../../shared/Constants";
 import { TopImage } from "@/entities/TopImage/TopImage";
+import { NewCarousel } from "../NewCarousel/NewCarousel";
 
 export const Luch = () => {
+    const server = `${SERVER_URL}luch/`;
     return (
         <section
             className="luch"
             style={{
-                backgroundImage: `${backgroundImageWithoutPhoto}`,
+                backgroundImage: `${backgroundImageWithPhoto}`,
             }}
         >
             <TopImage src={LUCH_COVER} srclite={LUCH_COVER_LITE} />
             <div className="luch__conteiner">
-            <h1 className="title">Ассоциация &laquo;Луч&raquo;</h1>
+                <h1 className="title">Ассоциация &laquo;Луч&raquo;</h1>
                 <article className="luch__article">
                     <p className="text">
                         Конкурс &laquo;Учитель года&raquo; – это всегда
@@ -74,6 +78,14 @@ export const Luch = () => {
                         счастливее!
                     </p>
                 </article>
+            </div>
+            <div className="luch__gallery">
+                <NewCarousel
+                    photo={6}
+                    server={server}
+                    extension={IMAGE_PERMISSION}
+                    height={400}
+                />
             </div>
         </section>
     );
