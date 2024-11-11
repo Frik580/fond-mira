@@ -81,7 +81,7 @@ export const Luch = () => {
             </div>
             <div className="luch__gallery">
                 <NewCarousel
-                    photo={6}
+                    photo={14}
                     server={server}
                     extension={IMAGE_PERMISSION}
                     height={400}
