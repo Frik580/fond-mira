@@ -33,6 +33,7 @@ export const IMAGE_PERMISSION = 'webp'
 export const DOCUMENT_PERMISSION = 'pdf'
 export const PARTNERS_PERMISSION = 'png'
 export const API_BASE_URL = 'https://fondmira-pk-api.ru'
+// export const API_BASE_URL = 'https://158.160.82.125'
 
 export const TITLES = {
     ABOUT_US: "Кто мы",
