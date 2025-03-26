@@ -10,7 +10,7 @@ export const TopNews = () => {
         <section className="top-news">
             <TopImage src={TOP_NEWS_COVER} srclite={TOP_NEWS_COVER_LITE} />
             <div className="top-news__conteiner">
-                <p className="top-news__title">Наша зима - 2025</p>
+                <p className="top-news__title">Наша весна - 2025</p>
                 <ul className="top-news__text">
                     <li>
                         Полным ходом идет реализация Проекта &laquo;Рябиновые
@@ -18,12 +18,13 @@ export const TopNews = () => {
                         президентских грантов
                     </li>
                     <li>
-                        Проект &laquo;Правнуки Победы. Живая Память&raquo; подан
-                        на Конкурс Грантов губернатора Пермского края. Верим в
-                        Победу!
+                        Наш проект &laquo;Правнуки Победы. Живая Память&raquo;
+                        стал победителем Конкурса Грантов губернатора Пермского
+                        края. Старт - 1 апреля 2025
                     </li>
                     <li>
-                    Краевой Молодёжный Штаб &laquo;МИР&raquo; уверенно РУЛИТ!
+                        Краевой Молодёжный Штаб &laquo;МИР&raquo; уверенно
+                        РУЛИТ!
                     </li>
 
                     {/* <li>
