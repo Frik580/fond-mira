@@ -6,7 +6,7 @@ import { useAppDispatch, useAppSelector } from "../../../shared/hooks/redux";
 import { setLinkHome } from "../../../store/reducers/linkSlice";
 import { FC } from "react";
 import { usePathname, useRouter } from "next/navigation";
-import logo from "../../../../public/images/logo.png";
+import logo from "../../../../public/images/dove.png";
 import { popupValue } from "@/store/reducers/popupSlice";
 
 type HeaderLogoProps = {
