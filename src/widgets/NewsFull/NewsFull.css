@@ -15,7 +15,7 @@
 .news__article {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
 }
 
 .news__video {
