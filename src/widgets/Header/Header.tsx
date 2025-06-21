@@ -112,13 +112,13 @@ export const Header = () => {
                     style="header-link__conteiner"
                     headerValue={header}
                 />
-                <HeaderLink
+                {/* <HeaderLink
                     path={PATH.LUCH}
                     title={TITLES.LUCH}
                     active={link.luch}
                     style="header-link__conteiner"
                     headerValue={header}
-                />
+                /> */}
                 {/* <Link href="/helpus" className="header__button">{TITLES.HELP}</Link> */}
                 {/* <div className="header__book">
                     <Book />
