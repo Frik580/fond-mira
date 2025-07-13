@@ -8,7 +8,7 @@ import { HeaderLink } from "@/entities/HeaderElem/HeaderLink/HeaderLink";
 import { PATH, TITLES } from "@/shared/Constants";
 import unfixedBody from "@/shared/lib/UnfixedBody";
 import useKeyEvents from "@/shared/hooks/useKeyEvents";
-import { useCallback, useEffect } from "react";
+import { useCallback } from "react";
 import { setValueHeader } from "@/store/reducers/headerSlice";
 
 export const NavPopup = () => {
@@ -17,10 +17,10 @@ export const NavPopup = () => {
     const link = useAppSelector(linkState);
 
     const closePopup = useCallback(() => {
-        dispatch(setValueHeader(null))
+        dispatch(setValueHeader(null));
         unfixedBody();
         dispatch(setValueNavPopup(false));
-    }, [dispatch])
+    }, [dispatch]);
 
     useKeyEvents((key) => {
         key === "Escape" && closePopup();

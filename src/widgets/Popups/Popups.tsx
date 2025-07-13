@@ -9,10 +9,6 @@ export const Popups = () => {
     const openpopup = useAppSelector(popupValue);
 
     return (
-        // <>
-        //     <NavPopup />
-        //     <PhotoPopup />
-        // </>
         <>
             {openpopup.valueNav && <NavPopup />}
             {openpopup.valuePhoto && <PhotoPopup />}

@@ -15,14 +15,13 @@ export const PhotoPopup = () => {
     const src = useAppSelector(photoState);
 
     function closePopup() {
-        dispatch(setValueHeader(null))
+        dispatch(setValueHeader(null));
         unfixedBody();
         dispatch(setValuePhotoPopup(false));
     }
 
     useKeyEvents((key) => {
         key === "Escape" && closePopup();
-        console.log("rrrr")
     });
 
     if (!openpopup.valuePhoto) {
@@ -36,7 +35,7 @@ export const PhotoPopup = () => {
             }`}
             onClick={closePopup}
         >
-            <div className="photo__loader"/>
+            <div className="photo__loader" />
             {src && (
                 <Image
                     src={src}
@@ -49,10 +48,7 @@ export const PhotoPopup = () => {
                     }}
                 />
             )}
-            <button
-                className="photo__close-button"
-                type="button"
-            />
+            <button className="photo__close-button" type="button" />
         </div>
     );
 };
