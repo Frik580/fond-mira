@@ -22,6 +22,7 @@ export const PhotoPopup = () => {
 
     useKeyEvents((key) => {
         key === "Escape" && closePopup();
+        console.log("rrrr")
     });
 
     if (!openpopup.valuePhoto) {
