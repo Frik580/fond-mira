@@ -223,6 +223,11 @@ export const DOCUMENTS = [
         title: "Свидетельство о внесении записи в Единый государственный реестр юридических лиц",
         href: "svid2",
     },
+    {
+        id: 11,
+        title: "Отчёт ПКО МОФ «Российский фонд мира» за 2024-2025 год",
+        href: "otchet_2024_2025",
+    },
 ];
 
 export const backgroundImageWithPhoto =
