@@ -172,7 +172,7 @@ export const PROJECTS = [
     },
     {
         id: 12,
-        year: 2026,
+        year: 2025,
         title: "Правнуки Победы. Живая Память",
         preview: "edededed",
         src: 'prav',
