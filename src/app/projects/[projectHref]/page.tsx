@@ -6,6 +6,7 @@ import { ProjectKtoYesliNeTy } from "@/widgets/ProjectKtoYesliNeTy/ProjectKtoYes
 import { ProjectMayskiyVals } from "@/widgets/ProjectMayskiyVals/ProjectMayskiyVals";
 import { ProjectMyIMir } from "@/widgets/ProjectMyIMir/ProjectMyIMir";
 import { ProjectPermVelikaya } from "@/widgets/ProjectPermVelikaya/ProjectPermVelikaya";
+import { ProjectPravnuki } from "@/widgets/ProjectPravnuki/ProjectPravnuki";
 import { ProjectProDobro } from "@/widgets/ProjectProDobro/ProjectProDobro";
 import { ProjectRassveti } from "@/widgets/ProjectRassveti/ProjectRassveti";
 import { ProjectRyabinovayaAlleya } from "@/widgets/ProjectRyabinovayaAlleya/ProjectRyabinovayaAlleya";
@@ -28,6 +29,7 @@ export default function Project({
 
     return (
         <main>
+            {projectHref === PROJECTS[11].href && <ProjectPravnuki />}
             {projectHref === PROJECTS[10].href && <ProjectRassveti />}
             {projectHref === PROJECTS[9].href && <ProjectKodSemyi />}
             {projectHref === PROJECTS[8].href && <ProjectProDobro />}

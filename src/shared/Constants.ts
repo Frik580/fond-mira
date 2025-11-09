@@ -170,6 +170,16 @@ export const PROJECTS = [
         href: "rassveti",
         photo: 0,
     },
+    {
+        id: 12,
+        year: 2026,
+        title: "Правнуки Победы. Живая Память",
+        preview: "edededed",
+        src: 'prav',
+        partner: 'guber',
+        href: "pravnuki",
+        photo: 9,
+    },
 ];
 
 export const DOCUMENTS = [
