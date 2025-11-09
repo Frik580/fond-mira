@@ -73,7 +73,7 @@ export const PROJECTS = [
     {
         id: 2,
         year: 2018,
-        title: "Фестиваль семейного досуга и творчества «Мы – ветви. ПЕРМЬ»",
+        title: "Фестиваль семейного досуга и творчества «Мы – ветви. Пермь»",
         preview: "edededed",
         src: 'vet',
         partner: 'gorod',
