@@ -163,7 +163,7 @@ export const PROJECTS = [
     {
         id: 11,
         year: 2024,
-        title: "Рябиновые рассветы",
+        title: "Рябиновые рассветы. Живая память",
         preview: "edededed",
         src: 'ras',
         partner: 'pg',
