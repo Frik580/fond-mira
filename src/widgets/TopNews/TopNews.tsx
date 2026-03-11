@@ -10,24 +10,21 @@ export const TopNews = () => {
         <section className="top-news">
             <TopImage src={TOP_NEWS_COVER} srclite={TOP_NEWS_COVER_LITE} />
             <div className="top-news__conteiner">
-                <p className="top-news__title">Наша осень - 2025</p>
+                <p className="top-news__title">Наша весна - 2026</p>
                 <ul className="top-news__text">
+
+
                     <li>
-                        Полным ходом идет реализация проекта &laquo;Правнуки
-                        Победы. Живая Память&raquo;, поддержанного Фондом
-                        грантов губернатора Пермского Края.
+                        Проекты Фонда мира:
                     </li>
                     <li>
-                        Краевой Медиа - марафон &laquo;Виват, Победа!&raquo;
+                        &laquo;От Сердца к Сердцу. Про - Добро&raquo; - на конкурсе &laquo;Город это МЫ&raquo;
                     </li>
                     <li>
-                        Краевой Конкурс творческих (исследовательских) работ
-                        &laquo;Моя Галерея Славы&raquo;
+                        &laquo;Каравай Дружбы земли Пермской&raquo; - на конкурса Фонда президентских грантов.
                     </li>
                     <li>
-                        Проект Фонда мира &laquo;От Победы к Победе. Живая
-                        Память&raquo; подан на 1 конкурс Фонда президентских
-                        грантов в 2026 году. Верим в Победу!
+                        &laquo;От Победы к Победе. Живая Память&raquo; - на конкурсе Фонда грантов губернатора ПК
                     </li>
                     {/* <li>
                         <Link href={"/projects/rassveti"} className="link">
