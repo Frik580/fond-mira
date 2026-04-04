@@ -43,7 +43,7 @@ export const TITLES = {
     DOCUMENTS: "Документы",
     CONTACTS: "Контакты",
     HELP: "Помочь нам",
-    LUCH: "Ассоциация Луч"
+    LUCH: "Штаб МИР"
 };
 
 export const PATH = {
