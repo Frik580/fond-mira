@@ -5,9 +5,9 @@ import { useAppDispatch, useAppSelector } from "@/shared/hooks/redux";
 import { popupValue, setValueNavPopup } from "@/store/reducers/popupSlice";
 import { linkState } from "@/store/reducers/linkSlice";
 import { HeaderLink } from "@/entities/HeaderElem/HeaderLink/HeaderLink";
-import { PATH, TITLES } from "@/shared/Constants";
 import unfixedBody from "@/shared/lib/UnfixedBody";
 import useKeyEvents from "@/shared/hooks/useKeyEvents";
+import { NAV_ITEMS, NavItem } from "@/shared/config/navConfig";
 import { useCallback } from "react";
 import { setValueHeader } from "@/store/reducers/headerSlice";
 
@@ -23,7 +23,9 @@ export const NavPopup = () => {
     }, [dispatch]);
 
     useKeyEvents((key) => {
-        key === "Escape" && closePopup();
+        if (key === "Escape" && openpopup.valueNav) {
+            closePopup();
+        }
     });
 
     if (!openpopup.valueNav) {
@@ -31,82 +33,31 @@ export const NavPopup = () => {
     }
 
     return (
-        <div
-            onClick={closePopup}
-            className={`navpopup ${openpopup.valueNav && "navpopup_opened"}`}
-        >
-            {openpopup.valueNav && (
-                <div
-                    onClick={(e) => {
-                        e.stopPropagation();
-                    }}
-                    className="navpopup__conteiner"
-                >
-                    <button
-                        onClick={closePopup}
-                        className="navpopup__close-button"
-                        type="button"
-                    />
-                    <div className="navpopup__links">
+        <div onClick={closePopup} className="navpopup navpopup_opened">
+            <div
+                onClick={(e) => {
+                    e.stopPropagation();
+                }}
+                className="navpopup__conteiner"
+            >
+                <button
+                    onClick={closePopup}
+                    className="navpopup__close-button"
+                    type="button"
+                />
+                <div className="navpopup__links">
+                    {NAV_ITEMS.map((item: NavItem) => (
                         <HeaderLink
-                            path={PATH.ABOUT_US}
-                            title={TITLES.ABOUT_US}
-                            active={link.aboutus}
+                            key={item.path}
+                            path={item.path}
+                            title={item.title}
+                            active={!!link[item.activeKey as keyof typeof link]}
                             style="header-link__conteiner_burger"
                             headerValue={false}
                         />
-                        <HeaderLink
-                            path={PATH.NEWS}
-                            title={TITLES.NEWS}
-                            active={link.newslist}
-                            style="header-link__conteiner_burger"
-                            headerValue={false}
-                        />
-                        <HeaderLink
-                            path={PATH.OUR_PROJECTS}
-                            title={TITLES.OUR_PROJECTS}
-                            active={link.projectslist}
-                            style="header-link__conteiner_burger"
-                            headerValue={false}
-                        />
-                        <HeaderLink
-                            path={PATH.PARTNERS}
-                            title={TITLES.PARTNERS}
-                            active={link.partners}
-                            style="header-link__conteiner_burger"
-                            headerValue={false}
-                        />
-                        <HeaderLink
-                            path={PATH.DOCUMENTS}
-                            title={TITLES.DOCUMENTS}
-                            active={link.documents}
-                            style="header-link__conteiner_burger"
-                            headerValue={false}
-                        />
-                        <HeaderLink
-                            path={PATH.CONTACTS}
-                            title={TITLES.CONTACTS}
-                            active={link.contacts}
-                            style="header-link__conteiner_burger"
-                            headerValue={false}
-                        />
-                        <HeaderLink
-                            path={PATH.HELP}
-                            title={TITLES.HELP}
-                            active={link.help}
-                            style="header-link__conteiner_burger"
-                            headerValue={false}
-                        />
-                        <HeaderLink
-                            path={PATH.LUCH}
-                            title={TITLES.LUCH}
-                            active={link.luch}
-                            style="header-link__conteiner_burger"
-                            headerValue={false}
-                        />
-                    </div>
+                    ))}
                 </div>
-            )}
+            </div>
         </div>
     );
 };
