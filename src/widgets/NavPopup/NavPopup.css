@@ -7,15 +7,7 @@
     right: 0;
     bottom: 0;
     display: flex;
-    visibility: hidden;
-    opacity: 0;
-    /* transition: opacity .3s; */
     backdrop-filter: blur(10px);
-  }
-  
-  .navpopup_opened {
-    visibility: visible;
-    opacity: 1;
     cursor: pointer;
   }
   

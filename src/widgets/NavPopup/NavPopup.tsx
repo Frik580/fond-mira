@@ -33,12 +33,7 @@ export const NavPopup = () => {
     }
 
     return (
-        <div
-            onClick={closePopup}
-            className={`navpopup ${
-                openpopup.valueNav ? "navpopup_opened" : ""
-            }`}
-        >
+        <div className="navpopup" onClick={closePopup}>
             <div
                 onClick={(e) => {
                     e.stopPropagation();

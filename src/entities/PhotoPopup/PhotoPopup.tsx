@@ -30,9 +30,10 @@ export const PhotoPopup = () => {
 
     return (
         <div
-            className={`photo_full ${
-                openpopup.valuePhoto && "photo_full_opened"
-            }`}
+            className="photo_full"
+            // className={`photo_full ${
+            //     openpopup.valuePhoto && "photo_full_opened"
+            // }`}
             onClick={closePopup}
         >
             <div className="photo__loader" />

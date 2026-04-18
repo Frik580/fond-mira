@@ -26,6 +26,11 @@
     gap: 20px;
 }
 
+.about-us__signature {
+    text-align: right;
+    margin-top: 20px;
+}
+
 .about-us__member {
     margin: 0 auto;
 }
