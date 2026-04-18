@@ -23,7 +23,7 @@ export const NavPopup = () => {
     }, [dispatch]);
 
     useKeyEvents((key) => {
-        if (key === "Escape" && openpopup.valueNav) {
+        if (key === "Escape") {
             closePopup();
         }
     });
@@ -33,7 +33,12 @@ export const NavPopup = () => {
     }
 
     return (
-        <div onClick={closePopup} className="navpopup navpopup_opened">
+        <div
+            onClick={closePopup}
+            className={`navpopup ${
+                openpopup.valueNav ? "navpopup_opened" : ""
+            }`}
+        >
             <div
                 onClick={(e) => {
                     e.stopPropagation();
@@ -43,6 +48,7 @@ export const NavPopup = () => {
                 <button
                     onClick={closePopup}
                     className="navpopup__close-button"
+                    aria-label="Закрыть навигацию"
                     type="button"
                 />
                 <div className="navpopup__links">

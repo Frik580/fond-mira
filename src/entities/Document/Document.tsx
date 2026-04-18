@@ -35,6 +35,8 @@ export const Document: FC<DocumentProps> = ({ title, href, num }) => {
             <Link
                 href={`${SERVER_URL_DOCUMENTS}${href}.${DOCUMENT_PERMISSION}`}
                 className="document__button"
+                target="_blank"
+                rel="noopener noreferrer"
             >
                 Открыть
             </Link>
