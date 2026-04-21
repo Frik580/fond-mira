@@ -42,7 +42,6 @@ const renderItems = (
 
 const BlockRenderer = ({
     block,
-    index,
 }: {
     block: ContentBlock;
     index: number;
@@ -50,7 +49,7 @@ const BlockRenderer = ({
     switch (block.type) {
         case "paragraph":
             return (
-                <div key={index} className="text project-card__multi-text">
+                <div className="text project-card__multi-text">
                     {block.boldText && (
                         <p className="text project-card__title">
                             {block.boldText}
@@ -66,7 +65,7 @@ const BlockRenderer = ({
 
         case "goal":
             return (
-                <p key={index} className="text">
+                <p className="text">
                     <span className="text project-card__title">
                         {block.title}{" "}
                     </span>
@@ -83,7 +82,7 @@ const BlockRenderer = ({
 
         case "article":
             return (
-                <article key={index} className="project-card__article">
+                <article className="project-card__article">
                     {block.title && (
                         <h2 className="text project-card__title">
                             {block.title}
@@ -110,14 +109,11 @@ const BlockRenderer = ({
             );
 
         case "document":
-            return (
-                <Document key={index} title={block.title} href={block.href} />
-            );
+            return <Document title={block.title} href={block.href} />;
 
         case "image-link":
             return block.href && block.src ? (
                 <Link
-                    key={index}
                     className="project-card__qr"
                     href={block.href}
                     target="_blank"
