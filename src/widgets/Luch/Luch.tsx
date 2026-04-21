@@ -1,5 +1,6 @@
 // "use client";
 
+import dynamic from "next/dynamic";
 import "./Luch.css";
 import {
     backgroundImageWithPhoto,
@@ -10,6 +11,11 @@ import {
 } from "../../shared/Constants";
 import { TopImage } from "@/entities/TopImage/TopImage";
 import { NewCarousel } from "../NewCarousel/NewCarousel";
+
+// Динамическая загрузка карусели (загрузится только на клиенте)
+const NewCarousel = dynamic(() => import("../NewCarousel/NewCarousel").then(mod => mod.NewCarousel), {
+    ssr: false, // если карусели нужны только на клиенте
+});
 
 export const Luch = () => {
     const server = `${SERVER_URL}shtab/`;

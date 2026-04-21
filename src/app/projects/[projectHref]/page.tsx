@@ -18,9 +18,7 @@ export default function Project({
 }) {
     const { projectHref } = params;
 
-    const project = PROJECTS.find((p) => p.href === projectHref) as
-        | ProjectType
-        | undefined;
+    const project = PROJECTS.find((p) => p.href === projectHref);
 
     if (!project) {
         notFound();

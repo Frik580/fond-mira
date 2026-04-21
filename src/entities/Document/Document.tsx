@@ -13,6 +13,8 @@ type DocumentProps = {
 };
 
 export const Document: FC<DocumentProps> = ({ title, href, num }) => {
+    const fileUrl = `${SERVER_URL_DOCUMENTS}${href}.${DOCUMENT_PERMISSION}`;
+
     return (
         <div className="document">
             <div className="document__text">
@@ -33,7 +35,7 @@ export const Document: FC<DocumentProps> = ({ title, href, num }) => {
                 Скачать
             </button>
             <Link
-                href={`${SERVER_URL_DOCUMENTS}${href}.${DOCUMENT_PERMISSION}`}
+                href={fileUrl}
                 className="document__button"
                 target="_blank"
                 rel="noopener noreferrer"
