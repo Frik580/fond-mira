@@ -1,13 +1,17 @@
 // "use client";
 
+import dynamic from "next/dynamic";
 import { FC } from "react";
 import "./NewsFull.css";
 import { NewsType } from "@/shared/models/Models";
 import VideoFrame from "@/entities/VideoFrame/VideoFrame";
-import { NewCarousel } from "@/widgets/NewCarousel/NewCarousel";
 import { IMAGE_PERMISSION } from "@/shared/Constants";
 import { NewsDate } from "@/entities/NewsElem/NewsDate/NewsDate";
 import { NewsTitle } from "@/entities/NewsElem/NewsTitle/NewsTitle";
+
+const NewCarousel = dynamic(() => import("@/widgets/NewCarousel/NewCarousel").then(mod => mod.NewCarousel), {
+    ssr: false,
+});
 
 type NewsConteinerProps = {
     post: NewsType;

@@ -1,5 +1,6 @@
 // "use client";
 
+import dynamic from "next/dynamic";
 import "./Project.css";
 import {
     backgroundImageWithoutPhoto,
@@ -14,7 +15,10 @@ import {
 import { FC, ReactNode } from "react";
 import { TopImage } from "@/entities/TopImage/TopImage";
 import { ProjectType } from "@/shared/models/Models";
-import { NewCarousel } from "../NewCarousel/NewCarousel";
+
+const NewCarousel = dynamic(() => import("@/widgets/NewCarousel/NewCarousel").then(mod => mod.NewCarousel), {
+    ssr: false,
+});
 
 type ProjectProps = {
     children: ReactNode;
