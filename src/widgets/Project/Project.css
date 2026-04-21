@@ -78,6 +78,12 @@
     gap: 10px;
 }
 
+.project-card__multi-text {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 .project-card__title {
     font-weight: 900;
 }

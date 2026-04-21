@@ -8,7 +8,7 @@ import { useAppDispatch, useAppSelector } from "../../shared/hooks/redux";
 import { linkState, setLinkHome } from "@/store/reducers/linkSlice";
 import { setValueNavPopup } from "@/store/reducers/popupSlice";
 import { Book } from "@/entities/Book/Book";
-import fixedBody from "@/shared/lib/FixedBody";
+import fixedBody from "@/features/FixedBody/FixedBody";
 import { HeaderLogo } from "@/entities/HeaderElem/HeaderLogo/HeaderLogo";
 import useScrollControl from "@/shared/hooks/useScrollControl";
 import { usePathname } from "next/navigation";

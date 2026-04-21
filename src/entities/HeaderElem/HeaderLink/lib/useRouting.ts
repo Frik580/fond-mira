@@ -1,6 +1,6 @@
 import { PATH } from "@/shared/Constants";
 import { useAppDispatch } from "@/shared/hooks/redux";
-import unfixedBody from "@/shared/lib/UnfixedBody";
+import unfixedBody from "@/features/FixedBody/UnfixedBody";
 import { setValueHeader } from "@/store/reducers/headerSlice";
 import {
     setLinkAboutus,

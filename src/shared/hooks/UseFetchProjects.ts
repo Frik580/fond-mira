@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "./redux";
-import { PROJECTS } from "../Constants";
+import { PROJECTS } from "../config/projectsConfig";
 import { projectState, setProject } from "@/store/reducers/projectSlice";
 
 export default function useFetchProjects() {

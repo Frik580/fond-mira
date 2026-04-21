@@ -7,7 +7,7 @@ import { useAppDispatch } from "@/shared/hooks/redux";
 import { setValuePhoto } from "@/store/reducers/photoSlice";
 import { setValuePhotoPopup } from "@/store/reducers/popupSlice";
 import { CarouselItemType } from "@/shared/models/Models";
-import fixedBody from "@/shared/lib/FixedBody";
+import fixedBody from "@/features/FixedBody/FixedBody";
 import { setValueHeader } from "@/store/reducers/headerSlice";
 
 export const CarouselItem: FC<CarouselItemType> = ({

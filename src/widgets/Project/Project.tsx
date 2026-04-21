@@ -11,33 +11,24 @@ import {
     SERVER_URL_PROJECTS_COVER,
     SERVER_URL_PROJECTS_COVER_LITE,
 } from "@/shared/Constants";
-import { FC } from "react";
-import { Support } from "@/entities/Support/Support";
+import { FC, ReactNode } from "react";
 import { TopImage } from "@/entities/TopImage/TopImage";
 import { ProjectType } from "@/shared/models/Models";
 import { NewCarousel } from "../NewCarousel/NewCarousel";
 
 type ProjectProps = {
-    children: React.ReactNode;
+    children: ReactNode;
     project: ProjectType;
 };
 
 export const Project: FC<ProjectProps> = ({ children, project }) => {
     const server = `${SERVER_URL}${project.href}/`;
+    const backgroundImage = project.photo
+        ? backgroundImageWithPhoto
+        : backgroundImageWithoutPhoto;
 
     return (
-        <section
-            className="project"
-            style={
-                !!project.photo
-                    ? {
-                          backgroundImage: `${backgroundImageWithPhoto}`,
-                      }
-                    : {
-                          backgroundImage: `${backgroundImageWithoutPhoto}`,
-                      }
-            }
-        >
+        <section className="project" style={{ backgroundImage }}>
             <TopImage
                 src={`${SERVER_URL_PROJECTS_COVER}${project.src}.${IMAGE_PERMISSION}`}
                 srclite={`${SERVER_URL_PROJECTS_COVER_LITE}${project.src}.${IMAGE_PERMISSION}`}

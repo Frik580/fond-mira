@@ -3,7 +3,7 @@
 import "./PhotoPopup.css";
 import { useAppDispatch, useAppSelector } from "@/shared/hooks/redux";
 import { popupValue, setValuePhotoPopup } from "@/store/reducers/popupSlice";
-import unfixedBody from "@/shared/lib/UnfixedBody";
+import unfixedBody from "@/features/FixedBody/UnfixedBody";
 import useKeyEvents from "@/shared/hooks/useKeyEvents";
 import Image from "next/image";
 import { photoState } from "@/store/reducers/photoSlice";

@@ -26,6 +26,38 @@ export type CarouselItemType = {
     cursor?: string;
 };
 
+export type ContentBlock =
+    | {
+        type: "paragraph";
+        boldText?: string;
+        text?: string;
+    }
+    | { type: "goal"; title: string; text: string }
+    | {
+        type: "list";
+        listType?: "ul" | "ol";
+        items: (string | string[])[];
+        className?: string;
+    }
+    | {
+        type: "article";
+        title?: string;
+        text?: string;
+        paragraphs?: string[];
+        items?: (string | string[])[];
+        listType?: "ul" | "ol";
+        className?: string;
+    }
+    | { type: "document"; title: string; href: string }
+    | {
+        type: "image-link";
+        href: string;
+        src: string | StaticImageData;
+        width?: number;
+        height?: number;
+        title?: string;
+    };
+
 export type ProjectType = {
     id: Key | null | undefined;
     year: number;
@@ -35,6 +67,7 @@ export type ProjectType = {
     partner: string;
     href: string;
     photo: number;
+    details: ContentBlock[];
 };
 
 export type GalleryType = {

@@ -1,18 +1,9 @@
 // "use client";
 
-import { PROJECTS } from "@/shared/Constants";
-import { ProjectKodSemyi } from "@/widgets/ProjectKodSemyi/ProjectKodSemyi";
-import { ProjectKtoYesliNeTy } from "@/widgets/ProjectKtoYesliNeTy/ProjectKtoYesliNeTy";
-import { ProjectMayskiyVals } from "@/widgets/ProjectMayskiyVals/ProjectMayskiyVals";
-import { ProjectMyIMir } from "@/widgets/ProjectMyIMir/ProjectMyIMir";
-import { ProjectPermVelikaya } from "@/widgets/ProjectPermVelikaya/ProjectPermVelikaya";
-import { ProjectPravnuki } from "@/widgets/ProjectPravnuki/ProjectPravnuki";
-import { ProjectProDobro } from "@/widgets/ProjectProDobro/ProjectProDobro";
-import { ProjectRassveti } from "@/widgets/ProjectRassveti/ProjectRassveti";
-import { ProjectRyabinovayaAlleya } from "@/widgets/ProjectRyabinovayaAlleya/ProjectRyabinovayaAlleya";
-import { ProjectSolnechnyyKrug } from "@/widgets/ProjectSolnechnyyKrug/ProjectSolnechnyyKrug";
-import { ProjectVetvi } from "@/widgets/ProjectVetvi/ProjectVetvi";
-import { ProjectZhivayaPamyat } from "@/widgets/ProjectZhivayaPamyat/ProjectZhivayaPamyat";
+import { PROJECTS } from "@/shared/config/projectsConfig";
+import { DynamicProject } from "@/widgets/DynamicProject/DynamicProject";
+import { ProjectType } from "@/shared/models/Models";
+import { notFound } from "next/navigation";
 
 export function generateStaticParams() {
     return PROJECTS.map((project) => ({
@@ -27,20 +18,17 @@ export default function Project({
 }) {
     const { projectHref } = params;
 
+    const project = PROJECTS.find((p) => p.href === projectHref) as
+        | ProjectType
+        | undefined;
+
+    if (!project) {
+        notFound();
+    }
+
     return (
         <main>
-            {projectHref === PROJECTS[11].href && <ProjectPravnuki />}
-            {projectHref === PROJECTS[10].href && <ProjectRassveti />}
-            {projectHref === PROJECTS[9].href && <ProjectKodSemyi />}
-            {projectHref === PROJECTS[8].href && <ProjectProDobro />}
-            {projectHref === PROJECTS[7].href && <ProjectPermVelikaya />}
-            {projectHref === PROJECTS[6].href && <ProjectRyabinovayaAlleya />}
-            {projectHref === PROJECTS[5].href && <ProjectKtoYesliNeTy />}
-            {projectHref === PROJECTS[4].href && <ProjectMayskiyVals />}
-            {projectHref === PROJECTS[3].href && <ProjectZhivayaPamyat />}
-            {projectHref === PROJECTS[2].href && <ProjectMyIMir />}
-            {projectHref === PROJECTS[1].href && <ProjectVetvi />}
-            {projectHref === PROJECTS[0].href && <ProjectSolnechnyyKrug />}
+            <DynamicProject project={project} />
         </main>
     );
 }
