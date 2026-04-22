@@ -4,4 +4,21 @@
  object-fit: cover;
  width: auto;
  border-radius: 20px;
+
+ /* Плавность перехода для фильтра и прозрачности */
+    transition: filter 0.6s ease-in-out, opacity 0.6s ease-in-out;
+    will-change: filter; /* Оптимизация для браузера */
+}
+
+
+/* Состояние в процессе загрузки */
+.carouselitem_loading {
+    filter: blur(10px); /* Степень размытия */
+    opacity: 0.7;       /* Можно немного уменьшить прозрачность */
+}
+
+/* Состояние после загрузки */
+.carouselitem_loaded {
+    filter: blur(0);    /* Убираем размытие */
+    opacity: 1;
 }

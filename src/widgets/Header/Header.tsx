@@ -6,7 +6,7 @@ import { HeaderLink } from "@/entities/HeaderElem/HeaderLink/HeaderLink";
 import { TITLES, PATH } from "../../shared/Constants";
 import { useAppDispatch, useAppSelector } from "../../shared/hooks/redux";
 import { linkState, setLinkHome } from "@/store/reducers/linkSlice";
-import { setValueNavPopup } from "@/store/reducers/popupSlice";
+import { setValueNavPopup, popupValue } from "@/store/reducers/popupSlice";
 import { Book } from "@/entities/Book/Book";
 import fixedBody from "@/features/FixedBody/FixedBody";
 import { HeaderLogo } from "@/entities/HeaderElem/HeaderLogo/HeaderLogo";
@@ -21,18 +21,34 @@ export const Header = () => {
     const header = useScrollControl();
     const dispatch = useAppDispatch();
     const link = useAppSelector(linkState);
+    const { valueNav } = useAppSelector(popupValue);
     const { news } = useAppSelector(newsState);
 
     useEffect(() => {
+        let timer: ReturnType<typeof setTimeout>;
+
+        if (pathname === "/" && !valueNav) {
+            timer = setTimeout(() => {
+                document.documentElement.classList.add("smooth-scroll");
+            }, 1000);
+        } else {
+            document.documentElement.classList.remove("smooth-scroll");
+        }
+
         if (
             pathname !== "/" &&
             pathname !== "/documents" &&
-            pathname !== "/helpus" && 
+            pathname !== "/helpus" &&
             pathname !== "/luch"
         ) {
             dispatch(setLinkHome());
         }
-    }, [dispatch, pathname]);
+
+        return () => {
+            if (timer) clearTimeout(timer);
+            document.documentElement.classList.remove("smooth-scroll");
+        };
+    }, [dispatch, pathname, valueNav]);
 
     return (
         <header
@@ -119,10 +135,6 @@ export const Header = () => {
                     style="header-link__conteiner"
                     headerValue={header}
                 />
-                {/* <Link href="/helpus" className="header__button">{TITLES.HELP}</Link> */}
-                {/* <div className="header__book">
-                    <Book />
-                </div> */}
             </nav>
             <div className="header__book">
                 <Book header={header} />

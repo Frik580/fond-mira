@@ -37,7 +37,9 @@ export const CarouselItem: FC<CarouselItemType> = ({
     return (
         <Image
             src={src}
-            className="carouselitem"
+            className={`carouselitem ${
+                loaded ? "carouselitem_loaded" : "carouselitem_loading"
+            }`}
             style={{ height: height, cursor: loaded ? cursor : "default" }}
             width={400}
             height={400}
