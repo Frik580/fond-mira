@@ -7,14 +7,13 @@
     right: 0;
     bottom: 0;
     display: flex;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(7px);
     cursor: pointer;
   }
   
   .navpopup__conteiner {
     position: relative;
     background-color: #fff;
-    /* height: 100vh; */
     padding: 10px 50px;
     display: flex;
     justify-content: center;
