@@ -21,20 +21,19 @@ export const Header = () => {
     const header = useScrollControl();
     const dispatch = useAppDispatch();
     const link = useAppSelector(linkState);
-    // const { valueNav } = useAppSelector(popupValue);
+    const { valueNav } = useAppSelector(popupValue);
     const { news } = useAppSelector(newsState);
 
     useEffect(() => {
-        // let timer: ReturnType<typeof setTimeout>;
+        let timer: ReturnType<typeof setTimeout>;
 
-        // if (pathname === "/" && !valueNav) {
-        //     if (pathname === "/") {
-        //     timer = setTimeout(() => {
-        //         document.documentElement.classList.add("smooth-scroll");
-        //     }, 1000);
-        // } else {
-        //     document.documentElement.classList.remove("smooth-scroll");
-        // }
+        if (pathname === "/" && !valueNav) {
+            timer = setTimeout(() => {
+                document.documentElement.classList.add("smooth-scroll");
+            }, 1000);
+        } else {
+            document.documentElement.classList.remove("smooth-scroll");
+        }
 
         if (
             pathname !== "/" &&
@@ -45,10 +44,10 @@ export const Header = () => {
             dispatch(setLinkHome());
         }
 
-        // return () => {
-        //     if (timer) clearTimeout(timer);
-        //     document.documentElement.classList.remove("smooth-scroll");
-        // };
+        return () => {
+            if (timer) clearTimeout(timer);
+            document.documentElement.classList.remove("smooth-scroll");
+        };
     }, [dispatch, pathname]);
 
     return (
@@ -73,7 +72,7 @@ export const Header = () => {
                 <BurgerButton
                     headerValue={header}
                     click={() => {
-                        // document.documentElement.classList.remove("smooth-scroll");
+                        document.documentElement.classList.remove("smooth-scroll");
                         dispatch(setValueHeader(header));
                         dispatch(setValueNavPopup(true));
                         fixedBody();

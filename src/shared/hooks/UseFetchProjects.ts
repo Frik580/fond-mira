@@ -11,7 +11,7 @@ export default function useFetchProjects() {
         if (projects.length === 0) {
             const array = [...PROJECTS];
             const newarray = array.sort(
-                (a, b) => (a.id < b.id && 1) || (a.id > b.id && -1) || 0,
+                (a, b) => ((a.id ?? 0) < (b.id ?? 0) && 1) || ((a.id ?? 0) > (b.id ?? 0) && -1) || 0,
             );
             dispatch(setProject(newarray));
         } else { return }
