@@ -6,7 +6,7 @@ import { useAppDispatch, useAppSelector } from "../../../shared/hooks/redux";
 import { setLinkHome } from "../../../store/reducers/linkSlice";
 import { FC } from "react";
 import { usePathname, useRouter } from "next/navigation";
-import logo from "../../../../public/images/logo.png";
+import logo from "../../../../public/images/lg.png";
 import { popupValue } from "@/store/reducers/popupSlice";
 
 type HeaderLogoProps = {
@@ -38,9 +38,16 @@ export const HeaderLogo: FC<HeaderLogoProps> = ({ headerValue }) => {
                 alt="голубь мира"
             />
             {headerValue && pathname === "/" && !popup.valuePhoto && (
-                <p className="logo__text">
-                    ПРО МОФ &#171;Российский фонд мира&#187;
-                </p>
+                <div className="box">
+                    <p className="logo__text logo__text_first_line">
+                        {/* ПРО МОФ &#171;Российский фонд мира&#187; */}
+                        Фонд Мира
+                    </p>
+                    <p className="logo__text logo__text_second_line">
+                        {/* ПРО МОФ &#171;Российский фонд мира&#187; */}
+                        Пермского Края
+                    </p>
+                </div>
             )}
         </button>
     );

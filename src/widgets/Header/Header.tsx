@@ -72,7 +72,7 @@ export const Header = () => {
                 <BurgerButton
                     headerValue={header}
                     click={() => {
-                        document.documentElement.classList.remove("smooth-scroll");
+                        // document.documentElement.classList.remove("smooth-scroll");
                         dispatch(setValueHeader(header));
                         dispatch(setValueNavPopup(true));
                         fixedBody();
@@ -122,13 +122,13 @@ export const Header = () => {
                     style="header-link__conteiner"
                     headerValue={header}
                 />
-                <HeaderLink
+                {/* <HeaderLink
                     path={PATH.HELP}
                     title={TITLES.HELP}
                     active={link.help}
                     style="header-link__conteiner"
                     headerValue={header}
-                />
+                /> */}
                 <HeaderLink
                     path={PATH.LUCH}
                     title={TITLES.LUCH}
