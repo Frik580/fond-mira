@@ -51,7 +51,7 @@ export const Header = () => {
             if (timer) clearTimeout(timer);
             document.documentElement.classList.remove("smooth-scroll");
         };
-    }, [dispatch, pathname]);
+    }, [dispatch, pathname, window.innerWidth]);
 
     return (
         <header
