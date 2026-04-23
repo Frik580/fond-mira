@@ -3,7 +3,7 @@
 import "./Header.css";
 import { BurgerButton } from "@/features/BurgerButton/BurgerButton";
 import { HeaderLink } from "@/entities/HeaderElem/HeaderLink/HeaderLink";
-import { TITLES, PATH } from "../../shared/Constants";
+import { TITLES, PATH, WINDOW_SIZE } from "../../shared/Constants";
 import { useAppDispatch, useAppSelector } from "../../shared/hooks/redux";
 import { linkState, setLinkHome } from "@/store/reducers/linkSlice";
 import { setValueNavPopup, popupValue } from "@/store/reducers/popupSlice";
@@ -27,7 +27,10 @@ export const Header = () => {
     useEffect(() => {
         let timer: ReturnType<typeof setTimeout>;
 
-        if (pathname === "/" && !valueNav) {
+        // Проверяем, является ли устройство мобильным (ширина экрана <= 660px)
+        const isMobile = window.innerWidth <= WINDOW_SIZE.MIDDLE;
+
+        if (pathname === "/" && !valueNav && !isMobile) {
             timer = setTimeout(() => {
                 document.documentElement.classList.add("smooth-scroll");
             }, 1000);
