@@ -20,6 +20,6 @@ export const NAV_ITEMS: NavItem[] = [
     { path: PATH.PARTNERS, title: TITLES.PARTNERS, activeKey: "partners" },
     { path: PATH.DOCUMENTS, title: TITLES.DOCUMENTS, activeKey: "documents" },
     { path: PATH.CONTACTS, title: TITLES.CONTACTS, activeKey: "contacts" },
-    { path: PATH.HELP, title: TITLES.HELP, activeKey: "help" },
+    // { path: PATH.HELP, title: TITLES.HELP, activeKey: "help" },
     { path: PATH.LUCH, title: TITLES.LUCH, activeKey: "luch" },
 ];
