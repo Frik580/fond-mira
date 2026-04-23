@@ -3,10 +3,10 @@
 import "./Header.css";
 import { BurgerButton } from "@/features/BurgerButton/BurgerButton";
 import { HeaderLink } from "@/entities/HeaderElem/HeaderLink/HeaderLink";
-import { TITLES, PATH, WINDOW_SIZE } from "../../shared/Constants";
+import { TITLES, PATH } from "../../shared/Constants";
 import { useAppDispatch, useAppSelector } from "../../shared/hooks/redux";
 import { linkState, setLinkHome } from "@/store/reducers/linkSlice";
-import { setValueNavPopup, popupValue } from "@/store/reducers/popupSlice";
+import { setValueNavPopup } from "@/store/reducers/popupSlice";
 import { Book } from "@/entities/Book/Book";
 import fixedBody from "@/features/FixedBody/FixedBody";
 import { HeaderLogo } from "@/entities/HeaderElem/HeaderLogo/HeaderLogo";
@@ -21,23 +21,9 @@ export const Header = () => {
     const header = useScrollControl();
     const dispatch = useAppDispatch();
     const link = useAppSelector(linkState);
-    const { valueNav } = useAppSelector(popupValue);
     const { news } = useAppSelector(newsState);
 
     useEffect(() => {
-        let timer: ReturnType<typeof setTimeout>;
-
-        // Проверяем, является ли устройство мобильным (ширина экрана <= 660px)
-        const isMobile = window.innerWidth <= WINDOW_SIZE.MIDDLE;
-
-        if (pathname === "/" && !valueNav && !isMobile) {
-            timer = setTimeout(() => {
-                document.documentElement.classList.add("smooth-scroll");
-            }, 1000);
-        } else {
-            document.documentElement.classList.remove("smooth-scroll");
-        }
-
         if (
             pathname !== "/" &&
             pathname !== "/documents" &&
@@ -47,11 +33,7 @@ export const Header = () => {
             dispatch(setLinkHome());
         }
 
-        return () => {
-            if (timer) clearTimeout(timer);
-            document.documentElement.classList.remove("smooth-scroll");
-        };
-    }, [dispatch, pathname, window.innerWidth]);
+    }, [dispatch, pathname]);
 
     return (
         <header
@@ -75,7 +57,6 @@ export const Header = () => {
                 <BurgerButton
                     headerValue={header}
                     click={() => {
-                        // document.documentElement.classList.remove("smooth-scroll");
                         dispatch(setValueHeader(header));
                         dispatch(setValueNavPopup(true));
                         fixedBody();
