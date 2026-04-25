@@ -42,29 +42,27 @@ padding: 5px 0;
     font-weight: 400;
 }
 
-/* @media (max-width: 500px) {
-    .logo__text {
+@media (max-width: 500px) {
+    .logo__text_first_line {
         font-size: 18px;
     }
 }
-
-@media (max-width: 280px) {
-    .logo__text {
-        font-size: 14px;
+@media (max-width: 500px) {
+    .logo__text_second_line {
+        font-size: 10px;
     }
-} */
+}
 
 .box {
     display: flex;
     flex-direction:column;
-    /* align-items: center; */
     margin-left: 10px;
-    padding-left: 15px;
+    padding-left: 20px;
     width: 170px;
     border-left: 1px solid var(--color-white);
 }
 
-@media (max-width: 500px) {
+@media (max-width: 450px) {
     .box {
         visibility: hidden;
     }
