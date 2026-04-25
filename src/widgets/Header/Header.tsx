@@ -43,7 +43,7 @@ export const Header = () => {
             style={{
                 backgroundImage: `${
                     header && pathname !== "/"
-                        ? "linear-gradient(rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.2) 100%)"
+                        ? "linear-gradient(rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%)"
                         : ""
                 }`,
                 height: `${header && pathname !== "/" ? "auto" : ""}`,

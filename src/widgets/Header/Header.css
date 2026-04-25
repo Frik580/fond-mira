@@ -47,7 +47,7 @@
     flex-shrink: 0;
 }
 
-@media (max-width: 1550px) {
+@media (max-width: 1500px) {
     .header__navigation {
         margin: 0;
         margin-left: auto;
