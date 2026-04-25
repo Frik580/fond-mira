@@ -120,10 +120,11 @@ export const Header = () => {
                     style="header-link__conteiner"
                     headerValue={header}
                 />
-            </nav>
-            <div className="header__book">
                 <Book header={header} />
-            </div>
+            </nav>
+            {/* <div className="header__book">
+                <Book header={header} />
+            </div> */}
         </header>
     );
 };

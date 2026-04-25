@@ -28,13 +28,13 @@ export const Book: FC<BookProps> = ({ header }) => {
                 blurDataURL={ordenLite.src}
                 placeholder="blur"
             />
-            <p className={header ? `book__title` : `book__title_hover`}>
+            <p className="book__title">
                 Книга Памяти
             </p>
-            <p className="book__text">1941 - 1945</p>
+            {/* <p className="book__text">1941 - 1945</p>
             <p className="book__text">
                 База данных погибших военнослужащих Пермского Края
-            </p>
+            </p> */}
         </Link>
     );
 };

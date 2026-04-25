@@ -47,6 +47,19 @@
     flex-shrink: 0;
 }
 
+@media (max-width: 1550px) {
+    .header__navigation {
+        margin: 0;
+        margin-left: auto;
+    }
+}
+
+@media (max-width: 420px) {
+    .header__navigation {
+        gap: 10px;
+    }
+}
+
 .header__links {
     display: flex;
     gap: 10px;
@@ -73,7 +86,7 @@
     }
 }
 
-.header__book {
+/* .header__book {
     width: 110px;
     position: absolute;
     right: 30px;
@@ -89,4 +102,9 @@
     .header__book {
         right: 10px;
     }
+} */
+
+.header__book {
+    /* position: relative; */
+    /* display: flex; */
 }
