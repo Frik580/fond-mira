@@ -6,7 +6,7 @@ import { useAppDispatch, useAppSelector } from "../../../shared/hooks/redux";
 import { setLinkHome } from "../../../store/reducers/linkSlice";
 import { FC } from "react";
 import { usePathname, useRouter } from "next/navigation";
-import logo from "../../../../public/images/lg.png";
+import logo from "../../../../public/images/logo4.png";
 import { popupValue } from "@/store/reducers/popupSlice";
 
 type HeaderLogoProps = {
@@ -30,14 +30,16 @@ export const HeaderLogo: FC<HeaderLogoProps> = ({ headerValue }) => {
                 src={logo}
                 width={200}
                 height={200}
-                className={
-                    headerValue && pathname === "/" && !popup.valuePhoto
-                        ? "logo__image_large"
-                        : "logo__image"
-                }
+                // className={
+                //     headerValue && pathname === "/" && !popup.valuePhoto
+                //         ? "logo__image_large"
+                //         : "logo__image"
+                // }
+                className="logo__image"
                 alt="голубь мира"
             />
-            {headerValue && pathname === "/" && !popup.valuePhoto && (
+            {/* {headerValue && pathname === "/" && !popup.valuePhoto && ( */}
+                {headerValue && !popup.valuePhoto && (
                 <div className="box">
                     <p className="logo__text logo__text_first_line">
                         {/* ПРО МОФ &#171;Российский фонд мира&#187; */}

@@ -9,7 +9,7 @@ export const TopNews = () => {
     return (
         <section className="top-news">
             <TopImage src={TOP_NEWS_COVER} srclite={TOP_NEWS_COVER_LITE} />
-            <div className="top-news__conteiner">
+            {/* <div className="top-news__conteiner">
                 <p className="top-news__title">Наша весна - 2026</p>
                 <ul className="top-news__text">
 
@@ -29,14 +29,14 @@ export const TopNews = () => {
                     <li>
                         Мы верим в победу!
                     </li>
-                    {/* <li>
+                    <li>
                         <Link href={"/projects/rassveti"} className="link">
                             &laquo;Рябиновые рассветы. Живая Память&raquo;
                         </Link>{" "}
                         (при поддержке Фонда президентских грантов)
-                    </li> */}
+                    </li>
                 </ul>
-            </div>
+            </div> */}
         </section>
     );
 };
