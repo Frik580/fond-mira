@@ -15,7 +15,7 @@ export default function useScrollControl() {
                 );
 
                 const scrollTop = document.documentElement.scrollTop;
-                scrollTop > 50 ? setHeader(false) : setHeader(true)
+                scrollTop > 100 ? setHeader(false) : setHeader(true)
             }
 
             window.addEventListener("scroll", callback);

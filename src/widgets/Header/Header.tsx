@@ -40,14 +40,6 @@ export const Header = () => {
             className={`header ${
                 header ? "header_gradient" : "header_visibility"
             }`}
-            style={{
-                backgroundImage: `${
-                    header && pathname !== "/"
-                        ? "linear-gradient(rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%)"
-                        : ""
-                }`,
-                height: `${header && pathname !== "/" ? "auto" : ""}`,
-            }}
         >
             <div className="header__links">
                 <HeaderLogo headerValue={header} />
