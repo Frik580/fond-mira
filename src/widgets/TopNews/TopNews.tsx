@@ -13,6 +13,7 @@ export const TopNews = () => {
                 srcTablet={TOP_NEWS_COVER_TABLET} 
                 srcMobile={TOP_NEWS_COVER_MOBILE} 
                 srclite={TOP_NEWS_COVER_LITE} 
+                isInitialPage={true}
             />
         </section>
     );

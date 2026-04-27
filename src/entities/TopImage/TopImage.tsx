@@ -9,11 +9,12 @@ type TopImageProps = {
     srcTablet?: string;
     srcMobile?: string;
     srclite: string;
+    isInitialPage?: boolean;
 };
 
 async function getBase64(url: string): Promise<string> {
     try {
-        const res = await fetch(url);
+        const res = await fetch(url, { cache: "force-cache" });
         if (!res.ok) return "";
         const buffer = await res.arrayBuffer();
         const base64 = Buffer.from(buffer).toString("base64");
@@ -25,9 +26,18 @@ async function getBase64(url: string): Promise<string> {
     }
 }
 
-export const TopImage = async ({ src, srcPC, srcTablet, srcMobile, srclite }: TopImageProps) => {
+export const TopImage = async ({
+    src,
+    srcPC,
+    srcTablet,
+    srcMobile,
+    srclite,
+    isInitialPage = false,
+}: TopImageProps) => {
     const blurDataURL = await getBase64(srclite);
-    const placeholderProps = blurDataURL ? { placeholder: "blur" as const, blurDataURL } : {};
+    const placeholderProps = blurDataURL
+        ? { placeholder: "blur" as const, blurDataURL }
+        : {};
 
     return (
         <div className="topimage">
@@ -41,41 +51,44 @@ export const TopImage = async ({ src, srcPC, srcTablet, srcMobile, srclite }: To
                 {...placeholderProps}
                 priority
             />
-            {/* PC Version */}
-            {srcPC && (
-                <Image
-                    src={srcPC}
-                    className="topimage__image topimage__image--PC"
-                    alt="Фоновая картинка"
-                    fill
-                    sizes="100vw"
-                    {...placeholderProps}
-                    priority
-                />
-            )}
-            {/* Tablet Version */}
-            {srcTablet && (
-                <Image
-                    src={srcTablet}
-                    className="topimage__image topimage__image--tablet"
-                    alt="Фоновая картинка"
-                    fill
-                    sizes="100vw"
-                    {...placeholderProps}
-                    priority
-                />
-            )}
-            {/* Mobile Version */}
-            {srcMobile && (
-                <Image
-                    src={srcMobile}
-                    className="topimage__image topimage__image--mobile"
-                    alt="Фоновая картинка"
-                    fill
-                    sizes="100vw"
-                    {...placeholderProps}
-                    priority
-                />
+
+            {/* Адаптивные версии только для начальной страницы */}
+            {isInitialPage && (
+                <>
+                    {srcPC && (
+                        <Image
+                            src={srcPC}
+                            className="topimage__image topimage__image--PC"
+                            alt="Фоновая картинка PC"
+                            fill
+                            sizes="100vw"
+                            {...placeholderProps}
+                            priority
+                        />
+                    )}
+                    {srcTablet && (
+                        <Image
+                            src={srcTablet}
+                            className="topimage__image topimage__image--tablet"
+                            alt="Фоновая картинка Tablet"
+                            fill
+                            sizes="100vw"
+                            {...placeholderProps}
+                            priority
+                        />
+                    )}
+                    {srcMobile && (
+                        <Image
+                            src={srcMobile}
+                            className="topimage__image topimage__image--mobile"
+                            alt="Фоновая картинка Mobile"
+                            fill
+                            sizes="100vw"
+                            {...placeholderProps}
+                            priority
+                        />
+                    )}
+                </>
             )}
         </div>
     );
