@@ -44,7 +44,9 @@ export const TopImage = async ({
             {/* Desktop Version */}
             <Image
                 src={src}
-                className="topimage__image topimage__image--desktop"
+                className={`topimage__image ${
+                    isInitialPage ? "header_gradient" : ""
+                }`}
                 alt="Фоновая картинка"
                 fill
                 sizes="100vw"
