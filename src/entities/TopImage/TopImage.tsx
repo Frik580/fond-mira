@@ -5,6 +5,9 @@ import Image from "next/image";
 
 type TopImageProps = {
     src: string;
+    srcPC?: string;
+    srcTablet?: string;
+    srcMobile?: string;
     srclite: string;
 };
 
@@ -22,21 +25,58 @@ async function getBase64(url: string): Promise<string> {
     }
 }
 
-export const TopImage = async ({ src, srclite }: TopImageProps) => {
+export const TopImage = async ({ src, srcPC, srcTablet, srcMobile, srclite }: TopImageProps) => {
     const blurDataURL = await getBase64(srclite);
+    const placeholderProps = blurDataURL ? { placeholder: "blur" as const, blurDataURL } : {};
 
     return (
         <div className="topimage">
+            {/* Desktop Version */}
             <Image
                 src={src}
-                className="topimage__image"
+                className="topimage__image topimage__image--desktop"
                 alt="Фоновая картинка"
                 fill
-                sizes="(max-width: 425px) 75vw, 100vw"
-                placeholder={blurDataURL ? "blur" : "empty"}
-                blurDataURL={blurDataURL}
+                sizes="100vw"
+                {...placeholderProps}
                 priority
             />
+            {/* PC Version */}
+            {srcPC && (
+                <Image
+                    src={srcPC}
+                    className="topimage__image topimage__image--PC"
+                    alt="Фоновая картинка"
+                    fill
+                    sizes="100vw"
+                    {...placeholderProps}
+                    priority
+                />
+            )}
+            {/* Tablet Version */}
+            {srcTablet && (
+                <Image
+                    src={srcTablet}
+                    className="topimage__image topimage__image--tablet"
+                    alt="Фоновая картинка"
+                    fill
+                    sizes="100vw"
+                    {...placeholderProps}
+                    priority
+                />
+            )}
+            {/* Mobile Version */}
+            {srcMobile && (
+                <Image
+                    src={srcMobile}
+                    className="topimage__image topimage__image--mobile"
+                    alt="Фоновая картинка"
+                    fill
+                    sizes="100vw"
+                    {...placeholderProps}
+                    priority
+                />
+            )}
         </div>
     );
 };
