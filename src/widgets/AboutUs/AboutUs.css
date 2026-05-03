@@ -6,6 +6,17 @@
     background-color: var(--color-white);
 }
 
+@keyframes element-reveal {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .about-us__columns {
     display: flex;
     padding: 50px 40px 100px 40px;
@@ -24,6 +35,19 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+}
+
+.about-us__member,
+.about-us__conteiner > * {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.about-us--visible .about-us__member,
+.about-us--visible .about-us__conteiner > * {
+    animation: element-reveal 0.8s ease-out forwards;
+    /* Автоматический расчет задержки: индекс * 0.2 секунды */
+    animation-delay: calc(var(--i, 0) * 0.2s);
 }
 
 .about-us__signature {

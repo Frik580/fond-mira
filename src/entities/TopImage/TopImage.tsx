@@ -1,7 +1,11 @@
-// "use client";
+"use client";
 
 import "./TopImage.css";
 import Image from "next/image";
+import { useState, useEffect } from "react";
+
+// Cache for blurDataURLs to avoid re-fetching and re-processing the same image on subsequent renders
+const blurDataURLCache = new Map<string, string>();
 
 type TopImageProps = {
     src: string;
@@ -9,89 +13,90 @@ type TopImageProps = {
     srcTablet?: string;
     srcMobile?: string;
     srclite: string;
-    isInitialPage?: boolean;
 };
 
+// Функция для получения Base64 представления изображения для blurDataURL
 async function getBase64(url: string): Promise<string> {
+    // Проверяем кэш перед выполнением запроса
+    if (blurDataURLCache.has(url)) {
+        return blurDataURLCache.get(url)!;
+    }
+
     try {
         const res = await fetch(url, { cache: "force-cache" });
-        if (!res.ok) return "";
+        if (!res.ok) {
+            console.warn(
+                `Failed to fetch blur image from ${url}: ${res.status} ${res.statusText}`,
+            );
+            return "";
+        }
         const buffer = await res.arrayBuffer();
-        const base64 = Buffer.from(buffer).toString("base64");
+        // Клиентская замена Buffer для конвертации в base64
+        const base64 = btoa(
+            new Uint8Array(buffer).reduce(
+                (data, byte) => data + String.fromCharCode(byte),
+                "",
+            ),
+        );
         const contentType = res.headers.get("content-type") || "image/webp";
-        return `data:${contentType};base64,${base64}`;
+        const dataUrl = `data:${contentType};base64,${base64}`;
+
+        // Сохраняем результат в кэш
+        blurDataURLCache.set(url, dataUrl);
+        return dataUrl;
     } catch (e) {
-        console.error("Ошибка при генерации blurDataURL:", e);
+        console.error(`Ошибка при генерации blurDataURL для ${url}:`, e);
         return "";
     }
 }
 
-export const TopImage = async ({
+export const TopImage = ({
     src,
     srcPC,
     srcTablet,
     srcMobile,
     srclite,
-    isInitialPage = false,
 }: TopImageProps) => {
-    const blurDataURL = await getBase64(srclite);
-    const placeholderProps = blurDataURL
-        ? { placeholder: "blur" as const, blurDataURL }
-        : {};
+    const [currentSrc, setCurrentSrc] = useState(src);
+    const [blurDataURL, setBlurDataURL] = useState("");
+
+    // Загрузка блюра при монтировании
+    useEffect(() => {
+        getBase64(srclite).then(setBlurDataURL);
+    }, [srclite]);
+
+    // Логика смены src в зависимости от ширины (Art Direction)
+    useEffect(() => {
+        const handleResize = () => {
+            const width = window.innerWidth;
+            if (srcMobile && width <= 800) {
+                setCurrentSrc(srcMobile);
+            } else if (srcTablet && width <= 1200) {
+                setCurrentSrc(srcTablet);
+            } else if (srcPC && width <= 1600) {
+                setCurrentSrc(srcPC);
+            } else {
+                setCurrentSrc(src);
+            }
+        };
+
+        handleResize(); // Инициализация
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, [src, srcPC, srcTablet, srcMobile]);
 
     return (
         <div className="topimage">
-            {/* Desktop Version */}
             <Image
-                src={src}
-                className={`topimage__image ${
-                    isInitialPage ? "header_gradient" : ""
-                }`}
+                src={currentSrc}
                 alt="Фоновая картинка"
                 fill
-                sizes="100vw"
-                {...placeholderProps}
                 priority
+                sizes="100vw"
+                className="topimage__image"
+                placeholder={blurDataURL ? "blur" : "empty"}
+                blurDataURL={blurDataURL || undefined}
             />
-
-            {/* Адаптивные версии только для начальной страницы */}
-            {isInitialPage && (
-                <>
-                    {srcPC && (
-                        <Image
-                            src={srcPC}
-                            className="topimage__image topimage__image--PC"
-                            alt="Фоновая картинка PC"
-                            fill
-                            sizes="100vw"
-                            {...placeholderProps}
-                            priority
-                        />
-                    )}
-                    {srcTablet && (
-                        <Image
-                            src={srcTablet}
-                            className="topimage__image topimage__image--tablet"
-                            alt="Фоновая картинка Tablet"
-                            fill
-                            sizes="100vw"
-                            {...placeholderProps}
-                            priority
-                        />
-                    )}
-                    {srcMobile && (
-                        <Image
-                            src={srcMobile}
-                            className="topimage__image topimage__image--mobile"
-                            alt="Фоновая картинка Mobile"
-                            fill
-                            sizes="100vw"
-                            {...placeholderProps}
-                            priority
-                        />
-                    )}
-                </>
-            )}
         </div>
     );
 };
