@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ContentBlock } from "@/shared/models/Models";
 import renderTextWithLinks from "@/features/RenderTextWithLinks/RenderTextWithLinks";
-import { CSSProperties } from "react";
+import { CSSProperties, memo } from "react";
 
 interface Props {
     content?: ContentBlock[];
@@ -45,119 +45,126 @@ const renderItems = (
     );
 };
 
-const BlockRenderer = ({
-    block,
-    index,
-}: {
-    block: ContentBlock;
-    index: number;
-}): React.ReactNode => {
-    const style = { "--i": index + 1 } as CSSProperties;
+const BlockRenderer = memo(
+    ({
+        block,
+        index,
+    }: {
+        block: ContentBlock;
+        index: number;
+    }): React.ReactNode => {
+        const style = { "--i": index + 1 } as CSSProperties;
 
-    switch (block.type) {
-        case "paragraph":
-            return (
-                <div className="text project-card__multi-text" style={style}>
-                    {block.boldText && (
-                        <p className="text project-card__title">
-                            {block.boldText}
-                        </p>
-                    )}
-                    {block.text && (
-                        <p className="text">
-                            {renderTextWithLinks(block.text)}
-                        </p>
-                    )}
-                </div>
-            );
+        if (!block) return null;
 
-        case "goal":
-            return (
-                <p className="text" style={style}>
-                    <span className="text project-card__title">
-                        {block.title}{" "}
-                    </span>
-                    {renderTextWithLinks(block.text)}
-                </p>
-            );
-
-        case "list":
-            return renderItems(
-                block.items || [],
-                block.listType,
-                block.className,
-                style,
-            );
-
-        case "article":
-            return (
-                <article className="project-card__article" style={style}>
-                    {block.title && (
-                        <h2 className="text project-card__title">
-                            {block.title}
-                        </h2>
-                    )}
-                    {block.text && (
-                        <p className="text">
-                            {renderTextWithLinks(block.text)}
-                        </p>
-                    )}
-                    {block.paragraphs?.map((p, pIndex) => (
-                        <p key={pIndex} className="text">
-                            {renderTextWithLinks(p)}
-                        </p>
-                    ))}
-                    {block.items &&
-                        block.items.length > 0 &&
-                        renderItems(
-                            block.items,
-                            block.listType,
-                            block.className,
+        switch (block.type) {
+            case "paragraph":
+                return (
+                    <div
+                        className="text project-card__multi-text"
+                        style={style}
+                    >
+                        {block.boldText && (
+                            <p className="text project-card__title">
+                                {block.boldText}
+                            </p>
                         )}
-                </article>
-            );
+                        {block.text && (
+                            <p className="text">
+                                {renderTextWithLinks(block.text)}
+                            </p>
+                        )}
+                    </div>
+                );
 
-        case "document":
-            return (
-                <div style={style}>
-                    <Document title={block.title} href={block.href} />
-                </div>
-            );
+            case "goal":
+                return (
+                    <p className="text" style={style}>
+                        <span className="text project-card__title">
+                            {block.title}{" "}
+                        </span>
+                        {renderTextWithLinks(block.text)}
+                    </p>
+                );
 
-        case "image-link":
-            return block.href && block.src ? (
-                <Link
-                    className="project-card__qr"
-                    href={block.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={style}
-                >
-                    <Image
-                        src={block.src}
-                        width={block.width || 132}
-                        height={block.height || 132}
-                        alt={block.title || "Image"}
-                    />
-                </Link>
-            ) : null;
+            case "list":
+                return renderItems(
+                    block.items || [],
+                    block.listType,
+                    block.className,
+                    style,
+                );
 
-        default:
-            return null;
-    }
-};
+            case "article":
+                return (
+                    <article className="project-card__article" style={style}>
+                        {block.title && (
+                            <h2 className="text project-card__title">
+                                {block.title}
+                            </h2>
+                        )}
+                        {block.text && (
+                            <p className="text">
+                                {renderTextWithLinks(block.text)}
+                            </p>
+                        )}
+                        {block.paragraphs?.map((p, pIndex) => (
+                            <p key={pIndex} className="text">
+                                {renderTextWithLinks(p)}
+                            </p>
+                        ))}
+                        {block.items &&
+                            block.items.length > 0 &&
+                            renderItems(
+                                block.items,
+                                block.listType,
+                                block.className,
+                                style,
+                            )}
+                    </article>
+                );
 
-export const DynamicProjectContent = ({ content }: Props) => {
+            case "document":
+                return (
+                    <div style={style}>
+                        <Document title={block.title} href={block.href} />
+                    </div>
+                );
 
+            case "image-link":
+                return block.href && block.src ? (
+                    <Link
+                        className="project-card__qr"
+                        href={block.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={style}
+                    >
+                        <Image
+                            src={block.src}
+                            width={block.width || 132}
+                            height={block.height || 132}
+                            alt={block.title || "Image"}
+                        />
+                    </Link>
+                ) : null;
+
+            default:
+                return null;
+        }
+    },
+);
+BlockRenderer.displayName = "BlockRenderer";
+
+export const DynamicProjectContent = memo(({ content }: Props) => {
     if (!content) return null;
 
     return (
-        <div
-            className="project-card__conteiner project-card__conteiner--visible"
-        >
+        <div className="project-card__conteiner project-card__conteiner--visible">
             {content.map((block, index) => (
                 <BlockRenderer key={index} block={block} index={index} />
             ))}
         </div>
     );
-};
+});
+DynamicProjectContent.displayName = "DynamicProjectContent";
