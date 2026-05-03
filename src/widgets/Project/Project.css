@@ -72,6 +72,32 @@
     gap: 20px;
 }
 
+/* Начальное состояние блоков (скрыты и смещены вниз) */
+.project-card__conteiner > * {
+    opacity: 0;
+    transform: translateY(30px);
+    will-change: opacity, transform;
+}
+
+/* Анимация при появлении контейнера */
+.project-card__conteiner--visible > * {
+    animation: project-block-reveal 0.8s ease-out forwards;
+    /* Задержка зависит от индекса блока */
+    animation-delay: calc(var(--i, 0) * 0.15s);
+}
+
+@keyframes project-block-reveal {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
 .project-card__article {
     display: flex;
     flex-direction: column;
