@@ -1,42 +1,21 @@
-// "use client";
+'use client';
 
-import { FC, useEffect, useState } from "react";
-import "./News.css";
-import { NewsType } from "@/shared/models/Models";
-import { SERVER_URL_NEWS_IMAGE } from "@/shared/Constants";
-import { NewsNoFull } from "@/widgets/NewsNoFull/NewsNoFull";
-import { NewsFull } from "@/widgets/NewsFull/NewsFull";
+import { FC, useState } from 'react';
+import './News.css';
+import { NewsType } from '@/shared/models/Models';
+import { NewsNoFull } from '@/widgets/NewsNoFull/NewsNoFull';
+import { NewsFull } from '@/widgets/NewsFull/NewsFull';
 
-type NewsProps = {
-    post: NewsType;
-};
+type NewsProps = { post: NewsType };
 
 export const News: FC<NewsProps> = ({ post }) => {
     const [fullNews, setFullNews] = useState(false);
-    const [server, setServer] = useState("");
-
-    useEffect(() => {
-        setServer(`${SERVER_URL_NEWS_IMAGE}${post.slug}/`);
-    }, [post]);
-
     return (
-        <li className={`news ${!fullNews ? "news_nofull" : ""}`}>
+        <li className={`news ${!fullNews ? 'news_nofull' : ''}`}>
             {!fullNews ? (
-                <NewsNoFull
-                    post={post}
-                    server={server}
-                    onClickOpenButton={() => {
-                        setFullNews(true);
-                    }}
-                />
+                <NewsNoFull post={post} onClickOpenButton={() => setFullNews(true)} />
             ) : (
-                <NewsFull
-                    post={post}
-                    server={server}
-                    onClickCloseButton={() => {
-                        setFullNews(false);
-                    }}
-                />
+                <NewsFull post={post} onClickCloseButton={() => setFullNews(false)} />
             )}
         </li>
     );
