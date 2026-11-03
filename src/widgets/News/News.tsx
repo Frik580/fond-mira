@@ -9,9 +9,11 @@ import { NewsFull } from "@/widgets/NewsFull/NewsFull";
 
 type NewsProps = {
     post: NewsType;
+    className?: string;
+    priority?: boolean;
 };
 
-export const News: FC<NewsProps> = ({ post }) => {
+export const News: FC<NewsProps> = ({ post, className, priority=false}) => {
     const [fullNews, setFullNews] = useState(false);
     const [server, setServer] = useState("");
 
@@ -20,7 +22,7 @@ export const News: FC<NewsProps> = ({ post }) => {
     }, [post]);
 
     return (
-        <li className={`news ${!fullNews ? "news_nofull" : ""}`}>
+        <li className={ className ? className : `news ${!fullNews ? "news_nofull" : ""}`}>
             {!fullNews ? (
                 <NewsNoFull
                     post={post}
