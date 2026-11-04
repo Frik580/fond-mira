@@ -24,6 +24,6 @@ export const NewsNoFull: FC<NewsConteinerProps> = ({ post, onClickOpenButton, pr
                 </div>}
             </div>
         </div>
-        <button className="news__button_open" type="button" onClick={onClickOpenButton}>РїРѕРґСЂРѕР±РЅРµРµ</button>
+        <button className="news__button_open" type="button" onClick={onClickOpenButton}>Подробнее</button>
     </>;
 };

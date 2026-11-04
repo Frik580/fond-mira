@@ -86,3 +86,8 @@
     0% { background-position: 100% 0 }
     100% { background-position: -100% 0 }
 }
+/* Каждая новость занимает всю ширину списка */
+.news-list__block > .news {
+    grid-column: span 12;
+    min-width: 0;
+}
