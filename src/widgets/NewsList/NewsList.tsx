@@ -59,7 +59,7 @@ export const NewsList = ({ news, error = false, configured = true }: Props) => {
                         <ul className="news-list__block">
                             {currentNews.map((post) => <News key={post._id} post={post} />)}
                         </ul>
-                        {pageCount > 1 && <DotsButton lenght={news.length} index={handleIndex} />}
+                        {pageCount > 1 && <DotsButton length={news.length} index={handleIndex} />}
                     </>
                 )}
             </div>

@@ -1,13 +1,13 @@
-import { FC } from 'react';
+﻿import { FC } from 'react';
 import './NewsNoFull.css';
 import { NewsType } from '@/shared/models/Models';
 import Image from 'next/image';
 import { NewsDate } from '@/entities/NewsElem/NewsDate/NewsDate';
 import { NewsTitle } from '@/entities/NewsElem/NewsTitle/NewsTitle';
 
-type NewsConteinerProps = { post: NewsType; onClickOpenButton: () => void };
+type NewsConteinerProps = { post: NewsType; onClickOpenButton: () => void; priority?: boolean };
 
-export const NewsNoFull: FC<NewsConteinerProps> = ({ post, onClickOpenButton }) => {
+export const NewsNoFull: FC<NewsConteinerProps> = ({ post, onClickOpenButton, priority = false }) => {
     const cover = post.images?.[0];
     return <>
         <div className="news__box news_border_white">
@@ -20,10 +20,10 @@ export const NewsNoFull: FC<NewsConteinerProps> = ({ post, onClickOpenButton }) 
                     </div>
                 </div>
                 {cover && <div className="news__img">
-                    <Image src={cover.url} className="news__photo" width={250} height={250} alt={cover.alt || post.title} />
+                    <Image src={cover.url} className="news__photo" width={250} height={250} alt={cover.alt || post.title} priority={priority} />
                 </div>}
             </div>
         </div>
-        <button className="news__button_open" type="button" onClick={onClickOpenButton}>подробнее</button>
+        <button className="news__button_open" type="button" onClick={onClickOpenButton}>РїРѕРґСЂРѕР±РЅРµРµ</button>
     </>;
 };
