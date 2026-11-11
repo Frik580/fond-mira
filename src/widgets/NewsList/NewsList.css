@@ -11,6 +11,7 @@
 .news-list__conteiner {
     max-width: 1200px;
     margin: 0 auto;
+    padding-top: 50px;
 }
 
 /* grid */
