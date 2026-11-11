@@ -6,19 +6,19 @@ import { NEWS_AMT } from "@/shared/Constants";
 import resetActiveDots from "./lib/ResetActiveDots";
 
 type DotsButtonProps = {
-    lenght: number;
+    length: number;
     index: any;
 };
 
-export const DotsButton: FC<DotsButtonProps> = ({ lenght, index }) => {
+export const DotsButton: FC<DotsButtonProps> = ({ length, index }) => {
     const [isActive, setIsActive] = useState<boolean[]>([]);
 
     useEffect(() => {
-        const num = Math.ceil(lenght / NEWS_AMT);
+        const num = Math.ceil(length / NEWS_AMT);
         const data = resetActiveDots(num);
         data[0] = true;
         setIsActive(data);
-    }, [lenght]);
+    }, [length]);
 
     const handleDotsButton = (i: number) => {
         const data = resetActiveDots(isActive.length);

@@ -1,62 +1,29 @@
-// "use client";
+﻿import { FC } from 'react';
+import './NewsNoFull.css';
+import { NewsType } from '@/shared/models/Models';
+import Image from 'next/image';
+import { NewsDate } from '@/entities/NewsElem/NewsDate/NewsDate';
+import { NewsTitle } from '@/entities/NewsElem/NewsTitle/NewsTitle';
 
-import { FC, useEffect, useState } from "react";
-import "./NewsNoFull.css";
-import { NewsType } from "@/shared/models/Models";
-import Image from "next/image";
-import toDataURL from "@/features/ToDataUrl/ToDataUrl";
-import { NewsDate } from "@/entities/NewsElem/NewsDate/NewsDate";
-import { NewsTitle } from "@/entities/NewsElem/NewsTitle/NewsTitle";
+type NewsConteinerProps = { post: NewsType; onClickOpenButton: () => void; priority?: boolean };
 
-type NewsConteinerProps = {
-    post: NewsType;
-    server: string;
-    onClickOpenButton: () => void;
-};
-
-export const NewsNoFull: FC<NewsConteinerProps> = ({
-    post,
-    server,
-    onClickOpenButton,
-}) => {
-    const [srcBase64, setSrcBase64] = useState("");
-
-    useEffect(() => {
-        !!server &&
-            toDataURL(`${server}lite/1.webp`).then((dataUrl) => {
-                typeof dataUrl === "string" && setSrcBase64(dataUrl);
-            });
-    }, [server]);
-
-    return (
-        <>
-            <div className="news__box news_border_white">
-                <div className="news__conteiner">
-                    <div className="news__tex">
-                        <NewsDate date={post.createdAt} />
-                        <div className="news__block">
-                            <NewsTitle title={post.title} />
-                            <p className="text">{post.article[0]}</p>
-                        </div>
+export const NewsNoFull: FC<NewsConteinerProps> = ({ post, onClickOpenButton, priority = false }) => {
+    const cover = post.images?.[0];
+    return <>
+        <div className="news__box news_border_white">
+            <div className="news__conteiner">
+                <div className="news__tex">
+                    <NewsDate date={post.createdAt} />
+                    <div className="news__block">
+                        <NewsTitle title={post.title} />
+                        <p className="text">{post.preview || post.article[0]}</p>
                     </div>
-                    {!!post.photo && !!server && (
-                        <div className="news__img">
-                            <Image
-                                src={`${server}1.webp`}
-                                className="news__photo"
-                                width={250}
-                                height={250}
-                                alt="фото 1"
-                                placeholder={!!srcBase64 ? "blur" : "empty"}
-                                blurDataURL={!!srcBase64 ? srcBase64 : ""}
-                            />
-                        </div>
-                    )}
                 </div>
+                {cover && <div className="news__img">
+                    <Image src={cover.url} className="news__photo" width={250} height={250} alt={cover.alt || post.title} priority={priority} />
+                </div>}
             </div>
-            <button className="news__button_open" onClick={onClickOpenButton}>
-                подробнее
-            </button>
-        </>
-    );
+        </div>
+        <button className="news__button_open" type="button" onClick={onClickOpenButton}>Подробнее</button>
+    </>;
 };

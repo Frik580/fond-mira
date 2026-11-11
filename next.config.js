@@ -1,20 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-//     experimental: {
-//     missingSuspenseWithCSRBailout: false,
-//   },
-    // output: 'export',
     images: {
         unoptimized: true,
-        // formats: ['image/avif', 'image/webp'],
         remotePatterns: [
-          {
-            protocol: 'https',
-            hostname: 'storage.yandexcloud.net',
-            // domains: ['storage.yandexcloud.net'],
-          },
+            { protocol: 'https', hostname: 'storage.yandexcloud.net' },
+            { protocol: 'https', hostname: 'cdn.sanity.io' },
         ],
-      },
-}
+    },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

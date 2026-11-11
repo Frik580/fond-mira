@@ -46,6 +46,7 @@ export const CarouselItem: FC<CarouselItemType> = ({
             alt={`фото ${i}`}
             onLoad={() => setLoaded(true)}
             onClick={openPopup}
+            priority={false}
         />
     );
 };
